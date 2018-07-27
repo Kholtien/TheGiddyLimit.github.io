@@ -87,15 +87,18 @@ function onJsonLoad (data) {
 	ListUtil.initGenericPinnable();
 
 	addDeities(data);
-	BrewUtil.addBrewData(addDeities);
-	BrewUtil.makeBrewButton("manage-brew");
-	BrewUtil.bind({list, filterBox, sourceFilter});
-	ListUtil.loadState();
+	BrewUtil.pAddBrewData()
+		.then(addDeities)
+		.catch(BrewUtil.purgeBrew)
+		.then(() => {
+			BrewUtil.makeBrewButton("manage-brew");
+			BrewUtil.bind({list, filterBox, sourceFilter});
+			ListUtil.loadState();
+			RollerUtil.addListRollButton();
+			addListShowHide();
 
-	History.init();
-	handleFilterChange();
-	RollerUtil.addListRollButton();
-	addListShowHide();
+			History.init(true);
+		});
 }
 
 let deitiesList = [];

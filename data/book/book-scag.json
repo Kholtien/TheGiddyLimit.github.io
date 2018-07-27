@@ -3877,7 +3877,7 @@
 								{
 								    "type": "list",
 								    "items": [
-								        "{@race Dwarf (Duergar)|SCAG}"
+								        "{@race Dwarf (Duergar)|MTF}"
 								    ]
 								}
 							]
@@ -4550,7 +4550,7 @@
 										{
 										    "type": "list",
 										    "items": [
-										        "{@race Gnome (Deep/Svirfneblin)|EEPC}"
+										        "{@race Gnome (Deep/Svirfneblin)|SCAG}"
 										    ]
 										}
 									]

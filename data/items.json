@@ -1825,11 +1825,23 @@
 			"page": 154
 		},
 		{
-			"name": "Ball Bearings",
+			"name": "Ball Bearing",
 			"type": "G",
 			"rarity": "None",
 			"value": "0.1cp",
 			"weight": "0.002",
+			"source": "PHB",
+			"page": 151,
+			"entries": [
+				"Most commonly found inside a {@item Ball Bearings (Bag of 1,000)|phb|bag of ball bearings}."
+			]
+		},
+		{
+			"name": "Ball Bearings (Bag of 1,000)",
+			"type": "G",
+			"rarity": "None",
+			"value": "1gp",
+			"weight": "2",
 			"source": "PHB",
 			"page": 151,
 			"entries": [
@@ -2690,20 +2702,20 @@
 				{
 					"type": "list",
 					"items": [
-						"a backpack",
-						"a bag of 1,000 ball bearings",
+						"a {@item backpack|phb}}",
+						"a {@item Ball Bearings (Bag of 1,000)|phb|bag of 1,000 ball bearings}",
 						"10 feet of string",
-						"a bell",
-						"5 candles",
-						"a crowbar",
-						"a hammer",
-						"10 pitons",
+						"a {@item bell|phb}",
+						"5 {@item candle|phb|candles}",
+						"a {@item crowbar|phb}",
+						"a {@item hammer|phb}",
+						"10 {@item piton|phb|pitons}",
 						"a {@item hooded lantern|phb}",
-						"2 flasks of oil",
-						"5 days rations",
-						"a tinderbox",
-						"a waterskin",
-						"50 feet of hempen rope"
+						"2 {@item Oil (flask)|phb|flasks of oil}",
+						"5 days {@item Rations (1 day)|phb|rations}",
+						"a {@item tinderbox|phb}",
+						"a {@item waterskin|phb}",
+						"{@item Hempen Rope (50 feet)|phb|50 feet of hempen rope}"
 					]
 				}
 			]
@@ -3892,7 +3904,7 @@
 				{
 					"type": "table",
 					"colLabels": [
-						"{@dice {@dice 1d33}|Playing Card}",
+						"{@dice 1d33|Playing Card}",
 						"Illusion"
 					],
 					"colStyles": [
@@ -4256,7 +4268,7 @@
 				{
 					"type": "table",
 					"colLabels": [
-						"{@dice {@dice 1d22}|Playing Card}",
+						"{@dice 1d22|Playing Card}",
 						"Card",
 						"Effect"
 					],
@@ -4627,17 +4639,17 @@
 				{
 					"type": "list",
 					"items": [
-						"a chest",
-						"2 cases for maps and scrolls",
-						"a set of fine clothes",
-						"a bottle of ink",
-						"an ink pen",
-						"a lamp",
-						"2 flasks of oil",
-						"5 sheets of paper",
-						"a vial of perfume",
-						"sealing wax",
-						"soap."
+						"a {@item chest|phb}",
+						"2 {@item Map or Scroll Case|phb|cases for maps and scrolls}",
+						"a set of {@item fine clothes|phb}",
+						"a {@item Ink (1 ounce bottle)|phb|bottle of ink}",
+						"an {@item ink pen|phb}",
+						"a {@item lamp|phb}",
+						"2 {@item Oil (flask)|phb|flasks of oil}",
+						"5 {@item Paper (one sheet)|phb|sheets of paper}",
+						"a {@item Perfume (vial)|phb|vial of perfume}",
+						"{@item sealing wax|phb}",
+						"{@item soap|phb}"
 					]
 				}
 			]
@@ -4867,15 +4879,15 @@
 				{
 					"type": "list",
 					"items": [
-						"a backpack",
-						"a crowbar",
-						"a hammer",
-						"10 pitons",
-						"10 torches",
-						"a tinderbox",
-						"10 days of rations",
-						"a waterskin",
-						"50 feet of hempen rope"
+						"a {@item backpack|phb}",
+						"a {@item crowbar|phb}",
+						"a {@item hammer|phb}",
+						"10 {@item piton|phb|pitons}",
+						"10 {@item torch|phb|torches}",
+						"a {@item tinderbox|phb}",
+						"10 days of {@item Rations (1 day)|phb|rations}",
+						"a {@item waterskin|phb}",
+						"{@item Hempen Rope (50 feet)|phb|50 feet of hempen rope}"
 					]
 				}
 			]
@@ -5118,13 +5130,13 @@
 				{
 					"type": "list",
 					"items": [
-						"a backpack",
-						"a bedroll",
-						"2 costumes",
-						"5 candles",
-						"5 days of rations",
-						"a waterskin",
-						"a disguise kit."
+						"a {@item backpack|phb}",
+						"a {@item bedroll|phb}",
+						"2 {@item Costume Clothes|phb|costumes}",
+						"5 {@item candle|phb|candles}",
+						"5 days of {@item Rations (1 day)|phb|rations}",
+						"a {@item waterskin|phb}",
+						"a {@item disguise kit|phb}"
 					]
 				}
 			]
@@ -5167,14 +5179,14 @@
 				{
 					"type": "list",
 					"items": [
-						"a backpack",
-						"a bedroll",
-						"a mess kit",
-						"a tinderbox",
-						"10 torches",
-						"10 days of rations",
-						"a waterskin",
-						"50 feet of hempen rope"
+						"a {@item backpack|phb}",
+						"a {@item bedroll|phb}",
+						"a {@item mess kit|phb}",
+						"a {@item tinderbox|phb}",
+						"10 {@item torch|phb|torches}",
+						"10 days of {@item Rations (1 day)|phb|rations}",
+						"a {@item waterskin|phb}",
+						"{@item Hempen Rope (50 feet)|phb|50 feet of hempen rope}"
 					]
 				}
 			]
@@ -9195,16 +9207,16 @@
 				{
 					"type": "list",
 					"items": [
-						"a backpack",
-						"a blanket",
-						"10 candles",
-						"a tinderbox",
+						"a {@item backpack|phb}",
+						"a {@item blanket|phb}",
+						"10 {@item candle|phb|candles}",
+						"a {@item tinderbox|phb}",
 						"an alms box",
 						"2 blocks of incense",
 						"a censer",
 						"vestments",
-						"2 days of rations",
-						"a waterskin."
+						"2 days of {@item Rations (1 day)|phb|rations}",
+						"a {@item waterskin|phb}."
 					]
 				}
 			]
@@ -10405,11 +10417,11 @@
 				{
 					"type": "list",
 					"items": [
-						"a backpack",
-						"a book of lore",
-						"a bottle of ink",
-						"an ink pen",
-						"10 sheets of parchment",
+						"a {@item backpack|phb}",
+						"a {@item book|phb} of lore",
+						"a {@item Ink (1 ounce bottle)|phb|bottle of ink}",
+						"an {@item ink pen|phb}",
+						"10 {@item Parchment (one sheet)|phb|sheets of parchment}",
 						"a little bag of sand",
 						"a small knife."
 					]
@@ -13700,8 +13712,7 @@
 				"Sentience. Wave is a sentient weapon of neutral alignment, with an Intelligence of 14, a Wisdom of 10, and a Charisma of 18. It has hearing and darkvision out to a range of 120 feet.",
 				"The weapon communicates telepathically with its wielder and can speak, read, and understand Aquan. It can also speak with aquatic animals as if using a {@spell speak with animals} spell, using telepathy to involve its wielder in the conversation.",
 				"Personality. When it grows restless, Wave has a habit of humming tunes that vary from sea chanteys to sacred hymns of the sea gods.",
-				"Wave zealously desires to convert mortals to the worship of one or more sea gods, or else to consign the faithless to death. Conflict arises if the wielder fails to",
-				"further the weapon's objectives in the world. The trident has a nostalgic attachment to the place where it was forged, a desolate island called Thunderforge. A sea god imprisoned a family of storm giants there, and the giants forged Wave in an act of devotion to- or rebellion against-that god.",
+				"Wave zealously desires to convert mortals to the worship of one or more sea gods, or else to consign the faithless to death. Conflict arises if the wielder fails to further the weapon's objectives in the world. The trident has a nostalgic attachment to the place where it was forged, a desolate island called Thunderforge. A sea god imprisoned a family of storm giants there, and the giants forged Wave in an act of devotion to- or rebellion against-that god.",
 				"Wave harbors a secret doubt about its own nature and purpose. For all its devotion to the sea gods, Wave fears that it was intended to bring about a particular sea god's demise. This destiny is something Wave might not be able to avert."
 			]
 		},
@@ -15396,7 +15407,7 @@
 			"source": "ToA",
 			"page": 205,
 			"entries": [
-				"Zabou mushrooms feed on offal and the rotting wood of dead trees. If handled carefully, a zabou can be picked or uprooted without causing it to release its spores. If crushed or struck, a zabou releases its spores in a 1 a-foot-radius sphere. A zabou can also be hurled up to 30 feet away or dropped like a grenade, releasing its cloud of spores on impact. Any creature in that area must succeed on a DC 10 Constitution saving throw or be {@condition poisoned} for 1 minute. The {@condition poisoned} creature's skin itches for the duration. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+				"Zabou mushrooms feed on offal and the rotting wood of dead trees. If handled carefully, a zabou can be picked or uprooted without causing it to release its spores. If crushed or struck, a zabou releases its spores in a 10-foot-radius sphere. A zabou can also be hurled up to 30 feet away or dropped like a grenade, releasing its cloud of spores on impact. Any creature in that area must succeed on a DC 10 Constitution saving throw or be {@condition poisoned} for 1 minute. The {@condition poisoned} creature's skin itches for the duration. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 			]
 		},
 		{
@@ -16320,6 +16331,126 @@
 						"{@item Reliquary|phb}"
 					]
 				}
+			]
+		},
+		{
+			"name": "Birdpipes",
+			"type": "INS",
+			"rarity": "None",
+			"source": "SCAG",
+			"page": 124,
+			"entries": [
+				"Pan pipes or satyr pipes, also known as the shalm, these are sacred to Lliira and popular with wood elf and wild elf bards."
+			]
+		},
+		{
+			"name": "Glaur",
+			"type": "INS",
+			"rarity": "None",
+			"source": "SCAG",
+			"page": 124,
+			"entries": [
+				"Short, curved horns like a cornucopia. Played with valves, glaur sound like trumpets, while those without valves, known as gloon, have a more mournful sound."
+			]
+		},
+		{
+			"name": "Hand Drum",
+			"type": "INS",
+			"rarity": "None",
+			"source": "SCAG",
+			"page": 124,
+			"entries": [
+				"A double-headed skin drum fitted with handles along its side."
+			]
+		},
+		{
+			"name": "Longhorn",
+			"type": "INS",
+			"rarity": "None",
+			"source": "SCAG",
+			"page": 124,
+			"entries": [
+				"A Faerûnian flute of sophisticated make, found only in areas with skilled artisans, as in great cities or elven enclaves."
+			]
+		},
+		{
+			"name": "Shawm",
+			"type": "INS",
+			"rarity": "None",
+			"source": "SCAG",
+			"page": 124,
+			"entries": [
+				"A double-reed instrument similar to an oboe or a bassoon, popular with gnomes, who have developed some bellows-powered versions."
+			]
+		},
+		{
+			"name": "Songhorn",
+			"type": "INS",
+			"rarity": "None",
+			"source": "SCAG",
+			"page": 124,
+			"entries": [
+				"A recorder, a simple type of flute, usually carved from wood."
+			]
+		},
+		{
+			"name": "Tantan",
+			"type": "INS",
+			"rarity": "None",
+			"source": "SCAG",
+			"page": 124,
+			"entries": [
+				"A tambourine, a popular instrument with halflings and humans south of the Dalelands."
+			]
+		},
+		{
+			"name": "Thelarr",
+			"type": "INS",
+			"rarity": "None",
+			"source": "SCAG",
+			"page": 124,
+			"entries": [
+				"Also known as a whistlecane, a simple and easy-to-make wind instrument cut from a reed. They are so simple, in fact, that skilled bards frequently make and give them away to children\u2014to the parents' delight or regret."
+			]
+		},
+		{
+			"name": "Tocken",
+			"type": "INS",
+			"rarity": "None",
+			"source": "SCAG",
+			"page": 124,
+			"entries": [
+				"A hanging set of carved oval bells, usually played with a pair of light wooden hammers (or open handed). They are most common in underground cultures, where the resonant tones can carry."
+			]
+		},
+		{
+			"name": "Wargong",
+			"type": "INS",
+			"rarity": "None",
+			"source": "SCAG",
+			"page": 124,
+			"entries": [
+				"A metal gong, traditionally made from a shield, particularly the shield of an enemy. Both goblins and dwarves make and play wargongs, their sound echoing through tunnels in the Underdark."
+			]
+		},
+		{
+			"name": "Yarting",
+			"type": "INS",
+			"rarity": "None",
+			"source": "SCAG",
+			"page": 124,
+			"entries": [
+				"A southern instrument from Amn and Calimshan that is a Faerûnian analog to the guitar. Numerous variations have spread across the continent."
+			]
+		},
+		{
+			"name": "Zulkoon",
+			"type": "INS",
+			"rarity": "None",
+			"source": "SCAG",
+			"page": 124,
+			"entries": [
+				"A complex pump organ that originated with the zulkirs of Thay, who use it in the casting of their spells. It is considered to have a dramatic, but sinister, sound."
 			]
 		}
 	]

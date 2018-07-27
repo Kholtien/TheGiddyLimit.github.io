@@ -79,7 +79,13 @@
 					]
 				}
 			],
-			"page": 89
+			"page": 89,
+			"traitTags": [
+				"Pack Tactics"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Dragonfang",
@@ -178,7 +184,10 @@
 					]
 				}
 			],
-			"page": 89
+			"page": 89,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Dragonsoul",
@@ -283,7 +292,13 @@
 					]
 				}
 			],
-			"page": 89
+			"page": 89,
+			"traitTags": [
+				"Pack Tactics"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Dragonwing",
@@ -382,7 +397,13 @@
 					]
 				}
 			],
-			"page": 90
+			"page": 90,
+			"traitTags": [
+				"Pack Tactics"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Guard Drake",
@@ -444,7 +465,10 @@
 				}
 			],
 			"page": 90,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/254/guard-drake.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/254/guard-drake.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Ice Toad",
@@ -514,7 +538,10 @@
 					]
 				}
 			],
-			"page": 90
+			"page": 90,
+			"traitTags": [
+				"Amphibious"
+			]
 		},
 		{
 			"name": "Naergoth Bladelord",
@@ -611,7 +638,13 @@
 					]
 				}
 			],
-			"page": 90
+			"page": 90,
+			"traitTags": [
+				"Sunlight Sensitivity"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Neronvain",
@@ -704,7 +737,13 @@
 					]
 				}
 			],
-			"page": 91
+			"page": 91,
+			"traitTags": [
+				"Fey Ancestry"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Rath Modar",
@@ -1002,7 +1041,10 @@
 			],
 			"page": 92,
 			"isNamedCreature": true,
-			"isNPC": true
+			"isNPC": true,
+			"traitTags": [
+				"Legendary Resistances"
+			]
 		},
 		{
 			"name": "Tiamat",
@@ -1213,7 +1255,15 @@
 			],
 			"page": 92,
 			"isNamedCreature": true,
-			"isNPC": true
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Weapons",
+				"Regeneration"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		}
 	]
 }

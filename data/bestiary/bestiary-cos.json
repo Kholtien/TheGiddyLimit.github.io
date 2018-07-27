@@ -161,7 +161,13 @@
 					]
 				}
 			],
-			"page": 228
+			"page": 228,
+			"traitTags": [
+				"Shapechanger"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Baba Lysaga's Creeping Hut",
@@ -256,7 +262,14 @@
 					]
 				}
 			],
-			"page": 226
+			"page": 226,
+			"traitTags": [
+				"Antimagic Susceptibility",
+				"Siege Monster"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Barovian Witch",
@@ -439,7 +452,14 @@
 					]
 				}
 			],
-			"page": 226
+			"page": 226,
+			"traitTags": [
+				"Antimagic Susceptibility",
+				"False Appearance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Ezmerelda d'Avenir",
@@ -589,7 +609,10 @@
 					]
 				}
 			],
-			"page": 231
+			"page": 231,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Guardian Portrait",
@@ -675,7 +698,11 @@
 					]
 				}
 			],
-			"page": 227
+			"page": 227,
+			"traitTags": [
+				"Antimagic Susceptibility",
+				"False Appearance"
+			]
 		},
 		{
 			"name": "Izek Strazni",
@@ -748,7 +775,13 @@
 					]
 				}
 			],
-			"page": 232
+			"page": 232,
+			"traitTags": [
+				"Brute"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Madam Eva",
@@ -943,12 +976,12 @@
 					"name": "Extraordinary Feature",
 					"entries": [
 						"The mongrelfolk has one of the following extraordinary features, determined randomly by rolling a d20 or chosen by the DM:",
-						"1-3\u2014Amphibious: The mongrelfolk can breathe air and water.",
-						"4-9\u2014Darkvision: The mongrelfolk has darkvision out to a range of 60 feet.",
+						"1\u20133\u2014Amphibious: The mongrelfolk can breathe air and water.",
+						"4\u20139\u2014Darkvision: The mongrelfolk has darkvision out to a range of 60 feet.",
 						"10\u2014Flight: The mongrelfolk has leathery wings and a flying speed of 40 feet.",
-						"11-15\u2014Keen Hearing and Smell: The mongrelfolk has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
-						"16-17\u2014Spider Climb: The mongrelfolk can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
-						"18-19\u2014Standing Leap: The mongrelfolk's long jump is up to 20 feet and its high jump up to 10 feet, with or without a running start.",
+						"11\u201315\u2014Keen Hearing and Smell: The mongrelfolk has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
+						"16\u201317\u2014Spider Climb: The mongrelfolk can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
+						"18\u201319\u2014Standing Leap: The mongrelfolk's long jump is up to 20 feet and its high jump up to 10 feet, with or without a running start.",
 						"20\u2014Two-Headed: The mongrelfolk has advantage on Wisdom (Perception) checks and on saving throws against being blinded, charmed, deafened, frightened, stunned, or knocked unconscious."
 					]
 				},
@@ -985,7 +1018,10 @@
 					]
 				}
 			],
-			"page": 234
+			"page": 234,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Phantom Warrior",
@@ -1085,7 +1121,13 @@
 					]
 				}
 			],
-			"page": 235
+			"page": 235,
+			"traitTags": [
+				"Incorporeal Movement"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Pidlwick II",
@@ -1154,7 +1196,10 @@
 					]
 				}
 			],
-			"page": 236
+			"page": 236,
+			"traitTags": [
+				"Ambusher"
+			]
 		},
 		{
 			"name": "Rahadin",
@@ -1265,7 +1310,13 @@
 					]
 				}
 			],
-			"page": 237
+			"page": 237,
+			"traitTags": [
+				"Fey Ancestry"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Rictavio",
@@ -1402,7 +1453,10 @@
 					]
 				}
 			],
-			"page": 238
+			"page": 238,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Strahd von Zarovich",
@@ -1622,7 +1676,13 @@
 			],
 			"page": 240,
 			"isNamedCreature": true,
-			"isNPC": true
+			"isNPC": true,
+			"traitTags": [
+				"Shapechanger",
+				"Legendary Resistances",
+				"Regeneration",
+				"Spider Climb"
+			]
 		},
 		{
 			"name": "Strahd Zombie",
@@ -1666,9 +1726,9 @@
 					"name": "Loathsome Limbs",
 					"entries": [
 						"Whenever the zombie takes at least 5 bludgeoning or slashing damage at one time, roll a d20 to determine what else happens to it:",
-						"1-8: One leg is severed from the zombie if it has any legs left.",
-						"9-16: One arm is severed from the zombie if it has any arms left.",
-						"17-20: The zombie is decapitated.",
+						"1\u20138: One leg is severed from the zombie if it has any legs left.",
+						"9\u201316: One arm is severed from the zombie if it has any arms left.",
+						"17\u201320: The zombie is decapitated.",
 						"If the zombie is reduced to 0 hit points, all parts of it die. Until then, a severed part acts on the zombie's initiative and has its own action and movement. A severed part has AC 8. Any damage it takes is subtracted from the zombie's hit points.",
 						"A severed leg is unable to attack and has a speed of 5 feet.",
 						"A severed arm has a speed of 5 feet and can make one claw attack on its turn, with disadvantage on the attack roll. Each time the zombie loses an arm, it loses a claw attack.",
@@ -1697,7 +1757,10 @@
 					]
 				}
 			],
-			"page": 241
+			"page": 241,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Strahd's Animated Armor",
@@ -1795,7 +1858,14 @@
 					]
 				}
 			],
-			"page": 227
+			"page": 227,
+			"traitTags": [
+				"Antimagic Susceptibility",
+				"False Appearance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Tree Blight",
@@ -1875,7 +1945,14 @@
 					]
 				}
 			],
-			"page": 230
+			"page": 230,
+			"traitTags": [
+				"False Appearance",
+				"Siege Monster"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Vladimir Horngaard",
@@ -1991,7 +2068,15 @@
 					]
 				}
 			],
-			"page": 241
+			"page": 241,
+			"traitTags": [
+				"Regeneration",
+				"Rejuvenation",
+				"Turn Immunity"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Wereraven",
@@ -2085,7 +2170,10 @@
 					]
 				}
 			],
-			"page": 242
+			"page": 242,
+			"traitTags": [
+				"Shapechanger"
+			]
 		}
 	]
 }

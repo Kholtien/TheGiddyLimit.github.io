@@ -62,7 +62,10 @@
 					]
 				}
 			],
-			"page": 88
+			"page": 88,
+			"traitTags": [
+				"Pack Tactics"
+			]
 		},
 		{
 			"name": "Azbara Jos",
@@ -180,7 +183,7 @@
 				{
 					"name": "Dagger",
 					"entries": [
-						"Melee or Ranged Weapon Attack: {@hit 5} to hit, reach 5 ft. or ranged 20 ft./60 ft., one target. Hit: 5 ({@dice 1d4+3}) piercing damage."
+						"Melee or Ranged Weapon Attack: {@hit 5} to hit, reach 5 ft. or ranged 20/60 ft., one target. Hit: 5 ({@dice 1d4+3}) piercing damage."
 					]
 				}
 			],
@@ -311,7 +314,13 @@
 					]
 				}
 			],
-			"page": 89
+			"page": 89,
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Captain Othelstan",
@@ -393,11 +402,14 @@
 				{
 					"name": "Spear",
 					"entries": [
-						"Melee or Ranged Weapon Attack: {@hit 7} to hit, reach 5 ft. or ranged 20 ft./60 ft., one target. Hit: 7 ({@dice 1d6+4}) piercing damage."
+						"Melee or Ranged Weapon Attack: {@hit 7} to hit, reach 5 ft. or ranged 20/60 ft., one target. Hit: 7 ({@dice 1d6+4}) piercing damage."
 					]
 				}
 			],
-			"page": 89
+			"page": 89,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Dralmorrer Borngray",
@@ -520,11 +532,17 @@
 				{
 					"name": "Dagger",
 					"entries": [
-						"Melee or Ranged Weapon Attack: {@hit 6} to hit, reach 5 ft. or ranged 20 ft./60 ft., one target. Hit: 6 ({@dice 1d4+4}) piercing damage."
+						"Melee or Ranged Weapon Attack: {@hit 6} to hit, reach 5 ft. or ranged 20/60 ft., one target. Hit: 6 ({@dice 1d4+4}) piercing damage."
 					]
 				}
 			],
-			"page": 90
+			"page": 90,
+			"traitTags": [
+				"Fey Ancestry"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Frulam Mondath",
@@ -629,7 +647,10 @@
 					]
 				}
 			],
-			"page": 90
+			"page": 90,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Jamna Gleamsilver",
@@ -737,7 +758,10 @@
 					]
 				}
 			],
-			"page": 91
+			"page": 91,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Langdedrosa Cyanwrath",
@@ -821,17 +845,20 @@
 				{
 					"name": "Spear",
 					"entries": [
-						"Melee or Ranged Weapon Attack: {@hit 6} to hit, reach 5 ft. or ranged 20 ft./60 ft., one target. Hit: 7 ({@dice 1d6+4}) piercing damage."
+						"Melee or Ranged Weapon Attack: {@hit 6} to hit, reach 5 ft. or ranged 20/60 ft., one target. Hit: 7 ({@dice 1d6+4}) piercing damage."
 					]
 				},
 				{
-					"name": "Lightning Breath (Recharge 5\u20146)",
+					"name": "Lightning Breath (Recharge 5\u20136)",
 					"entries": [
 						"Langdedrosa breathes lightning in a 30-foot line that is 5 feet wide. Each creature in the line must make a DC 13 Dexterity saving throw, taking 22 ({@dice 4d10}) lightning damage on a failed save, or half as much damage on a successful one."
 					]
 				}
 			],
-			"page": 91
+			"page": 91,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Pharblex Spattergoo",
@@ -970,7 +997,13 @@
 					]
 				}
 			],
-			"page": 91
+			"page": 91,
+			"traitTags": [
+				"Amphibious"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Rezmir",
@@ -1078,7 +1111,7 @@
 					]
 				},
 				{
-					"name": "Acid Breath (Recharge 5\u20146)",
+					"name": "Acid Breath (Recharge 5\u20136)",
 					"entries": [
 						"Rezmir breathes acid in a 30-foot line that is 5 feet wide. Each creature in the line must make a DC 14 Dexterity saving throw, taking 22 ({@dice 5d8}) acid damage on a failed save, or half as much damage on a successful one."
 					]
@@ -1107,7 +1140,11 @@
 			],
 			"page": 93,
 			"isNamedCreature": true,
-			"isNPC": true
+			"isNPC": true,
+			"traitTags": [
+				"Amphibious",
+				"Legendary Resistances"
+			]
 		},
 		{
 			"name": "Talis the White",
@@ -1239,11 +1276,14 @@
 				{
 					"name": "Spear",
 					"entries": [
-						"Melee or Ranged Weapon Attack: {@hit 5} to hit, reach 5 ft. or ranged 20 ft./60 ft., one target. Hit: 6 ({@dice 1d6+2}) piercing damage."
+						"Melee or Ranged Weapon Attack: {@hit 5} to hit, reach 5 ft. or ranged 20/60 ft., one target. Hit: 6 ({@dice 1d6+2}) piercing damage."
 					]
 				}
 			],
-			"page": 93
+			"page": 93,
+			"traitTags": [
+				"Fey Ancestry"
+			]
 		},
 		{
 			"name": "Trepsin",
@@ -1316,7 +1356,14 @@
 					]
 				}
 			],
-			"page": 63
+			"page": 63,
+			"traitTags": [
+				"Keen Senses",
+				"Regeneration"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		}
 	]
 }

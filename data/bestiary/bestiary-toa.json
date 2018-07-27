@@ -233,7 +233,12 @@
 			],
 			"page": 209,
 			"isNamedCreature": true,
-			"isNPC": true
+			"isNPC": true,
+			"traitTags": [
+				"Legendary Resistances",
+				"Rejuvenation",
+				"Turn Resistance"
+			]
 		},
 		{
 			"source": "ToA",
@@ -386,7 +391,13 @@
 					]
 				}
 			],
-			"page": 210
+			"page": 210,
+			"traitTags": [
+				"Amphibious"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "ToA",
@@ -442,7 +453,10 @@
 				}
 			],
 			"page": 211,
-			"familiar": true
+			"familiar": true,
+			"traitTags": [
+				"Keen Senses"
+			]
 		},
 		{
 			"source": "ToA",
@@ -498,7 +512,10 @@
 					]
 				}
 			],
-			"page": 240
+			"page": 240,
+			"traitTags": [
+				"Undead Fortitude"
+			]
 		},
 		{
 			"source": "ToA",
@@ -593,13 +610,16 @@
 					"name": "Ring of Winter",
 					"entries": [
 						"The Ring of Winter has 12 charges and regains all its expended charges daily at dawn. While attuned to and wearing the ring, Artus can expend the necessary number of charges to activate one of the following properties:",
-						"• Artus can expend 1 charge and use the ring to lower the temperature in a 120-foot-radius sphere centered on a point he can see within 300 feet of him. The temperature in that area drops 20 degrees per minute, to a minimum of -30 degrees Fahrenheit. Frost and ice begin to form on surfaces once the temperature drops below 32 degrees. This effect is permanent unless Artus uses the ring to end the effect as an action, at which point the temperature in the area returns to normal at a rate of 10 degrees per minute.",
+						"• Artus can expend 1 charge and use the ring to lower the temperature in a 120-foot-radius sphere centered on a point he can see within 300 feet of him. The temperature in that area drops 20 degrees per minute, to a minimum of \u201330 degrees Fahrenheit. Frost and ice begin to form on surfaces once the temperature drops below 32 degrees. This effect is permanent unless Artus uses the ring to end the effect as an action, at which point the temperature in the area returns to normal at a rate of 10 degrees per minute.",
 						"• Artus can cast one of the following spells from the ring (spell save DC 17) by expending the necessary number of charges: {@spell Bigby's hand} (2 charges) the hand is made of ice, is immune to cold damage, and deals bludgeoning damage instead of force damage as a clenched fist, {@spell cone of cold} (2 charges), {@spell flesh to stone|phb|flesh to ice} (3 charges); as flesh to stone except that the target turns to solid ice with the density and durability of stone, {@spell ice storm} (2 charges), {@spell Otiluke's freezing sphere} (3 charges), {@spell sleet storm} (1 charge), {@spell spike growth} (1 charge) the spikes are made of ice, or {@spell wall of ice} (2 charges).",
 						"• Artus can expend the necessary number of charges and use the ring to create either an inanimate ice object (2 charges) or an animated ice creature (4 charges). The ice object can't have any moving parts, must be able to fit inside a 10-foot cube, and has the density and durability of metal or stone (Artus's choice). The ice creature must be modeled after a beast with a challenge rating of 2 or less. The ice creature has the same statistics as the beast it models, with the following changes: the creature is a construct with vulnerability to fire damage, immunity to cold and poison damage, and immunity to the following conditions: charmed, exhaustion, frightened, paralyzed, petrified, and poisoned. The ice creature obeys only its creator's commands. The the object or creature appears in an unoccupied space within 60 feet of Artus. It melts into a pool of normal water after 24 hours or when it drops to 0 hit points. In extreme heat, it loses 5 ({@dice 1d10}) hit points per minute as it melts. Use the guidelines in chapter 8 of the Dungeon Master's Guide to determine the hit points of an inanimate object if they become necessary."
 					]
 				}
 			],
-			"page": 212
+			"page": 212,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "ToA",
@@ -666,7 +686,10 @@
 					]
 				}
 			],
-			"page": 213
+			"page": 213,
+			"traitTags": [
+				"False Appearance"
+			]
 		},
 		{
 			"source": "ToA",
@@ -724,6 +747,9 @@
 				"exhaustion",
 				"frightened",
 				"poisoned"
+			],
+			"vulnerable": [
+				"radiant"
 			],
 			"senses": "darkvision 120 ft., truesight 120 ft.",
 			"passive": 24,
@@ -801,7 +827,11 @@
 					]
 				}
 			],
-			"page": 214
+			"page": 214,
+			"traitTags": [
+				"Magic Resistance",
+				"Turn Resistance"
+			]
 		},
 		{
 			"source": "ToA",
@@ -963,7 +993,13 @@
 					]
 				}
 			],
-			"page": 218
+			"page": 218,
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "ToA",
@@ -1026,7 +1062,10 @@
 					]
 				}
 			],
-			"page": 219
+			"page": 219,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "ToA",
@@ -1072,7 +1111,10 @@
 					]
 				}
 			],
-			"page": 220
+			"page": 220,
+			"traitTags": [
+				"Pack Tactics"
+			]
 		},
 		{
 			"source": "ToA",
@@ -1161,7 +1203,13 @@
 					]
 				}
 			],
-			"page": 221
+			"page": 221,
+			"traitTags": [
+				"False Appearance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "ToA",
@@ -1222,7 +1270,10 @@
 					]
 				}
 			],
-			"page": 222
+			"page": 222,
+			"traitTags": [
+				"Amphibious"
+			]
 		},
 		{
 			"source": "ToA",
@@ -1298,7 +1349,14 @@
 					]
 				}
 			],
-			"page": 240
+			"page": 240,
+			"traitTags": [
+				"Aggressive",
+				"Undead Fortitude"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "ToA",
@@ -1366,7 +1424,10 @@
 					]
 				}
 			],
-			"page": 225
+			"page": 225,
+			"traitTags": [
+				"Keen Senses"
+			]
 		},
 		{
 			"source": "ToA",
@@ -1449,7 +1510,14 @@
 					]
 				}
 			],
-			"page": 225
+			"page": 225,
+			"traitTags": [
+				"Keen Senses",
+				"Pounce"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "ToA",
@@ -1535,7 +1603,10 @@
 					]
 				}
 			],
-			"page": 227
+			"page": 227,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "ToA",
@@ -1596,7 +1667,10 @@
 					]
 				}
 			],
-			"page": 227
+			"page": 227,
+			"traitTags": [
+				"False Appearance"
+			]
 		},
 		{
 			"source": "ToA",
@@ -1744,7 +1818,10 @@
 					]
 				}
 			],
-			"page": 229
+			"page": 229,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "ToA",
@@ -1927,7 +2004,14 @@
 					]
 				}
 			],
-			"page": 230
+			"page": 230,
+			"traitTags": [
+				"Shapechanger",
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "ToA",
@@ -2020,7 +2104,12 @@
 					]
 				}
 			],
-			"page": 231
+			"page": 231,
+			"traitTags": [
+				"Immutable Form",
+				"Regeneration",
+				"Siege Monster"
+			]
 		},
 		{
 			"source": "ToA",
@@ -2080,7 +2169,10 @@
 					]
 				}
 			],
-			"page": 232
+			"page": 232,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "ToA",
@@ -2162,7 +2254,10 @@
 					]
 				}
 			],
-			"page": 232
+			"page": 232,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "ToA",
@@ -2239,7 +2334,10 @@
 					]
 				}
 			],
-			"page": 233
+			"page": 233,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "ToA",
@@ -2300,7 +2398,10 @@
 					]
 				}
 			],
-			"page": 234
+			"page": 234,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "ToA",
@@ -2374,7 +2475,13 @@
 					]
 				}
 			],
-			"page": 241
+			"page": 241,
+			"traitTags": [
+				"Undead Fortitude"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "ToA",
@@ -2646,7 +2753,11 @@
 					]
 				}
 			],
-			"page": 237
+			"page": 237,
+			"traitTags": [
+				"False Appearance",
+				"Regeneration"
+			]
 		},
 		{
 			"source": "ToA",
@@ -2695,7 +2806,10 @@
 					]
 				}
 			],
-			"page": 237
+			"page": 237,
+			"traitTags": [
+				"Undead Fortitude"
+			]
 		},
 		{
 			"source": "ToA",
@@ -2907,11 +3021,14 @@
 				{
 					"name": "Destructive Claws",
 					"entries": [
-						"Melee Weapon Attack: {@hit 3} to hit, reach 5 ft., one target. Hit: 8 ({@dice 2d6+1}) slashing damage, and if the target is a creature wearing armor, carrying a shield, or in possession of a magic item that improves its AC, it must make a DC 11 Dexterity saving throw. On a failed save, one such item worn or carried by the creature (the target's choice) magically deteriorates, taking a permanent and cumulative -1 penalty to the AC it offers, and the zorbo gains a +1 bonus to AC until the start of its next turn. Armor reduced to an AC of 10 or a shield or magic item that drops to a 0 AC increase is destroyed."
+						"Melee Weapon Attack: {@hit 3} to hit, reach 5 ft., one target. Hit: 8 ({@dice 2d6+1}) slashing damage, and if the target is a creature wearing armor, carrying a shield, or in possession of a magic item that improves its AC, it must make a DC 11 Dexterity saving throw. On a failed save, one such item worn or carried by the creature (the target's choice) magically deteriorates, taking a permanent and cumulative \u20131 penalty to the AC it offers, and the zorbo gains a +1 bonus to AC until the start of its next turn. Armor reduced to an AC of 10 or a shield or magic item that drops to a 0 AC increase is destroyed."
 					]
 				}
 			],
-			"page": 241
+			"page": 241,
+			"traitTags": [
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "King of Feathers",
@@ -2999,7 +3116,13 @@
 					]
 				}
 			],
-			"page": 106
+			"page": 106,
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Withers",
@@ -3148,7 +3271,13 @@
 					}
 				}
 			],
-			"page": 145
+			"page": 145,
+			"traitTags": [
+				"Sunlight Sensitivity"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Asharra",
@@ -3490,7 +3619,11 @@
 				}
 			],
 			"isNamedCreature": true,
-			"isNPC": true
+			"traitTags": [
+				"Legendary Resistances",
+				"Rejuvenation",
+				"Turn Resistance"
+			]
 		},
 		{
 			"name": "Hew Hackinstone",
@@ -3560,6 +3693,557 @@
 						"Melee Weapon Attack: {@hit 5} to hit, reach 5 ft., one target. Hit: 7 ({@dice 1d8+3}) slashing damage."
 					]
 				}
+			],
+			"traitTags": [
+				"Reckless"
+			]
+		},
+		{
+			"name": "Clay Gladiator",
+			"size": "M",
+			"type": "construct",
+			"source": "ToA",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"natural armor",
+						"{@item shield|phb}"
+					]
+				}
+			],
+			"hp": {
+				"average": 112,
+				"formula": "15d8+45"
+			},
+			"speed": {
+				"walk": 30,
+				"climb": 30
+			},
+			"str": 18,
+			"dex": 15,
+			"con": 16,
+			"int": 10,
+			"wis": 12,
+			"cha": 15,
+			"save": {
+				"str": "+7",
+				"dex": "+5",
+				"con": "+6"
+			},
+			"skill": {
+				"athletics": "+10",
+				"intimidation": "+5"
+			},
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"charmed",
+				"frightened",
+				"poisoned"
+			],
+			"senses": "passive Perception 11",
+			"passive": 11,
+			"languages": "none",
+			"cr": "5",
+			"page": 100,
+			"trait": [
+				{
+					"name": "Climbing",
+					"entries": [
+						"The gladiator can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+					]
+				},
+				{
+					"name": "Steadfast",
+					"entries": [
+						"The gladiator can't be disarmed, and cannot make ranged attacks."
+					]
+				},
+				{
+					"name": "Brute",
+					"entries": [
+						"A melee weapon deals one extra die of its damage when the gladiator hits with it (included in the attack)."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The gladiator makes three melee attacks."
+					]
+				},
+				{
+					"name": "Spear",
+					"entries": [
+						"Melee Weapon Attack: {@hit 7} to hit, reach 5 ft., one target. Hit: 11 ({@dice 2d6+4}) piercing damage, or 13 ({@dice 2d8+4}) piercing damage if used with two hands."
+					]
+				},
+				{
+					"name": "Shield Bash",
+					"entries": [
+						"Melee Weapon Attack: {@hit 7} to hit, reach 5 ft., one creature. Hit: 9 ({@dice 2d4+4}) bludgeoning damage. If the target is a Medium or smaller creature, it must succeed on a DC 15 Strength saving throw or be knocked prone."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Parry",
+					"entries": [
+						"The gladiator adds 3 to its AC against one melee attack that would hit it. To do so, the gladiator must see the attacker and be wielding a melee weapon."
+					]
+				}
+			],
+			"traitTags": [
+				"Brute"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Parry"
+			]
+		},
+		{
+			"name": "Spiked Tomb Guardian",
+			"size": "M",
+			"type": "construct",
+			"source": "ToA",
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				17
+			],
+			"hp": {
+				"average": 93,
+				"formula": "11d8+44"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 19,
+			"dex": 9,
+			"con": 18,
+			"int": 6,
+			"wis": 10,
+			"cha": 5,
+			"immune": [
+				"lightning",
+				"poison",
+				{
+					"immune": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks that aren't adamantine"
+				}
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"paralyzed",
+				"petrified",
+				"poisoned"
+			],
+			"senses": "darkvision 60 ft., passive Perception 10",
+			"passive": 10,
+			"languages": "understands the languages of its creator but can't speak",
+			"cr": "6",
+			"page": 154,
+			"trait": [
+				{
+					"name": "Berserk",
+					"entries": [
+						"Whenever the tomb guardian starts its turn with 40 hit points or fewer, roll a {@dice d6}. On a 6, the tomb guardian goes berserk. On each of its turns while berserk, the tomb guardian attacks the nearest creature it can see. If no creature is near enough to move to and attack, the tomb guardian attacks an object, with preference for an object smaller than itself. Once the tomb guardian goes berserk, it continues to do so until it is destroyed or regains all its hit points. The golem's creator, if within 60 feet of the berserk tomb guardian, can try to calm it by speaking firmly and persuasively. The tomb guardian must be able to hear its creator, who must take an action to make a DC 15 Charisma (Persuasion) check. If the check succeeds, the tomb guardian ceases being berserk. If it takes damage while still at 40 hit points or fewer, the tomb guardian might go berserk again."
+					]
+				},
+				{
+					"name": "Aversion of Fire",
+					"entries": [
+						"If the tomb guardian takes fire damage, it has disadvantage on attack rolls and ability checks until the end of its next turn."
+					]
+				},
+				{
+					"name": "Immutable Form",
+					"entries": [
+						"The tomb guardian is immune to any spell or effect that would alter its form."
+					]
+				},
+				{
+					"name": "Lightning Absorption",
+					"entries": [
+						"Whenever the tomb guardian is subjected to lightning damage, it takes no damage and instead regains a number of hit points equal to the lightning damage dealt."
+					]
+				},
+				{
+					"name": "Magic Resistance",
+					"entries": [
+						"The tomb guardian has advantage on saving throws against spells and other magical effects."
+					]
+				},
+				{
+					"name": "Magic Weapons",
+					"entries": [
+						"The golem's weapon attacks are magical."
+					]
+				},
+				{
+					"name": "Chained",
+					"entries": [
+						"As long as the Guardian remains chained to another any damage done to one is divided evenly between them. If the chain is broken the Guardian immediately goes berserk."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The tomb guardian makes two spiked gauntlet attacks."
+					]
+				},
+				{
+					"name": "Spiked Gauntlet",
+					"entries": [
+						"Melee Weapon Attack: {@hit 7} to hit, reach 5 ft., one target. Hit: 13 ({@dice 2d8+4}) bludgeoning damage plus 9 ({@dice 2d6}) piercing damage."
+					]
+				}
+			],
+			"traitTags": [
+				"Immutable Form",
+				"Damage Absorption",
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
+		},
+		{
+			"name": "Tomb Guardian",
+			"size": "M",
+			"type": "construct",
+			"source": "ToA",
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				17
+			],
+			"hp": {
+				"average": 93,
+				"formula": "11d8+44"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 19,
+			"dex": 9,
+			"con": 18,
+			"int": 6,
+			"wis": 10,
+			"cha": 5,
+			"immune": [
+				"lightning",
+				"poison",
+				{
+					"immune": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks that aren't adamantine"
+				}
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"paralyzed",
+				"petrified",
+				"poisoned"
+			],
+			"senses": "darkvision 60 ft., passive Perception 10",
+			"passive": 10,
+			"languages": "understands the languages of its creator but can't speak",
+			"cr": "5",
+			"page": 127,
+			"trait": [
+				{
+					"name": "Berserk",
+					"entries": [
+						"Whenever the tomb guardian starts its turn with 40 hit points or fewer, roll a {@dice d6}. On a 6, the tomb guardian goes berserk. On each of its turns while berserk, the tomb guardian attacks the nearest creature it can see. If no creature is near enough to move to and attack, the tomb guardian attacks an object, with preference for an object smaller than itself. Once the tomb guardian goes berserk, it continues to do so until it is destroyed or regains all its hit points. The golem's creator, if within 60 feet of the berserk tomb guardian, can try to calm it by speaking firmly and persuasively. The tomb guardian must be able to hear its creator, who must take an action to make a DC 15 Charisma (Persuasion) check. If the check succeeds, the tomb guardian ceases being berserk. If it takes damage while still at 40 hit points or fewer, the tomb guardian might go berserk again."
+					]
+				},
+				{
+					"name": "Aversion of Fire",
+					"entries": [
+						"If the tomb guardian takes fire damage, it has disadvantage on attack rolls and ability checks until the end of its next turn."
+					]
+				},
+				{
+					"name": "Immutable Form",
+					"entries": [
+						"The tomb guardian is immune to any spell or effect that would alter its form."
+					]
+				},
+				{
+					"name": "Lightning Absorption",
+					"entries": [
+						"Whenever the tomb guardian is subjected to lightning damage, it takes no damage and instead regains a number of hit points equal to the lightning damage dealt."
+					]
+				},
+				{
+					"name": "Magic Resistance",
+					"entries": [
+						"The tomb guardian has advantage on saving throws against spells and other magical effects."
+					]
+				},
+				{
+					"name": "Magic Weapons",
+					"entries": [
+						"The golem's weapon attacks are magical."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The tomb guardian makes two slam attacks."
+					]
+				},
+				{
+					"name": "Slam",
+					"entries": [
+						"Melee Weapon Attack: {@hit 7} to hit, reach 5 ft., one target. Hit: 13 ({@dice 2d8+4}) bludgeoning damage."
+					]
+				}
+			],
+			"traitTags": [
+				"Immutable Form",
+				"Damage Absorption",
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
+		},
+		{
+			"name": "Tomb Dwarf",
+			"size": "M",
+			"type": "undead",
+			"source": "ToA",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"{@item studded leather armor|phb}"
+					]
+				}
+			],
+			"hp": {
+				"average": 45,
+				"formula": "6d8+18"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 15,
+			"dex": 14,
+			"con": 16,
+			"int": 10,
+			"wis": 13,
+			"cha": 15,
+			"skill": {
+				"perception": "+3",
+				"stealth": "+4"
+			},
+			"resist": [
+				"necrotic",
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks that aren't silvered"
+				}
+			],
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"exhaustion",
+				"poisoned"
+			],
+			"senses": "darkvision 60 ft., passive Perception 13",
+			"passive": 13,
+			"languages": "the languages it knew in life",
+			"cr": "3",
+			"page": 135,
+			"trait": [
+				{
+					"name": "Sunlight Sensitivity",
+					"entries": [
+						"While in sunlight, the tomb dwarf has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The tomb dwarf makes two longsword attacks or two longbow attacks. It can use its Life Drain in place of one longsword attack."
+					]
+				},
+				{
+					"name": "Life Drain",
+					"entries": [
+						"Melee Weapon Attack: {@hit 4} to hit, reach 5 ft., one creature. Hit: 5 ({@dice 1d6+2}) necrotic damage. The target must succeed on a DC 13 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.A humanoid slain by this attack rises 24 hours later as a zombie under the tomb dwarf's control, unless the humanoid is restored to life or its body is destroyed. The tomb dwarf can have no more than twelve zombies under its control at one time."
+					]
+				},
+				{
+					"name": "Battleaxe",
+					"entries": [
+						"Melee Weapon Attack: {@hit 4} to hit, reach 5 ft., one target. Hit: 6 ({@dice 1d8+2}) slashing damage, or 7 ({@dice 1d10+2}) slashing damage if used with two hands."
+					]
+				},
+				{
+					"name": "Light Crossbow",
+					"entries": [
+						"Ranged Weapon Attack: {@hit 4} to hit, range 80/320 ft., one target. Hit: 6 ({@dice 1d8+2}) piercing damage."
+					]
+				}
+			],
+			"traitTags": [
+				"Sunlight Sensitivity"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
+		},
+		{
+			"name": "Bag of Nails",
+			"size": "M",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"Tabaxi"
+				]
+			},
+			"source": "ToA",
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"{@item studded leather armor|phb}"
+					]
+				}
+			],
+			"hp": {
+				"average": 78,
+				"formula": "12d8+24"
+			},
+			"speed": {
+				"walk": 30,
+				"climb": 20
+			},
+			"str": 11,
+			"dex": 16,
+			"con": 14,
+			"int": 13,
+			"wis": 11,
+			"cha": 10,
+			"save": {
+				"dex": "+6",
+				"int": "+4"
+			},
+			"skill": {
+				"acrobatics": "+6",
+				"deception": "+3",
+				"perception": "+3",
+				"stealth": "+9"
+			},
+			"resist": [
+				"poison"
+			],
+			"senses": "Darkvision 60 ft., passive Perception 13",
+			"passive": 13,
+			"languages": "Thieves' cant, common, dwarvish",
+			"cr": "8",
+			"page": 102,
+			"trait": [
+				{
+					"name": "Feline Agility",
+					"entries": [
+						"When Bag of Nails moves on its turn in combat, he can double his speed until the end of the turn. Once he uses this trait, Bag of Nails can't use it again until he moves 0 feet on one of his turns."
+					]
+				},
+				{
+					"name": "Assassinate",
+					"entries": [
+						"During his first turn, Bag of Nails has advantage on attack rolls against any creature that hasn't taken a turn. Any hit Bag of Nails scores against a surprised creature is a critical hit."
+					]
+				},
+				{
+					"name": "Evasion",
+					"entries": [
+						"If Bag of Nails is subjected to an effect that allows him to make a Dexterity saving throw to take only half damage, Bag of Nails instead takes no damage if he succeeds on the saving throw, and only half damage if it fails."
+					]
+				},
+				{
+					"name": "Sneak Attack (1/Turn)",
+					"entries": [
+						"Bag of Nails deals an extra 14 ({@dice 4d6}) damage when he hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of his that isn't incapacitated and Bag of Nails doesn't have disadvantage on the attack roll."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Bag of Nails makes two shortsword attacks."
+					]
+				},
+				{
+					"name": "Claw",
+					"entries": [
+						"Melee Weapon Attack: {@hit 3} to hit, reach 5 ft., one target. Hit: 2 ({@dice 1d4}) slashing damage"
+					]
+				},
+				{
+					"name": "Shortsword",
+					"entries": [
+						"Melee Weapon Attack: {@hit 6} to hit, reach 5 ft., one target. Hit: 6 ({@dice 1d6+3}) piercing damage, and the target must make a DC 15 Constitution saving throw, taking 24 ({@dice 7d6}) poison damage on a failed save, or half as much damage on a successful one."
+					]
+				},
+				{
+					"name": "Longbow",
+					"entries": [
+						"Ranged Weapon Attack: {@hit 6} to hit, range 150/600 ft., one target. Hit: 7 ({@dice 1d8+3}) piercing damage, and the target must make a DC 15 Constitution saving throw, taking 24 ({@dice 7d6}) poison damage on a failed save, or half as much damage on a successful one."
+					]
+				}
+			],
+			"traitTags": [
+				"Sneak Attack"
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		}
 	]

@@ -39,6 +39,10 @@ function mapAbilityObjToFull (abilObj) {
 	return `${Parser.attAbvToFull(abilObj.asi)} ${abilObj.amount < 0 ? "" : "+"}${abilObj.amount}`;
 }
 
+function getSpeedRating (speed) {
+	return speed > 30 ? "Walk (Fast)" : speed < 30 ? "Walk (Slow)" : "Walk";
+}
+
 let list;
 const sourceFilter = getSourceFilter();
 const sizeFilter = new Filter({header: "Size", displayFn: Parser.sizeAbvToFull});
@@ -68,13 +72,53 @@ function onJsonLoad (data) {
 			"Charisma +1"
 		]
 	});
-	const speedFilter = new Filter({header: "Speed", items: ["Climb", "Fly", "Swim", "Walk"]});
-	const miscFilter = new Filter({
-		header: "Miscellaneous",
-		items: ["Darkvision", "NPC Race"],
+	const speedFilter = new Filter({header: "Speed", items: ["Climb", "Fly", "Swim", "Walk (Fast)", "Walk", "Walk (Slow)"]});
+	const traitFilter = new Filter({
+		header: "Traits",
+		items: [
+			"Amphibious",
+			"Armor Proficiency",
+			"Damage Resistance",
+			"Darkvision", "Superior Darkvision",
+			"Improved Resting",
+			"Natural Armor",
+			"NPC Race",
+			"Powerful Build",
+			"Skill Proficiency",
+			"Spellcasting",
+			"Tool Proficiency",
+			"Unarmed Strike",
+			"Weapon Proficiency"
+		],
 		deselFn: (it) => {
 			return it === "NPC Race";
 		}
+	});
+	const languageFilter = new Filter({
+		header: "Languages",
+		items: [
+			"Abyssal",
+			"Aquan",
+			"Auran",
+			"Celestial",
+			"Choose",
+			"Common",
+			"Draconic",
+			"Dwarvish",
+			"Elvish",
+			"Giant",
+			"Gnomish",
+			"Goblin",
+			"Halfling",
+			"Infernal",
+			"Orc",
+			"Other",
+			"Primordial",
+			"Sylvan",
+			"Terran",
+			"Undercommon"
+		],
+		umbrellaItem: "Choose"
 	});
 
 	filterBox = initFilterBox(
@@ -82,7 +126,8 @@ function onJsonLoad (data) {
 		asiFilter,
 		sizeFilter,
 		speedFilter,
-		miscFilter
+		traitFilter,
+		languageFilter
 	);
 
 	list.on("updated", () => {
@@ -103,14 +148,17 @@ function onJsonLoad (data) {
 	ListUtil.initGenericPinnable();
 
 	addRaces({race: jsonRaces});
-	BrewUtil.addBrewData(addRaces);
-	BrewUtil.makeBrewButton("manage-brew");
-	BrewUtil.bind({list, filterBox, sourceFilter});
-	ListUtil.loadState();
+	BrewUtil.pAddBrewData()
+		.then(addRaces)
+		.catch(BrewUtil.purgeBrew)
+		.then(() => {
+			BrewUtil.makeBrewButton("manage-brew");
+			BrewUtil.bind({list, filterBox, sourceFilter});
+			ListUtil.loadState();
+			RollerUtil.addListRollButton();
 
-	History.init();
-	handleFilterChange();
-	RollerUtil.addListRollButton();
+			History.init(true);
+		});
 }
 
 let raceList = [];
@@ -128,16 +176,21 @@ function addRaces (data) {
 
 		const ability = race.ability ? utils_getAbilityData(race.ability) : {asTextShort: "None"};
 		race._fAbility = race.ability ? getAbilityObjs(race.ability).map(a => mapAbilityObjToFull(a)) : []; // used for filtering
-		race._fSpeed = race.speed.walk ? [race.speed.climb ? "Climb" : null, race.speed.fly ? "Fly" : null, race.speed.swim ? "Swim" : null, "Walk"].filter(it => it) : "Walk";
-		race._fMisc = [race.darkvision ? "Darkvision" : null, race.npc ? "NPC Race" : null].filter(it => it);
-		// convert e.g. "Elf (High)" to "High Elf" and add as a searchable field
-		const bracketMatch = /^(.*?) \((.*?)\)$/.exec(race.name);
+		race._fSpeed = race.speed.walk ? [race.speed.climb ? "Climb" : null, race.speed.fly ? "Fly" : null, race.speed.swim ? "Swim" : null, getSpeedRating(race.speed.walk)].filter(it => it) : getSpeedRating(race.speed);
+		race._fMisc = [
+			race.darkvision === 120 ? "Superior Darkvision" : race.darkvision ? "Darkvision" : null,
+			race.hasSpellcasting ? "Spellcasting" : null
+		].filter(it => it).concat(race.traitTags || []);
+		race._fSources = ListUtil.getCompleteSources(race);
 
 		race._slAbility = ability.asTextShort;
 
+		// convert e.g. "Elf (High)" to "High Elf" and add as a searchable field
+		const bracketMatch = /^(.*?) \((.*?)\)$/.exec(race.name);
+
 		tempString +=
 			`<li class="row" ${FLTR_ID}='${rcI}' onclick="ListUtil.toggleSelected(event, this)" oncontextmenu="ListUtil.openContextMenu(event, this)">
-				<a id='${rcI}' href='#${UrlUtil.autoEncodeHash(race)}' title='${race.name}'>
+				<a id='${rcI}' href="#${UrlUtil.autoEncodeHash(race)}" title="${race.name}">
 					<span class='name col-xs-4'>${race.name}</span>
 					<span class='ability col-xs-4'>${ability.asTextShort}</span>
 					<span class='size col-xs-2'>${Parser.sizeAbvToFull(race.size)}</span>
@@ -147,7 +200,7 @@ function addRaces (data) {
 			</li>`;
 
 		// populate filters
-		sourceFilter.addIfAbsent(race.source);
+		sourceFilter.addIfAbsent(race._fSources);
 		sizeFilter.addIfAbsent(race.size);
 	}
 	const lastSearch = ListUtil.getSearchTermAndReset(list);
@@ -202,11 +255,12 @@ function handleFilterChange () {
 		const r = raceList[$(item.elm).attr(FLTR_ID)];
 		return filterBox.toDisplay(
 			f,
-			r.source,
+			r._fSources,
 			r._fAbility,
 			r.size,
 			r._fSpeed,
-			r._fMisc
+			r._fMisc,
+			r.languageTags
 		);
 	});
 	FilterBox.nextIfHidden(raceList);
@@ -255,7 +309,7 @@ function loadhash (id) {
 		`);
 
 		$pgContent.find("th.name").html(`
-			<span class="stats-name">${race.name}</span>
+			<span class="stats-name copyable" onclick="EntryRenderer.utils._handleNameClick(this, '${race.source.escapeQuotes()}')">${race.name}</span>
 			${race.soundClip ? getPronunciationButton() : ""}
 			<span class="stats-source source${race.source}" title="${Parser.sourceJsonToFull(race.source)}">${Parser.sourceJsonToAbv(race.source)}</span>
 		`);
@@ -272,7 +326,7 @@ function loadhash (id) {
 		renderStack.push("<tr class='text'><td colspan='6'>");
 		renderer.recursiveEntryRender({type: "entries", entries: race.entries}, renderStack, 1);
 		renderStack.push("</td></tr>");
-		if (race.npc) {
+		if (race.traitTags && race.traitTags.includes("NPC Race")) {
 			renderStack.push(`<tr class="text"><td colspan="6"><section class="text-muted">`);
 			renderer.recursiveEntryRender(
 				`{@i Note: This race is listed in the {@i Dungeon Master's Guide} as an option for creating NPCs. It is not designed for use as a playable race.}`

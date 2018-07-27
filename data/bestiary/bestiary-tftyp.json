@@ -74,7 +74,12 @@
 					]
 				}
 			],
-			"page": 230
+			"page": 230,
+			"traitTags": [
+				"Antimagic Susceptibility",
+				"False Appearance",
+				"Charge"
+			]
 		},
 		{
 			"name": "Belak the Outcast",
@@ -257,7 +262,13 @@
 					]
 				}
 			],
-			"page": 231
+			"page": 231,
+			"traitTags": [
+				"Charge"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -325,7 +336,14 @@
 				}
 			],
 			"page": 232,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/610/choker.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/610/choker.mp3",
+			"traitTags": [
+				"Spider Climb"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Tentacles"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -436,7 +454,13 @@
 				}
 			],
 			"page": 233,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/613/deathlock-wight.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/613/deathlock-wight.mp3",
+			"traitTags": [
+				"Sunlight Sensitivity"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -515,7 +539,13 @@
 					]
 				}
 			],
-			"page": 233
+			"page": 233,
+			"traitTags": [
+				"Undead Fortitude"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -626,7 +656,14 @@
 					]
 				}
 			],
-			"page": 234
+			"page": 234,
+			"traitTags": [
+				"Sneak Attack",
+				"Sunlight Sensitivity"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Durnn",
@@ -855,7 +892,13 @@
 					]
 				}
 			],
-			"page": 129
+			"page": 129,
+			"traitTags": [
+				"False Appearance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -915,7 +958,13 @@
 					]
 				}
 			],
-			"page": 235
+			"page": 235,
+			"traitTags": [
+				"Amphibious"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -988,7 +1037,13 @@
 					]
 				}
 			],
-			"page": 235
+			"page": 235,
+			"traitTags": [
+				"Amphibious"
+			],
+			"actionTags": [
+				"Swallow"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -1065,7 +1120,14 @@
 					]
 				}
 			],
-			"page": 236
+			"page": 236,
+			"traitTags": [
+				"Magic Resistance",
+				"Turn Immunity"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -1129,7 +1191,11 @@
 					]
 				}
 			],
-			"page": 236
+			"page": 236,
+			"actionTags": [
+				"Multiattack",
+				"Swallow"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -1210,7 +1276,14 @@
 					]
 				}
 			],
-			"page": 237
+			"page": 237,
+			"traitTags": [
+				"Turn Resistance",
+				"Undead Fortitude"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -1404,7 +1477,10 @@
 					]
 				}
 			],
-			"page": 103
+			"page": 103,
+			"traitTags": [
+				"Amphibious"
+			]
 		},
 		{
 			"name": "Kaarghaz",
@@ -1523,6 +1599,12 @@
 						}
 					}
 				}
+			],
+			"traitTags": [
+				"Sunlight Sensitivity"
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		},
 		{
@@ -1599,7 +1681,14 @@
 					]
 				}
 			],
-			"page": 238
+			"page": 238,
+			"traitTags": [
+				"Amphibious",
+				"False Appearance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -1692,7 +1781,14 @@
 					]
 				}
 			],
-			"page": 238
+			"page": 238,
+			"traitTags": [
+				"Amphibious",
+				"False Appearance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -1799,7 +1895,15 @@
 					]
 				}
 			],
-			"page": 239
+			"page": 239,
+			"traitTags": [
+				"Amphibious",
+				"Siege Monster"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Tentacles"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -1883,7 +1987,14 @@
 					]
 				}
 			],
-			"page": 91
+			"page": 91,
+			"traitTags": [
+				"Shapechanger",
+				"Ambusher"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -1975,7 +2086,10 @@
 					]
 				}
 			],
-			"page": 240
+			"page": 240,
+			"traitTags": [
+				"Amphibious"
+			]
 		},
 		{
 			"name": "Nimira",
@@ -2072,7 +2186,13 @@
 					]
 				}
 			],
-			"page": 54
+			"page": 54,
+			"traitTags": [
+				"Sunlight Sensitivity"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -2148,7 +2268,7 @@
 				{
 					"name": "Corrosive Form",
 					"entries": [
-						"A creature that touches the Ooze Master or hits it with a melee attack while within 5 feet of it takes 9 ({@dice 2d8}) acid damage. Any nonmagical weapon that hits the Ooze Master corrodes. After dealing damage, the weapon takes a permanent and cumulative -1 penalty to damage rolls. If its penalty drops to -5, the weapon is destroyed. Nonmagical ammunition that hits the Ooze Master is destroyed after dealing damage.",
+						"A creature that touches the Ooze Master or hits it with a melee attack while within 5 feet of it takes 9 ({@dice 2d8}) acid damage. Any nonmagical weapon that hits the Ooze Master corrodes. After dealing damage, the weapon takes a permanent and cumulative \u20131 penalty to damage rolls. If its penalty drops to \u20135, the weapon is destroyed. Nonmagical ammunition that hits the Ooze Master is destroyed after dealing damage.",
 						"The Ooze Master can eat through 2-inch-thick, nonmagical wood or metal in 1 round."
 					]
 				},
@@ -2237,6 +2357,9 @@
 						}
 					}
 				}
+			],
+			"traitTags": [
+				"Spider Climb"
 			]
 		},
 		{
@@ -2321,7 +2444,15 @@
 					]
 				}
 			],
-			"page": 242
+			"page": 242,
+			"traitTags": [
+				"Amphibious",
+				"Keen Senses",
+				"Pack Tactics"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -2586,6 +2717,10 @@
 						]
 					}
 				}
+			],
+			"traitTags": [
+				"Amphibious",
+				"Magic Resistance"
 			]
 		},
 		{
@@ -2732,6 +2867,10 @@
 						}
 					}
 				}
+			],
+			"traitTags": [
+				"Shapechanger",
+				"Keen Senses"
 			]
 		},
 		{
@@ -2851,6 +2990,9 @@
 						}
 					}
 				}
+			],
+			"traitTags": [
+				"Sunlight Sensitivity"
 			]
 		},
 		{
@@ -3049,7 +3191,12 @@
 					}
 				}
 			],
-			"isNamedCreature": true
+			"isNamedCreature": true,
+			"traitTags": [
+				"Legendary Resistances",
+				"Rejuvenation",
+				"Turn Resistance"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -3148,7 +3295,14 @@
 					]
 				}
 			],
-			"page": 245
+			"page": 245,
+			"traitTags": [
+				"Amphibious",
+				"Spider Climb"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -3325,7 +3479,13 @@
 					]
 				}
 			],
-			"page": 246
+			"page": 246,
+			"traitTags": [
+				"Pack Tactics"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -3382,7 +3542,10 @@
 					]
 				}
 			],
-			"page": 246
+			"page": 246,
+			"traitTags": [
+				"False Appearance"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -3506,6 +3669,14 @@
 						"{@spell hold person}"
 					]
 				}
+			],
+			"traitTags": [
+				"Regeneration",
+				"Spider Climb",
+				"Shapechanger"
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		},
 		{
@@ -3607,7 +3778,10 @@
 				}
 			],
 			"page": 247,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/713/vampiric-mist.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/713/vampiric-mist.mp3",
+			"traitTags": [
+				"Sunlight Sensitivity"
+			]
 		},
 		{
 			"source": "TftYP",
@@ -3666,7 +3840,7 @@
 				{
 					"name": "Corrode Metal",
 					"entries": [
-						"Any nonmagical weapon made of metal that hits White Maw corrodes. After dealing damage, the weapon takes a permanent and cumulative -1 penalty to damage rolls. if its penalty drops to -5, the weapon is destroyed. Nonmagical ammunition made of metal that hits White Maw is destroyed after dealing damage.",
+						"Any nonmagical weapon made of metal that hits White Maw corrodes. After dealing damage, the weapon takes a permanent and cumulative \u20131 penalty to damage rolls. if its penalty drops to \u20135, the weapon is destroyed. Nonmagical ammunition made of metal that hits White Maw is destroyed after dealing damage.",
 						"White Maw can eat through 2-inch-thick, nonmagical metal in 1 round."
 					]
 				},
@@ -3687,11 +3861,15 @@
 				{
 					"name": "Pseudopod",
 					"entries": [
-						"Melee Weapon Attack: {@hit 8} to hit, reach 10 ft., one target. Hit: 22 ({@dice 4d8+4}) bludgeoning damage plus 9 ({@dice 2d8}) acid damage. If the target is wearing nonmagical metal armor, its armor is partly corroded and takes a permanent and cumulative -1 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10."
+						"Melee Weapon Attack: {@hit 8} to hit, reach 10 ft., one target. Hit: 22 ({@dice 4d8+4}) bludgeoning damage plus 9 ({@dice 2d8}) acid damage. If the target is wearing nonmagical metal armor, its armor is partly corroded and takes a permanent and cumulative \u20131 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10."
 					]
 				}
 			],
-			"page": 248
+			"page": 248,
+			"traitTags": [
+				"Amorphous",
+				"False Appearance"
+			]
 		},
 		{
 			"name": "Yusdrayl",
@@ -3786,6 +3964,10 @@
 						}
 					}
 				}
+			],
+			"traitTags": [
+				"Sunlight Sensitivity",
+				"Pack Tactics"
 			]
 		},
 		{
@@ -3847,7 +4029,13 @@
 					]
 				}
 			],
-			"page": 236
+			"page": 236,
+			"traitTags": [
+				"Water Breathing"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Calcryx",

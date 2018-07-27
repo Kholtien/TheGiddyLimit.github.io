@@ -42,11 +42,15 @@ function onJsonLoad (data) {
 	addListShowHide();
 
 	addVariantRules(data);
-	BrewUtil.addBrewData(addVariantRules);
-	BrewUtil.makeBrewButton("manage-brew");
-	BrewUtil.bind({list, filterBox, sourceFilter});
+	BrewUtil.pAddBrewData()
+		.then(addVariantRules)
+		.catch(BrewUtil.purgeBrew)
+		.then(() => {
+			BrewUtil.makeBrewButton("manage-brew");
+			BrewUtil.bind({list, filterBox, sourceFilter});
 
-	History.init();
+			History.init(true);
+		});
 }
 
 let rulesList = [];

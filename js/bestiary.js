@@ -43,17 +43,19 @@ function basename (str, sep) {
 
 const meta = {};
 
-function loadMeta (nextFunction) {
-	DataUtil.loadJSON(JSON_DIR + META_URL).then(function (data) {
-		// Convert the legendary Group JSONs into a look-up, i.e. use the name as a JSON property name
-		for (let i = 0; i < data.legendaryGroup.length; i++) {
-			meta[data.legendaryGroup[i].name] = {
-				"lairActions": data.legendaryGroup[i].lairActions,
-				"regionalEffects": data.legendaryGroup[i].regionalEffects
-			};
-		}
-
-		nextFunction();
+function pLoadMeta () {
+	return new Promise(resolve => {
+		DataUtil.loadJSON(JSON_DIR + META_URL)
+			.then((data) => {
+				// Convert the legendary Group JSONs into a look-up, i.e. use the name as a JSON property name
+				for (let i = 0; i < data.legendaryGroup.length; i++) {
+					meta[data.legendaryGroup[i].name] = {
+						"lairActions": data.legendaryGroup[i].lairActions,
+						"regionalEffects": data.legendaryGroup[i].regionalEffects
+					};
+				}
+				resolve();
+			});
 	});
 }
 
@@ -70,10 +72,13 @@ function addLegendaryGroups (toAdd) {
 }
 
 let ixFluff = {};
-function loadFluffIndex (nextFunction) {
-	DataUtil.loadJSON(JSON_DIR + FLUFF_INDEX).then(function (data) {
-		ixFluff = data;
-		nextFunction();
+function pLoadFluffIndex () {
+	return new Promise(resolve => {
+		DataUtil.loadJSON(JSON_DIR + FLUFF_INDEX)
+			.then((data) => {
+				ixFluff = data;
+				resolve();
+			});
 	});
 }
 
@@ -82,18 +87,25 @@ function handleBrew (homebrew) {
 	addMonsters(homebrew.monster);
 }
 
-window.onload = function load () {
-	ExcludeUtil.initialise();
-	loadMeta(() => {
-		loadFluffIndex(() => {
-			multisourceLoad(JSON_DIR, JSON_LIST_NAME, pageInit, addMonsters, () => {
-				BrewUtil.addBrewData(handleBrew);
+function pPostLoad () {
+	return new Promise(resolve => {
+		BrewUtil.pAddBrewData()
+			.then(handleBrew)
+			.catch(BrewUtil.purgeBrew)
+			.then(() => {
 				BrewUtil.makeBrewButton("manage-brew");
 				BrewUtil.bind({list, filterBox, sourceFilter});
 				ListUtil.loadState();
+				resolve();
 			});
-		});
-	});
+	})
+}
+
+window.onload = function load () {
+	ExcludeUtil.initialise();
+	pLoadMeta()
+		.then(pLoadFluffIndex)
+		.then(multisourceLoad.bind(null, JSON_DIR, JSON_LIST_NAME, pageInit, addMonsters, pPostLoad));
 };
 
 let list;
@@ -218,9 +230,21 @@ const conditionImmuneFilter = new Filter({
 	items: CONDS,
 	displayFn: StrUtil.uppercaseFirst
 });
+const traitFilter = new Filter({
+	header: "Traits",
+	items: [
+		"Aggressive", "Ambusher", "Amorphous", "Amphibious", "Antimagic Susceptibility", "Brute", "Charge", "Damage Absorption", "Death Burst", "Devil's Sight", "False Appearance", "Fey Ancestry", "Flyby", "Hold Breath", "Illumination", "Immutable Form", "Incorporeal Movement", "Keen Senses", "Legendary Resistances", "Light Sensitivity", "Magic Resistance", "Magic Weapons", "Pack Tactics", "Pounce", "Rampage", "Reckless", "Regeneration", "Rejuvenation", "Shapechanger", "Siege Monster", "Sneak Attack", "Spider Climb", "Sunlight Sensitivity", "Turn Immunity", "Turn Resistance", "Undead Fortitude", "Water Breathing", "Web Sense", "Web Walker"
+	]
+});
+const actionReactionFilter = new Filter({
+	header: "Actions & Reactions",
+	items: [
+		"Frightful Presence", "Multiattack", "Parry", "Swallow", "Teleport", "Tentacles"
+	]
+});
 const miscFilter = new Filter({
 	header: "Miscellaneous",
-	items: ["Familiar", "Legendary", "NPC", "Spellcaster", "Swarm"],
+	items: ["Familiar", "Lair Actions", "Legendary", "NPC", "Spellcaster", "Regional Effects", "Swarm"],
 	displayFn: StrUtil.uppercaseFirst,
 	deselFn: (it) => it === "NPC"
 });
@@ -241,6 +265,8 @@ const filterBox = initFilterBox(
 	resistFilter,
 	immuneFilter,
 	conditionImmuneFilter,
+	traitFilter,
+	actionReactionFilter,
 	miscFilter
 );
 
@@ -362,6 +388,8 @@ function handleFilterChange () {
 			m._fRes,
 			m._fImm,
 			m._fCondImm,
+			m.traitTags,
+			m.actionTags,
 			m._fMisc
 		);
 	});
@@ -432,6 +460,10 @@ function addMonsters (data) {
 		if (mon.type.swarmSize) mon._fMisc.push("Swarm");
 		if (mon.spellcasting) mon._fMisc.push("Spellcaster");
 		if (mon.isNPC) mon._fMisc.push("NPC");
+		if (mon.legendaryGroup) {
+			if (meta[mon.legendaryGroup].lairActions) mon._fMisc.push("Lair Actions");
+			if (meta[mon.legendaryGroup].regionalEffects) mon._fMisc.push("Regional Effects");
+		}
 	}
 	const lastSearch = ListUtil.getSearchTermAndReset(list);
 	table.append(textStack);
@@ -591,7 +623,7 @@ function loadhash (id) {
 
 		const imgLink = mon.tokenURL || UrlUtil.link(`img/${source}/${name.replace(/"/g, "")}.png`);
 		$content.find("th.name").html(
-			`<span class="stats-name">${name}</span>
+			`<span class="stats-name copyable" onclick="EntryRenderer.utils._handleNameClick(this, '${mon.source.escapeQuotes()}')">${name}</span>
 			${mon.soundClip ? getPronunciationButton() : ""}
 		<span class="stats-source source${source}" title="${sourceFull}${EntryRenderer.utils.getSourceSubText(mon)}">${source}</span>
 		<a href="${imgLink}" target="_blank">
@@ -614,7 +646,7 @@ function loadhash (id) {
 
 		var saves = mon.save;
 		if (saves) {
-			const parsedSaves = Object.keys(saves).map(it => `${it.uppercaseFirst()} ${saves[it]}`).join(", ");
+			const parsedSaves = Object.keys(saves).map(it => EntryRenderer.monster.getSave(renderer, it, mon.save[it])).join(", ");
 			$content.find("td span#saves").parent().show();
 			$content.find("td span#saves").html(parsedSaves);
 		} else {
@@ -696,12 +728,14 @@ function loadhash (id) {
 
 		if (reaction) renderSection("reaction", "reaction", reaction, 1);
 
+		const dragonVariant = EntryRenderer.monster.getDragonCasterVariant(renderer, mon);
 		const variants = mon.variant;
 		const variantSect = $content.find(`#variants`);
-		if (!variants) variantSect.hide();
+		if (!variants && !dragonVariant) variantSect.hide();
 		else {
 			const rStack = [];
-			variants.forEach(v => renderer.recursiveEntryRender(v, rStack));
+			(variants || []).forEach(v => renderer.recursiveEntryRender(v, rStack));
+			if (dragonVariant) rStack.push(dragonVariant);
 			variantSect.html(`<td colspan=6>${rStack.join("")}</td>`);
 			variantSect.show();
 		}
@@ -765,9 +799,6 @@ function loadhash (id) {
 		if (mon.skill) {
 			$content.find("#skills").each(makeSkillRoller);
 		}
-		if (mon.save) {
-			$content.find("#saves").each(makeSaveRoller);
-		}
 
 		function makeSkillRoller () {
 			const $this = $(this);
@@ -801,19 +832,6 @@ function loadhash (id) {
 			$this.html(out.join(", "));
 		}
 
-		function makeSaveRoller () {
-			const $this = $(this);
-			const saves = $this.html().split(",").map(s => s.trim());
-			const out = [];
-			saves.map(s => {
-				const spl = s.split("+").map(s => s.trim());
-				const bonus = Number(spl[1]);
-				const pBonusStr = `+${bonus}`;
-				out.push(spl[0] + ' ' + renderSkillOrSaveRoller(spl[0], pBonusStr, true));
-			});
-			$this.html(out.join(", "));
-		}
-
 		function renderSkillOrSaveRoller (itemName, profBonusString, isSave) {
 			itemName = itemName.replace(/plus one of the following:/g, "").replace(/^or\s*/, "");
 			return EntryRenderer.getDefaultRenderer().renderEntry(`{@dice 1d20${profBonusString}|${profBonusString}|${itemName}${isSave ? " save" : ""}`);
@@ -831,14 +849,15 @@ function loadhash (id) {
 			})
 			.each(function () {
 				const bonus = Number($(this).text());
-				const expectedPB = getProfBonusFromCr(mon.cr);
+				const expectedPB = Parser.crToPb(mon.cr);
 
 				// skills and saves can have expertise
 				let expert = 1;
 				let pB = expectedPB;
 				if ($(this).parent().prop("id") === "saves") {
 					const title = $(this).attr("title");
-					const fromAbility = Parser.getAbilityModNumber(mon[title.split(" ")[0].trim().toLowerCase()]);
+					const ability = title.split(" ")[0].trim().toLowerCase().substring(0, 3);
+					const fromAbility = Parser.getAbilityModNumber(mon[ability]);
 					pB = bonus - fromAbility;
 					expert = (pB === expectedPB * 2) ? 2 : 1;
 				} else if ($(this).parent().prop("id") === "skills") {
@@ -882,7 +901,7 @@ function loadhash (id) {
 			$(this).html($(this).html().replace(/DC\s*(\d+)/g, function (match, capture) {
 				const dc = Number(capture);
 
-				const expectedPB = getProfBonusFromCr(mon.cr);
+				const expectedPB = Parser.crToPb(mon.cr);
 
 				if (expectedPB > 0) {
 					const withoutPB = dc - expectedPB;
@@ -1000,11 +1019,6 @@ function handleUnknownHash (link, sub) {
 	}
 }
 
-function getProfBonusFromCr (cr) {
-	if (CR_TO_PROF[cr]) return CR_TO_PROF[cr];
-	return 0;
-}
-
 function dcRollerClick (ele, exp) {
 	const parsed = EntryRenderer.dice._parse(exp);
 	const entFormat = parsed.dice.map(d => ({number: d.num, faces: d.faces}));
@@ -1017,42 +1031,6 @@ function dcRollerClick (ele, exp) {
 	EntryRenderer.dice.rollerClick(ele, JSON.stringify(it));
 }
 
-const CR_TO_PROF = {
-	"0": 2,
-	"1/8": 2,
-	"1/4": 2,
-	"1/2": 2,
-	"1": 2,
-	"2": 2,
-	"3": 2,
-	"4": 2,
-	"5": 3,
-	"6": 3,
-	"7": 3,
-	"8": 3,
-	"9": 4,
-	"10": 4,
-	"11": 4,
-	"12": 4,
-	"13": 5,
-	"14": 5,
-	"15": 5,
-	"16": 5,
-	"17": 6,
-	"18": 6,
-	"19": 6,
-	"20": 6,
-	"21": 7,
-	"22": 7,
-	"23": 7,
-	"24": 7,
-	"25": 8,
-	"26": 8,
-	"27": 8,
-	"28": 8,
-	"29": 9,
-	"30": 9
-};
 const SKILL_TO_ATB_ABV = {
 	"athletics": "str",
 	"acrobatics": "dex",

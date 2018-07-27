@@ -44,14 +44,17 @@ function onJsonLoad (data) {
 	ListUtil.initGenericPinnable();
 
 	addFeats(data);
-	BrewUtil.addBrewData(addFeats);
-	BrewUtil.makeBrewButton("manage-brew");
-	BrewUtil.bind({list, filterBox, sourceFilter});
-	ListUtil.loadState();
+	BrewUtil.pAddBrewData()
+		.then(addFeats)
+		.catch(BrewUtil.purgeBrew)
+		.then(() => {
+			BrewUtil.makeBrewButton("manage-brew");
+			BrewUtil.bind({list, filterBox, sourceFilter});
+			ListUtil.loadState();
+			RollerUtil.addListRollButton();
 
-	History.init();
-	handleFilterChange();
-	RollerUtil.addListRollButton();
+			History.init(true);
+		});
 }
 
 let featList = [];
@@ -86,9 +89,9 @@ function addFeats (data) {
 
 		tempString += `
 			<li class="row" ${FLTR_ID}="${ftI}" onclick="ListUtil.toggleSelected(event, this)" oncontextmenu="ListUtil.openContextMenu(event, this)">
-				<a id='${ftI}' href='#${UrlUtil.autoEncodeHash(curfeat)}' title='${name}'>
+				<a id='${ftI}' href='#${UrlUtil.autoEncodeHash(curfeat)}' title="${name}">
 					<span class='${CLS_COL_1}'>${name}</span>
-					<span class='${CLS_COL_2}' title='${Parser.sourceJsonToFull(curfeat.source)}'>${Parser.sourceJsonToAbv(curfeat.source)}</span>
+					<span class='${CLS_COL_2}' title="${Parser.sourceJsonToFull(curfeat.source)}">${Parser.sourceJsonToAbv(curfeat.source)}</span>
 					<span class='${CLS_COL_3}'>${ability.asText}</span>
 					<span class='${CLS_COL_4}'>${prereqText}</span>
 				</a>

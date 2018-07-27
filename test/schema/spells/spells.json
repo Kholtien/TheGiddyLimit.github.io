@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-06/schema#",
-	"version": "1.2.1",
+	"version": "1.2.3",
 	"title": "SpellsArray",
 	"type": "object",
 
@@ -195,11 +195,51 @@
 					],
 					"additionalProperties": false
 				},
+				"races": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"source": {
+								"type": "string"
+							},
+							"baseName": {
+								"type": "string"
+							},
+							"baseSource": {
+								"type": "string"
+							}
+						},
+						"required": ["name", "source"]
+					}
+				},
 				"source": {
 					"type": "string"
 				},
 				"page": {
 					"type": "integer"
+				},
+				"otherSources": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"source": {
+								"type": "string"
+							},
+							"page": {
+								"type": "integer"
+							}
+						},
+						"required": [
+							"source",
+							"page"
+						],
+						"additionalProperties": false
+					}
 				},
 				"damageInflict": {
 					"type": "array",
@@ -267,6 +307,9 @@
 							"M", "R", "O"
 						]
 					}
+				},
+				"scalingEffects": {
+					"type": "boolean"
 				}
 			},
 			"required": [

@@ -298,7 +298,10 @@
 					]
 				}
 			],
-			"page": 240
+			"page": 240,
+			"traitTags": [
+				"Pounce"
+			]
 		},
 		{
 			"name": "Darathra Shendrel",
@@ -386,7 +389,10 @@
 					]
 				}
 			],
-			"page": 253
+			"page": 253,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Darz Helgar",
@@ -460,7 +466,10 @@
 					]
 				}
 			],
-			"page": 253
+			"page": 253,
+			"traitTags": [
+				"Sneak Attack"
+			]
 		},
 		{
 			"name": "Duvessa Shane",
@@ -531,7 +540,10 @@
 					]
 				}
 			],
-			"page": 248
+			"page": 248,
+			"actionTags": [
+				"Parry"
+			]
 		},
 		{
 			"name": "Ghelryn Foehammer",
@@ -622,7 +634,10 @@
 					]
 				}
 			],
-			"page": 255
+			"page": 255,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Hulking Crab",
@@ -688,7 +703,13 @@
 					]
 				}
 			],
-			"page": 240
+			"page": 240,
+			"traitTags": [
+				"Amphibious"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Iymrith, Ancient Blue Dragon",
@@ -797,7 +818,7 @@
 					]
 				},
 				{
-					"name": "Lightning Breath (Recharge 5\u20146)",
+					"name": "Lightning Breath (Recharge 5\u20136)",
 					"entries": [
 						"Iymrith exhales lightning in a 120-foot line that is 10 feet wide. Each creature in that line must make a DC 23 Dexterity saving throw, taking 88 ({@dice 16d10}) lightning damage on a failed save, or half as much damage on a successful one."
 					]
@@ -832,7 +853,15 @@
 					]
 				}
 			],
-			"page": 241
+			"page": 241,
+			"dragonCastingColor": "U",
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Lifferlas",
@@ -905,7 +934,13 @@
 					]
 				}
 			],
-			"page": 250
+			"page": 250,
+			"traitTags": [
+				"False Appearance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Maegera the Dawn Titan",
@@ -1047,7 +1082,14 @@
 				}
 			],
 			"page": 241,
-			"isNamedCreature": true
+			"isNamedCreature": true,
+			"traitTags": [
+				"Illumination",
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Markham Southwell",
@@ -1126,7 +1168,10 @@
 					]
 				}
 			],
-			"page": 248
+			"page": 248,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Miros Xelbrin",
@@ -1566,7 +1611,10 @@
 					]
 				}
 			],
-			"page": 255
+			"page": 255,
+			"actionTags": [
+				"Parry"
+			]
 		},
 		{
 			"name": "Purple Wormling",
@@ -1621,7 +1669,10 @@
 					]
 				}
 			],
-			"page": 242
+			"page": 242,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Shalvus Martholio",
@@ -1703,7 +1754,10 @@
 					]
 				}
 			],
-			"page": 250
+			"page": 250,
+			"traitTags": [
+				"Sneak Attack"
+			]
 		},
 		{
 			"name": "Sir Baric Nylef",
@@ -1866,7 +1920,10 @@
 					]
 				}
 			],
-			"page": 247
+			"page": 247,
+			"actionTags": [
+				"Parry"
+			]
 		},
 		{
 			"name": "Tressym",
@@ -1943,7 +2000,10 @@
 				}
 			],
 			"page": 242,
-			"familiar": true
+			"familiar": true,
+			"traitTags": [
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Urgala Meltimer",
@@ -2028,7 +2088,10 @@
 					]
 				}
 			],
-			"page": 254
+			"page": 254,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Uthgardt Shaman",
@@ -2227,7 +2290,10 @@
 					]
 				}
 			],
-			"page": 245
+			"page": 245,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Yakfolk Warrior",
@@ -2295,7 +2361,10 @@
 					]
 				}
 			],
-			"page": 244
+			"page": 244,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Zi Liang",
@@ -2377,7 +2446,10 @@
 					]
 				}
 			],
-			"page": 251
+			"page": 251,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Thunderbeast Skeleton",
@@ -2664,7 +2736,16 @@
 					}
 				}
 			],
-			"isNamedCreature": true
+			"isNamedCreature": true,
+			"traitTags": [
+				"Legendary Resistances",
+				"Amphibious",
+				"Siege Monster"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Tentacles"
+			]
 		},
 		{
 			"name": "Chief Guh",
@@ -2729,7 +2810,10 @@
 					]
 				}
 			],
-			"page": 140
+			"page": 140,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Thane Kayalithica",
@@ -2830,7 +2914,10 @@
 					]
 				}
 			],
-			"page": 153
+			"page": 153,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Jarl Storvald",
@@ -2935,6 +3022,9 @@
 						}
 					}
 				}
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		},
 		{
@@ -3026,7 +3116,13 @@
 					]
 				}
 			],
-			"page": 184
+			"page": 184,
+			"traitTags": [
+				"Siege Monster"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Countess Sansuri",
@@ -3181,6 +3277,12 @@
 						}
 					}
 				}
+			],
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		},
 		{
@@ -3265,7 +3367,7 @@
 					]
 				},
 				{
-					"name": "Lightning Strike (Recharge 5\u20146)",
+					"name": "Lightning Strike (Recharge 5\u20136)",
 					"entries": [
 						"Hekaton hurls a magical lightning bolt at a point he can see within 500 feet of it. Each creature within 10 feet of that point must make a DC 17 Dexterity saving throw, taking 54 ({@dice 12d8}) lightning damage on a failed save, or half as much damage on a successful one."
 					]
@@ -3297,6 +3399,12 @@
 						]
 					}
 				}
+			],
+			"traitTags": [
+				"Amphibious"
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		},
 		{
@@ -3379,7 +3487,13 @@
 					]
 				}
 			],
-			"page": 120
+			"page": 120,
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Zaltember",
@@ -3605,6 +3719,12 @@
 						}
 					}
 				}
+			],
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		},
 		{
@@ -3709,7 +3829,7 @@
 					]
 				},
 				{
-					"name": "Fire Breath (Recharge 5\u20146)",
+					"name": "Fire Breath (Recharge 5\u20136)",
 					"entries": [
 						"Klauth exhales fire in a 90-foot cone. Each creature in that area must make a DC 24 Dexterity saving throw, taking 91 ({@dice 26d6}) fire damage on a failed save, or half as much damage on a successful one."
 					]
@@ -3825,6 +3945,13 @@
 						}
 					}
 				}
+			],
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
 			]
 		}
 	]

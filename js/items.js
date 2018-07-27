@@ -39,24 +39,24 @@ function sortItems (a, b, o) {
 	} else return 0;
 }
 
-function deselectFilter (deselectProperty, deselectValue) {
+function deselectFilter (deselectProperty, ...deselectValues) {
 	return function (val) {
 		if (window.location.hash.length && !window.location.hash.startsWith(`#${HASH_BLANK}`)) {
 			const curItem = History.getSelectedListElement();
 			if (!curItem) return deselNoHash();
 
 			const itemProperty = itemList[curItem.attr("id")][deselectProperty];
-			if (itemProperty === deselectValue) {
+			if (deselectValues.includes(itemProperty)) {
 				return deselNoHash();
 			} else {
-				return val === deselectValue && itemProperty !== val;
+				return deselectValues.includes(val) && itemProperty !== val;
 			}
 		} else {
 			return deselNoHash();
 		}
 
 		function deselNoHash () {
-			return val === deselectValue;
+			return deselectValues.includes(val);
 		}
 	}
 }
@@ -64,7 +64,7 @@ function deselectFilter (deselectProperty, deselectValue) {
 let mundanelist;
 let magiclist;
 const sourceFilter = getSourceFilter();
-const typeFilter = new Filter({header: "Type", deselFn: deselectFilter("type", "$")});
+const typeFilter = new Filter({header: "Type", deselFn: deselectFilter("type", "$", "Futuristic", "Modern", "Renaissance")});
 const tierFilter = new Filter({header: "Tier", items: ["None", "Minor", "Major"]});
 const propertyFilter = new Filter({header: "Property", displayFn: StrUtil.uppercaseFirst});
 let filterBox;
@@ -165,12 +165,16 @@ function populateTablesAndFilters (data) {
 	ListUtil.initGenericAddable();
 
 	addItems(data);
-	BrewUtil.addBrewData(handleBrew);
-	BrewUtil.makeBrewButton("manage-brew");
-	BrewUtil.bind({lists: [mundanelist, magiclist], filterBox, sourceFilter});
-	ListUtil.loadState();
+	BrewUtil.pAddBrewData()
+		.then(handleBrew)
+		.catch(BrewUtil.purgeBrew)
+		.then(() => {
+			BrewUtil.makeBrewButton("manage-brew");
+			BrewUtil.bind({lists: [mundanelist, magiclist], filterBox, sourceFilter});
+			ListUtil.loadState();
 
-	History.init();
+			History.init(true);
+		});
 }
 
 function handleBrew (homebrew) {
@@ -356,7 +360,6 @@ function loadhash (id) {
 
 	const source = item.source;
 	const sourceFull = Parser.sourceJsonToFull(source);
-	$content.find("th.name").html(`<span class="stats-name">${item.name}</span><span class="stats-source source${item.source}" title="${Parser.sourceJsonToFull(item.source)}">${Parser.sourceJsonToAbv(item.source)}</span>`);
 
 	const type = item.type || "";
 	if (type === "INS" || type === "GS") item.additionalSources = item.additionalSources || [];

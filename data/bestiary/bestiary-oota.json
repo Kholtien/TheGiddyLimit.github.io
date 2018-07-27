@@ -62,7 +62,10 @@
 					]
 				}
 			],
-			"page": 230
+			"page": 230,
+			"traitTags": [
+				"False Appearance"
+			]
 		},
 		{
 			"name": "Baphomet",
@@ -250,7 +253,18 @@
 					}
 				}
 			],
-			"isNamedCreature": true
+			"isNamedCreature": true,
+			"traitTags": [
+				"Charge",
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Magic Weapons",
+				"Reckless"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Bridesmaid of Zuggtmoy",
@@ -388,7 +402,10 @@
 					]
 				}
 			],
-			"page": 230
+			"page": 230,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Chuul Spore Servant",
@@ -447,7 +464,10 @@
 					]
 				}
 			],
-			"page": 228
+			"page": 228,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Demogorgon",
@@ -614,7 +634,16 @@
 					}
 				}
 			],
-			"isNamedCreature": true
+			"isNamedCreature": true,
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Tentacles"
+			]
 		},
 		{
 			"name": "Derro",
@@ -693,7 +722,11 @@
 				}
 			],
 			"page": 224,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/616/derro.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/616/derro.mp3",
+			"traitTags": [
+				"Magic Resistance",
+				"Sunlight Sensitivity"
+			]
 		},
 		{
 			"name": "Derro Savant",
@@ -813,7 +846,11 @@
 					}
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/615/derro-savant.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/615/derro-savant.mp3",
+			"traitTags": [
+				"Magic Resistance",
+				"Sunlight Sensitivity"
+			]
 		},
 		{
 			"name": "Droki",
@@ -933,6 +970,15 @@
 						]
 					}
 				}
+			],
+			"traitTags": [
+				"Sneak Attack",
+				"Magic Resistance",
+				"Sunlight Sensitivity"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Parry"
 			]
 		},
 		{
@@ -1084,6 +1130,9 @@
 						]
 					}
 				}
+			],
+			"traitTags": [
+				"Sunlight Sensitivity"
 			]
 		},
 		{
@@ -1188,7 +1237,10 @@
 				}
 			],
 			"page": 226,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/627/duergar-kavalrachni.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/627/duergar-kavalrachni.mp3",
+			"traitTags": [
+				"Sunlight Sensitivity"
+			]
 		},
 		{
 			"name": "Duergar Keeper of the Flame",
@@ -1320,6 +1372,9 @@
 						}
 					}
 				}
+			],
+			"traitTags": [
+				"Sunlight Sensitivity"
 			]
 		},
 		{
@@ -1423,7 +1478,10 @@
 					}
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/630/duergar-soulblade.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/630/duergar-soulblade.mp3",
+			"traitTags": [
+				"Sunlight Sensitivity"
+			]
 		},
 		{
 			"name": "Duergar Spore Servant",
@@ -1561,7 +1619,10 @@
 				}
 			],
 			"page": 227,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/631/duergar-stone-guard.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/631/duergar-stone-guard.mp3",
+			"traitTags": [
+				"Sunlight Sensitivity"
+			]
 		},
 		{
 			"name": "Duergar Xarrorn",
@@ -1646,7 +1707,10 @@
 				}
 			],
 			"page": 226,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/633/duergar-xarrorn.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/633/duergar-xarrorn.mp3",
+			"traitTags": [
+				"Sunlight Sensitivity"
+			]
 		},
 		{
 			"source": "OotA",
@@ -1730,7 +1794,13 @@
 					]
 				}
 			],
-			"page": 130
+			"page": 130,
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Female Steeder",
@@ -1797,7 +1867,10 @@
 				}
 			],
 			"page": 231,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/639/female-steeder.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/639/female-steeder.mp3",
+			"traitTags": [
+				"Spider Climb"
+			]
 		},
 		{
 			"name": "Fraz-Urb'luu",
@@ -1965,7 +2038,15 @@
 					}
 				}
 			],
-			"isNamedCreature": true
+			"isNamedCreature": true,
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "OotA",
@@ -2016,7 +2097,10 @@
 					]
 				}
 			],
-			"page": 131
+			"page": 131,
+			"traitTags": [
+				"Spider Climb"
+			]
 		},
 		{
 			"name": "Graz'zt",
@@ -2194,7 +2278,17 @@
 					}
 				}
 			],
-			"isNamedCreature": true
+			"isNamedCreature": true,
+			"traitTags": [
+				"Shapechanger",
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Teleport"
+			]
 		},
 		{
 			"name": "Grisha",
@@ -2306,6 +2400,9 @@
 						}
 					}
 				}
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		},
 		{
@@ -2364,7 +2461,10 @@
 					]
 				}
 			],
-			"page": 68
+			"page": 68,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Ixitxachitl",
@@ -2643,7 +2743,7 @@
 				{
 					"name": "Eject Slime (Recharge 5\u20146)",
 					"entries": [
-						"Juiblex spews out a corrosive slime, targeting one creature that it can see within 60 feet of it. The target must make a DC 21 Dexterity saving throw. On a failure, the target takes 55 ({@dice 10d10}) acid damage. Unless the target avoids taking any of this damage, any metal armor worn by the target takes a permanent -1 penalty to the AC it offers, and any metal weapon it is carrying or wearing takes a permanent -1 penalty to damage rolls. The penalty worsens each time a target is subjected to this effect. If the penalty on an object drops to -5, the object is destroyed."
+						"Juiblex spews out a corrosive slime, targeting one creature that it can see within 60 feet of it. The target must make a DC 21 Dexterity saving throw. On a failure, the target takes 55 ({@dice 10d10}) acid damage. Unless the target avoids taking any of this damage, any metal armor worn by the target takes a permanent \u20131 penalty to the AC it offers, and any metal weapon it is carrying or wearing takes a permanent \u20131 penalty to damage rolls. The penalty worsens each time a target is subjected to this effect. If the penalty on an object drops to \u20135, the object is destroyed."
 					]
 				}
 			],
@@ -2691,7 +2791,17 @@
 					}
 				}
 			],
-			"isNamedCreature": true
+			"isNamedCreature": true,
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Magic Weapons",
+				"Regeneration",
+				"Spider Climb"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"source": "OotA",
@@ -2833,7 +2943,13 @@
 					]
 				}
 			],
-			"page": 131
+			"page": 131,
+			"traitTags": [
+				"Sneak Attack"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Male Steeder",
@@ -2900,7 +3016,10 @@
 				}
 			],
 			"page": 231,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/659/male-steeder.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/659/male-steeder.mp3",
+			"traitTags": [
+				"Spider Climb"
+			]
 		},
 		{
 			"name": "Narrak",
@@ -3019,6 +3138,10 @@
 						}
 					}
 				}
+			],
+			"traitTags": [
+				"Magic Resistance",
+				"Sunlight Sensitivity"
 			]
 		},
 		{
@@ -3189,7 +3312,15 @@
 					}
 				}
 			],
-			"isNamedCreature": true
+			"isNamedCreature": true,
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "The Pudding King",
@@ -3458,7 +3589,13 @@
 					]
 				}
 			],
-			"page": 229
+			"page": 229,
+			"traitTags": [
+				"Sunlight Sensitivity"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Vampiric Ixitxachitl",
@@ -3673,7 +3810,10 @@
 					]
 				}
 			],
-			"page": 130
+			"page": 130,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Yeenoghu",
@@ -3838,7 +3978,16 @@
 					}
 				}
 			],
-			"isNamedCreature": true
+			"isNamedCreature": true,
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Magic Weapons",
+				"Rampage"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Yestabrod",
@@ -3930,7 +4079,10 @@
 				}
 			],
 			"page": 233,
-			"isNamedCreature": true
+			"isNamedCreature": true,
+			"traitTags": [
+				"Legendary Resistances"
+			]
 		},
 		{
 			"name": "Deepking Horgar Steelshadow V",
@@ -4068,7 +4220,14 @@
 					]
 				}
 			],
-			"page": 82
+			"page": 82,
+			"traitTags": [
+				"Sunlight Sensitivity"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Parry"
+			]
 		},
 		{
 			"source": "OotA",
@@ -4137,7 +4296,13 @@
 					]
 				}
 			],
-			"page": 131
+			"page": 131,
+			"traitTags": [
+				"Pack Tactics"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Spider King",
@@ -4220,7 +4385,12 @@
 					]
 				}
 			],
-			"page": 74
+			"page": 74,
+			"traitTags": [
+				"Spider Climb",
+				"Web Sense",
+				"Web Walker"
+			]
 		},
 		{
 			"name": "Zuggtmoy",
@@ -4378,7 +4548,15 @@
 					}
 				}
 			],
-			"isNamedCreature": true
+			"isNamedCreature": true,
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		}
 	]
 }

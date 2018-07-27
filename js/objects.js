@@ -27,12 +27,16 @@ function onJsonLoad (data) {
 	ListUtil.initGenericPinnable();
 
 	addObjects(data);
-	BrewUtil.addBrewData(addObjects);
-	BrewUtil.makeBrewButton("manage-brew");
-	BrewUtil.bind({list});
-	ListUtil.loadState();
+	BrewUtil.pAddBrewData()
+		.then(addObjects)
+		.catch(BrewUtil.purgeBrew)
+		.then(() => {
+			BrewUtil.makeBrewButton("manage-brew");
+			BrewUtil.bind({list});
+			ListUtil.loadState();
 
-	History.init();
+			History.init(true);
+		});
 }
 
 let objectsList = [];

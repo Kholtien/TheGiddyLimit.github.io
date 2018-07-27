@@ -77,6 +77,9 @@
 						"If a creature within 5 feet of the chupacabra stands up, the chupacabra can use its reaction to make a bite attack."
 					]
 				}
+			],
+			"traitTags": [
+				"Sunlight Sensitivity"
 			]
 		},
 		{
@@ -139,6 +142,9 @@
 						"Ranged Weapon Attack: {@hit 4} to hit, range 15/30 ft., one creature. Hit: The target must make a DC 13 Constitution saving throw, taking 18 ({@dice 4d8}) poison damage on a failed save, or half as much damage on a successful one. In addition, a creature that fails its saving throw is blinded until the end of the deathspitter's next turn."
 					]
 				}
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		},
 		{
@@ -237,7 +243,14 @@
 					]
 				}
 			],
-			"isNamedCreature": true
+			"isNamedCreature": true,
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Swallow"
+			]
 		},
 		{
 			"source": "PSX",
@@ -359,6 +372,15 @@
 						"The elder dinosaur makes one bite attack or uses its Swallow."
 					]
 				}
+			],
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Siege Monster"
+			],
+			"actionTags": [
+				"Frightful Presence",
+				"Swallow"
 			]
 		},
 		{
@@ -509,6 +531,16 @@
 						"The elder dinosaur makes one bite attack or uses its Swallow."
 					]
 				}
+			],
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Siege Monster"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence",
+				"Swallow"
 			]
 		},
 		{
@@ -650,6 +682,17 @@
 						"The elder dinosaur makes one bite attack or uses its Swallow."
 					]
 				}
+			],
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Siege Monster",
+				"Hold Breath"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence",
+				"Swallow"
 			]
 		},
 		{
@@ -790,6 +833,16 @@
 						"The elder dinosaur makes one bite attack or uses its Swallow."
 					]
 				}
+			],
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Siege Monster"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence",
+				"Swallow"
 			]
 		},
 		{
@@ -954,6 +1007,16 @@
 						"The elder dinosaur makes one bite attack or uses its Swallow."
 					]
 				}
+			],
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Siege Monster"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence",
+				"Swallow"
 			]
 		},
 		{
@@ -1094,6 +1157,16 @@
 						"The elder dinosaur makes one bite attack or uses its Swallow."
 					]
 				}
+			],
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Siege Monster"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence",
+				"Swallow"
 			]
 		},
 		{
@@ -1234,6 +1307,16 @@
 						"The elder dinosaur makes one bite attack or uses its Swallow."
 					]
 				}
+			],
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Siege Monster"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence",
+				"Swallow"
 			]
 		},
 		{
@@ -1332,6 +1415,14 @@
 						"Melee Weapon Attack: {@hit 14} to hit, reach 5 ft., one target. Hit: 16 ({@dice 2d6 + 9}) slashing damage plus 14 ({@dice 4d6}) fire damage, and the target is grappled (escape DC 18). Until this grapple ends, the target is restrained, and the sunbird can't attack another target with that talon. A grappled creature takes 11 ({@dice 2d10}) fire damage at the start of each of the sunbird's turns."
 					]
 				}
+			],
+			"traitTags": [
+				"Death Burst",
+				"Flyby",
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		}
 	]

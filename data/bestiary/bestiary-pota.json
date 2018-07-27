@@ -142,6 +142,10 @@
 						}
 					}
 				}
+			],
+			"traitTags": [
+				"Fey Ancestry",
+				"Legendary Resistances"
 			]
 		},
 		{
@@ -228,7 +232,13 @@
 				}
 			],
 			"page": 212,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/593/air-elemental-myrmidon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/593/air-elemental-myrmidon.mp3",
+			"traitTags": [
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Bastian Thermandar",
@@ -419,7 +429,10 @@
 					]
 				}
 			],
-			"page": 195
+			"page": 195,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Black Earth Priest",
@@ -526,6 +539,9 @@
 						}
 					}
 				}
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		},
 		{
@@ -602,7 +618,10 @@
 					]
 				}
 			],
-			"page": 196
+			"page": 196,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Crushing Wave Priest",
@@ -835,7 +854,13 @@
 					]
 				}
 			],
-			"page": 205
+			"page": 205,
+			"traitTags": [
+				"Sneak Attack"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Drannin Splithelm",
@@ -937,7 +962,13 @@
 					]
 				}
 			],
-			"page": 210
+			"page": 210,
+			"traitTags": [
+				"Brute"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Earth Elemental Myrmidon",
@@ -1020,7 +1051,13 @@
 				}
 			],
 			"page": 212,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/635/earth-elemental-myrmidon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/635/earth-elemental-myrmidon.mp3",
+			"traitTags": [
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Elizar Dryflagon",
@@ -1210,7 +1247,10 @@
 					]
 				}
 			],
-			"page": 200
+			"page": 200,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Eternal Flame Priest",
@@ -1410,7 +1450,7 @@
 							]
 						},
 						"3": {
-							"slots": 0,
+							"slots": 2,
 							"spells": [
 								"{@spell Vampiric touch}"
 							]
@@ -1506,6 +1546,9 @@
 						}
 					}
 				}
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		},
 		{
@@ -1602,7 +1645,14 @@
 				}
 			],
 			"page": 213,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/640/fire-elemental-myrmidon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/640/fire-elemental-myrmidon.mp3",
+			"traitTags": [
+				"Illumination",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Flamewrath",
@@ -1863,6 +1913,13 @@
 						}
 					}
 				}
+			],
+			"traitTags": [
+				"Amphibious",
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		},
 		{
@@ -1968,7 +2025,13 @@
 					]
 				}
 			],
-			"page": 210
+			"page": 210,
+			"traitTags": [
+				"Sneak Attack"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Hellenrae",
@@ -2026,7 +2089,7 @@
 					]
 				},
 				{
-					"name": "Stunning Strike (Recharge 5\u20146)",
+					"name": "Stunning Strike (Recharge 5\u20136)",
 					"entries": [
 						"When Hellenrae hits a target with a melee weapon attack, the target must succeed on a DC 13 Constitution saving throw or be stunned until the end of Hellenrae's next turn."
 					]
@@ -2066,7 +2129,10 @@
 					]
 				}
 			],
-			"page": 198
+			"page": 198,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Howling Hatred Initiate",
@@ -2133,7 +2199,10 @@
 					]
 				}
 			],
-			"page": 190
+			"page": 190,
+			"traitTags": [
+				"Hold Breath"
+			]
 		},
 		{
 			"name": "Howling Hatred Priest",
@@ -2246,6 +2315,12 @@
 						}
 					}
 				}
+			],
+			"traitTags": [
+				"Hold Breath"
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		},
 		{
@@ -2352,6 +2427,9 @@
 						}
 					}
 				}
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		},
 		{
@@ -2523,7 +2601,15 @@
 					}
 				}
 			],
-			"isNamedCreature": true
+			"isNamedCreature": true,
+			"traitTags": [
+				"Illumination",
+				"Legendary Resistances",
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Marlos Urnrayle",
@@ -2617,7 +2703,13 @@
 				}
 			],
 			"legendaryGroup": "Marlos Urnrayle",
-			"page": 199
+			"page": 199,
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Miraj Vizann",
@@ -2901,7 +2993,15 @@
 					]
 				}
 			],
-			"isNamedCreature": true
+			"isNamedCreature": true,
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Siege Monster"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Olhydra",
@@ -3065,7 +3165,14 @@
 					}
 				}
 			],
-			"isNamedCreature": true
+			"isNamedCreature": true,
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "One-Eyed Shiver",
@@ -3359,7 +3466,10 @@
 					]
 				}
 			],
-			"page": 201
+			"page": 201,
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Sacred Stone Monk",
@@ -3436,7 +3546,11 @@
 					]
 				}
 			],
-			"page": 196
+			"page": 196,
+			"actionTags": [
+				"Multiattack",
+				"Parry"
+			]
 		},
 		{
 			"name": "Shoalar Quanderil",
@@ -3557,6 +3671,9 @@
 						}
 					}
 				}
+			],
+			"traitTags": [
+				"Amphibious"
 			]
 		},
 		{
@@ -3758,6 +3875,9 @@
 						}
 					}
 				}
+			],
+			"traitTags": [
+				"Death Burst"
 			]
 		},
 		{
@@ -3873,6 +3993,10 @@
 						}
 					}
 				}
+			],
+			"actionTags": [
+				"Multiattack",
+				"Parry"
 			]
 		},
 		{
@@ -4011,6 +4135,12 @@
 						}
 					}
 				}
+			],
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		},
 		{
@@ -4096,7 +4226,13 @@
 				}
 			],
 			"page": 213,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/716/water-elemental-myrmidon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/716/water-elemental-myrmidon.mp3",
+			"traitTags": [
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Wiggan Nettlebee",
@@ -4200,6 +4336,9 @@
 						}
 					}
 				}
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		},
 		{
@@ -4319,6 +4458,12 @@
 						}
 					}
 				}
+			],
+			"traitTags": [
+				"Fey Ancestry"
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		},
 		{
@@ -4490,7 +4635,14 @@
 					}
 				}
 			],
-			"isNamedCreature": true
+			"isNamedCreature": true,
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		}
 	]
 }

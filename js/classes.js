@@ -113,9 +113,9 @@ class ClassList {
 
 	static _renderClass (classToRender, id) {
 		return `<li class="row" ${FLTR_ID}="${id}" ${classToRender.uniqueId ? `data-unique-id="${classToRender.uniqueId}"` : ""}>
-				<a id='${id}' href='${HashLoad.getClassHash(classToRender)}' title='${classToRender.name}'>
+				<a id='${id}' href="${HashLoad.getClassHash(classToRender)}" title="${classToRender.name}">
 					<span class='name col-xs-8'>${classToRender.name}</span>
-					<span class='source col-xs-4 text-align-center source${Parser.sourceJsonToAbv(classToRender.source)}' title='${Parser.sourceJsonToFull(classToRender.source)}'>
+					<span class='source col-xs-4 text-align-center source${Parser.sourceJsonToAbv(classToRender.source)}' title="${Parser.sourceJsonToFull(classToRender.source)}">
 						${Parser.sourceJsonToAbv(classToRender.source)}
 					</span>
 					<span class="uniqueid hidden">${classToRender.uniqueId ? classToRender.uniqueId : id}</span>
@@ -1191,7 +1191,6 @@ ClassList.classList = ListUtil.search({
 BrewUtil.makeBrewButton("manage-brew");
 BrewUtil.bind({list: ClassList.classList, filterBox, sourceFilter});
 
-History.init();
 initCompareMode();
 ClassBookView.initButton();
 ExcludeUtil.initialise();
@@ -1203,10 +1202,13 @@ let classTableDefault = $("#classtable").html();
 DataUtil.class.loadJSON().then((data) => {
 	addClassData(data);
 
-	BrewUtil.addBrewData(handleBrew);
-
-	History.initialLoad = false;
-	RollerUtil.addListRollButton();
+	BrewUtil.pAddBrewData()
+		.then(handleBrew)
+		.catch(BrewUtil.purgeBrew)
+		.then(() => {
+			RollerUtil.addListRollButton();
+			History.init(true);
+		});
 });
 
 function handleBrew (homebrew) {

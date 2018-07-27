@@ -14,6 +14,18 @@
 
 $spacer: 1rem;
 
+.code {
+	font-family: 'Courier New', monospace;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.copyable {
+	cursor: copy;
+}
+
 .unselectable {
 	user-select: none;
 }
@@ -88,9 +100,66 @@ dialog.dialog-modal {
 	}
 }
 
+.modal-wrapper {
+	position: fixed;
+	z-index: 1000;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(69, 69, 69, 0.51);
+
+	.modal-outer {
+		position: relative;
+		z-index: 10001;
+		top: initial;
+		left: initial;
+		margin: 60px auto;
+		padding: 5px 10px;
+		min-width: 600px;
+		display: flex;
+		max-height: 95%;
+		max-width: 95%;
+		overflow: auto;
+		transform: translateZ(0);
+
+		.modal-inner {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+.flex {
+	display: flex;
+}
+
+.inline-flex {
+	display: inline-flex;
+}
+
+.flex-1 {
+	flex: 1;
+}
+
+.flex-2 {
+	flex: 2;
+}
+
+.flex-3 {
+	flex: 3;
+}
+
 .split {
 	display: flex;
 	justify-content: space-between;
+}
+
+.split-column {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
 }
 
 #legal-notice {
@@ -277,6 +346,26 @@ dialog.dialog-modal {
 }
 
 /* hoverbox */
+@keyframes kf-fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes kf-pop-in {
+	from {
+		transform: scale(0);
+	}
+
+	to {
+		transform: scale(1);
+	}
+}
+
 .hoverbox {
 	position: fixed;
 	width: 600px;
@@ -285,6 +374,8 @@ dialog.dialog-modal {
 	box-shadow: 0 0 12px 0 black;
 	max-height: 96vh;
 	overflow-y: auto;
+	animation-name: kf-fade-in, kf-pop-in;
+	animation-duration: 150ms, 75ms;
 
 	@media (max-width: 1023px) {
 		max-width: 95vw;
@@ -1997,6 +2088,36 @@ table.stats.stats-book table.printbook-bestiary-entry {
 	margin-bottom: $spacer !important;
 }
 
+.my-3 {
+	margin-top: $spacer !important;
+	margin-bottom: $spacer !important;
+}
+
+.ml-1 {
+	margin-left: ($spacer * 0.25) !important;
+}
+
+.ml-2 {
+	margin-left: ($spacer * 0.5) !important;
+}
+
+.mr-1 {
+	margin-right: ($spacer * 0.25) !important;
+}
+
+.mr-2 {
+	margin-right: ($spacer * 0.5) !important;
+}
+
+.mr-3 {
+	margin-right: $spacer !important;
+}
+
+.px-2 {
+	padding-right: ($spacer * 0.5) !important;
+	padding-left: ($spacer * 0.5) !important;
+}
+
 .dropdown-menu > li > a.dropdown-ext-link {
 	display: flex;
 	justify-content: space-between;
@@ -2217,19 +2338,15 @@ table.stats.stats-book table.printbook-bestiary-entry {
 	border: 1px solid transparent;
 }
 
-.dropdown-menu-filter .slider.slider-horizontal {
+.dropdown-menu-filter .filter-slider {
 	width: calc(100% - 80px);
 	margin-top: 5px;
-	margin-bottom: 7px;
+	margin-bottom: 35px;
 }
 
-.dropdown-menu-filter .slider-handle {
-	border-radius: 3px;
-	width: 14px;
-	height: 16px;
-	top: 2px;
-	border: 1px solid #ccc;
-	background: white;
+.dropdown-menu-filter .ui-slider-pips:not(.ui-slider-disabled) .ui-slider-pip:hover .ui-slider-label,
+.dropdown-menu-filter .ui-slider-label {
+	color: #337ab7;
 }
 
 #filter-search-input-group > *:first-child,
@@ -3160,8 +3277,20 @@ table.stats tr.homebrew-hover {
 		color: $font-color;
 	}
 
+	input.form-control,
+	textarea.form-control {
+		background-color: transparent;
+		color: $font-color;
+	}
+
+	input.form-control[disabled],
+	textarea.form-control[disabled] {
+		background: #0e0e0e88;
+	}
+
 	#legal-notice {
 		background: #232323;
+		color: #999;
 	}
 
 	a,
@@ -3553,7 +3682,30 @@ table.stats tr.homebrew-hover {
 		background: #323232;
 	}
 
-	.dropdown-menu-filter .slider-handle {
+	.dropdown-menu-filter .filter-slider {
+		background: transparent;
+	}
+
+	.dropdown-menu-filter .ui-slider-tip {
+		background: #333;
+		color: $font-color;
+	}
+
+	.dropdown-menu-filter .ui-slider-pips:not(.ui-slider-disabled) .ui-slider-pip:hover .ui-slider-label,
+	.dropdown-menu-filter .ui-slider-label {
+		color: $link-color;
+	}
+
+	.dropdown-menu-filter .ui-slider-pips .ui-slider-line {
+		background-color: #444;
+	}
+
+	.dropdown-menu-filter .ui-slider-pips .ui-slider-pip-inrange .ui-slider-line {
+		background-color: #ccc;
+	}
+
+	.dropdown-menu-filter .ui-slider-handle,
+	.dropdown-menu-filter .ui-slider-range {
 		background: rgba(128, 128, 128, 0.5);
 	}
 
@@ -3695,6 +3847,13 @@ table.stats tr.homebrew-hover {
 
 	.homebrew-inline {
 		background-color: rgba(255, 0, 0, 0.1);
+	}
+
+	/* *** */
+
+	/* Bootstrap overrides */
+	.table-striped > tbody > tr:nth-of-type(odd) {
+		background-color: #444;
 	}
 
 	/* *** */

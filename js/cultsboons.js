@@ -51,7 +51,7 @@ function onJsonLoad (data) {
 				<a id="${i}" href="#${UrlUtil.autoEncodeHash(it)}" title="${it.name}">
 					<span class="type col-xs-3 text-align-center">${cultBoonTypeToFull(it._type)}</span>
 					<span class="name col-xs-7">${it.name}</span>
-					<span class="source col-xs-2 source${it.source}" title='${Parser.sourceJsonToFull(it.source)}'>${Parser.sourceJsonToAbv(it.source)}</span>
+					<span class="source col-xs-2 source${it.source}" title="${Parser.sourceJsonToFull(it.source)}">${Parser.sourceJsonToAbv(it.source)}</span>
 				</a>
 			</li>`;
 
@@ -75,7 +75,7 @@ function onJsonLoad (data) {
 		itemList: cultsAndBoonsList,
 		primaryLists: [list]
 	});
-	History.init();
+	History.init(true);
 }
 
 // filtering function
@@ -104,12 +104,12 @@ function loadhash (id) {
 		renderer.recursiveEntryRender({entries: it.entries}, renderStack, 2);
 
 		$("#pagecontent").html(`
-			<tr><th class="border" colspan="6"></th></tr>
-			<tr><th class="name" colspan="6"><span class="stats-name">${it.name}</span><span class="stats-source source${it.source}" title="${Parser.sourceJsonToFull(it.source)}">${Parser.sourceJsonToAbv(it.source)}</span></th></tr>
+			${EntryRenderer.utils.getBorderTr()}
+			${EntryRenderer.utils.getNameTr(it)}
 			<tr id="text"><td class="divider" colspan="6"><div></div></td></tr>
 			<tr class='text'><td colspan='6' class='text'>${renderStack.join("")}</td></tr>
 			${EntryRenderer.utils.getPageTr(it)}
-			<tr><th class="border" colspan="6"></th></tr>
+			${EntryRenderer.utils.getBorderTr()}
 		`);
 	} else if (it._type === "b") {
 		EntryRenderer.cultboon.doRenderBoonParts(it, renderer, renderStack);

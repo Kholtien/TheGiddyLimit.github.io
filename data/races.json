@@ -57,7 +57,15 @@
 					"type": "entries"
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/7/aarakocra.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/7/aarakocra.mp3",
+			"traitTags": [
+				"Unarmed Strike"
+			],
+			"languageTags": [
+				"Common",
+				"Other",
+				"Auran"
+			]
 		},
 		{
 			"name": "Genasi",
@@ -119,6 +127,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -141,6 +152,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -171,6 +185,10 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Damage Resistance",
+						"Spellcasting"
 					]
 				},
 				{
@@ -211,10 +229,19 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Damage Resistance",
+						"Amphibious",
+						"Spellcasting"
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/576/genasi.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/576/genasi.mp3",
+			"languageTags": [
+				"Common",
+				"Primordial"
+			]
 		},
 		{
 			"name": "Elf",
@@ -238,7 +265,7 @@
 					"name": "Alignment",
 					"type": "entries",
 					"entries": [
-						"Elves love freedom, variety, and self- expression, so they lean strongly toward the gentler aspects of chaos. They value and protect others' freedom as well as their own, and they are more often good than not."
+						"Elves love freedom, variety, and self-expression, so they lean strongly toward the gentler aspects of chaos. They value and protect others' freedom as well as their own, and they are more often good than not."
 					]
 				},
 				{
@@ -324,10 +351,14 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting",
+						"Weapon Proficiency"
 					]
 				},
 				{
-					"name": "Eladrin; DMG",
+					"name": "Eladrin",
 					"source": "DMG",
 					"page": 286,
 					"ability": {
@@ -348,6 +379,10 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Weapon Proficiency",
+						"Spellcasting"
 					]
 				},
 				{
@@ -378,6 +413,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Weapon Proficiency"
 					]
 				},
 				{
@@ -408,6 +446,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Weapon Proficiency"
 					]
 				},
 				{
@@ -471,6 +512,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -495,6 +539,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"languageTags": [
+						"Auran"
 					]
 				},
 				{
@@ -528,6 +575,14 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Weapon Proficiency"
+					],
+					"languageTags": [
+						"Sylvan",
+						"Elvish",
+						"Choose"
 					]
 				},
 				{
@@ -569,6 +624,13 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Weapon Proficiency",
+						"Amphibious"
+					],
+					"languageTags": [
+						"Aquan"
 					]
 				},
 				{
@@ -602,6 +664,15 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting",
+						"Damage Resistance"
+					],
+					"languageTags": [
+						"Common",
+						"Elvish",
+						"Choose"
 					]
 				},
 				{
@@ -689,6 +760,13 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Weapon Proficiency",
+						"Amphibious"
+					],
+					"languageTags": [
+						"Aquan"
 					]
 				},
 				{
@@ -714,10 +792,21 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Damage Resistance"
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/152/elf.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/152/elf.mp3",
+			"traitTags": [
+				"Skill Proficiency",
+				"Improved Resting"
+			],
+			"languageTags": [
+				"Common",
+				"Elvish"
+			]
 		},
 		{
 			"name": "Elf (Zendikar)",
@@ -809,6 +898,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Weapon Proficiency"
 					]
 				},
 				{
@@ -849,6 +941,10 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting",
+						"Weapon Proficiency"
 					]
 				},
 				{
@@ -864,8 +960,19 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Skill Proficiency",
+						"Tool Proficiency"
 					]
 				}
+			],
+			"traitTags": [
+				"Skill Proficiency"
+			],
+			"languageTags": [
+				"Common",
+				"Elvish"
 			]
 		},
 		{
@@ -985,6 +1092,15 @@
 						}
 					]
 				}
+			],
+			"traitTags": [
+				"Skill Proficiency",
+				"Weapon Proficiency",
+				"Improved Resting"
+			],
+			"languageTags": [
+				"Common",
+				"Elvish"
 			]
 		},
 		{
@@ -1044,9 +1160,15 @@
 			"subraces": [
 				{
 					"name": "Deep/Svirfneblin",
-					"source": "EEPC",
+					"source": "SCAG",
+					"page": 115,
+					"otherSources": [
+						{
+							"source": "EEPC",
+							"page": 5
+						}
+					],
 					"darkvision": 120,
-					"page": 5,
 					"ability": {
 						"dex": 1
 					},
@@ -1108,6 +1230,11 @@
 							},
 							"type": "entries"
 						}
+					],
+					"languageTags": [
+						"Common",
+						"Gnomish",
+						"Undercommon"
 					]
 				},
 				{
@@ -1130,6 +1257,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -1174,6 +1304,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Tool Proficiency"
 					]
 				},
 				{
@@ -1242,10 +1375,20 @@
 							},
 							"type": "entries"
 						}
+					],
+					"languageTags": [
+						"Common",
+						"Gnomish",
+						"Undercommon"
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/231/gnome.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/231/gnome.mp3",
+			"languageTags": [
+				"Common",
+				"Gnomish",
+				"Dwarvish"
+			]
 		},
 		{
 			"name": "Dragonborn",
@@ -1376,12 +1519,25 @@
 					"type": "entries"
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/135/dragonborn.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/135/dragonborn.mp3",
+			"traitTags": [
+				"Damage Resistance"
+			],
+			"languageTags": [
+				"Common",
+				"Draconic"
+			]
 		},
 		{
 			"name": "Goliath",
-			"source": "EEPC",
-			"page": 10,
+			"source": "VGM",
+			"page": 108,
+			"otherSources": [
+				{
+					"source": "EEPC",
+					"page": 10
+				}
+			],
 			"size": "M",
 			"speed": 30,
 			"ability": {
@@ -1446,7 +1602,15 @@
 					"type": "entries"
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/238/goliath.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/238/goliath.mp3",
+			"traitTags": [
+				"Skill Proficiency",
+				"Powerful Build"
+			],
+			"languageTags": [
+				"Common",
+				"Giant"
+			]
 		},
 		{
 			"name": "Half-Elf",
@@ -1572,6 +1736,10 @@
 								"overwrite": "Skill Versatility"
 							}
 						}
+					],
+					"traitTags": [
+						"Skill Proficiency",
+						"Weapon Proficiency"
 					]
 				},
 				{
@@ -1616,6 +1784,10 @@
 								"overwrite": "Skill Versatility"
 							}
 						}
+					],
+					"traitTags": [
+						"Skill Proficiency",
+						"Weapon Proficiency"
 					]
 				},
 				{
@@ -1653,6 +1825,10 @@
 								"overwrite": "Skill Versatility"
 							}
 						}
+					],
+					"traitTags": [
+						"Skill Proficiency",
+						"Spellcasting"
 					]
 				},
 				{
@@ -1694,10 +1870,21 @@
 								"overwrite": "Skill Versatility"
 							}
 						}
+					],
+					"traitTags": [
+						"Skill Proficiency"
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/259/half-elf.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/259/half-elf.mp3",
+			"traitTags": [
+				"Skill Proficiency"
+			],
+			"languageTags": [
+				"Common",
+				"Elvish",
+				"Choose"
+			]
 		},
 		{
 			"name": "Half-Orc",
@@ -1768,7 +1955,15 @@
 					"type": "entries"
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/262/half-orc.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/262/half-orc.mp3",
+			"traitTags": [
+				"Skill Proficiency"
+			],
+			"languageTags": [
+				"Common",
+				"Orc",
+				"Dwarvish"
+			]
 		},
 		{
 			"name": "Dwarf",
@@ -1881,64 +2076,21 @@
 							],
 							"type": "entries"
 						}
-					]
-				},
-				{
-					"name": "Duergar",
-					"source": "SCAG",
-					"page": 104,
-					"darkvision": 120,
-					"ability": {
-						"str": 1
-					},
-					"entries": [
-						{
-							"name": "Superior Darkvision",
-							"entries": [
-								"Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 120 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
-							],
-							"data": {
-								"overwrite": "Darkvision"
-							},
-							"type": "entries"
-						},
-						{
-							"name": "Duergar Resilience",
-							"entries": [
-								"You have advantage on saving throws against poison, and you have resistance against poison damage. You also have advantage on saving throws against illusions and against being {@condition charmed} or {@condition paralyzed}."
-							],
-							"type": "entries"
-						},
-						{
-							"name": "Languages",
-							"entries": [
-								"You can speak, read, and write Common, Dwarvish, and Undercommon."
-							],
-							"data": {
-								"overwrite": "Languages"
-							},
-							"type": "entries"
-						},
-						{
-							"name": "Duergar Magic",
-							"entries": [
-								"When you reach 3rd level, you can cast the {@spell Enlarge/Reduce} spell on yourself once with this trait, using only the spell's enlarge option. When reach 5th level, you can cast the {@spell Invisibility} spell on yourself once with this trait. You don't need material components for either spell, and you can't cast them while you're in direct sunlight, although sunlight has no effect on them once cast. You regain the ability to cast these spells with this trait when you finish a long rest. Intelligence is your spellcasting ability for these spells."
-							],
-							"type": "entries"
-						},
-						{
-							"name": "Sunlight Sensitivity",
-							"entries": [
-								"You have disadvantage on attack rolls and Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight."
-							],
-							"type": "entries"
-						}
+					],
+					"traitTags": [
+						"Armor Proficiency"
 					]
 				},
 				{
 					"name": "Duergar",
 					"source": "MTF",
 					"page": 81,
+					"otherSources": [
+						{
+							"source": "SCAG",
+							"page": 104
+						}
+					],
 					"darkvision": 120,
 					"ability": {
 						"str": 1
@@ -1985,10 +2137,29 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Damage Resistance",
+						"Spellcasting"
+					],
+					"languageTags": [
+						"Common",
+						"Dwarvish",
+						"Undercommon"
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/146/dwarf.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/146/dwarf.mp3",
+			"traitTags": [
+				"Damage Resistance",
+				"Weapon Proficiency",
+				"Tool Proficiency",
+				"Skill Proficiency"
+			],
+			"languageTags": [
+				"Common",
+				"Dwarvish"
+			]
 		},
 		{
 			"name": "Human",
@@ -2069,10 +2240,17 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Skill Proficiency"
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/279/human.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/279/human.mp3",
+			"languageTags": [
+				"Common",
+				"Choose"
+			]
 		},
 		{
 			"name": "Halfling",
@@ -2163,6 +2341,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Damage Resistance"
 					]
 				},
 				{
@@ -2183,7 +2364,11 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/260/halfling.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/260/halfling.mp3",
+			"languageTags": [
+				"Common",
+				"Halfling"
+			]
 		},
 		{
 			"name": "Shifter",
@@ -2241,6 +2426,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Unarmed Strike"
 					]
 				},
 				{
@@ -2271,6 +2459,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Natural Armor"
 					]
 				},
 				{
@@ -2318,6 +2509,10 @@
 						}
 					]
 				}
+			],
+			"languageTags": [
+				"Common",
+				"Sylvan"
 			]
 		},
 		{
@@ -2385,6 +2580,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -2446,6 +2644,9 @@
 								}
 							]
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -2537,6 +2738,13 @@
 							},
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
+					],
+					"languageTags": [
+						"Common",
+						"Abyssal"
 					]
 				},
 				{
@@ -2555,7 +2763,10 @@
 							"type": "entries"
 						}
 					],
-					"page": 1
+					"page": 1,
+					"traitTags": [
+						"Spellcasting"
+					]
 				},
 				{
 					"name": "Baalzebul; UA",
@@ -2573,6 +2784,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -2591,6 +2805,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -2609,6 +2826,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -2627,6 +2847,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -2645,6 +2868,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -2663,6 +2889,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -2680,6 +2909,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -2697,6 +2929,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -2715,6 +2950,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -2733,6 +2971,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -2751,6 +2992,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -2769,6 +3013,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -2787,6 +3034,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -2805,6 +3055,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -2823,6 +3076,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -2841,6 +3097,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -2859,10 +3118,20 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/488/tiefling.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/488/tiefling.mp3",
+			"traitTags": [
+				"Damage Resistance"
+			],
+			"languageTags": [
+				"Common",
+				"Infernal"
+			]
 		},
 		{
 			"name": "Bugbear",
@@ -2939,6 +3208,13 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Powerful Build"
+			],
+			"languageTags": [
+				"Common",
+				"Goblin"
 			]
 		},
 		{
@@ -3062,7 +3338,15 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/8/aasimar.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/8/aasimar.mp3",
+			"traitTags": [
+				"Damage Resistance",
+				"Spellcasting"
+			],
+			"languageTags": [
+				"Common",
+				"Celestial"
+			]
 		},
 		{
 			"name": "Firbolg",
@@ -3132,7 +3416,16 @@
 					"type": "entries"
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/161/firbolg.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/161/firbolg.mp3",
+			"traitTags": [
+				"Spellcasting",
+				"Powerful Build"
+			],
+			"languageTags": [
+				"Common",
+				"Elvish",
+				"Giant"
+			]
 		},
 		{
 			"name": "Goblin",
@@ -3195,6 +3488,10 @@
 					],
 					"type": "entries"
 				}
+			],
+			"languageTags": [
+				"Common",
+				"Goblin"
 			]
 		},
 		{
@@ -3258,6 +3555,10 @@
 					],
 					"type": "entries"
 				}
+			],
+			"languageTags": [
+				"Common",
+				"Goblin"
 			]
 		},
 		{
@@ -3321,7 +3622,11 @@
 					"type": "entries"
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/294/kenku-2.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/294/kenku-2.mp3",
+			"languageTags": [
+				"Common",
+				"Auran"
+			]
 		},
 		{
 			"name": "Kobold",
@@ -3391,6 +3696,10 @@
 					],
 					"type": "entries"
 				}
+			],
+			"languageTags": [
+				"Common",
+				"Draconic"
 			]
 		},
 		{
@@ -3477,6 +3786,15 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Unarmed Strike",
+				"Skill Proficiency",
+				"Natural Armor"
+			],
+			"languageTags": [
+				"Common",
+				"Draconic"
 			]
 		},
 		{
@@ -3548,6 +3866,13 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Powerful Build"
+			],
+			"languageTags": [
+				"Common",
+				"Orc"
 			]
 		},
 		{
@@ -3622,7 +3947,15 @@
 					"type": "entries"
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/482/tabaxi.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/482/tabaxi.mp3",
+			"traitTags": [
+				"Unarmed Strike",
+				"Skill Proficiency"
+			],
+			"languageTags": [
+				"Common",
+				"Choose"
+			]
 		},
 		{
 			"name": "Triton",
@@ -3703,7 +4036,16 @@
 					"type": "entries"
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/496/triton.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/496/triton.mp3",
+			"traitTags": [
+				"Amphibious",
+				"Spellcasting",
+				"Damage Resistance"
+			],
+			"languageTags": [
+				"Common",
+				"Primordial"
+			]
 		},
 		{
 			"name": "Yuan-ti Pureblood",
@@ -3773,6 +4115,14 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Spellcasting"
+			],
+			"languageTags": [
+				"Common",
+				"Abyssal",
+				"Draconic"
 			]
 		},
 		{
@@ -3814,6 +4164,13 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Skill Proficiency"
+			],
+			"languageTags": [
+				"Common",
+				"Choose"
 			]
 		},
 		{
@@ -3856,6 +4213,14 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Natural Armor",
+				"Improved Resting"
+			],
+			"languageTags": [
+				"Common",
+				"Choose"
 			]
 		},
 		{
@@ -3935,6 +4300,9 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Damage Resistance"
 			]
 		},
 		{
@@ -4028,6 +4396,12 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Tool Proficiency"
+			],
+			"languageTags": [
+				"Common"
 			]
 		},
 		{
@@ -4101,6 +4475,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Skill Proficiency"
 					]
 				},
 				{
@@ -4123,6 +4500,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Skill Proficiency"
 					]
 				},
 				{
@@ -4145,8 +4525,20 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Skill Proficiency",
+						"Tool Proficiency"
 					]
 				}
+			],
+			"traitTags": [
+				"Amphibious"
+			],
+			"languageTags": [
+				"Common",
+				"Other",
+				"Choose"
 			]
 		},
 		{
@@ -4214,6 +4606,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Skill Proficiency"
 					]
 				},
 				{
@@ -4238,8 +4633,19 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Tool Proficiency"
 					]
 				}
+			],
+			"traitTags": [
+				"Natural Armor",
+				"Damage Resistance"
+			],
+			"languageTags": [
+				"Common",
+				"Goblin"
 			]
 		},
 		{
@@ -4312,6 +4718,13 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Skill Proficiency"
+			],
+			"languageTags": [
+				"Common",
+				"Other"
 			]
 		},
 		{
@@ -4375,6 +4788,13 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Damage Resistance"
+			],
+			"languageTags": [
+				"Common",
+				"Other"
 			]
 		},
 		{
@@ -4460,6 +4880,14 @@
 						"An aetherborn with this gift gains the Drain Life ability: a natural attack that deals 1d6 necrotic damage and restores the same number of hit points to the aetherborn. However, if the aetherborn goes for 7 days without dealing this damage, their hit point maximum is reduced by 1d6 per week. This reduction can't be removed until the aetherborn has used their Drain Life ability and completed a long rest."
 					]
 				}
+			],
+			"traitTags": [
+				"Damage Resistance",
+				"Skill Proficiency"
+			],
+			"languageTags": [
+				"Common",
+				"Choose"
 			]
 		},
 		{
@@ -4537,6 +4965,15 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Damage Resistance",
+				"Skill Proficiency",
+				"Tool Proficiency"
+			],
+			"languageTags": [
+				"Common",
+				"Dwarvish"
 			]
 		},
 		{
@@ -4592,6 +5029,10 @@
 					],
 					"type": "entries"
 				}
+			],
+			"languageTags": [
+				"Common",
+				"Other"
 			]
 		},
 		{
@@ -4687,6 +5128,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Skill Proficiency"
 					]
 				},
 				{
@@ -4703,6 +5147,10 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Skill Proficiency",
+						"Tool Proficiency"
 					]
 				},
 				{
@@ -4726,8 +5174,15 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Skill Proficiency"
 					]
 				}
+			],
+			"languageTags": [
+				"Common",
+				"Choose"
 			]
 		},
 		{
@@ -4792,7 +5247,15 @@
 					"type": "entries"
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/8/aasimar.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/8/aasimar.mp3",
+			"traitTags": [
+				"Damage Resistance",
+				"Spellcasting"
+			],
+			"languageTags": [
+				"Common",
+				"Celestial"
+			]
 		},
 		{
 			"name": "Human (Amonkhet)",
@@ -4865,6 +5328,13 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Skill Proficiency"
+			],
+			"languageTags": [
+				"Common",
+				"Choose"
 			]
 		},
 		{
@@ -4945,8 +5415,15 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Skill Proficiency"
 					]
 				}
+			],
+			"languageTags": [
+				"Common",
+				"Other"
 			]
 		},
 		{
@@ -5002,6 +5479,13 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Weapon Proficiency"
+			],
+			"languageTags": [
+				"Common",
+				"Other"
 			]
 		},
 		{
@@ -5071,6 +5555,14 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Unarmed Strike",
+				"Skill Proficiency"
+			],
+			"languageTags": [
+				"Common",
+				"Other"
 			]
 		},
 		{
@@ -5142,6 +5634,14 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Unarmed Strike",
+				"Tool Proficiency"
+			],
+			"languageTags": [
+				"Common",
+				"Other"
 			]
 		},
 		{
@@ -5212,6 +5712,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -5242,8 +5745,16 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Natural Armor",
+						"Spellcasting"
 					]
 				}
+			],
+			"languageTags": [
+				"Common",
+				"Other"
 			]
 		},
 		{
@@ -5315,6 +5826,9 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				},
 				{
@@ -5346,8 +5860,15 @@
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Spellcasting"
 					]
 				}
+			],
+			"languageTags": [
+				"Common",
+				"Other"
 			]
 		},
 		{
@@ -5424,6 +5945,15 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Unarmed Strike",
+				"Natural Armor",
+				"Skill Proficiency"
+			],
+			"languageTags": [
+				"Aquan",
+				"Common"
 			]
 		},
 		{
@@ -5511,6 +6041,13 @@
 						"You can speak, read, and write Grung."
 					]
 				}
+			],
+			"traitTags": [
+				"Skill Proficiency",
+				"Amphibious"
+			],
+			"languageTags": [
+				"Other"
 			]
 		},
 		{
@@ -5563,7 +6100,13 @@
 					]
 				}
 			],
-			"npc": true
+			"traitTags": [
+				"Amphibious",
+				"NPC Race"
+			],
+			"languageTags": [
+				"Other"
+			]
 		},
 		{
 			"name": "Gnoll",
@@ -5599,7 +6142,10 @@
 					]
 				}
 			],
-			"npc": true
+			"traitTags": [
+				"Unarmed Strike",
+				"NPC Race"
+			]
 		},
 		{
 			"name": "Grimlock",
@@ -5641,10 +6187,15 @@
 					"type": "entries"
 				}
 			],
-			"npc": true
+			"languageTags": [
+				"Undercommon"
+			],
+			"traitTags": [
+				"NPC Race"
+			]
 		},
 		{
-			"name": "Hobgoblin; DMG",
+			"name": "Hobgoblin",
 			"source": "DMG",
 			"page": 282,
 			"darkvision": 60,
@@ -5655,7 +6206,7 @@
 					"type": "entries",
 					"name": "Martial Advantage",
 					"entries": [
-						"Once per turn, you can deal an extra 7 (2d6) damage to a creature you hit with a weapon attack if that creature is within 5 ft. of an ally of yours that isn't incapacitated."
+						"Once per turn, you can deal an extra {@dice 2d6} damage to a creature you hit with a weapon attack if that creature is within 5 ft. of an ally of yours that isn't incapacitated."
 					]
 				},
 				{
@@ -5673,7 +6224,13 @@
 					"type": "entries"
 				}
 			],
-			"npc": true
+			"languageTags": [
+				"Common",
+				"Goblin"
+			],
+			"traitTags": [
+				"NPC Race"
+			]
 		},
 		{
 			"name": "Kuo-Toa",
@@ -5697,7 +6254,7 @@
 					"name": "Otherworldly Perception",
 					"type": "entries",
 					"entries": [
-						"You can sense the presence of any creature within 30 feet of you that is invisible or on the Ethereal Plane. You can pinpoint such a creature that is moving."
+						"You can sense the presence of any creature within 30 feet of you that is {@condition invisible} or on the Ethereal Plane. You can pinpoint such a creature that is moving."
 					]
 				},
 				{
@@ -5729,48 +6286,13 @@
 					"type": "entries"
 				}
 			],
-			"npc": true
-		},
-		{
-			"name": "Merfolk",
-			"source": "DMG",
-			"page": 282,
-			"size": "M",
-			"speed": {
-				"walk": 10,
-				"swim": 40
-			},
-			"entries": [
-				{
-					"name": "Age",
-					"type": "entries",
-					"entries": [
-						"Merfolk mature at the same rate humans do and reach adulthood around the age of 20. They live considerably longer than humans, though, often reaching well over 100 years."
-					]
-				},
-				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Most merfolk are neutral, though merfolk of the Emeria and Cosi creeds have chaotic leanings."
-					]
-				},
-				{
-					"name": "Amphibious",
-					"type": "entries",
-					"entries": [
-						"You can breathe air and water."
-					]
-				},
-				{
-					"name": "Languages",
-					"entries": [
-						"You can speak, read, and write Common and Aquan."
-					],
-					"type": "entries"
-				}
+			"traitTags": [
+				"Amphibious",
+				"NPC Race"
 			],
-			"npc": true
+			"languageTags": [
+				"Undercommon"
+			]
 		},
 		{
 			"name": "Skeleton",
@@ -5796,7 +6318,7 @@
 					"type": "entries",
 					"name": "Undead Nature",
 					"entries": [
-						"You are immune to poison damage and {@condition exhaustion}, and you can't be poisoned. You don't require air, food, drink, or sleep."
+						"You are immune to poison damage and {@condition exhaustion}, and you can't be {@condition poisoned}. You don't require air, food, drink, or sleep."
 					]
 				},
 				{
@@ -5814,7 +6336,10 @@
 					"type": "entries"
 				}
 			],
-			"npc": true
+			"traitTags": [
+				"Improved Resting",
+				"NPC Race"
+			]
 		},
 		{
 			"name": "Troglodyte",
@@ -5841,7 +6366,7 @@
 					"name": "Stench",
 					"type": "entries",
 					"entries": [
-						"Any creature other than a troglodyte that starts its turn within 5 ft. of you must succeed on a DC 12 Constitution saving throw or be poisoned until the start of the creature's next turn. On a successful saving throw, the creature is immune to the stench of all troglodytes for 1 hour."
+						"Any creature other than a troglodyte that starts its turn within 5 ft. of you must succeed on a DC 12 Constitution saving throw or be {@condition poisoned} until the start of the creature's next turn. On a successful saving throw, the creature is immune to the stench of all troglodytes for 1 hour."
 					]
 				},
 				{
@@ -5873,7 +6398,13 @@
 					"type": "entries"
 				}
 			],
-			"npc": true
+			"traitTags": [
+				"Natural Armor",
+				"NPC Race"
+			],
+			"languageTags": [
+				"Other"
+			]
 		},
 		{
 			"name": "Zombie",
@@ -5901,7 +6432,7 @@
 					"type": "entries",
 					"name": "Undead Nature",
 					"entries": [
-						"You are immune to poison damage and {@condition exhaustion}, and you can't be poisoned. You don't require air, food, drink, or sleep."
+						"You are immune to poison damage and {@condition exhaustion}, and you can't be {@condition poisoned}. You don't require air, food, drink, or sleep."
 					]
 				},
 				{
@@ -5919,7 +6450,10 @@
 					"type": "entries"
 				}
 			],
-			"npc": true
+			"traitTags": [
+				"Improved Resting",
+				"NPC Race"
+			]
 		},
 		{
 			"name": "Human (Ixalan)",
@@ -5964,6 +6498,11 @@
 					],
 					"type": "entries"
 				}
+			],
+			"languageTags": [
+				"Common",
+				"Other",
+				"Choose"
 			]
 		},
 		{
@@ -6034,6 +6573,13 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Damage Resistance"
+			],
+			"languageTags": [
+				"Common",
+				"Other"
 			]
 		},
 		{
@@ -6104,6 +6650,13 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Skill Proficiency"
+			],
+			"languageTags": [
+				"Common",
+				"Orc"
 			]
 		},
 		{
@@ -6162,6 +6715,10 @@
 					],
 					"type": "entries"
 				}
+			],
+			"languageTags": [
+				"Common",
+				"Goblin"
 			]
 		},
 		{
@@ -6212,6 +6769,13 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Spellcasting"
+			],
+			"languageTags": [
+				"Common",
+				"Other"
 			]
 		},
 		{
@@ -6309,12 +6873,23 @@
 						{
 							"name": "Lore of the Waters",
 							"entries": [
-								"You gain proficiency in history and Nature."
+								"You gain proficiency in the History and Nature skills."
 							],
 							"type": "entries"
 						}
+					],
+					"traitTags": [
+						"Skill Proficiency"
 					]
 				}
+			],
+			"traitTags": [
+				"Amphibious"
+			],
+			"languageTags": [
+				"Common",
+				"Other",
+				"Choose"
 			]
 		},
 		{
@@ -6391,6 +6966,14 @@
 					],
 					"type": "entries"
 				}
+			],
+			"traitTags": [
+				"Powerful Build",
+				"Skill Proficiency"
+			],
+			"languageTags": [
+				"Common",
+				"Sylvan"
 			]
 		},
 		{
@@ -6472,6 +7055,956 @@
 						"You can speak, read, and write Common and Minotaur."
 					],
 					"type": "entries"
+				}
+			],
+			"traitTags": [
+				"Skill Proficiency"
+			],
+			"languageTags": [
+				"Common",
+				"Other"
+			]
+		},
+		{
+			"name": "Aarakocra",
+			"source": "DMG",
+			"page": 282,
+			"ability": {
+				"dex": 2,
+				"wis": 2
+			},
+			"size": "M",
+			"speed": {
+				"walk": 20,
+				"fly": 50
+			},
+			"entries": [
+				{
+					"name": "Dive Attack",
+					"entries": [
+						"If you are flying and dive at least 30 ft. straight toward a target and then hit it with a melee weapon attack, the attack deals an extra {@dice 1d6} damage to the target."
+					],
+					"type": "entries"
+				},
+				{
+					"name": "Talons",
+					"entries": [
+						"You are proficient with your unarmed strikes, which deal 1d4 slashing damage on a hit."
+					],
+					"type": "entries"
+				},
+				{
+					"name": "Language",
+					"entries": [
+						"You can speak, read, and write Auran."
+					],
+					"type": "entries"
+				}
+			],
+			"traitTags": [
+				"Unarmed Strike",
+				"NPC Race"
+			],
+			"languageTags": [
+				"Auran"
+			]
+		},
+		{
+			"name": "Gnome (Deep)",
+			"source": "DMG",
+			"page": 282,
+			"ability": {
+				"str": 1,
+				"dex": 2
+			},
+			"size": "M",
+			"speed": 20,
+			"darkvision": 120,
+			"entries": [
+				{
+					"name": "Innate Spellcasting",
+					"entries": [
+						"You have an innate ability to cast the following spells, requiring no material components:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "itemSpell",
+									"name": "At will:",
+									"entry": "{@spell nondetection} (self only)"
+								},
+								{
+									"type": "itemSpell",
+									"name": "1/day each:",
+									"entry": "{@spell blindness/deafness}, {@spell blur}, {@spell disguise self}"
+								}
+							]
+						},
+						"Intelligence is your spellcasting ability for these spells."
+					],
+					"type": "entries"
+				},
+				{
+					"type": "entries",
+					"name": "Innate Spellcasting",
+					"entries": [
+						"You have an innate ability to cast the following spells."
+					]
+				},
+				{
+					"name": "Gnome Cunning",
+					"entries": [
+						"You have advantage on Intelligence, Wisdom, and Charisma saving throws against magic."
+					],
+					"type": "entries"
+				},
+				{
+					"name": "Superior Darkvision",
+					"entries": [
+						"Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 120 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+					],
+					"data": {
+						"overwrite": "Darkvision"
+					},
+					"type": "entries"
+				},
+				{
+					"name": "Languages",
+					"entries": [
+						"You can speak, read, and write Gnomish, Terran, and Undercommon."
+					],
+					"type": "entries"
+				}
+			],
+			"traitTags": [
+				"Spellcasting",
+				"NPC Race"
+			],
+			"languageTags": [
+				"Gnomish",
+				"Terran",
+				"Undercommon"
+			]
+		},
+		{
+			"name": "Goblin",
+			"source": "DMG",
+			"page": 282,
+			"ability": {
+				"str": -2,
+				"dex": 2
+			},
+			"size": "S",
+			"speed": 30,
+			"darkvision": 60,
+			"entries": [
+				{
+					"name": "Nimble Escape",
+					"entries": [
+						"You can take the Disengage or Hide action as a bonus action on each of your turns."
+					],
+					"type": "entries"
+				},
+				{
+					"name": "Languages",
+					"entries": [
+						"You can speak, read, and write Common and Goblin."
+					],
+					"type": "entries"
+				}
+			],
+			"languageTags": [
+				"Common",
+				"Goblin"
+			],
+			"traitTags": [
+				"NPC Race"
+			]
+		},
+		{
+			"name": "Kenku",
+			"source": "DMG",
+			"page": 282,
+			"ability": {
+				"dex": 2
+			},
+			"size": "M",
+			"speed": 30,
+			"darkvision": 60,
+			"entries": [
+				{
+					"name": "Ambusher",
+					"entries": [
+						"In the first round of a combat, you have advantage on attack rolls against any creature who is surprised."
+					],
+					"type": "entries"
+				},
+				{
+					"name": "Mimicry",
+					"entries": [
+						"You can mimic any sounds you have heard, including voices. A creature that hears the sounds can tell they are imitations with a successful DC 14 Wisdom (Insight) check."
+					],
+					"type": "entries"
+				},
+				{
+					"name": "Languages",
+					"entries": [
+						"You can read and write Common and Auran, but you can only speak using your Mimicry trait."
+					],
+					"type": "entries"
+				}
+			],
+			"languageTags": [
+				"Common",
+				"Auran"
+			],
+			"traitTags": [
+				"NPC Race"
+			]
+		},
+		{
+			"name": "Kobold",
+			"source": "DMG",
+			"page": 282,
+			"ability": {
+				"str": -4,
+				"dex": 2
+			},
+			"size": "S",
+			"speed": 30,
+			"darkvision": 60,
+			"entries": [
+				{
+					"name": "Pack Tactics",
+					"entries": [
+						"You have advantage on an attack roll against a creature if at least one of your allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+					],
+					"type": "entries"
+				},
+				{
+					"name": "Sunlight Sensitivity",
+					"entries": [
+						"You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight."
+					],
+					"type": "entries"
+				},
+				{
+					"name": "Languages",
+					"entries": [
+						"You can speak, read, and write Common and Draconic."
+					],
+					"type": "entries"
+				}
+			],
+			"languageTags": [
+				"Common",
+				"Draconic"
+			],
+			"traitTags": [
+				"NPC Race"
+			]
+		},
+		{
+			"name": "Lizardfolk",
+			"source": "DMG",
+			"page": 282,
+			"ability": {
+				"str": 2,
+				"int": -2
+			},
+			"size": "M",
+			"speed": {
+				"walk": 30,
+				"swim": 30
+			},
+			"entries": [
+				{
+					"name": "Hold Breath",
+					"entries": [
+						"You can hold your breath for up to 15 minutes at a time."
+					],
+					"type": "entries"
+				},
+				{
+					"name": "Natural Armor",
+					"entries": [
+						"Your scales function as natural armor, granting you a +3 bonus to Armor Class."
+					],
+					"type": "entries"
+				},
+				{
+					"name": "Languages",
+					"entries": [
+						"You can speak, read, and write Draconic."
+					],
+					"type": "entries"
+				}
+			],
+			"traitTags": [
+				"Natural Armor",
+				"NPC Race"
+			],
+			"languageTags": [
+				"Draconic"
+			]
+		},
+		{
+			"name": "Merfolk",
+			"source": "DMG",
+			"page": 282,
+			"size": "M",
+			"speed": {
+				"walk": 10,
+				"swim": 40
+			},
+			"entries": [
+				{
+					"name": "Amphibious",
+					"entries": [
+						"You can breathe air and water."
+					],
+					"type": "entries"
+				},
+				{
+					"name": "Languages",
+					"entries": [
+						"You can speak, read, and write Common and Aquan."
+					],
+					"type": "entries"
+				}
+			],
+			"traitTags": [
+				"Amphibious",
+				"NPC Race"
+			],
+			"languageTags": [
+				"Common",
+				"Aquan"
+			]
+		},
+		{
+			"name": "Orc",
+			"source": "DMG",
+			"page": 282,
+			"ability": {
+				"str": 2,
+				"int": -2
+			},
+			"size": "M",
+			"speed": 30,
+			"darkvision": 60,
+			"entries": [
+				{
+					"name": "Aggressive",
+					"entries": [
+						"As a bonus action, you can move up to your speed toward a hostile creature that you can see."
+					],
+					"type": "entries"
+				},
+				{
+					"name": "Languages",
+					"entries": [
+						"You can speak, read, and write Common and Orc."
+					],
+					"type": "entries"
+				}
+			],
+			"languageTags": [
+				"Common",
+				"Orc"
+			],
+			"traitTags": [
+				"NPC Race"
+			]
+		},
+		{
+			"name": "Changeling",
+			"source": "UAWGtE",
+			"page": 60,
+			"ability": {
+				"cha": 2,
+				"choose": [
+					{
+						"from": [
+							"int",
+							"dex"
+						],
+						"count": 1
+					}
+				]
+			},
+			"size": "M",
+			"speed": 30,
+			"entries": [
+				{
+					"name": "Age",
+					"entries": [
+						"Changelings mature slightly faster than humans but share a similar lifespan—typically a century or less. While a changeling can shapeshift to conceal their age, the effects of aging still catch up to them."
+					],
+					"type": "entries"
+				},
+				{
+				    "type": "entries",
+				    "name": "Alignment",
+				    "entries": [
+						"Changelings hate to be bound in any way, and those who follow the path of the Traveler believe that chaos and change are important aspects of life. Most tend toward pragmatic neutrality as opposed to being concerned with lofty ideals. Few changelings embrace evil."
+					]
+				},
+				{
+				    "type": "entries",
+				    "name": "Size",
+				    "entries": [
+						"In their natural forms, changelings average between 5 and 6 feet in height, with a slender build. Your size is Medium."
+				    ]
+				},
+				{
+				    "type": "entries",
+				    "name": "Change Appearance",
+				    "entries": [
+						"As an action, you can transform your appearance or revert to your natural form. You can’t duplicate the appearance of a creature you’ve never seen, and you revert to your natural form if you die.",
+						"You decide what you look like, including your height, weight, facial features, the sound of your voice, coloration, hair length, sex, and any other distinguishing characteristics. You can make yourself appear as a member of another race, though none of your game statistics change. You also can’t appear as a creature of a different size than you, and your basic shape stays the same; if you’re bipedal, you can’t use this trait to become quadrupedal, for instance. Your clothing and other equipment don’t change in appearance, size, or shape to match your new form, requiring you to keep a few extra outfits on hand to make the most compelling disguise possible.",
+						"Even to the most astute observers, your ruse is usually indiscernible. If you rouse suspicion, or if a wary creature suspects something is amiss, you have advantage on any Charisma (Deception) check you make to avoid detection."
+				    ]
+				},
+				{
+				    "type": "entries",
+				    "name": "Changeling Instincts",
+				    "entries": [
+						"You gain proficiency with two of the following skills of your choice: Deception, Insight, Intimidation, or Persuasion"
+				    ]
+				},
+				{
+				    "type": "entries",
+				    "name": "Unsettling Visage",
+				    "entries": [
+						"When a creature you can see makes an attack roll against you, you can use your reaction to impose disadvantage on the roll. You must use this feature before knowing whether the attack hits or misses. Using this trait reveals your shapeshifting nature to any creature within 30 feet that can see you. Once you use this trait, you can’t use it again until you finish a short or long rest."
+					]
+				},
+				{
+				    "type": "entries",
+				    "name": "Divergent Persona",
+				    "entries": [
+						"You gain proficiency with one tool of your choice. Define a persona associated with that proficiency: establish the name, race, gender, age, and other details. While you are in the form of this persona, the related proficiency bonus is doubled for any ability check you make that uses that proficiency."
+					]
+				},
+				{
+					"name": "Languages",
+					"entries": [
+						"You can speak, read, and write Common and two other languages of your choice."
+					],
+					"type": "entries"
+				}
+			],
+			"languageTags": [
+				"Common",
+				"Choose"
+			],
+			"traitTags": [
+				"Skill Proficiency",
+				"Tool Proficiency"
+			]
+		},
+		{
+			"name": "Kalashtar",
+			"source": "UAWGtE",
+			"page": 62,
+			"ability": {
+				"cha": 1,
+				"wis": 1,
+				"choose": [
+					{
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						],
+						"count": 1
+					}
+				]
+			},
+			"size": "M",
+			"speed": 30,
+			"entries": [
+				{
+					"name": "Age",
+					"entries": [
+						"Kalashtar develop physically at the same rate as humans do and have similar lifespans."
+					],
+					"type": "entries"
+				},
+				{
+				    "type": "entries",
+				    "name": "Alignment",
+				    "entries": [
+						"The noble spirit tied to a kalashtar drives it toward lawful and good behavior. Most kalashtar combine self-discipline with compassion for all sentient beings, but some kalashtar resist the virtuous influence of their spirit."
+					]
+				},
+				{
+				    "type": "entries",
+				    "name": "Size",
+				    "entries": [
+						"Kalashtar are similar in build to humans, though they are typically a few inches taller. Your size is Medium."
+				    ]
+				},
+				{
+				    "type": "entries",
+				    "name": "Dual Mind",
+				    "entries": [
+						"When you make a Wisdom saving throw, you can use your reaction to gain advantage on the roll. You can use this trait immediately before or after you roll, but before any of the roll’s effects occur."
+				    ]
+				},
+				{
+				    "type": "entries",
+				    "name": "Mental Discipline",
+				    "entries": [
+						"You have resistance to psychic damage."
+				    ]
+				},
+				{
+				    "type": "entries",
+				    "name": "Mind Link",
+				    "entries": [
+						"You can speak telepathically to any creature you can see within 60 feet of you. You don’t need to share a language with the creature for it to understand your telepathic messages, but the creature must be able to understand at least one language or be telepathic itself.",
+						"As a bonus action when you’re speaking telepathically to a creature, you can give that creature the ability to speak telepathically to you until the start of your next turn. To use this ability, the creature must be within 60 feet of you and able to see you."
+					]
+				},
+				{
+				    "type": "entries",
+				    "name": "Psychic Glamour",
+				    "entries": [
+						"Choose one of the following skills: Insight, Intimidation, Performance, or Persuasion. You have advantage on all ability checks you make with that skill."
+					]
+				},
+				{
+				    "type": "entries",
+				    "name": "Severed from Dreams",
+				    "entries": [
+						"Kalashtar sleep, but they don’t connect to the plane of dreams as other creatures do. Instead, their minds draw from the memories of their otherworldly spirit while they sleep. As such, you are immune to spells and other magical effects that require you to dream, like the dream spell, but not to spells and effects that put you to sleep, like the sleep spell."
+				    ]
+				},
+				{
+					"name": "Languages",
+					"entries": [
+						"You can speak, read, and write Common, Quori, and one other language of your choice."
+					],
+					"type": "entries"
+				}
+			],
+			"languageTags": [
+				"Common",
+				"Choose",
+				"Other"
+			],
+			"traitTags": [
+				"Damage Resistance"
+			]
+		},
+		{
+			"name": "Shifter",
+			"source": "UAWGtE",
+			"page": 64,
+			"ability": {
+				"dex": 1
+			},
+			"size": "M",
+			"speed": 30,
+			"darkvision": 60,
+			"entries": [
+				{
+					"name": "Age",
+					"entries": [
+						"Shifters are quick to mature both physically and emotionally, reaching young adulthood at age 10. They rarely live to be more than 70 years old."
+					],
+					"type": "entries"
+				},
+				{
+				    "type": "entries",
+				    "name": "Alignment",
+				    "entries": [
+						"Shifters tend toward neutrality, being more focused on survival than concepts of good and evil. A love of personal freedom can drive shifters toward chaotic alignments."
+					]
+				},
+				{
+				    "type": "entries",
+				    "name": "Size",
+				    "entries": [
+						"Shifters range from 5 to almost 7 feet tall, depending on their subrace. Your size is Medium."
+					]
+				},
+				{
+					"name": "Darkvision",
+					"entries": [
+						"You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray."
+					],
+					"type": "entries"
+				},
+				{
+				    "type": "entries",
+				    "name": "Keen Senses",
+				    "entries": [
+						"You have proficiency with the Perception skill."
+					]
+				},
+				{
+				    "type": "entries",
+				    "name": "Shifting",
+				    "entries": [
+						"As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to your level + your Constitution modifier (minimum of 1 temporary hit point). You also gain additional benefits that depend on your shifter subrace, described below.",
+						"Once you shift, you can’t do so again until you finish a short or long rest."
+					]
+				},
+				{
+					"name": "Languages",
+					"entries": [
+						"You can speak, read, and write Common."
+					],
+					"type": "entries"
+				}
+			],
+			"languageTags": [
+				"Common"
+			],
+			"traitTags": [
+				"Skill Proficiency"
+			],
+			"subraces": [
+				{
+					"name": "Beasthide",
+					"ability": {
+						"con": 2
+					},
+					"page": 66,
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Tough",
+							"entries": [
+								"You have proficiency with the Athletics skill."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Shifting Feature",
+							"entries": [
+								"Whenever you shift, you gain 1d6 additional temporary hit points, and while shifted, you have a +1 bonus to your AC."
+							]
+						}
+					],
+					"traitTags": [
+						"Skill Proficiency",
+						"Natural Armor"
+					]
+				},
+				{
+					"name": "Longtooth",
+					"ability": {
+						"str": 2
+					},
+					"page": 66,
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Fierce",
+							"entries": [
+								"You have proficiency with the Intimidation skill."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Shifting Feature",
+							"entries": [
+								"While shifted, you can use your elongated fangs to make an unarmed strike as a bonus action. If you hit with your fangs, you can deal piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."
+							]
+						}
+					],
+					"traitTags": [
+						"Skill Proficiency",
+						"Unarmed Strike"
+					]
+				},
+				{
+					"name": "Swiftstride",
+					"ability": {
+						"dex": 2,
+						"cha": 1
+					},
+					"page": 66,
+					"speed": 35,
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Graceful",
+							"entries": [
+								"You have proficiency with the Acrobatics skill."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Swift Stride",
+							"entries": [
+								"Your walking speed increases by 5 feet."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Shifting Feature",
+							"entries": [
+								"While shifted, your walking speed increases by 5 feet. Additionally, you can move up to 10 feet as a reaction when an enemy ends its turn within 5 feet of you. This movement doesn’t provoke opportunity attacks."
+							]
+						}
+					],
+					"traitTags": [
+						"Skill Proficiency"
+					]
+				},
+				{
+					"name": "Wildhunt",
+					"ability": {
+						"wis": 2
+					},
+					"page": 66,
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Natural Tracker",
+							"entries": [
+								"You have proficiency with the Survival skill."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Mark the Scent",
+							"entries": [
+								"As a bonus action, you can mark one creature you can see within 10 feet of you. Until the end of your next long rest, your proficiency bonus is doubled for any ability check you make to find the marked creature, and you always know the location of that creature if it is within 60 feet of you. You can’t use this trait again until you finish a short or long rest."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Shifting Feature",
+							"entries": [
+								"While shifted, you have advantage on Wisdom checks."
+							]
+						}
+					],
+					"traitTags": [
+						"Skill Proficiency"
+					]
+				}
+			]
+		},
+		{
+			"name": "Warforged",
+			"source": "UAWGtE",
+			"page": 67,
+			"ability": {
+				"con": 1
+			},
+			"size": "M",
+			"speed": 30,
+			"entries": [
+				{
+					"name": "Age",
+					"entries": [
+						"A typical warforged is between two and thirty years old. The maximum lifespan of the warforged remains a mystery; so far, warforged have shown no signs of deterioration due to age."
+					],
+					"type": "entries"
+				},
+				{
+				    "type": "entries",
+				    "name": "Alignment",
+				    "entries": [
+						"Most warforged take comfort in order and discipline, tending toward law and neutrality, but some have absorbed the morality—or lack thereof—of the beings they served with."
+					]
+				},
+				{
+				    "type": "entries",
+				    "name": "Size",
+				    "entries": [
+						"Your size is Medium. Most warforged stand between 5 and 6½ feet tall. Build is affected by your subrace."
+					]
+				},
+				{
+				    "type": "entries",
+				    "name": "Warforged Resilience",
+				    "entries": [
+						"You were created to have remarkable fortitude, represented by the following benefits:",
+						{
+						    "type": "list",
+						    "items": [
+								"You have advantage on saving throws against being {@condition poisoned}, and you have resistance to poison damage.",
+								"You are immune to disease.",
+								"You don’t need to eat, drink, or breathe.",
+								"You don’t need to sleep and don’t suffer the effects of exhaustion due to lack of rest, and magic can’t put you to sleep."
+						    ]
+						}
+					]
+				},
+				{
+				    "type": "entries",
+				    "name": "Sentry's Rest",
+				    "entries": [
+						"When you take a long rest, you must spend at least six hours of it in an inactive, motionless state, rather than sleeping. In this state, you appear inert, but it doesn’t render you unconscious, and you can see and hear as normal."
+					]
+				},
+				{
+				    "type": "entries",
+				    "name": "Integrated Protection",
+				    "entries": [
+						"Your body has built-in protective layers, which determine your Armor Class. You gain no benefit from wearing armor, but if you are using a shield, you apply its bonus as normal.",
+						"You can alter your body to enter different defensive modes; each time you finish a long rest, choose one mode to adopt from the Integrated Protection table, provided you meet the mode’s prerequisite.",
+						{
+						    "type": "table",
+						    "caption": "Integrated protection",
+						    "colLabels": [
+						        "Mode", "Prerequisite", "Armor Class"
+						    ],
+						    "colStyles": [
+						        "col-xs-4",
+						        "col-xs-4",
+						        "col-xs-4"
+						    ],
+						    "rows": [
+								["Darkwood core (unarmored)", "None", "11 + your Dexterity modifier (add proficiency bonus if proficient with light armor)"],
+								["Composite plating (armor)", "Medium armor proficiency", "13 + your Dexterity modifier (maximum of 2) + your proficiency bonus"],
+								["Heavy plating (armor)", "Heavy armor proficiency", "16 + your proficiency bonus; disadvantage on Dexterity (Stealth) checks"]
+						    ]
+						}
+				    ]
+				},
+				{
+					"name": "Languages",
+					"entries": [
+						"You can speak, read, and write Common."
+					],
+					"type": "entries"
+				}
+			],
+			"languageTags": [
+				"Common"
+			],
+			"traitTags": [
+				"Natural Armor",
+				"Improved Resting",
+				"Damage Resistance"
+			],
+			"subraces": [
+				{
+					"name": "Envoy",
+					"page": 69,
+					"ability": {
+						"choose": [
+							{
+								"from": [
+									"str",
+									"dex",
+									"con",
+									"int",
+									"wis",
+									"cha"
+								],
+								"count": 2
+							}
+						]
+					},
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Specialized Design",
+							"entries": [
+								"You gain one skill proficiency of your choice, one tool proficiency of your choice, and fluency in one language of your choice."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Integrated Tool",
+							"entries": [
+								"Choose one tool you’re proficient with. This tool is integrated into your body, and you double your proficiency bonus for any ability checks you make with it. You must have your hands free to use this integrated tool."
+							]
+						},
+						{
+						    "type": "inset",
+						    "name": "Envoys: Specialized Design",
+						    "entries": [
+								"As the name implies, most warforged were built to fight in the Last War. The vast majority of warforged are juggernauts or skirmishers—soldiers and scouts who fought under the banner of one of the Five Nations. Warforged envoys, however, were designed to perform other functions. As an envoy, you have a skill, a tool proficiency, and a tool that’s part of your body. When you make an envoy character, consider the following questions: What is your purpose? How does your skill and your tool reflect that purpose? What form does your integrated tool take? If you have embedded thieves’ tools, for instance, are your fingers actually lockpicks, or can you produce keys from various parts of your body? The following characters are examples of warforged with integrated tools.",
+								"{@b Lute} is a bard with the entertainer background; his namesake instrument folds out of his left arm.",
+								"{@b Compass Rose} is a wizard with the outlander background. A keen explorer, she uses her built-in cartographer’s tools to record the paths she travels.",
+								"{@b Masque} is an infiltrator. A rogue with the charlatan background and an integrated disguise kit, she was built to blend in and assassinate. Cannith built six warforged of her design, and Masque has vowed to hunt down and destroy the other five.",
+								"In developing your integrated tool, remember that you must have your hands free to use it. Masque, the infiltrator mentioned above, doesn’t shapeshift like a changeling; she has to manually adjust her appearance."
+							]
+						}
+					],
+					"languageTags": [
+						"Choose"
+					],
+					"traitTags": [
+						"Tool Proficiency",
+						"Skill Proficiency"
+					]
+				},
+				{
+					"name": "Juggernaut",
+					"page": 70,
+					"ability": {
+						"str": 2
+					},
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Iron Fists",
+							"entries": [
+								"When you hit with an unarmed strike, you can deal 1d4 + your Strength modifier bludgeoning damage, instead of the normal damage for an unarmed strike."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Powerful Build",
+							"entries": [
+								"You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+							]
+						}
+					],
+					"traitTags": [
+						"Powerful Build",
+						"Unarmed Strike"
+					]
+				},
+				{
+					"name": "Skirmisher",
+					"page": 70,
+					"ability": {
+						"dex": 2
+					},
+					"speed": 35,
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Graceful",
+							"entries": [
+								"You have proficiency with the Acrobatics skill."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Swift",
+							"entries": [
+								"Your walking speed increases by 5 feet."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Light Step",
+							"entries": [
+								"When you are traveling alone for an extended period of time (one hour or more), you can move stealthily at a normal pace. (See chapter 8 of the Player’s Handbook for information about travel pace.)"
+							]
+						}
+					],
+					"traitTags": [
+						"Skill Proficiency"
+					]
 				}
 			]
 		}

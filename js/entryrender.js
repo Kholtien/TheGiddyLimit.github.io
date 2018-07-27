@@ -1011,6 +1011,25 @@ function EntryRenderer () {
 	};
 }
 
+EntryRenderer.HOVER_TAG_TO_PAGE = {
+	"spell": UrlUtil.PG_SPELLS,
+	"item": UrlUtil.PG_ITEMS,
+	"creature": UrlUtil.PG_BESTIARY,
+	"condition": UrlUtil.PG_CONDITIONS_DISEASES,
+	"disease": UrlUtil.PG_CONDITIONS_DISEASES,
+	"background": UrlUtil.PG_BACKGROUNDS,
+	"race": UrlUtil.PG_RACES,
+	"invocation": UrlUtil.PG_INVOCATIONS,
+	"feat": UrlUtil.PG_FEATS,
+	"reward": UrlUtil.PG_REWARDS,
+	"psionic": UrlUtil.PG_PSIONICS,
+	"object": UrlUtil.PG_OBJECTS,
+	"cult": UrlUtil.PG_CULTS_BOONS,
+	"boon": UrlUtil.PG_CULTS_BOONS,
+	"trap": UrlUtil.PG_TRAPS_HAZARDS,
+	"hazard": UrlUtil.PG_TRAPS_HAZARDS
+};
+
 EntryRenderer.splitFirstSpace = function (string) {
 	return [
 		string.substr(0, string.indexOf(' ')),
@@ -1096,7 +1115,7 @@ EntryRenderer.utils = {
 		return `<tr>
 					<th class="name" colspan="6">
 						<div class="name-inner">
-							<span class="stats-name">${prefix || ""}${it.name}${suffix || ""}</span>
+							<span class="stats-name copyable" onclick="EntryRenderer.utils._handleNameClick(this, '${it.source.escapeQuotes()}')">${prefix || ""}${it.name}${suffix || ""}</span>
 							<span class="stats-source source${it.source}" title="${Parser.sourceJsonToFull(it.source)}${EntryRenderer.utils.getSourceSubText(it)}">
 								${Parser.sourceJsonToAbv(it.source)}${addPageNum && it.page ? ` p${it.page}` : ""}
 							</span>
@@ -1105,14 +1124,26 @@ EntryRenderer.utils = {
 				</tr>`;
 	},
 
+	_handleNameClick (ele, source) {
+		source = source.unescapeQuotes();
+		copyText($(ele).text());
+		showCopiedEffect($(ele));
+	},
+
 	getPageTr: (it) => {
 		return `<td colspan=6>${EntryRenderer.utils._getPageTrText(it)}</td>`;
 	},
 
 	_getPageTrText: (it) => {
-		const addSourceText = it.additionalSources && it.additionalSources.length ? `. Additional information from ${it.additionalSources.map(as => `<i title="${Parser.sourceJsonToFull(as.source)}">${Parser.sourceJsonToAbv(as.source)}</i>, page ${as.page}`).join("; ")}.` : "";
+		function getAltSourceText (prop, introText) {
+			return it[prop] && it[prop].length ? `${introText} ${it[prop].map(as => `<i title="${Parser.sourceJsonToFull(as.source)}">${Parser.sourceJsonToAbv(as.source)}</i>, page ${as.page}`).join("; ")}` : "";
+		}
 		const sourceSub = EntryRenderer.utils.getSourceSubText(it);
-		return it.page ? `<b>Source: </b> <i title="${Parser.sourceJsonToFull(it.source)}${sourceSub}">${Parser.sourceJsonToAbv(it.source)}${sourceSub}</i>, page ${it.page}${addSourceText}` : ""
+		const baseText = it.page ? `<b>Source: </b> <i title="${Parser.sourceJsonToFull(it.source)}${sourceSub}">${Parser.sourceJsonToAbv(it.source)}${sourceSub}</i>, page ${it.page}` : "";
+		const addSourceText = getAltSourceText("additionalSources", "Additional information from");
+		const otherSourceText = getAltSourceText("otherSources", "Also printed in");
+
+		return `${[baseText, addSourceText, otherSourceText].filter(it => it).join(". ")}${baseText && (addSourceText || otherSourceText) ? "." : ""}`;
 	},
 
 	tabButton: (label, funcChange, funcPopulate) => {
@@ -1392,6 +1423,10 @@ EntryRenderer.spell = {
 			if (currentAndLegacy[1]) {
 				renderStack.push(`<tr class="text"><td colspan="6"><section class="text-muted"><span class="bold">Subclasses (legacy): </span>${currentAndLegacy[1]}</section></td></tr>`);
 			}
+		}
+
+		if (spell.races) {
+			renderStack.push(`<tr class="text"><td class="classes" colspan="6"><span class="bold">Races: </span>${spell.races.map(r => renderer.renderEntry(`{@race ${r.name}|${r.source}}`)).join(", ")}</td></tr>`);
 		}
 
 		if (spell.scrollNote) {
@@ -1789,6 +1824,88 @@ EntryRenderer.monster = {
 		return `${mon.isNamedCreature ? "" : "The "}${legendaryName[0]} can take ${legendaryActions} legendary action${legendaryActions > 1 ? "s" : ""}, choosing from the options below. Only one legendary action can be used at a time and only at the end of another creature's turn. ${mon.isNamedCreature ? "" : "The "}${legendaryName[0]} regains spent legendary actions at the start of its turn.`
 	},
 
+	getSave (renderer, attr, mod) {
+		if (attr === "special") return renderer.renderEntry(mod);
+		else return renderer.renderEntry(`${attr.uppercaseFirst()} {@dice 1d20${mod}|${mod}|${Parser.attAbvToFull([attr])} save`);
+	},
+
+	getDragonCasterVariant (renderer, dragon) {
+		// if the dragon already has a spellcasting trait specified, don't add a note about adding a spellcasting trait
+		if (!dragon.dragonCastingColor || dragon.spellcasting) return null;
+
+		function getExampleSpells (maxSpellLevel, color) {
+			const LVL_TO_COLOR_TO_SPELLS = {
+				2: {
+					B: ["darkness", "Melf's acid arrow", "fog cloud", "scorching ray"],
+					G: ["ray of sickness", "charm person", "detect thoughts", "invisibility", "suggestion"],
+					W: ["ice knife|XGE", "Snilloc's snowball swarm|XGE"],
+					A: ["see invisibility", "magic mouth", "blindness/deafness", "sleep", "detect thoughts"],
+					Z: ["gust of wind", "misty step", "locate object", "blur", "witch bolt", "thunderwave", "shield"],
+					C: ["knock", "sleep", "detect thoughts", "blindness/deafness", "tasha's hideous laughter"]
+				},
+				3: {
+					U: ["wall of sand|XGE", "thunder step|XGE", "lightning bolt", "blink", "magic missile", "slow"],
+					R: ["fireball", "scorching ray", "haste", "erupting earth|XGE", "Aganazzar's scorcher|XGE"],
+					O: ["slow", "slow", "fireball", "dispel magic", "counterspell", "Aganazzar's scorcher|XGE", "shield"],
+					S: ["sleet storm", "protection from energy", "catnap|XGE", "locate object", "identify", "Leomund's tiny hut"]
+				},
+				4: {
+					B: ["vitriolic sphere|XGE", "sickening radiance|XGE", "Evard's black tentacles", "blight", "hunger of Hadar"],
+					W: ["fire shield", "ice storm", "sleet storm"],
+					A: ["charm monster|XGE", "sending", "wall of sand|XGE", "hypnotic pattern", "tongues"],
+					C: ["polymorph", "greater invisibility", "confusion", "stinking cloud", "major image", "charm monster|XGE"]
+				},
+				5: {
+					U: ["telekinesis", "hold monster", "dimension door", "wall of stone", "wall of force"],
+					G: ["cloudkill", "charm monster|XGE", "modify memory", "mislead", "hallucinatory terrain", "dimension door"],
+					Z: ["steel wind strike|XGE", "control weather", "control winds|XGE", "watery sphere|XGE", "storm sphere|XGE", "tidal wave|XGE"],
+					O: ["hold monster", "immolation|XGE", "wall of fire", "greater invisibility", "dimension door"],
+					S: ["cone of cold", "ice storm", "teleportation circle", "skill empowerment|XGE", "creation", "Mordenkainen's private sanctum"]
+				},
+				6: {
+					W: ["cone of cold", "wall of ice"],
+					A: ["scrying", "Rary's telepathic bond", "Otto's irresistible dance", "legend lore", "hold monster", "dream"]
+				},
+				7: {
+					B: ["power word pain|XGE", "finger of death", "disintegrate", "disintegrate", "hold monster"],
+					U: ["chain lightning", "forcecage", "teleport", "etherealness"],
+					G: ["project image", "mirage arcane", "prismatic spray", "teleport"],
+					Z: ["whirlwind|XGE", "chain lightning", "scatter|XGE", "teleport", "disintegrate", "lightning bolt"],
+					C: ["symbol", "simulacrum", "reverse gravity", "project image", "Bigby's hand", "mental prison|XGE", "seeming"],
+					S: ["Otiluke's freezing sphere", "prismatic spray", "wall of ice", "contingency", "arcane gate"]
+				},
+				8: {
+					O: ["sunburst", "delayed blast fireball", "antimagic field", "teleport", "globe of invulnerability", "maze"]
+				}
+			};
+
+			return (LVL_TO_COLOR_TO_SPELLS[maxSpellLevel] || {})[color];
+		}
+
+		const chaMod = Parser.getAbilityModNumber(dragon.cha);
+		const pb = Parser.crToPb(dragon.cr);
+		const maxSpellLevel = Math.floor(Parser.crToNumber(dragon.cr) / 3);
+		const exampleSpells = getExampleSpells(maxSpellLevel, dragon.dragonCastingColor);
+		const v = {
+			type: "variant",
+			name: "Dragons as Innate Spellcasters",
+			entries: [
+				"Dragons are innately magical creatures that can master a few spells as they age, using this variant.",
+				`A young or older dragon can innately cast a number of spells equal to its Charisma modifier. Each spell can be cast once per day, requiring no material components, and the spell's level can be no higher than one-third the dragon's challenge rating (rounded down). The dragon's bonus to hit with spell attacks is equal to its proficiency bonus + its Charisma bonus. The dragon's spell save DC equals 8 + its proficiency bonus + its Charisma modifier.`,
+				`{@i This dragon can innately cast ${Parser.numberToText(chaMod)} spell${chaMod === 1 ? "" : "s"}, once per day${chaMod === 1 ? "" : " each"}, requiring no material components. ${chaMod === 1 ? "The" : "Each"} spell's level can be no higher than ${Parser.spLevelToFull(maxSpellLevel)}. The dragon's spell save DC is ${pb + chaMod + 8}, and it has {@hit ${pb + chaMod}} to hit with spell attacks. See the {@filter spell page|spells|level=${[...new Array(maxSpellLevel)].map((it, i) => i + 1).join(";")}} for a list of spells the dragon is capable of casting.${exampleSpells ? ` A selection of examples are shown below:` : ""}`
+			]
+		};
+		if (exampleSpells) {
+			const ls = {
+				type: "list",
+				style: "italic",
+				items: exampleSpells.map(it => `{@spell ${it}}`)
+			};
+			v.entries.push(ls);
+		}
+		return renderer.renderEntry(v);
+	},
+
 	getCompactRenderedString: (mon, renderer) => {
 		renderer = renderer || EntryRenderer.getDefaultRenderer();
 
@@ -1799,10 +1916,6 @@ EntryRenderer.monster = {
 
 		function makeSkillRoller (name, mod) {
 			return renderer.renderEntry(`${name} {@dice 1d20${mod}|${mod}|${name}`);
-		}
-
-		function makeSaveRoller (attr, mod) {
-			return renderer.renderEntry(`${attr.uppercaseFirst()} {@dice 1d20${mod}|${mod}|${Parser.attAbvToFull([attr])} save`);
 		}
 
 		function getSection (title, key, depth) {
@@ -1861,7 +1974,7 @@ EntryRenderer.monster = {
 			<tr><td colspan="6"><div class="border"></div></td></tr>
 			<tr><td colspan="6">
 				<div class="summary-flexer">
-					${mon.save ? `<p><b>Saving Throws:</b> ${Object.keys(mon.save).map(s => makeSaveRoller(s, mon.save[s])).join(", ")}</p>` : ""}
+					${mon.save ? `<p><b>Saving Throws:</b> ${Object.keys(mon.save).map(s => EntryRenderer.monster.getSave(renderer, s, mon.save[s])).join(", ")}</p>` : ""}
 					${mon.skill ? `<p><b>Skills:</b> ${Object.keys(mon.skill).sort().map(s => makeSkillRoller(s.uppercaseFirst(), mon.skill[s])).join(", ")}</p>` : ""}
 					<p><b>Senses:</b> ${mon.senses ? `${mon.senses}, ` : ""}passive Perception ${mon.passive}</p>
 					<p><b>Languages:</b> ${mon.languages ? mon.languages : `\u2014`}</p>
@@ -1878,9 +1991,10 @@ EntryRenderer.monster = {
 			${getSection("Actions", "action", 3)}
 			${getSection("Reactions", "reaction", 3)}
 			${getSection("Legendary Actions", "legendary", 3)}
-			${mon.variant ? `
+			${mon.variant || (mon.dragonCastingColor && !mon.spellcasting) ? `
 			<tr class="text compact"><td colspan="6">
-			${mon.variant.map(it => it.rendered || renderer.renderEntry(it)).join("")}
+			${mon.variant ? mon.variant.map(it => it.rendered || renderer.renderEntry(it)).join("") : ""}
+			${mon.dragonCastingColor ? EntryRenderer.monster.getDragonCasterVariant(renderer, mon) : ""}
 			</td></tr>
 			` : ""}
 		`);
@@ -2068,10 +2182,15 @@ EntryRenderer.item = {
 			"entries": t.entries
 		};
 	},
-	_addBrewPropertiesAndTypes () {
-		BrewUtil.addBrewData((brew) => {
-			(brew.itemProperty || []).forEach(p => EntryRenderer.item._addProperty(p));
-			(brew.itemType || []).forEach(t => EntryRenderer.item._addType(t));
+	_pAddBrewPropertiesAndTypes () {
+		return new Promise(resolve => {
+			BrewUtil.pAddBrewData()
+				.then((brew) => {
+					(brew.itemProperty || []).forEach(p => EntryRenderer.item._addProperty(p));
+					(brew.itemType || []).forEach(t => EntryRenderer.item._addType(t));
+					resolve();
+				})
+				.catch(BrewUtil.purgeBrew);
 		});
 	},
 	/**
@@ -2113,8 +2232,8 @@ EntryRenderer.item = {
 					// Convert the property and type list JSONs into look-ups, i.e. use the abbreviation as a JSON property name
 					basicItemData.itemProperty.forEach(p => EntryRenderer.item._addProperty(p));
 					basicItemData.itemType.forEach(t => EntryRenderer.item._addType(t));
-					EntryRenderer.item._addBrewPropertiesAndTypes();
-					resolve([itemList, basicItems]);
+					EntryRenderer.item._pAddBrewPropertiesAndTypes()
+						.then(() => resolve([itemList, basicItems]));
 				}, reject);
 			});
 		}
@@ -2336,27 +2455,32 @@ EntryRenderer.item = {
 	},
 
 	promiseData: (urls, addGroups) => {
-		return new Promise((resolve, reject) => {
+		return new Promise((resolve) => {
 			EntryRenderer.item.buildList((data) => resolve({item: data}), urls, addGroups);
 		});
 	},
 
 	_isRefPopulated: false,
 	populatePropertyAndTypeReference: () => {
-		return DataUtil.loadJSON(`${EntryRenderer.getDefaultRenderer().baseUrl}data/basicitems.json`).then(data => {
-			if (EntryRenderer.item._isRefPopulated) {
-				Promise.resolve();
-			} else {
-				try {
-					data.itemProperty.forEach(p => EntryRenderer.item._addProperty(p));
-					data.itemType.forEach(t => EntryRenderer.item._addType(t));
-					EntryRenderer.item._addBrewPropertiesAndTypes();
-					EntryRenderer.item._isRefPopulated = true;
-					Promise.resolve();
-				} catch (e) {
-					Promise.reject(e);
-				}
-			}
+		return new Promise((resolve, reject) => {
+			DataUtil.loadJSON(`${EntryRenderer.getDefaultRenderer().baseUrl}data/basicitems.json`)
+				.then(data => {
+					if (EntryRenderer.item._isRefPopulated) {
+						resolve();
+					} else {
+						try {
+							data.itemProperty.forEach(p => EntryRenderer.item._addProperty(p));
+							data.itemType.forEach(t => EntryRenderer.item._addType(t));
+							EntryRenderer.item._pAddBrewPropertiesAndTypes()
+								.then(() => {
+									EntryRenderer.item._isRefPopulated = true;
+									resolve();
+								});
+						} catch (e) {
+							reject(e);
+						}
+					}
+				});
 		});
 	}
 };
@@ -2547,7 +2671,7 @@ EntryRenderer.hover = {
 		 * @param listProp list property in the data
 		 * @param itemModifier optional function to run per item; takes listProp and an item as parameters
 		 */
-		function loadPopulate (data, listProp, itemModifier) {
+		function populate (data, listProp, itemModifier) {
 			data[listProp].forEach(it => {
 				const itHash = UrlUtil.URL_TO_HASH_BUILDER[page](it);
 				if (itemModifier) itemModifier(listProp, it);
@@ -2557,45 +2681,52 @@ EntryRenderer.hover = {
 
 		function loadMultiSource (page, baseUrl, listProp) {
 			if (!EntryRenderer.hover._isCached(page, source, hash)) {
-				BrewUtil.addBrewData((data) => {
-					if (!data[listProp]) return;
-					loadPopulate(data, listProp);
-				});
-				DataUtil.loadJSON(`${EntryRenderer.getDefaultRenderer().baseUrl}${baseUrl}index.json`).then((data) => {
-					const procData = {};
-					const officialSource = Object.keys(data).find(k => k.toLowerCase() === source.toLowerCase());
-					if (officialSource) {
-						DataUtil.loadJSON(`${EntryRenderer.getDefaultRenderer().baseUrl}${baseUrl}${data[officialSource]}`).then((data) => {
-							loadPopulate(data, listProp);
-							callbackFn();
-						});
-					} else {
-						// source to load is 3rd party, which was already handled
-						callbackFn();
-					}
-				});
+				BrewUtil.pAddBrewData()
+					.then((data) => {
+						if (!data[listProp]) return;
+						populate(data, listProp);
+					})
+					.catch(BrewUtil.purgeBrew)
+					.then(() => DataUtil.loadJSON(`${EntryRenderer.getDefaultRenderer().baseUrl}${baseUrl}index.json`))
+					.then((data) => {
+						const officialSource = Object.keys(data).find(k => k.toLowerCase() === source.toLowerCase());
+						if (officialSource) {
+							DataUtil.loadJSON(`${EntryRenderer.getDefaultRenderer().baseUrl}${baseUrl}${data[officialSource]}`)
+								.then((data) => {
+									populate(data, listProp);
+									callbackFn();
+								});
+						} else {
+							callbackFn(); // source to load is 3rd party, which was already handled
+						}
+					});
 			} else {
 				callbackFn();
 			}
 		}
 
-		function _loadSingleBrew (listProp, itemModifier) {
-			BrewUtil.addBrewData((data) => {
-				if (!data[listProp]) return;
-				loadPopulate(data, listProp, itemModifier);
+		function _pLoadSingleBrew (listProp, itemModifier) {
+			return new Promise(resolve => {
+				BrewUtil.pAddBrewData()
+					.then((data) => {
+						if (data[listProp]) populate(data, listProp, itemModifier);
+						resolve();
+					})
+					.catch(BrewUtil.purgeBrew);
 			});
 		}
 
 		function _handleSingleData (data, listProp, itemModifier) {
-			if (listProp instanceof Array) listProp.forEach(p => loadPopulate(data, p, itemModifier));
-			else loadPopulate(data, listProp, itemModifier);
+			if (listProp instanceof Array) listProp.forEach(p => populate(data, p, itemModifier));
+			else populate(data, listProp, itemModifier);
 			callbackFn();
 		}
 
 		function loadSimple (page, jsonFile, listProp, itemModifier) {
 			if (!EntryRenderer.hover._isCached(page, source, hash)) {
-				_loadSingleBrew(listProp, itemModifier);
-				DataUtil.loadJSON(`${EntryRenderer.getDefaultRenderer().baseUrl}data/${jsonFile}`).then((data) => _handleSingleData(data, listProp, itemModifier));
+				_pLoadSingleBrew(listProp, itemModifier)
+					.then(() => DataUtil.loadJSON(`${EntryRenderer.getDefaultRenderer().baseUrl}data/${jsonFile}`))
+					.then((data) => _handleSingleData(data, listProp, itemModifier));
 			} else {
 				callbackFn();
 			}
@@ -2603,8 +2734,9 @@ EntryRenderer.hover = {
 
 		function loadCustom (page, jsonFile, listProp, itemModifier, loader) {
 			if (!EntryRenderer.hover._isCached(page, source, hash)) {
-				_loadSingleBrew(listProp, itemModifier);
-				DataUtil[loader].loadJSON(EntryRenderer.getDefaultRenderer().baseUrl).then((data) => _handleSingleData(data, listProp, itemModifier));
+				_pLoadSingleBrew(listProp, itemModifier)
+					.then(() => DataUtil[loader].loadJSON(EntryRenderer.getDefaultRenderer().baseUrl))
+					.then((data) => _handleSingleData(data, listProp, itemModifier));
 			} else {
 				callbackFn();
 			}
@@ -2630,20 +2762,23 @@ EntryRenderer.hover = {
 				if (!EntryRenderer.hover._isCached(page, source, hash)) {
 					EntryRenderer.item.buildList((allItems) => {
 						// populate brew once the main item properties have been loaded
-						BrewUtil.addBrewData((data) => {
-							if (!data.item) return;
-							data.item.forEach(it => {
-								if (!it._isEnhanced) EntryRenderer.item.enhanceItem(it);
-								const itHash = UrlUtil.URL_TO_HASH_BUILDER[page](it);
-								EntryRenderer.hover._addToCache(page, it.source, itHash, it)
+						BrewUtil.pAddBrewData()
+							.then((data) => {
+								if (!data.item) return;
+								data.item.forEach(it => {
+									if (!it._isEnhanced) EntryRenderer.item.enhanceItem(it);
+									const itHash = UrlUtil.URL_TO_HASH_BUILDER[page](it);
+									EntryRenderer.hover._addToCache(page, it.source, itHash, it)
+								});
+							})
+							.catch(BrewUtil.purgeBrew)
+							.then(() => {
+								allItems.forEach(item => {
+									const itemHash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS](item);
+									EntryRenderer.hover._addToCache(page, item.source, itemHash, item)
+								});
+								callbackFn();
 							});
-						});
-
-						allItems.forEach(item => {
-							const itemHash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS](item);
-							EntryRenderer.hover._addToCache(page, item.source, itemHash, item)
-						});
-						callbackFn();
 					}, {}, true);
 				} else {
 					callbackFn();
@@ -2673,18 +2808,22 @@ EntryRenderer.hover = {
 			}
 			case UrlUtil.PG_RACES: {
 				if (!EntryRenderer.hover._isCached(page, source, hash)) {
-					BrewUtil.addBrewData((data) => {
-						if (!data.race) return;
-						loadPopulate(data, "race");
-					});
-					DataUtil.loadJSON(`${EntryRenderer.getDefaultRenderer().baseUrl}data/races.json`).then((data) => {
-						const merged = EntryRenderer.race.mergeSubraces(data.race);
-						merged.forEach(race => {
-							const raceHash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_RACES](race);
-							EntryRenderer.hover._addToCache(page, race.source, raceHash, race)
+					BrewUtil.pAddBrewData()
+						.then((data) => {
+							if (!data.race) return;
+							populate(data, "race");
+						})
+						.catch(BrewUtil.purgeBrew)
+						.then(() => {
+							DataUtil.loadJSON(`${EntryRenderer.getDefaultRenderer().baseUrl}data/races.json`).then((data) => {
+								const merged = EntryRenderer.race.mergeSubraces(data.race);
+								merged.forEach(race => {
+									const raceHash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_RACES](race);
+									EntryRenderer.hover._addToCache(page, race.source, raceHash, race)
+								});
+								callbackFn();
+							});
 						});
-						callbackFn();
-					});
 				} else {
 					callbackFn();
 				}
@@ -2736,6 +2875,7 @@ EntryRenderer.hover = {
 			reset();
 			return;
 		}
+
 		const hoverId = EntryRenderer.hover._curHovering.hoverId;
 		const ele = EntryRenderer.hover._curHovering.ele;
 		const page = EntryRenderer.hover._curHovering.cPage;
@@ -2744,12 +2884,12 @@ EntryRenderer.hover = {
 		const permanent = EntryRenderer.hover._curHovering.permanent;
 		const clientX = EntryRenderer.hover._curHovering.clientX;
 
-		// if we've outrun the loading, restart
+		// if it doesn't seem to exist, return
 		if (!EntryRenderer.hover._isCached(page, source, hash) && page !== "hover") {
 			EntryRenderer.hover._showInProgress = false;
-			if ((new Date().getTime() - 5000) > EntryRenderer.hover.startTime) throw new Error(`Hover content for ${page}#${hash} took too long to load! Could this be a typo?`);
-			// pass a fake "event"
-			EntryRenderer.hover.show({shiftKey: permanent}, ele, page, source, hash);
+			setTimeout(() => {
+				throw new Error(`Could not load hash ${hash} with source ${source} from page ${page}`);
+			}, 1);
 			return;
 		}
 
@@ -2789,7 +2929,10 @@ EntryRenderer.hover = {
 		let drag = {};
 		const $brdrTop = $(`<div class="hoverborder top" ${permanent ? `data-perm="true"` : ""} data-hover-id="${hoverId}"></div>`)
 			.on("mousedown", (evt) => {
-				$hov.css("z-index", 201); // temporarily display it on top
+				$hov.css({
+					"z-index": 201, // temporarily display it on top
+					"animation": "initial"
+				});
 				drag.on = true;
 				drag.startX = evt.clientX;
 				drag.startY = evt.clientY;
@@ -2888,8 +3031,8 @@ EntryRenderer.hover = {
 		if (fromBottom) $hov.css("top", vpOffsetT - $hov.height());
 		else $hov.css("top", vpOffsetT + $(ele).height() + 1);
 
-		if (fromRight) $hov.css("left", (clientX || vpOffsetL) - $hov.width());
-		else $hov.css("left", (clientX || (vpOffsetL + $(ele).width())) + 5);
+		if (fromRight) $hov.css("left", (clientX || vpOffsetL) - ($hov.width() + 6));
+		else $hov.css("left", (clientX || (vpOffsetL + $(ele).width())) + 6);
 
 		adjustPosition(true);
 
@@ -2918,8 +3061,8 @@ EntryRenderer.hover = {
 			EntryRenderer.hover._teardownWindow(hoverId);
 		}
 
+		// alternate teardown for 'x' button
 		function altTeardown () {
-			// alternate teardown for 'x' button
 			$ele.attr("data-hover-active", false);
 			$hov.remove();
 			$(document).off(mouseUpId);
@@ -2983,9 +3126,7 @@ EntryRenderer.hover = {
 		}
 	},
 
-	startTime: null,
 	mouseOver (evt, ele, page, source, hash, isPopout) {
-		EntryRenderer.hover.startTime = new Date().getTime();
 		EntryRenderer.hover.show(evt, ele, page, source, hash, isPopout);
 	},
 
@@ -3080,7 +3221,7 @@ EntryRenderer.hover = {
 	doPopout: ($btnPop, list, index, clientX) => {
 		$btnPop.attr("data-hover-active", false);
 		const it = list[index];
-		EntryRenderer.hover.mouseOver({shiftKey: true, clientX: clientX}, $btnPop.get(), UrlUtil.getCurrentPage(), it.source, UrlUtil.autoEncodeHash(it), true);
+		EntryRenderer.hover.mouseOver({shiftKey: true, clientX: clientX}, $btnPop.get(0), UrlUtil.getCurrentPage(), it.source, UrlUtil.autoEncodeHash(it), true);
 	}
 };
 
@@ -3112,7 +3253,7 @@ EntryRenderer.dice = {
 	unbindDmScreenPanel () {
 		if (EntryRenderer.dice._panel) {
 			$(`body`).append(EntryRenderer.dice._$wrpRoll);
-			EntryRenderer.dice._panel.reset$Content();
+			EntryRenderer.dice._panel.close$TabContent();
 			EntryRenderer.dice._panel = null;
 			EntryRenderer.dice._hideBox();
 			EntryRenderer.dice._$wrpRoll.removeClass("rollbox-panel");
@@ -3370,7 +3511,9 @@ EntryRenderer.dice = {
 
 		if (com === "/help") {
 			EntryRenderer.dice._showMessage(
-				`Use <span class="out-roll-item-code">${PREF_MACRO} list</span> to list saved macros.<br>
+				`Drop highest (<span class="out-roll-item-code">2d4dh1</span>) and lowest (<span class="out-roll-item-code">4d6dl1</span>) are supported.<br>
+				Up and down arrow keys cycle input history.<br>
+Use <span class="out-roll-item-code">${PREF_MACRO} list</span> to list saved macros.<br>
 				Use <span class="out-roll-item-code">${PREF_MACRO} add myName 1d2+3</span> to add (or update) a macro. Macro names should not contain spaces or hashes.<br>
 				Use <span class="out-roll-item-code">${PREF_MACRO} remove myName</span> to remove a macro.<br>
 				Use <span class="out-roll-item-code">#myName</span> to roll a macro.`,
@@ -3470,23 +3613,13 @@ EntryRenderer.dice = {
 					if (!d.drops) return [r, []];
 					let toSlice;
 					if (d.drops === "h") {
-						toSlice = [...r].sort().reverse();
+						toSlice = [...r].sort((a, b) => b - a);
 					} else if (d.drops === "l") {
-						toSlice = [...r].sort();
+						toSlice = [...r].sort((a, b) => a - b);
 					}
 					const toDrop = toSlice.slice(0, d.drop);
-					const keepStack = [];
-					const dropStack = [];
-					r.forEach(it => {
-						const di = toDrop.indexOf(it);
-						if (~di) {
-							toDrop.splice(di, 1);
-							dropStack.push(it);
-						} else {
-							keepStack.push(it);
-						}
-					});
-					return [keepStack, dropStack];
+					const toKeep = toSlice.slice(d.drop);
+					return [toKeep, toDrop];
 				}
 
 				const r = EntryRenderer.dice.rollDice(d.num, d.faces);

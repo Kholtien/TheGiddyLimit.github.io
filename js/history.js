@@ -41,13 +41,14 @@ class History {
 		}
 	}
 
-	static init () {
+	static init (initialLoadComplete) {
 		window.onhashchange = History.hashChange;
 		if (window.location.hash.length) {
 			History.hashChange();
 		} else {
 			History._freshLoad();
 		}
+		if (initialLoadComplete) History.initialLoad = false;
 	}
 
 	/**
@@ -69,7 +70,7 @@ class History {
 	}
 
 	static _getHashParts () {
-		return window.location.hash.slice(1).split(HASH_PART_SEP);
+		return window.location.hash.slice(1).replace(/%27/g, "'").split(HASH_PART_SEP);
 	}
 
 	static _getListElem (link, getIndex) {

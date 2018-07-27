@@ -66,7 +66,7 @@ class FilterBox {
 	 * Render the "Filters" button in the inputGroup
 	 */
 	render () {
-		const firstRender = this.$rendered.length === 0;
+		const firstRender = this.$rendered.length === 0 || History.initialLoad;
 		// save the current values to re-apply if we're re-rendering
 		const curValues = firstRender ? null : this.getValues();
 		// remove any previously rendered elements
@@ -500,19 +500,20 @@ class FilterBox {
 			function makeSliderWrapper () {
 				const $wrp = $(`<div class="pill-grid"/>`);
 
-				const $sld = $(`<input class="filter-slider"/>`).appendTo($wrp);
+				const $sld = $(`<div class="filter-slider"/>`).appendTo($wrp);
 				$sld.slider({
 					min: filter.min,
 					max: filter.max,
-					value: [filter.min, filter.max]
-				});
+					range: true,
+					values: [filter.min, filter.max]
+				}).slider("pips").slider("float");
 				filter.$slider = $sld;
 
 				const $miniPillMin = $(`<div class="mini-pill" state="ignore"/>`);
 				const $miniPillMax = $(`<div class="mini-pill" state="ignore"/>`);
 
 				function checkUpdateMiniPills () {
-					const [min, max] = $sld.slider("getValue");
+					const [min, max] = $sld.slider("values");
 
 					if (min === max) {
 						$miniPillMin.attr("state", FilterBox._PILL_STATES[1]).text(`${filter.header} = ${min}`);
@@ -526,25 +527,25 @@ class FilterBox {
 					}
 				}
 
-				$sld.slider().on("slide", checkUpdateMiniPills);
+				$sld.slider().on("slidechange", checkUpdateMiniPills);
 
 				$miniPillMin.on(EVNT_CLICK, function () {
 					$miniPillMin.attr("state", FilterBox._PILL_STATES[0]);
-					const [min, max] = $sld.slider("getValue");
-					$sld.slider("setValue", [filter.min, max]);
+					const [min, max] = $sld.slider("values");
+					$sld.slider("values", [filter.min, max]);
 					self._fireValChangeEvent();
 				}).appendTo($miniView);
 				$miniPillMax.on(EVNT_CLICK, function () {
 					$miniPillMax.attr("state", FilterBox._PILL_STATES[0]);
-					const [min, max] = $sld.slider("getValue");
-					$sld.slider("setValue", [min, filter.max]);
+					const [min, max] = $sld.slider("values");
+					$sld.slider("values", [min, filter.max]);
 					self._fireValChangeEvent();
 				}).appendTo($miniView);
 
 				$wrp.data(
 					"resetValues",
 					function () {
-						$sld.slider("setValue", [filter.min, filter.max]);
+						$sld.slider("values", [filter.min, filter.max]);
 						checkUpdateMiniPills();
 					}
 				);
@@ -553,7 +554,7 @@ class FilterBox {
 					"getValues",
 					function () {
 						const out = {};
-						const [min, max] = $sld.slider("getValue");
+						const [min, max] = $sld.slider("values");
 						out.min = min;
 						out.max = max;
 						return out;
@@ -566,7 +567,7 @@ class FilterBox {
 						const min = toVal.filter(it => it.startsWith("min")).map(it => it.slice(3));
 						const max = toVal.filter(it => it.startsWith("max")).map(it => it.slice(3));
 						$sld.slider(
-							"setValue",
+							"values",
 							[
 								min.length ? Math.max(min[0], filter.min) : filter.min,
 								max.length ? Math.min(max[0], filter.max) : filter.max
@@ -580,12 +581,12 @@ class FilterBox {
 				if (curValues) {
 					const min = curValues[filter.header].min;
 					const max = curValues[filter.header].max;
-					$sld.slider("setValue", [min, max]);
+					$sld.slider("values", [min, max]);
 					checkUpdateMiniPills();
 				} else if (self.storedValues && self.storedValues[filter.header]) {
 					const min = self.storedValues[filter.header].min || filter.min;
 					const max = self.storedValues[filter.header].max || filter.max;
-					$sld.slider("setValue", [min, max]);
+					$sld.slider("values", [min, max]);
 					checkUpdateMiniPills();
 				} else {
 					$wrp.data("resetValues")();
@@ -859,6 +860,10 @@ class Filter {
 	 *   (OPTIONAL)
 	 *   deselFn: a function, defaults items as "do not match this" if `deselFn(item)` is true
 	 *
+	 *   (OPTIONAL)
+	 *   umbrellaItem: e.g. "Choose Any"; an item that should allow anything containing it to always be displayed when
+	 *     checking for other items in the filter
+	 *
 	 */
 	constructor (options) {
 		this.header = options.header;
@@ -868,6 +873,7 @@ class Filter {
 		this.deselFn = options.deselFn;
 		this.attrName = options.attrName;
 		this.minimalUI = options.minimalUI;
+		this.umbrellaItem = options.umbrellaItem;
 	}
 
 	/**
@@ -875,7 +881,9 @@ class Filter {
 	 * @param item the item to add
 	 */
 	addIfAbsent (item) {
-		if (!this.items.find(it => Filter._checkMatches(it, item))) this.items.push(item);
+		if (!item) return;
+		if (item instanceof Array) item.forEach(it => this.addIfAbsent(it));
+		else if (!this.items.find(it => Filter._checkMatches(it, item))) this.items.push(item);
 	}
 
 	static _checkMatches (item1, item2) {
@@ -909,6 +917,13 @@ class Filter {
 			return tc;
 		}
 
+		const isUmbrella = () => {
+			return this.umbrellaItem &&
+				toCheck &&
+				toCheck instanceof Array ? toCheck.includes(this.umbrellaItem) : toCheck === this.umbrellaItem &&
+				(map[toCheckVal(this.umbrellaItem)] === 0 || map[toCheckVal(this.umbrellaItem)] === 1);
+		};
+
 		if (toCheck instanceof Array) {
 			let hide = false;
 			let display = false;
@@ -920,7 +935,7 @@ class Filter {
 				}
 
 				toCheck.forEach(tc => {
-					if (map[toCheckVal(tc)] === 1) { // if any are 1 (blue) include if they match
+					if (map[toCheckVal(tc)] === 1 || isUmbrella()) { // if any are 1 (blue) include if they match
 						display = true;
 					}
 				});
@@ -952,7 +967,7 @@ class Filter {
 
 			return display && !hide;
 		} else {
-			return doCheck();
+			return doCheck.bind(this)();
 		}
 
 		function doCheck () {
@@ -960,13 +975,13 @@ class Filter {
 			let hide = false;
 			if (map._andOr.blue === "OR") {
 				if (totals.yes > 0) {
-					display = map[toCheckVal(toCheck)] === 1;
+					display = map[toCheckVal(toCheck)] === 1 || isUmbrella();
 				} else {
 					display = true;
 				}
 			} else {
 				if (totals.yes > 0) {
-					display = map[toCheckVal(toCheck)] === 1 && totals.yes === 1;
+					display = (map[toCheckVal(toCheck)] === 1 || isUmbrella()) && totals.yes === 1;
 				} else {
 					display = true;
 				}
@@ -1014,17 +1029,17 @@ class RangeFilter extends Filter {
 			this.min = Math.min(this.min, number);
 			this.max = Math.max(this.max, number);
 			if (this.$slider) {
-				const [lower, upper] = this.$slider.slider("getValue");
+				const [lower, upper] = this.$slider.slider("values");
 
 				const updateMin = lower === oMin && this.min !== oMin;
 				const updateMax = upper === oMax && this.max !== oMax;
 
-				if (updateMin) this.$slider.slider("setAttribute", "min", this.min);
-				if (updateMax) this.$slider.slider("setAttribute", "max", this.max);
+				if (updateMin) this.$slider.slider("option", "min", this.min);
+				if (updateMax) this.$slider.slider("option", "max", this.max);
 
-				if (updateMin && updateMax) this.$slider.slider("setValue", [this.min, this.max]);
-				else if (updateMin) this.$slider.slider("setValue", [this.min, upper]);
-				else if (updateMax) this.$slider.slider("setValue", [lower, this.max]);
+				if (updateMin && updateMax) this.$slider.slider("values", [this.min, this.max]);
+				else if (updateMin) this.$slider.slider("values", [this.min, upper]);
+				else if (updateMax) this.$slider.slider("values", [lower, this.max]);
 			}
 		}
 	}

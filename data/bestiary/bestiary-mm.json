@@ -187,7 +187,14 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/10/aboleth.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/10/aboleth.mp3",
+			"traitTags": [
+				"Amphibious"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Tentacles"
+			]
 		},
 		{
 			"name": "Abominable Yeti",
@@ -281,7 +288,13 @@
 			"environment": [
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/11/abominable-yeti.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/11/abominable-yeti.mp3",
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Acolyte",
@@ -482,7 +495,16 @@
 			"environment": [
 				"swamp"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/53/black-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/53/black-dragon.mp3",
+			"dragonCastingColor": "B",
+			"traitTags": [
+				"Amphibious",
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Adult Blue Dracolich",
@@ -621,7 +643,15 @@
 			"environment": [
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/58/blue-dracolich.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/58/blue-dracolich.mp3",
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Adult Blue Dragon",
@@ -739,7 +769,15 @@
 				"desert",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/60/blue-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/60/blue-dragon.mp3",
+			"dragonCastingColor": "U",
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Adult Brass Dragon",
@@ -879,7 +917,15 @@
 			"environment": [
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/68/brass-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/68/brass-dragon.mp3",
+			"dragonCastingColor": "A",
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Adult Bronze Dragon",
@@ -1031,7 +1077,16 @@
 			"environment": [
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/71/bronze-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/71/bronze-dragon.mp3",
+			"dragonCastingColor": "Z",
+			"traitTags": [
+				"Amphibious",
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Adult Copper Dragon",
@@ -1170,7 +1225,15 @@
 			"environment": [
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/100/copper-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/100/copper-dragon.mp3",
+			"dragonCastingColor": "C",
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Adult Gold Dragon",
@@ -1324,7 +1387,16 @@
 				"grassland",
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/236/gold-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/236/gold-dragon.mp3",
+			"dragonCastingColor": "O",
+			"traitTags": [
+				"Amphibious",
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Adult Green Dragon",
@@ -1458,7 +1530,16 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/243/green-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/243/green-dragon.mp3",
+			"dragonCastingColor": "G",
+			"traitTags": [
+				"Amphibious",
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Adult Red Dragon",
@@ -1581,7 +1662,15 @@
 				"mountain",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/408/red-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/408/red-dragon.mp3",
+			"dragonCastingColor": "R",
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Adult Silver Dragon",
@@ -1728,7 +1817,15 @@
 				"mountain",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/448/silver-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/448/silver-dragon.mp3",
+			"dragonCastingColor": "S",
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Adult White Dragon",
@@ -1857,7 +1954,15 @@
 			"environment": [
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/533/white-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/533/white-dragon.mp3",
+			"dragonCastingColor": "W",
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Air Elemental",
@@ -1950,7 +2055,10 @@
 				"mountain",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/13/air-elemental.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/13/air-elemental.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Allosaurus",
@@ -2012,7 +2120,10 @@
 			"environment": [
 				"grassland"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/15/allosaurus.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/15/allosaurus.mp3",
+			"traitTags": [
+				"Pounce"
+			]
 		},
 		{
 			"name": "Ancient Black Dragon",
@@ -2140,7 +2251,16 @@
 			"environment": [
 				"swamp"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/53/black-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/53/black-dragon.mp3",
+			"dragonCastingColor": "B",
+			"traitTags": [
+				"Amphibious",
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Ancient Blue Dragon",
@@ -2263,7 +2383,15 @@
 				"desert",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/60/blue-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/60/blue-dragon.mp3",
+			"dragonCastingColor": "U",
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Ancient Brass Dragon",
@@ -2410,7 +2538,15 @@
 			"environment": [
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/68/brass-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/68/brass-dragon.mp3",
+			"dragonCastingColor": "A",
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Ancient Bronze Dragon",
@@ -2562,7 +2698,16 @@
 			"environment": [
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/71/bronze-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/71/bronze-dragon.mp3",
+			"dragonCastingColor": "Z",
+			"traitTags": [
+				"Amphibious",
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Ancient Copper Dragon",
@@ -2708,7 +2853,15 @@
 			"environment": [
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/100/copper-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/100/copper-dragon.mp3",
+			"dragonCastingColor": "C",
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Ancient Gold Dragon",
@@ -2862,7 +3015,16 @@
 				"grassland",
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/236/gold-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/236/gold-dragon.mp3",
+			"dragonCastingColor": "O",
+			"traitTags": [
+				"Amphibious",
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Ancient Green Dragon",
@@ -2996,7 +3158,16 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/243/green-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/243/green-dragon.mp3",
+			"dragonCastingColor": "G",
+			"traitTags": [
+				"Amphibious",
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Ancient Red Dragon",
@@ -3119,7 +3290,15 @@
 				"mountain",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/408/red-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/408/red-dragon.mp3",
+			"dragonCastingColor": "R",
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Ancient Silver Dragon",
@@ -3266,7 +3445,15 @@
 				"mountain",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/448/silver-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/448/silver-dragon.mp3",
+			"dragonCastingColor": "S",
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Ancient White Dragon",
@@ -3395,7 +3582,15 @@
 			"environment": [
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/533/white-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/533/white-dragon.mp3",
+			"dragonCastingColor": "W",
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence"
+			]
 		},
 		{
 			"name": "Androsphinx",
@@ -3579,7 +3774,13 @@
 			"environment": [
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/16/androsphinx.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/16/androsphinx.mp3",
+			"traitTags": [
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Animated Armor",
@@ -3656,7 +3857,14 @@
 				}
 			],
 			"page": 19,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/17/animated-armor.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/17/animated-armor.mp3",
+			"traitTags": [
+				"Antimagic Susceptibility",
+				"False Appearance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Ankheg",
@@ -3816,7 +4024,10 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/20/ape.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/20/ape.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Arcanaloth",
@@ -4027,7 +4238,14 @@
 					}
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/22/arcanaloth.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/22/arcanaloth.mp3",
+			"traitTags": [
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Teleport"
+			]
 		},
 		{
 			"name": "Archmage",
@@ -4083,7 +4301,6 @@
 					],
 					"note": "(from stoneskin)",
 					"preNote": "nonmagical"
-
 				}
 			],
 			"passive": 12,
@@ -4193,7 +4410,10 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/25/archmage.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/25/archmage.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Assassin",
@@ -4290,7 +4510,13 @@
 				}
 			],
 			"page": 343,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/26/assassin.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/26/assassin.mp3",
+			"traitTags": [
+				"Sneak Attack"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Awakened Shrub",
@@ -4345,7 +4571,10 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/28/awakened-shrub.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/28/awakened-shrub.mp3",
+			"traitTags": [
+				"False Appearance"
+			]
 		},
 		{
 			"name": "Awakened Tree",
@@ -4406,7 +4635,10 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/29/awakened-tree.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/29/awakened-tree.mp3",
+			"traitTags": [
+				"False Appearance"
+			]
 		},
 		{
 			"name": "Axe Beak",
@@ -4522,7 +4754,10 @@
 				}
 			],
 			"page": 22,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/31/azer.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/31/azer.mp3",
+			"traitTags": [
+				"Illumination"
+			]
 		},
 		{
 			"name": "Baboon",
@@ -4572,7 +4807,10 @@
 				"forest",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/33/baboon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/33/baboon.mp3",
+			"traitTags": [
+				"Pack Tactics"
+			]
 		},
 		{
 			"name": "Badger",
@@ -4622,7 +4860,10 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/34/badger.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/34/badger.mp3",
+			"traitTags": [
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Balor",
@@ -4753,7 +4994,16 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/35/balor.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/35/balor.mp3",
+			"traitTags": [
+				"Death Burst",
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Teleport"
+			]
 		},
 		{
 			"name": "Bandit",
@@ -4892,7 +5142,11 @@
 				}
 			],
 			"page": 344,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/37/bandit-captain.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/37/bandit-captain.mp3",
+			"actionTags": [
+				"Multiattack",
+				"Parry"
+			]
 		},
 		{
 			"name": "Banshee",
@@ -5001,7 +5255,10 @@
 				"forest",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/39/banshee.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/39/banshee.mp3",
+			"traitTags": [
+				"Incorporeal Movement"
+			]
 		},
 		{
 			"name": "Barbed Devil",
@@ -5118,7 +5375,14 @@
 				}
 			],
 			"page": 70,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/40/barbed-devil.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/40/barbed-devil.mp3",
+			"traitTags": [
+				"Devil's Sight",
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Barlgura",
@@ -5243,7 +5507,13 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/554/barlgura.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/554/barlgura.mp3",
+			"traitTags": [
+				"Reckless"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Basilisk",
@@ -5353,7 +5623,10 @@
 			],
 			"page": 318,
 			"familiar": true,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/44/bat.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/44/bat.mp3",
+			"traitTags": [
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Bearded Devil",
@@ -5458,7 +5731,14 @@
 				}
 			],
 			"page": 70,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/45/bearded-devil.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/45/bearded-devil.mp3",
+			"traitTags": [
+				"Devil's Sight",
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Behir",
@@ -5539,7 +5819,11 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/46/behir.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/46/behir.mp3",
+			"actionTags": [
+				"Multiattack",
+				"Swallow"
+			]
 		},
 		{
 			"name": "Beholder",
@@ -5723,7 +6007,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/47/beholder-zombie.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/47/beholder-zombie.mp3",
+			"traitTags": [
+				"Undead Fortitude"
+			]
 		},
 		{
 			"name": "Berserker",
@@ -5782,7 +6069,10 @@
 				}
 			],
 			"page": 344,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/49/berserker.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/49/berserker.mp3",
+			"traitTags": [
+				"Reckless"
+			]
 		},
 		{
 			"name": "Black Bear",
@@ -5851,7 +6141,13 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/51/black-bear.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/51/black-bear.mp3",
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Black Dragon Wyrmling",
@@ -5925,7 +6221,10 @@
 				}
 			],
 			"page": 88,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/52/black-dragon-wyrmling.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/52/black-dragon-wyrmling.mp3",
+			"traitTags": [
+				"Amphibious"
+			]
 		},
 		{
 			"name": "Black Pudding",
@@ -5979,7 +6278,7 @@
 				{
 					"name": "Corrosive Form",
 					"entries": [
-						"A creature that touches the pudding or hits it with a melee attack while within 5 feet of it takes 4 ({@dice 1d8}) acid damage. Any nonmagical weapon made of metal or wood that hits the pudding corrodes. After dealing damage, the weapon takes a permanent and cumulative -1 penalty to damage rolls. If its penalty drops to -5, the weapon is destroyed. Nonmagical ammunition made of metal or wood that hits the pudding is destroyed after dealing damage. The pudding can eat through 2-inch-thick, nonmagical wood or metal in 1 round."
+						"A creature that touches the pudding or hits it with a melee attack while within 5 feet of it takes 4 ({@dice 1d8}) acid damage. Any nonmagical weapon made of metal or wood that hits the pudding corrodes. After dealing damage, the weapon takes a permanent and cumulative \u20131 penalty to damage rolls. If its penalty drops to \u20135, the weapon is destroyed. Nonmagical ammunition made of metal or wood that hits the pudding is destroyed after dealing damage. The pudding can eat through 2-inch-thick, nonmagical wood or metal in 1 round."
 					]
 				},
 				{
@@ -5993,7 +6292,7 @@
 				{
 					"name": "Pseudopod",
 					"entries": [
-						"Melee Weapon Attack: {@hit 5} to hit, reach 5 ft., one target. Hit: 6 ({@dice 1d6+3}) bludgeoning damage plus 18 ({@dice 4d8}) acid damage. In addition, nonmagical armor worn by the target is partly dissolved and takes a permanent and cumulative -1 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10."
+						"Melee Weapon Attack: {@hit 5} to hit, reach 5 ft., one target. Hit: 6 ({@dice 1d6+3}) bludgeoning damage plus 18 ({@dice 4d8}) acid damage. In addition, nonmagical armor worn by the target is partly dissolved and takes a permanent and cumulative \u20131 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10."
 					]
 				}
 			],
@@ -6009,7 +6308,11 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/54/black-pudding.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/54/black-pudding.mp3",
+			"traitTags": [
+				"Amorphous",
+				"Spider Climb"
+			]
 		},
 		{
 			"name": "Blink Dog",
@@ -6069,7 +6372,10 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/56/blink-dog.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/56/blink-dog.mp3",
+			"traitTags": [
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Blood Hawk",
@@ -6132,7 +6438,11 @@
 				"coastal",
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/57/blood-hawk.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/57/blood-hawk.mp3",
+			"traitTags": [
+				"Keen Senses",
+				"Pack Tactics"
+			]
 		},
 		{
 			"name": "Blue Dragon Wyrmling",
@@ -6291,7 +6601,14 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/61/blue-slaad.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/61/blue-slaad.mp3",
+			"traitTags": [
+				"Magic Resistance",
+				"Regeneration"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Boar",
@@ -6342,7 +6659,7 @@
 				{
 					"name": "Tusk",
 					"entries": [
-						"Weapon Attack: {@hit 3} to hit, reach 5 ft., one target. Hit: 4 ({@dice 1d6+1}) slashing damage."
+						"Melee Weapon Attack: {@hit 3} to hit, reach 5 ft., one target. Hit: 4 ({@dice 1d6+1}) slashing damage."
 					]
 				}
 			],
@@ -6352,7 +6669,10 @@
 				"forest",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/62/boar.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/62/boar.mp3",
+			"traitTags": [
+				"Charge"
+			]
 		},
 		{
 			"name": "Bone Devil",
@@ -6456,7 +6776,14 @@
 				}
 			],
 			"page": 71,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/65/bone-devil.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/65/bone-devil.mp3",
+			"traitTags": [
+				"Devil's Sight",
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Bone Devil Polearm",
@@ -6565,7 +6892,14 @@
 					]
 				}
 			],
-			"page": 71
+			"page": 71,
+			"traitTags": [
+				"Devil's Sight",
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Bone Naga (Guardian)",
@@ -6925,7 +7259,10 @@
 				}
 			],
 			"page": 109,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/70/bronze-dragon-wyrmling.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/70/bronze-dragon-wyrmling.mp3",
+			"traitTags": [
+				"Amphibious"
+			]
 		},
 		{
 			"name": "Brown Bear",
@@ -6980,7 +7317,7 @@
 				{
 					"name": "Bite",
 					"entries": [
-						"Weapon Attack: {@hit 5} to hit, reach 5 ft., one target. Hit: 8 ({@dice 1d8+4}) piercing damage."
+						"Melee Weapon Attack: {@hit 5} to hit, reach 5 ft., one target. Hit: 8 ({@dice 1d8+4}) piercing damage."
 					]
 				},
 				{
@@ -6996,7 +7333,13 @@
 				"hill",
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/72/brown-bear.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/72/brown-bear.mp3",
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Bugbear",
@@ -7076,7 +7419,10 @@
 				"grassland",
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/74/bugbear.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/74/bugbear.mp3",
+			"traitTags": [
+				"Brute"
+			]
 		},
 		{
 			"name": "Bugbear Chief",
@@ -7169,7 +7515,13 @@
 				"grassland",
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/73/bugbear-chief.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/73/bugbear-chief.mp3",
+			"traitTags": [
+				"Brute"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Bulette",
@@ -7330,7 +7682,13 @@
 			"environment": [
 				"swamp"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/76/bullywug.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/76/bullywug.mp3",
+			"traitTags": [
+				"Amphibious"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Cambion",
@@ -7451,7 +7809,10 @@
 			"environment": [
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/77/cambion.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/77/cambion.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Camel",
@@ -7567,7 +7928,15 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/79/carrior-crawler.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/79/carrior-crawler.mp3",
+			"traitTags": [
+				"Keen Senses",
+				"Spider Climb"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Tentacles"
+			]
 		},
 		{
 			"name": "Cat",
@@ -7624,7 +7993,10 @@
 				"urban",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/80/cat.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/80/cat.mp3",
+			"traitTags": [
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Cave Bear",
@@ -7694,7 +8066,13 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/82/cave-bear.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/82/cave-bear.mp3",
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Centaur",
@@ -7768,7 +8146,13 @@
 				"grassland",
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/84/centaur.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/84/centaur.mp3",
+			"traitTags": [
+				"Charge"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Chain Devil",
@@ -7876,7 +8260,14 @@
 				}
 			],
 			"page": 72,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/85/chain-devil.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/85/chain-devil.mp3",
+			"traitTags": [
+				"Devil's Sight",
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Chasme",
@@ -7976,7 +8367,11 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/87/chasme.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/87/chasme.mp3",
+			"traitTags": [
+				"Magic Resistance",
+				"Spider Climb"
+			]
 		},
 		{
 			"name": "Chimera",
@@ -8055,7 +8450,10 @@
 				"grassland",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/88/chimera.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/88/chimera.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Chuul",
@@ -8139,7 +8537,14 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/91/chuul.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/91/chuul.mp3",
+			"traitTags": [
+				"Amphibious"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Tentacles"
+			]
 		},
 		{
 			"name": "Clay Golem",
@@ -8248,7 +8653,16 @@
 				}
 			],
 			"page": 168,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/556/clay-golem.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/556/clay-golem.mp3",
+			"traitTags": [
+				"Damage Absorption",
+				"Immutable Form",
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Cloaker",
@@ -8346,7 +8760,14 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/92/cloaker.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/92/cloaker.mp3",
+			"traitTags": [
+				"False Appearance",
+				"Light Sensitivity"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Cloud Giant",
@@ -8486,7 +8907,13 @@
 			"environment": [
 				"mountain"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/94/cloud-giant.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/94/cloud-giant.mp3",
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Cockatrice",
@@ -8831,7 +9258,10 @@
 				"urban",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/101/couatl.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/101/couatl.mp3",
+			"traitTags": [
+				"Magic Weapons"
+			]
 		},
 		{
 			"name": "Crab",
@@ -8889,7 +9319,10 @@
 			"environment": [
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/104/crab.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/104/crab.mp3",
+			"traitTags": [
+				"Amphibious"
+			]
 		},
 		{
 			"name": "Crawling Claw",
@@ -8944,7 +9377,10 @@
 				}
 			],
 			"page": 44,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/106/crawling-claw.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/106/crawling-claw.mp3",
+			"traitTags": [
+				"Turn Immunity"
+			]
 		},
 		{
 			"name": "Crocodile",
@@ -9002,7 +9438,10 @@
 				"swamp",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/107/crocodile.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/107/crocodile.mp3",
+			"traitTags": [
+				"Hold Breath"
+			]
 		},
 		{
 			"name": "Cult Fanatic",
@@ -9105,7 +9544,10 @@
 					}
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/108/cult-fanatic.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/108/cult-fanatic.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Cultist",
@@ -9241,7 +9683,10 @@
 				"desert",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/110/cyclops.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/110/cyclops.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Dao",
@@ -9371,7 +9816,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/111/dao.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/111/dao.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Darkmantle",
@@ -9438,7 +9886,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/114/darkmantle.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/114/darkmantle.mp3",
+			"traitTags": [
+				"False Appearance"
+			]
 		},
 		{
 			"name": "Death Dog",
@@ -9498,7 +9949,10 @@
 			"environment": [
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/115/death-dog.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/115/death-dog.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Death Knight",
@@ -9643,7 +10097,14 @@
 					}
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/117/death-knight.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/117/death-knight.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Parry"
+			]
 		},
 		{
 			"name": "Death Slaad",
@@ -9787,7 +10248,16 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/118/death-slaad.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/118/death-slaad.mp3",
+			"traitTags": [
+				"Shapechanger",
+				"Magic Resistance",
+				"Magic Weapons",
+				"Regeneration"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Death Tyrant",
@@ -10182,7 +10652,11 @@
 				}
 			],
 			"page": 48,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/123/demilich.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/123/demilich.mp3",
+			"traitTags": [
+				"Legendary Resistances",
+				"Turn Immunity"
+			]
 		},
 		{
 			"name": "Acererak Demilich",
@@ -10333,7 +10807,11 @@
 					]
 				}
 			],
-			"page": 49
+			"page": 49,
+			"traitTags": [
+				"Legendary Resistances",
+				"Turn Immunity"
+			]
 		},
 		{
 			"name": "Deva",
@@ -10453,7 +10931,13 @@
 					}
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/124/deva.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/124/deva.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Dire Wolf",
@@ -10517,7 +11001,11 @@
 				"forest",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/127/dire-wolf.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/127/dire-wolf.mp3",
+			"traitTags": [
+				"Keen Senses",
+				"Pack Tactics"
+			]
 		},
 		{
 			"name": "Displacer Beast",
@@ -10584,7 +11072,11 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/128/displacer-beast.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/128/displacer-beast.mp3",
+			"actionTags": [
+				"Multiattack",
+				"Tentacles"
+			]
 		},
 		{
 			"name": "Djinni",
@@ -10703,7 +11195,10 @@
 			"environment": [
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/555/djinni.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/555/djinni.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Doppelganger",
@@ -10790,7 +11285,14 @@
 				"underdark",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/131/doppelganger.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/131/doppelganger.mp3",
+			"traitTags": [
+				"Shapechanger",
+				"Ambusher"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Draft Horse",
@@ -10919,7 +11421,13 @@
 				"underwater",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/134/dragon-turtle.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/134/dragon-turtle.mp3",
+			"traitTags": [
+				"Amphibious"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Dretch",
@@ -10998,7 +11506,10 @@
 				}
 			],
 			"page": 57,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/136/dretch.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/136/dretch.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Drider",
@@ -11112,7 +11623,16 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/137/drider.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/137/drider.mp3",
+			"traitTags": [
+				"Fey Ancestry",
+				"Spider Climb",
+				"Sunlight Sensitivity",
+				"Web Walker"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Drider Spellcaster",
@@ -11268,6 +11788,15 @@
 			],
 			"environment": [
 				"underdark"
+			],
+			"traitTags": [
+				"Fey Ancestry",
+				"Spider Climb",
+				"Sunlight Sensitivity",
+				"Web Walker"
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		},
 		{
@@ -11377,7 +11906,11 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/141/drow.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/141/drow.mp3",
+			"traitTags": [
+				"Fey Ancestry",
+				"Sunlight Sensitivity"
+			]
 		},
 		{
 			"name": "Drow Elite Warrior",
@@ -11507,7 +12040,15 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/138/drow-elite-warrior.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/138/drow-elite-warrior.mp3",
+			"traitTags": [
+				"Fey Ancestry",
+				"Sunlight Sensitivity"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Parry"
+			]
 		},
 		{
 			"name": "Drow Mage",
@@ -11657,7 +12198,11 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/139/drow-mage.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/139/drow-mage.mp3",
+			"traitTags": [
+				"Fey Ancestry",
+				"Sunlight Sensitivity"
+			]
 		},
 		{
 			"name": "Drow Priestess of Lolth",
@@ -11835,7 +12380,14 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/140/drow-priestess-of-lolth.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/140/drow-priestess-of-lolth.mp3",
+			"traitTags": [
+				"Fey Ancestry",
+				"Sunlight Sensitivity"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Druid",
@@ -12022,7 +12574,10 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/143/dryad.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/143/dryad.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Duergar",
@@ -12111,7 +12666,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/144/duergar.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/144/duergar.mp3",
+			"traitTags": [
+				"Sunlight Sensitivity"
+			]
 		},
 		{
 			"name": "Duodrone",
@@ -12183,7 +12741,10 @@
 				}
 			],
 			"page": 225,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/145/duodrone.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/145/duodrone.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Dust Mephit",
@@ -12274,7 +12835,10 @@
 			"environment": [
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/330/mephit.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/330/mephit.mp3",
+			"traitTags": [
+				"Death Burst"
+			]
 		},
 		{
 			"name": "Eagle",
@@ -12329,7 +12893,10 @@
 				"hill",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/147/eagle.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/147/eagle.mp3",
+			"traitTags": [
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Earth Elemental",
@@ -12420,7 +12987,13 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/148/earth-elemental.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/148/earth-elemental.mp3",
+			"traitTags": [
+				"Siege Monster"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Efreeti",
@@ -12534,7 +13107,10 @@
 			"environment": [
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/149/efreeti.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/149/efreeti.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Elephant",
@@ -12649,7 +13225,10 @@
 				"forest",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/153/elk.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/153/elk.mp3",
+			"traitTags": [
+				"Charge"
+			]
 		},
 		{
 			"name": "Empyrean",
@@ -12802,7 +13381,12 @@
 					}
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/154/empyrean.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/154/empyrean.mp3",
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Magic Weapons"
+			]
 		},
 		{
 			"name": "Erinyes",
@@ -12920,7 +13504,14 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/156/erinyes.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/156/erinyes.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Parry"
+			]
 		},
 		{
 			"name": "Ettercap",
@@ -13020,7 +13611,15 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/157/ettercap.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/157/ettercap.mp3",
+			"traitTags": [
+				"Spider Climb",
+				"Web Sense",
+				"Web Walker"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Ettin",
@@ -13099,7 +13698,10 @@
 				"mountain",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/158/ettin.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/158/ettin.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Faerie Dragon (Blue)",
@@ -13209,7 +13811,10 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/160/faerie-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/160/faerie-dragon.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Faerie Dragon (Green)",
@@ -13318,7 +13923,10 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/160/faerie-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/160/faerie-dragon.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Faerie Dragon (Indigo)",
@@ -13429,7 +14037,10 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/160/faerie-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/160/faerie-dragon.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Faerie Dragon (Orange)",
@@ -13536,7 +14147,10 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/160/faerie-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/160/faerie-dragon.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Faerie Dragon (Red)",
@@ -13642,7 +14256,10 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/160/faerie-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/160/faerie-dragon.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Faerie Dragon (Violet)",
@@ -13754,7 +14371,10 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/160/faerie-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/160/faerie-dragon.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Faerie Dragon (Yellow)",
@@ -13862,7 +14482,10 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/160/faerie-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/160/faerie-dragon.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Fire Elemental",
@@ -13954,7 +14577,13 @@
 			"environment": [
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/162/fire-elemental.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/162/fire-elemental.mp3",
+			"traitTags": [
+				"Illumination"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Fire Giant",
@@ -14053,7 +14682,10 @@
 				"underdark",
 				"mountain"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/164/fire-giant.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/164/fire-giant.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Fire Snake",
@@ -14137,7 +14769,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/165/fire-snake.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/165/fire-snake.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Flameskull",
@@ -14267,7 +14902,15 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/168/flameskull.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/168/flameskull.mp3",
+			"traitTags": [
+				"Illumination",
+				"Magic Resistance",
+				"Rejuvenation"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Flesh Golem",
@@ -14371,7 +15014,16 @@
 				}
 			],
 			"page": 169,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/169/flesh-golem.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/169/flesh-golem.mp3",
+			"traitTags": [
+				"Immutable Form",
+				"Damage Absorption",
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Flumph",
@@ -14503,7 +15155,10 @@
 				"urban",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/172/flying-snake.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/172/flying-snake.mp3",
+			"traitTags": [
+				"Flyby"
+			]
 		},
 		{
 			"name": "Flying Sword",
@@ -14581,7 +15236,11 @@
 				}
 			],
 			"page": 20,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/173/flying-sword.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/173/flying-sword.mp3",
+			"traitTags": [
+				"Antimagic Susceptibility",
+				"False Appearance"
+			]
 		},
 		{
 			"name": "Fomorian",
@@ -14652,7 +15311,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/174/fomorian.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/174/fomorian.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Frog",
@@ -14702,7 +15364,10 @@
 			],
 			"page": 322,
 			"familiar": true,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/175/frog.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/175/frog.mp3",
+			"traitTags": [
+				"Amphibious"
+			]
 		},
 		{
 			"name": "Frost Giant",
@@ -14794,7 +15459,10 @@
 				"mountain",
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/178/frost-giant.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/178/frost-giant.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Galeb Duhr",
@@ -14884,7 +15552,10 @@
 				"mountain",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/179/galeb-duhr.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/179/galeb-duhr.mp3",
+			"traitTags": [
+				"False Appearance"
+			]
 		},
 		{
 			"name": "Gargoyle",
@@ -14972,7 +15643,13 @@
 				"underdark",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/180/gargoyle.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/180/gargoyle.mp3",
+			"traitTags": [
+				"False Appearance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Gas Spore",
@@ -15044,7 +15721,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/181/gas-spore.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/181/gas-spore.mp3",
+			"traitTags": [
+				"Death Burst"
+			]
 		},
 		{
 			"name": "Gelatinous Cube",
@@ -15190,7 +15870,10 @@
 				"swamp",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/186/ghast.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/186/ghast.mp3",
+			"traitTags": [
+				"Turn Resistance"
+			]
 		},
 		{
 			"name": "Ghost",
@@ -15301,7 +15984,10 @@
 				"underdark",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/187/ghost.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/187/ghost.mp3",
+			"traitTags": [
+				"Incorporeal Movement"
+			]
 		},
 		{
 			"name": "Ghoul",
@@ -15412,7 +16098,10 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/189/giant-ape.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/189/giant-ape.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Giant Badger",
@@ -15474,7 +16163,13 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/190/giant-badger.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/190/giant-badger.mp3",
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Giant Bat",
@@ -15531,7 +16226,10 @@
 				"underdark",
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/191/giant-bat.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/191/giant-bat.mp3",
+			"traitTags": [
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Giant Boar",
@@ -15592,7 +16290,10 @@
 				"forest",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/192/giant-boar.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/192/giant-boar.mp3",
+			"traitTags": [
+				"Charge"
+			]
 		},
 		{
 			"name": "Giant Centipede",
@@ -15753,7 +16454,10 @@
 			"environment": [
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/195/giant-crab.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/195/giant-crab.mp3",
+			"traitTags": [
+				"Amphibious"
+			]
 		},
 		{
 			"name": "Giant Crocodile",
@@ -15822,7 +16526,13 @@
 			"environment": [
 				"swamp"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/196/giant-crocodile.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/196/giant-crocodile.mp3",
+			"traitTags": [
+				"Hold Breath"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Giant Eagle",
@@ -15891,7 +16601,13 @@
 				"hill",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/197/giant-eagle.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/197/giant-eagle.mp3",
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Giant Elk",
@@ -15957,7 +16673,10 @@
 				"forest",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/198/giant-elk.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/198/giant-elk.mp3",
+			"traitTags": [
+				"Charge"
+			]
 		},
 		{
 			"name": "Giant Fire Beetle",
@@ -16011,7 +16730,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/199/giant-fire-beetle.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/199/giant-fire-beetle.mp3",
+			"traitTags": [
+				"Illumination"
+			]
 		},
 		{
 			"name": "Giant Frog",
@@ -16078,7 +16800,13 @@
 				"forest",
 				"swamp"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/200/giant-frog.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/200/giant-frog.mp3",
+			"traitTags": [
+				"Amphibious"
+			],
+			"actionTags": [
+				"Swallow"
+			]
 		},
 		{
 			"name": "Giant Goat",
@@ -16139,7 +16867,10 @@
 				"grassland",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/201/giant-goat.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/201/giant-goat.mp3",
+			"traitTags": [
+				"Charge"
+			]
 		},
 		{
 			"name": "Giant Hyena",
@@ -16193,7 +16924,10 @@
 				"hill",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/202/giant-hyena.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/202/giant-hyena.mp3",
+			"traitTags": [
+				"Rampage"
+			]
 		},
 		{
 			"name": "Giant Lizard",
@@ -16339,7 +17073,14 @@
 			"environment": [
 				"underwater"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/204/giant-octopus.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/204/giant-octopus.mp3",
+			"traitTags": [
+				"Hold Breath",
+				"Water Breathing"
+			],
+			"actionTags": [
+				"Tentacles"
+			]
 		},
 		{
 			"name": "Giant Owl",
@@ -16402,7 +17143,11 @@
 				"hill",
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/205/giant-owl.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/205/giant-owl.mp3",
+			"traitTags": [
+				"Flyby",
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Giant Poisonous Snake",
@@ -16510,7 +17255,11 @@
 				"swamp",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/207/giant-rat.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/207/giant-rat.mp3",
+			"traitTags": [
+				"Keen Senses",
+				"Pack Tactics"
+			]
 		},
 		{
 			"name": "Giant Rat (Diseased)",
@@ -16611,7 +17360,10 @@
 			"environment": [
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/208/giant-scorpion.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/208/giant-scorpion.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Giant Sea Horse",
@@ -16671,7 +17423,11 @@
 			"environment": [
 				"underwater"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/209/giant-sea-horse.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/209/giant-sea-horse.mp3",
+			"traitTags": [
+				"Charge",
+				"Water Breathing"
+			]
 		},
 		{
 			"name": "Giant Shark",
@@ -16726,7 +17482,7 @@
 				{
 					"name": "Bite",
 					"entries": [
-						"Weapon Attack: {@hit 9} to hit, reach 5 ft., one target. Hit: 22 ({@dice 3d10+6}) piercing damage."
+						"Melee Weapon Attack: {@hit 9} to hit, reach 5 ft., one target. Hit: 22 ({@dice 3d10+6}) piercing damage."
 					]
 				}
 			],
@@ -16734,7 +17490,10 @@
 			"environment": [
 				"underwater"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/210/giant-shark.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/210/giant-shark.mp3",
+			"traitTags": [
+				"Water Breathing"
+			]
 		},
 		{
 			"name": "Giant Spider",
@@ -16814,7 +17573,12 @@
 				"urban",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/211/giant-spider.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/211/giant-spider.mp3",
+			"traitTags": [
+				"Spider Climb",
+				"Web Sense",
+				"Web Walker"
+			]
 		},
 		{
 			"name": "Giant Toad",
@@ -16881,7 +17645,13 @@
 				"desert",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/213/giant-toad.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/213/giant-toad.mp3",
+			"traitTags": [
+				"Amphibious"
+			],
+			"actionTags": [
+				"Swallow"
+			]
 		},
 		{
 			"name": "Giant Vulture",
@@ -16954,7 +17724,14 @@
 				"grassland",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/214/giant-vulture.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/214/giant-vulture.mp3",
+			"traitTags": [
+				"Keen Senses",
+				"Pack Tactics"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Giant Wasp",
@@ -17042,7 +17819,7 @@
 				{
 					"name": "Bite",
 					"entries": [
-						"Weapon Attack: {@hit 5} to hit, reach 5 ft., one target. Hit: 5 ({@dice 1d4+3}) piercing damage."
+						"Melee Weapon Attack: {@hit 5} to hit, reach 5 ft., one target. Hit: 5 ({@dice 1d4+3}) piercing damage."
 					]
 				}
 			],
@@ -17052,7 +17829,10 @@
 				"forest",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/216/giant-weasel.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/216/giant-weasel.mp3",
+			"traitTags": [
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Giant Wolf Spider",
@@ -17110,7 +17890,7 @@
 				{
 					"name": "Bite",
 					"entries": [
-						"Weapon Attack: {@hit 3} to hit, reach 5 ft., one creature. Hit: 4 ({@dice 1d6+1}) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 7 ({@dice 2d6}) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way."
+						"Melee Weapon Attack: {@hit 3} to hit, reach 5 ft., one creature. Hit: 4 ({@dice 1d6+1}) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 7 ({@dice 2d6}) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way."
 					]
 				}
 			],
@@ -17122,7 +17902,12 @@
 				"desert",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/217/giant-wolf-spider.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/217/giant-wolf-spider.mp3",
+			"traitTags": [
+				"Spider Climb",
+				"Web Sense",
+				"Web Walker"
+			]
 		},
 		{
 			"name": "Gibbering Mouther",
@@ -17193,7 +17978,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/218/gibbering-mouther.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/218/gibbering-mouther.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Githyanki Knight",
@@ -17276,7 +18064,10 @@
 					}
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/220/githyanki-knight.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/220/githyanki-knight.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Githyanki Warrior",
@@ -17354,7 +18145,10 @@
 					}
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/558/githyanki-warrior.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/558/githyanki-warrior.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Githzerai Monk",
@@ -17441,7 +18235,10 @@
 					}
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/221/githzerai-monk.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/221/githzerai-monk.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Githzerai Zerth",
@@ -17529,7 +18326,10 @@
 					}
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/562/githzerai-zerth.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/562/githzerai-zerth.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Glabrezu",
@@ -17655,7 +18455,13 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/223/glabrezu.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/223/glabrezu.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Gladiator",
@@ -17747,7 +18553,14 @@
 				}
 			],
 			"page": 346,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/224/gladiator.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/224/gladiator.mp3",
+			"traitTags": [
+				"Brute"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Parry"
+			]
 		},
 		{
 			"name": "Gnoll",
@@ -17824,7 +18637,10 @@
 				"hill",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/230/gnoll.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/230/gnoll.mp3",
+			"traitTags": [
+				"Rampage"
+			]
 		},
 		{
 			"name": "Gnoll Fang of Yeenoghu",
@@ -17905,7 +18721,13 @@
 				"hill",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/225/gnoll-fang-of-yeenoghu.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/225/gnoll-fang-of-yeenoghu.mp3",
+			"traitTags": [
+				"Rampage"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Gnoll Pack Lord",
@@ -17993,7 +18815,13 @@
 				"hill",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/228/gnoll-pack-lord.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/228/gnoll-pack-lord.mp3",
+			"traitTags": [
+				"Rampage"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Goat",
@@ -18050,7 +18878,10 @@
 				"hill",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/232/goat.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/232/goat.mp3",
+			"traitTags": [
+				"Charge"
+			]
 		},
 		{
 			"name": "Goblin",
@@ -18212,7 +19043,10 @@
 				"forest",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/233/goblin-boss.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/233/goblin-boss.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Gold Dragon Wyrmling",
@@ -18302,7 +19136,10 @@
 				}
 			],
 			"page": 115,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/235/gold-dragon-wyrmlin.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/235/gold-dragon-wyrmlin.mp3",
+			"traitTags": [
+				"Amphibious"
+			]
 		},
 		{
 			"name": "Gorgon",
@@ -18498,7 +19335,15 @@
 				}
 			],
 			"page": 59,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/559/goristro.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/559/goristro.mp3",
+			"traitTags": [
+				"Charge",
+				"Magic Resistance",
+				"Siege Monster"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Gray Ooze",
@@ -18554,7 +19399,7 @@
 				{
 					"name": "Corrode Metal",
 					"entries": [
-						"Any nonmagical weapon made of metal that hits the ooze corrodes. After dealing damage, the weapon takes a permanent and cumulative -1 penalty to damage rolls. If its penalty drops to -5, the weapon is destroyed. Nonmagical ammunition made of metal that hits the ooze is destroyed after dealing damage.",
+						"Any nonmagical weapon made of metal that hits the ooze corrodes. After dealing damage, the weapon takes a permanent and cumulative \u20131 penalty to damage rolls. If its penalty drops to \u20135, the weapon is destroyed. Nonmagical ammunition made of metal that hits the ooze is destroyed after dealing damage.",
 						"The ooze can eat through 2-inch-thick, nonmagical metal in 1 round."
 					]
 				},
@@ -18569,7 +19414,7 @@
 				{
 					"name": "Pseudopod",
 					"entries": [
-						"Melee Weapon Attack: {@hit 3} to hit, reach 5 ft., one target. Hit: 4 ({@dice 1d6+1}) bludgeoning damage plus 7 ({@dice 2d6}) acid damage, and if the target is wearing nonmagical metal armor, its armor is partly corroded and takes a permanent and cumulative -1 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10."
+						"Melee Weapon Attack: {@hit 3} to hit, reach 5 ft., one target. Hit: 4 ({@dice 1d6+1}) bludgeoning damage plus 7 ({@dice 2d6}) acid damage, and if the target is wearing nonmagical metal armor, its armor is partly corroded and takes a permanent and cumulative \u20131 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10."
 					]
 				}
 			],
@@ -18577,7 +19422,11 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/240/gray-ooze.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/240/gray-ooze.mp3",
+			"traitTags": [
+				"Amorphous",
+				"False Appearance"
+			]
 		},
 		{
 			"name": "Gray Ooze (Psychic)",
@@ -18633,7 +19482,7 @@
 				{
 					"name": "Corrode Metal",
 					"entries": [
-						"Any nonmagical weapon made of metal that hits the ooze corrodes. After dealing damage, the weapon takes a permanent and cumulative -1 penalty to damage rolls. If its penalty drops to -5, the weapon is destroyed. Nonmagical ammunition made of metal that hits the ooze is destroyed after dealing damage.",
+						"Any nonmagical weapon made of metal that hits the ooze corrodes. After dealing damage, the weapon takes a permanent and cumulative \u20131 penalty to damage rolls. If its penalty drops to \u20135, the weapon is destroyed. Nonmagical ammunition made of metal that hits the ooze is destroyed after dealing damage.",
 						"The ooze can eat through 2-inch-thick, nonmagical metal in 1 round."
 					]
 				},
@@ -18648,7 +19497,7 @@
 				{
 					"name": "Pseudopod",
 					"entries": [
-						"Melee Weapon Attack: {@hit 3} to hit, reach 5 ft., one target. Hit: 4 ({@dice 1d6+1}) bludgeoning damage plus 7 ({@dice 2d6}) acid damage, and if the target is wearing nonmagical metal armor, its armor is partly corroded and takes a permanent and cumulative -1 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10."
+						"Melee Weapon Attack: {@hit 3} to hit, reach 5 ft., one target. Hit: 4 ({@dice 1d6+1}) bludgeoning damage plus 7 ({@dice 2d6}) acid damage, and if the target is wearing nonmagical metal armor, its armor is partly corroded and takes a permanent and cumulative \u20131 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10."
 					]
 				},
 				{
@@ -18662,7 +19511,11 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/569/psychic-gray-ooze.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/569/psychic-gray-ooze.mp3",
+			"traitTags": [
+				"Amorphous",
+				"False Appearance"
+			]
 		},
 		{
 			"name": "Gray Slaad",
@@ -18808,7 +19661,16 @@
 			"environment": [
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/241/gray-slaad.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/241/gray-slaad.mp3",
+			"traitTags": [
+				"Shapechanger",
+				"Magic Resistance",
+				"Magic Weapons",
+				"Regeneration"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Green Dragon Wyrmling",
@@ -18885,7 +19747,10 @@
 				}
 			],
 			"page": 95,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/242/green-dragon-wyrmling.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/242/green-dragon-wyrmling.mp3",
+			"traitTags": [
+				"Amphibious"
+			]
 		},
 		{
 			"name": "Green Hag",
@@ -19051,7 +19916,10 @@
 				"swamp",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/244/green-hag.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/244/green-hag.mp3",
+			"traitTags": [
+				"Amphibious"
+			]
 		},
 		{
 			"name": "Green Slaad",
@@ -19190,7 +20058,15 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/245/green-slaad.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/245/green-slaad.mp3",
+			"traitTags": [
+				"Shapechanger",
+				"Magic Resistance",
+				"Regeneration"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Grell",
@@ -19262,7 +20138,11 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/246/grell.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/246/grell.mp3",
+			"actionTags": [
+				"Multiattack",
+				"Tentacles"
+			]
 		},
 		{
 			"name": "Grick",
@@ -19340,7 +20220,11 @@
 				"underdark",
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/248/grick.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/248/grick.mp3",
+			"actionTags": [
+				"Multiattack",
+				"Tentacles"
+			]
 		},
 		{
 			"name": "Grick Alpha",
@@ -19424,7 +20308,11 @@
 				"underdark",
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/247/grick-alpha.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/247/grick-alpha.mp3",
+			"actionTags": [
+				"Multiattack",
+				"Tentacles"
+			]
 		},
 		{
 			"name": "Griffon",
@@ -19493,7 +20381,13 @@
 				"coastal",
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/249/griffon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/249/griffon.mp3",
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Grimlock",
@@ -19569,7 +20463,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/250/grimlock.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/250/grimlock.mp3",
+			"traitTags": [
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Guard",
@@ -19757,7 +20654,10 @@
 				"forest",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/256/guardian-naga.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/256/guardian-naga.mp3",
+			"traitTags": [
+				"Rejuvenation"
+			]
 		},
 		{
 			"name": "Gynosphinx",
@@ -19924,7 +20824,13 @@
 			"environment": [
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/257/gynosphinx.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/257/gynosphinx.mp3",
+			"traitTags": [
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Half-Ogre (Ogrillon)",
@@ -20043,7 +20949,7 @@
 				{
 					"name": "Longsword",
 					"entries": [
-						"Weapon Attack: {@hit 5} to hit, reach 5 ft., one target. Hit: 7 ({@dice 1d8+3}) slashing damage, or 8 ({@dice 1d10+3}) slashing damage if used with two hands."
+						"Melee Weapon Attack: {@hit 5} to hit, reach 5 ft., one target. Hit: 7 ({@dice 1d8+3}) slashing damage, or 8 ({@dice 1d10+3}) slashing damage if used with two hands."
 					]
 				},
 				{
@@ -20066,7 +20972,10 @@
 				}
 			],
 			"page": 180,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/263/half-red-dragon-veteran.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/263/half-red-dragon-veteran.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Harpy",
@@ -20132,7 +21041,10 @@
 				"hill",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/264/harpy.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/264/harpy.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Hawk",
@@ -20182,7 +21094,10 @@
 			],
 			"page": 330,
 			"familiar": true,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/265/hawk.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/265/hawk.mp3",
+			"traitTags": [
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Hell Hound",
@@ -20257,7 +21172,11 @@
 				"underdark",
 				"mountain"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/266/hell-hound.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/266/hell-hound.mp3",
+			"traitTags": [
+				"Keen Senses",
+				"Pack Tactics"
+			]
 		},
 		{
 			"name": "Helmed Horror",
@@ -20351,7 +21270,14 @@
 				}
 			],
 			"page": 183,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/267/helmed-horror.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/267/helmed-horror.mp3",
+			"traitTags": [
+				"Magic Resistance",
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Hezrou",
@@ -20462,7 +21388,13 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/268/hezrou.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/268/hezrou.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Hill Giant",
@@ -20544,7 +21476,10 @@
 			"environment": [
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/269/hill-giant.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/269/hill-giant.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Hippogriff",
@@ -20610,7 +21545,13 @@
 				"grassland",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/270/hippogriff.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/270/hippogriff.mp3",
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Hobgoblin",
@@ -20765,7 +21706,10 @@
 				"hill",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/271/hobgoblin-captain.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/271/hobgoblin-captain.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Hobgoblin Warlord",
@@ -20868,7 +21812,11 @@
 				"hill",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/274/hobgoblin-warlord.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/274/hobgoblin-warlord.mp3",
+			"actionTags": [
+				"Multiattack",
+				"Parry"
+			]
 		},
 		{
 			"name": "Homunculus",
@@ -20999,7 +21947,13 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/277/hook-horror.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/277/hook-horror.mp3",
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Horned Devil",
@@ -21106,7 +22060,14 @@
 				}
 			],
 			"page": 74,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/278/horned-devil.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/278/horned-devil.mp3",
+			"traitTags": [
+				"Devil's Sight",
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Hunter Shark",
@@ -21169,7 +22130,10 @@
 			"environment": [
 				"underwater"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/280/hunter-shark.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/280/hunter-shark.mp3",
+			"traitTags": [
+				"Water Breathing"
+			]
 		},
 		{
 			"name": "Hydra",
@@ -21253,7 +22217,13 @@
 			"environment": [
 				"swamp"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/281/hydra.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/281/hydra.mp3",
+			"traitTags": [
+				"Hold Breath"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Hyena",
@@ -21296,7 +22266,7 @@
 				{
 					"name": "Bite",
 					"entries": [
-						"Weapon Attack: {@hit 2} to hit, reach 5 ft., one target. Hit: 3 ({@dice 1d6}) piercing damage."
+						"Melee Weapon Attack: {@hit 2} to hit, reach 5 ft., one target. Hit: 3 ({@dice 1d6}) piercing damage."
 					]
 				}
 			],
@@ -21307,7 +22277,10 @@
 				"hill",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/282/hyena.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/282/hyena.mp3",
+			"traitTags": [
+				"Pack Tactics"
+			]
 		},
 		{
 			"name": "Ice Devil",
@@ -21420,7 +22393,14 @@
 				}
 			],
 			"page": 75,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/283/ice-devil.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/283/ice-devil.mp3",
+			"traitTags": [
+				"Devil's Sight",
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Ice Devil Spear",
@@ -21538,7 +22518,14 @@
 					]
 				}
 			],
-			"page": 75
+			"page": 75,
+			"traitTags": [
+				"Devil's Sight",
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Ice Mephit",
@@ -21637,7 +22624,11 @@
 			"environment": [
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/284/ice-mephit.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/284/ice-mephit.mp3",
+			"traitTags": [
+				"Death Burst",
+				"False Appearance"
+			]
 		},
 		{
 			"name": "Imp",
@@ -21750,7 +22741,12 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/286/imp.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/286/imp.mp3",
+			"traitTags": [
+				"Shapechanger",
+				"Devil's Sight",
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Intellect Devourer",
@@ -21837,7 +22833,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/288/intellect-devourer.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/288/intellect-devourer.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Invisible Stalker",
@@ -21931,7 +22930,10 @@
 			"environment": [
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/289/invisible-stalker.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/289/invisible-stalker.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Iron Golem",
@@ -22040,7 +23042,16 @@
 				}
 			],
 			"page": 170,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/290/iron-golem.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/290/iron-golem.mp3",
+			"traitTags": [
+				"Damage Absorption",
+				"Immutable Form",
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Jackal",
@@ -22098,7 +23109,11 @@
 				"grassland",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/291/jackal.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/291/jackal.mp3",
+			"traitTags": [
+				"Keen Senses",
+				"Pack Tactics"
+			]
 		},
 		{
 			"name": "Jackalwere",
@@ -22193,7 +23208,12 @@
 				"grassland",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/292/jackalwere.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/292/jackalwere.mp3",
+			"traitTags": [
+				"Shapechanger",
+				"Keen Senses",
+				"Pack Tactics"
+			]
 		},
 		{
 			"name": "Kenku",
@@ -22266,7 +23286,10 @@
 				"forest",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/294/kenku-2.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/294/kenku-2.mp3",
+			"traitTags": [
+				"Ambusher"
+			]
 		},
 		{
 			"name": "Killer Whale",
@@ -22335,7 +23358,11 @@
 			"environment": [
 				"underwater"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/295/killer-whale.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/295/killer-whale.mp3",
+			"traitTags": [
+				"Hold Breath",
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Knight",
@@ -22421,7 +23448,11 @@
 				}
 			],
 			"page": 347,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/297/knight.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/297/knight.mp3",
+			"actionTags": [
+				"Multiattack",
+				"Parry"
+			]
 		},
 		{
 			"name": "Kobold",
@@ -22497,7 +23528,11 @@
 				"mountain",
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/301/kobold.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/301/kobold.mp3",
+			"traitTags": [
+				"Sunlight Sensitivity",
+				"Pack Tactics"
+			]
 		},
 		{
 			"name": "Kraken",
@@ -22638,7 +23673,15 @@
 			"environment": [
 				"underwater"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/304/kraken.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/304/kraken.mp3",
+			"traitTags": [
+				"Amphibious",
+				"Siege Monster"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Tentacles"
+			]
 		},
 		{
 			"name": "Kuo-toa",
@@ -22742,7 +23785,11 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/307/kuo-toa.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/307/kuo-toa.mp3",
+			"traitTags": [
+				"Amphibious",
+				"Sunlight Sensitivity"
+			]
 		},
 		{
 			"name": "Kuo-toa Archpriest",
@@ -22891,7 +23938,14 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/305/kuo-toa-archpriest.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/305/kuo-toa-archpriest.mp3",
+			"traitTags": [
+				"Amphibious",
+				"Sunlight Sensitivity"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Kuo-toa Monitor",
@@ -22991,7 +24045,14 @@
 				}
 			],
 			"page": 198,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/563/kuo-toa-monitor.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/563/kuo-toa-monitor.mp3",
+			"traitTags": [
+				"Amphibious",
+				"Sunlight Sensitivity"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Kuo-toa Whip",
@@ -23110,7 +24171,14 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/306/kuo-toa-whip.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/306/kuo-toa-whip.mp3",
+			"traitTags": [
+				"Amphibious",
+				"Sunlight Sensitivity"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Lamia",
@@ -23204,7 +24272,10 @@
 			"environment": [
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/308/lamia.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/308/lamia.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Lemure",
@@ -23275,7 +24346,10 @@
 				}
 			],
 			"page": 76,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/309/lemure.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/309/lemure.mp3",
+			"traitTags": [
+				"Devil's Sight"
+			]
 		},
 		{
 			"name": "Lich",
@@ -23494,7 +24568,12 @@
 					}
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/310/lich.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/310/lich.mp3",
+			"traitTags": [
+				"Legendary Resistances",
+				"Rejuvenation",
+				"Turn Resistance"
+			]
 		},
 		{
 			"name": "Lion",
@@ -23573,7 +24652,12 @@
 				"hill",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/311/lion.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/311/lion.mp3",
+			"traitTags": [
+				"Keen Senses",
+				"Pack Tactics",
+				"Pounce"
+			]
 		},
 		{
 			"name": "Lizard",
@@ -23712,7 +24796,13 @@
 				"forest",
 				"swamp"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/312/lizard-king-_-queen.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/312/lizard-king-_-queen.mp3",
+			"traitTags": [
+				"Hold Breath"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Lizard Queen",
@@ -23811,7 +24901,13 @@
 				"forest",
 				"swamp"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/312/lizard-king-_-queen.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/312/lizard-king-_-queen.mp3",
+			"traitTags": [
+				"Hold Breath"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Lizardfolk",
@@ -23902,7 +24998,13 @@
 				"forest",
 				"swamp"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/315/lizardfolk.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/315/lizardfolk.mp3",
+			"traitTags": [
+				"Hold Breath"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Lizardfolk Shaman",
@@ -24024,7 +25126,10 @@
 				"forest",
 				"swamp"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/314/lizardfolk-shaman.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/314/lizardfolk-shaman.mp3",
+			"traitTags": [
+				"Hold Breath"
+			]
 		},
 		{
 			"name": "Mage",
@@ -24232,7 +25337,11 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/317/magma-mephit.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/317/magma-mephit.mp3",
+			"traitTags": [
+				"Death Burst",
+				"False Appearance"
+			]
 		},
 		{
 			"name": "Magmin",
@@ -24304,7 +25413,10 @@
 				}
 			],
 			"page": 212,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/318/magmin.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/318/magmin.mp3",
+			"traitTags": [
+				"Death Burst"
+			]
 		},
 		{
 			"name": "Mammoth",
@@ -24504,7 +25616,10 @@
 				"coastal",
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/321/manticore.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/321/manticore.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Marid",
@@ -24632,7 +25747,13 @@
 				"underwater",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/322/marid.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/322/marid.mp3",
+			"traitTags": [
+				"Amphibious"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Marilith",
@@ -24764,7 +25885,16 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/323/marilith.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/323/marilith.mp3",
+			"traitTags": [
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Teleport",
+				"Parry"
+			]
 		},
 		{
 			"name": "Mastiff",
@@ -24817,7 +25947,10 @@
 				"hill",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/326/mastiff.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/326/mastiff.mp3",
+			"traitTags": [
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Medusa",
@@ -24899,7 +26032,10 @@
 			"environment": [
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/328/medusa.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/328/medusa.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Merfolk",
@@ -24958,7 +26094,10 @@
 				"underwater",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/331/merfolk.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/331/merfolk.mp3",
+			"traitTags": [
+				"Amphibious"
+			]
 		},
 		{
 			"name": "Merrow",
@@ -25034,7 +26173,13 @@
 				"underwater",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/332/merrow.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/332/merrow.mp3",
+			"traitTags": [
+				"Amphibious"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Mezzoloth",
@@ -25174,7 +26319,15 @@
 					}
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/333/mezzoloth.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/333/mezzoloth.mp3",
+			"traitTags": [
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Teleport"
+			]
 		},
 		{
 			"name": "Mimic",
@@ -25267,7 +26420,10 @@
 				"underdark",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/334/mimic.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/334/mimic.mp3",
+			"traitTags": [
+				"Shapechanger"
+			]
 		},
 		{
 			"name": "Mind Flayer",
@@ -25366,7 +26522,13 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/337/mind-flayer.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/337/mind-flayer.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Tentacles"
+			]
 		},
 		{
 			"name": "Mind Flayer Arcanist",
@@ -25520,7 +26682,13 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/335/mind-flayer-arcanist.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/335/mind-flayer-arcanist.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Tentacles"
+			]
 		},
 		{
 			"name": "Minotaur",
@@ -25597,7 +26765,11 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/340/minotaur.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/340/minotaur.mp3",
+			"traitTags": [
+				"Charge",
+				"Reckless"
+			]
 		},
 		{
 			"name": "Minotaur Skeleton",
@@ -25669,7 +26841,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/339/minotaur-skeleton.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/339/minotaur-skeleton.mp3",
+			"traitTags": [
+				"Charge"
+			]
 		},
 		{
 			"name": "Monodrone",
@@ -25819,7 +26994,11 @@
 			"environment": [
 				"swamp"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/344/mud-mephit.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/344/mud-mephit.mp3",
+			"traitTags": [
+				"Death Burst",
+				"False Appearance"
+			]
 		},
 		{
 			"name": "Mule",
@@ -25962,7 +27141,10 @@
 			"environment": [
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/347/mummy.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/347/mummy.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Mummy Lord",
@@ -26163,7 +27345,14 @@
 			"environment": [
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/346/mummy-lord.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/346/mummy-lord.mp3",
+			"traitTags": [
+				"Magic Resistance",
+				"Rejuvenation"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Myconid Adult",
@@ -26395,7 +27584,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/565/myconid-sovere.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/565/myconid-sovere.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Myconid Sprout",
@@ -26576,7 +27768,14 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/351/nalfeshnee.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/351/nalfeshnee.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Teleport"
+			]
 		},
 		{
 			"name": "Needle Blight",
@@ -26823,7 +28022,10 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/357/night-hag.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/357/night-hag.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Nightmare",
@@ -26891,7 +28093,10 @@
 				}
 			],
 			"page": 235,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/358/nightmare.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/358/nightmare.mp3",
+			"traitTags": [
+				"Illumination"
+			]
 		},
 		{
 			"name": "Noble",
@@ -26952,7 +28157,10 @@
 				}
 			],
 			"page": 348,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/360/noble.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/360/noble.mp3",
+			"actionTags": [
+				"Parry"
+			]
 		},
 		{
 			"name": "Nothic",
@@ -27032,7 +28240,13 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/361/nothic.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/361/nothic.mp3",
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Nycaloth",
@@ -27173,7 +28387,15 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/362/nycaloth.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/362/nycaloth.mp3",
+			"traitTags": [
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Teleport"
+			]
 		},
 		{
 			"name": "Ochre Jelly",
@@ -27252,7 +28474,11 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/363/ochre-jelly.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/363/ochre-jelly.mp3",
+			"traitTags": [
+				"Amorphous",
+				"Spider Climb"
+			]
 		},
 		{
 			"name": "Octopus",
@@ -27322,7 +28548,14 @@
 			],
 			"page": 333,
 			"familiar": true,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/364/octopus.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/364/octopus.mp3",
+			"traitTags": [
+				"Hold Breath",
+				"Water Breathing"
+			],
+			"actionTags": [
+				"Tentacles"
+			]
 		},
 		{
 			"name": "Ogre",
@@ -27441,7 +28674,10 @@
 				}
 			],
 			"page": 316,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/365/ogre-zombie.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/365/ogre-zombie.mp3",
+			"traitTags": [
+				"Undead Fortitude"
+			]
 		},
 		{
 			"name": "Oni",
@@ -27554,7 +28790,14 @@
 				"forest",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/367/oni.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/367/oni.mp3",
+			"traitTags": [
+				"Magic Weapons",
+				"Regeneration"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Orc",
@@ -27630,7 +28873,10 @@
 				"hill",
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/374/orc.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/374/orc.mp3",
+			"traitTags": [
+				"Aggressive"
+			]
 		},
 		{
 			"name": "Orc Eye of Gruumsh",
@@ -27739,7 +28985,10 @@
 				"hill",
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/370/orc-eye-of-gruumsh.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/370/orc-eye-of-gruumsh.mp3",
+			"traitTags": [
+				"Aggressive"
+			]
 		},
 		{
 			"name": "Orc War Chief",
@@ -27838,7 +29087,13 @@
 				"hill",
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/373/orc-war-chief.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/373/orc-war-chief.mp3",
+			"traitTags": [
+				"Aggressive"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Orog",
@@ -27920,7 +29175,13 @@
 				"hill",
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/375/orog.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/375/orog.mp3",
+			"traitTags": [
+				"Aggressive"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Otyugh",
@@ -27996,7 +29257,11 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/376/otyugh.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/376/otyugh.mp3",
+			"actionTags": [
+				"Multiattack",
+				"Tentacles"
+			]
 		},
 		{
 			"name": "Owl",
@@ -28058,7 +29323,11 @@
 				"forest",
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/377/owl.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/377/owl.mp3",
+			"traitTags": [
+				"Flyby",
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Owlbear",
@@ -28127,7 +29396,13 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/378/owlbear.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/378/owlbear.mp3",
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Panther",
@@ -28194,7 +29469,11 @@
 				"forest",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/379/panther.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/379/panther.mp3",
+			"traitTags": [
+				"Keen Senses",
+				"Pounce"
+			]
 		},
 		{
 			"name": "Pegasus",
@@ -28322,7 +29601,10 @@
 				}
 			],
 			"page": 226,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/381/pentadrone.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/381/pentadrone.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Peryton",
@@ -28416,7 +29698,14 @@
 				"mountain",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/382/peryton.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/382/peryton.mp3",
+			"traitTags": [
+				"Flyby",
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Phase Spider",
@@ -28491,7 +29780,11 @@
 				"urban",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/383/phase-spider.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/383/phase-spider.mp3",
+			"traitTags": [
+				"Spider Climb",
+				"Web Walker"
+			]
 		},
 		{
 			"name": "Piercer",
@@ -28555,7 +29848,11 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/384/piercer.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/384/piercer.mp3",
+			"traitTags": [
+				"False Appearance",
+				"Spider Climb"
+			]
 		},
 		{
 			"name": "Pit Fiend",
@@ -28691,7 +29988,14 @@
 					}
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/385/pit-fiend.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/385/pit-fiend.mp3",
+			"traitTags": [
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Pixie",
@@ -28771,7 +30075,10 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/386/pixie.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/386/pixie.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Planetar",
@@ -28898,7 +30205,13 @@
 					}
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/387/planetar.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/387/planetar.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Plesiosaurus",
@@ -28957,7 +30270,10 @@
 				"underwater",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/388/plesiosaurus.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/388/plesiosaurus.mp3",
+			"traitTags": [
+				"Hold Breath"
+			]
 		},
 		{
 			"name": "Poisonous Snake",
@@ -29075,7 +30391,13 @@
 				"underdark",
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/390/polar-bear.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/390/polar-bear.mp3",
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Poltergeist",
@@ -29182,7 +30504,11 @@
 				"underdark",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/552/poltergeist.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/552/poltergeist.mp3",
+			"traitTags": [
+				"Incorporeal Movement",
+				"Sunlight Sensitivity"
+			]
 		},
 		{
 			"name": "Pony",
@@ -29418,7 +30744,11 @@
 				"desert",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/393/pseudodragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/393/pseudodragon.mp3",
+			"traitTags": [
+				"Keen Senses",
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Pteranodon",
@@ -29477,7 +30807,10 @@
 				"grassland",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/394/pteranodon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/394/pteranodon.mp3",
+			"traitTags": [
+				"Flyby"
+			]
 		},
 		{
 			"name": "Purple Worm",
@@ -29550,7 +30883,10 @@
 				"underdark",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/395/purple-worm.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/395/purple-worm.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Quadrone",
@@ -29626,7 +30962,10 @@
 				}
 			],
 			"page": 226,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/396/quadrone.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/396/quadrone.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Quaggoth",
@@ -29703,7 +31042,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/399/quaggoth.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/399/quaggoth.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Quaggoth Spore Servant",
@@ -29766,7 +31108,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/397/quaggoth-spore-servant.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/397/quaggoth-spore-servant.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Quaggoth Thonot",
@@ -29863,7 +31208,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/398/quaggoth-thonot.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/398/quaggoth-thonot.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Quasit",
@@ -29973,7 +31321,11 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/400/quasit.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/400/quasit.mp3",
+			"traitTags": [
+				"Shapechanger",
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Quipper",
@@ -30029,7 +31381,10 @@
 			"environment": [
 				"underwater"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/403/quipper.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/403/quipper.mp3",
+			"traitTags": [
+				"Water Breathing"
+			]
 		},
 		{
 			"name": "Rakshasa",
@@ -30142,7 +31497,10 @@
 			"environment": [
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/404/rakshasa.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/404/rakshasa.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Rat",
@@ -30193,7 +31551,10 @@
 				"swamp",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/405/rat.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/405/rat.mp3",
+			"traitTags": [
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Raven",
@@ -30409,7 +31770,14 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/410/red-slaad.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/410/red-slaad.mp3",
+			"traitTags": [
+				"Magic Resistance",
+				"Regeneration"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Reef Shark",
@@ -30472,7 +31840,11 @@
 			"environment": [
 				"underwater"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/412/reef-shark.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/412/reef-shark.mp3",
+			"traitTags": [
+				"Pack Tactics",
+				"Water Breathing"
+			]
 		},
 		{
 			"name": "Remorhaz",
@@ -30538,7 +31910,10 @@
 			"environment": [
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/413/remorhaz.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/413/remorhaz.mp3",
+			"actionTags": [
+				"Swallow"
+			]
 		},
 		{
 			"name": "Revenant",
@@ -30649,7 +32024,15 @@
 				"desert",
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/414/revenant.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/414/revenant.mp3",
+			"traitTags": [
+				"Regeneration",
+				"Rejuvenation",
+				"Turn Immunity"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Rhinoceros",
@@ -30702,7 +32085,10 @@
 			"environment": [
 				"grassland"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/415/rhinoceros.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/415/rhinoceros.mp3",
+			"traitTags": [
+				"Charge"
+			]
 		},
 		{
 			"name": "Riding Horse",
@@ -30822,7 +32208,13 @@
 				"coastal",
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/417/roc.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/417/roc.mp3",
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Roper",
@@ -30912,7 +32304,14 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/418/roper.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/418/roper.mp3",
+			"traitTags": [
+				"False Appearance",
+				"Spider Climb"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Rug of Smothering",
@@ -30983,7 +32382,11 @@
 				}
 			],
 			"page": 20,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/419/run-of-smothering.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/419/run-of-smothering.mp3",
+			"traitTags": [
+				"Antimagic Susceptibility",
+				"False Appearance"
+			]
 		},
 		{
 			"name": "Rust Monster",
@@ -31027,7 +32430,7 @@
 				{
 					"name": "Rust Metal",
 					"entries": [
-						"Any nonmagical weapon made of metal that hits the rust monster corrodes. After dealing damage, the weapon takes a permanent and cumulative -1 penalty to damage rolls. If its penalty drops to -5, the weapon is destroyed. Non magical ammunition made of metal that hits the rust monster is destroyed after dealing damage."
+						"Any nonmagical weapon made of metal that hits the rust monster corrodes. After dealing damage, the weapon takes a permanent and cumulative \u20131 penalty to damage rolls. If its penalty drops to \u20135, the weapon is destroyed. Non magical ammunition made of metal that hits the rust monster is destroyed after dealing damage."
 					]
 				}
 			],
@@ -31042,7 +32445,7 @@
 					"name": "Antennae",
 					"entries": [
 						"The rust monster corrodes a nonmagical ferrous metal object it can see within 5 feet of it. If the object isn't being worn or carried, the touch destroys a 1-foot cube of it. If the object is being worn or carried by a creature, the creature can make a DC 11 Dexterity saving throw to avoid the rust monster's touch.",
-						"If the object touched is either metal armor or a metal shield being worn or carried, its takes a permanent and cumulative -1 penalty to the AC it offers. Armor reduced to an AC of 10 or a shield that drops to a +0 bonus is destroyed. If the object touched is a held metal weapon, it rusts as described in the Rust Metal trait."
+						"If the object touched is either metal armor or a metal shield being worn or carried, its takes a permanent and cumulative \u20131 penalty to the AC it offers. Armor reduced to an AC of 10 or a shield that drops to a +0 bonus is destroyed. If the object touched is a held metal weapon, it rusts as described in the Rust Metal trait."
 					]
 				}
 			],
@@ -31115,7 +32518,11 @@
 				"mountain",
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/427/saber-toothed-tiger.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/427/saber-toothed-tiger.mp3",
+			"traitTags": [
+				"Keen Senses",
+				"Pounce"
+			]
 		},
 		{
 			"name": "Sahuagin",
@@ -31211,7 +32618,10 @@
 				"underwater",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/430/sahuagin.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/430/sahuagin.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Sahuagin Baron",
@@ -31313,7 +32723,10 @@
 				"underwater",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/428/sahuagin-baron.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/428/sahuagin-baron.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Sahuagin Priestess",
@@ -31442,7 +32855,10 @@
 				"underwater",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/429/sahuagin-priestess.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/429/sahuagin-priestess.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Salamander",
@@ -31532,7 +32948,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/431/salamander.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/431/salamander.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Satyr",
@@ -31642,7 +33061,10 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/432/satyr.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/432/satyr.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Scarecrow",
@@ -31729,7 +33151,13 @@
 			"environment": [
 				"grassland"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/433/scarecrow.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/433/scarecrow.mp3",
+			"traitTags": [
+				"False Appearance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Scorpion",
@@ -31849,7 +33277,13 @@
 				}
 			],
 			"page": 349,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/435/scout.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/435/scout.mp3",
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Sea Hag",
@@ -31999,7 +33433,10 @@
 				"underwater",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/436/sea-hag.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/436/sea-hag.mp3",
+			"traitTags": [
+				"Amphibious"
+			]
 		},
 		{
 			"name": "Sea Horse",
@@ -32037,7 +33474,10 @@
 			],
 			"page": 337,
 			"familiar": true,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/437/sea-horse.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/437/sea-horse.mp3",
+			"traitTags": [
+				"Water Breathing"
+			]
 		},
 		{
 			"name": "Shadow",
@@ -32136,7 +33576,10 @@
 				"underdark",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/442/shadow.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/442/shadow.mp3",
+			"traitTags": [
+				"Amorphous"
+			]
 		},
 		{
 			"name": "Shadow Demon",
@@ -32240,7 +33683,11 @@
 				}
 			],
 			"page": 64,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/439/shadow-demon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/439/shadow-demon.mp3",
+			"traitTags": [
+				"Incorporeal Movement",
+				"Light Sensitivity"
+			]
 		},
 		{
 			"name": "Shambling Mound",
@@ -32323,7 +33770,13 @@
 				"forest",
 				"swamp"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/443/shambling-mound.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/443/shambling-mound.mp3",
+			"traitTags": [
+				"Damage Absorption"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Shield Guardian",
@@ -32414,7 +33867,13 @@
 			"environment": [
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/444/shield-guardian.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/444/shield-guardian.mp3",
+			"traitTags": [
+				"Regeneration"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Shrieker",
@@ -32468,7 +33927,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/446/shrieker.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/446/shrieker.mp3",
+			"traitTags": [
+				"False Appearance"
+			]
 		},
 		{
 			"name": "Silver Dragon Wyrmling",
@@ -32670,7 +34132,10 @@
 				}
 			],
 			"page": 276,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/450/slaad-tadpole.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/450/slaad-tadpole.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Smoke Mephit",
@@ -32759,7 +34224,10 @@
 			"environment": [
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/452/smoke-mephit.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/452/smoke-mephit.mp3",
+			"traitTags": [
+				"Death Burst"
+			]
 		},
 		{
 			"name": "Solar",
@@ -32921,7 +34389,13 @@
 					}
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/453/solar.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/453/solar.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Spectator",
@@ -33097,7 +34571,11 @@
 				"underdark",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/457/specter.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/457/specter.mp3",
+			"traitTags": [
+				"Incorporeal Movement",
+				"Sunlight Sensitivity"
+			]
 		},
 		{
 			"name": "Spider",
@@ -33160,7 +34638,12 @@
 			],
 			"page": 337,
 			"familiar": true,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/458/spider.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/458/spider.mp3",
+			"traitTags": [
+				"Spider Climb",
+				"Web Sense",
+				"Web Walker"
+			]
 		},
 		{
 			"name": "Spined Devil",
@@ -33273,7 +34756,15 @@
 				}
 			],
 			"page": 78,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/459/spined-devil.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/459/spined-devil.mp3",
+			"traitTags": [
+				"Devil's Sight",
+				"Flyby",
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Spirit Naga",
@@ -33394,7 +34885,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/460/spirit-naga.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/460/spirit-naga.mp3",
+			"traitTags": [
+				"Rejuvenation"
+			]
 		},
 		{
 			"name": "Sprite",
@@ -33543,7 +35037,13 @@
 				}
 			],
 			"page": 349,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/462/spy.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/462/spy.mp3",
+			"traitTags": [
+				"Sneak Attack"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Steam Mephit",
@@ -33628,7 +35128,10 @@
 			"environment": [
 				"underwater"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/463/steam-mephit.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/463/steam-mephit.mp3",
+			"traitTags": [
+				"Death Burst"
+			]
 		},
 		{
 			"name": "Stirge",
@@ -33797,7 +35300,10 @@
 				"mountain",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/468/stone-giant.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/468/stone-giant.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Stone Golem",
@@ -33893,7 +35399,15 @@
 				}
 			],
 			"page": 170,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/469/stone-golem.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/469/stone-golem.mp3",
+			"traitTags": [
+				"Immutable Form",
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Storm Giant",
@@ -34026,7 +35540,13 @@
 			"environment": [
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/470/storm-giant.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/470/storm-giant.mp3",
+			"traitTags": [
+				"Amphibious"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Succubus",
@@ -34134,7 +35654,10 @@
 			"environment": [
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/551/succubus-incubus.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/551/succubus-incubus.mp3",
+			"traitTags": [
+				"Shapechanger"
+			]
 		},
 		{
 			"name": "Incubus",
@@ -34242,7 +35765,10 @@
 			"environment": [
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/551/succubus-incubus.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/551/succubus-incubus.mp3",
+			"traitTags": [
+				"Shapechanger"
+			]
 		},
 		{
 			"name": "Swarm of Bats",
@@ -34325,7 +35851,10 @@
 				"hill",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/473/swarm-of-bats.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/473/swarm-of-bats.mp3",
+			"traitTags": [
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Swarm of Beetles",
@@ -34711,7 +36240,10 @@
 			"environment": [
 				"underwater"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/477/swarm-of-quippers.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/477/swarm-of-quippers.mp3",
+			"traitTags": [
+				"Water Breathing"
+			]
 		},
 		{
 			"name": "Swarm of Rats",
@@ -34785,7 +36317,10 @@
 				"swamp",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/478/swarm-of-rats.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/478/swarm-of-rats.mp3",
+			"traitTags": [
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Swarm of Ravens",
@@ -34951,6 +36486,11 @@
 				"hill",
 				"urban",
 				"desert"
+			],
+			"traitTags": [
+				"Spider Climb",
+				"Web Sense",
+				"Web Walker"
 			]
 		},
 		{
@@ -35186,7 +36726,17 @@
 			"environment": [
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/484/tarrasque.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/484/tarrasque.mp3",
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Siege Monster"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Frightful Presence",
+				"Swallow"
+			]
 		},
 		{
 			"name": "Thri-kreen",
@@ -35301,7 +36851,10 @@
 				"grassland",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/486/thri-kreen.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/486/thri-kreen.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Thri-kreen (Psionic)",
@@ -35435,6 +36988,9 @@
 			"environment": [
 				"grassland",
 				"desert"
+			],
+			"actionTags": [
+				"Multiattack"
 			]
 		},
 		{
@@ -35510,7 +37066,13 @@
 				}
 			],
 			"page": 350,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/487/thug.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/487/thug.mp3",
+			"traitTags": [
+				"Pack Tactics"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Tiger",
@@ -35576,7 +37138,11 @@
 				"grassland",
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/489/tiger.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/489/tiger.mp3",
+			"traitTags": [
+				"Keen Senses",
+				"Pounce"
+			]
 		},
 		{
 			"name": "Treant",
@@ -35662,7 +37228,14 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/492/treant.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/492/treant.mp3",
+			"traitTags": [
+				"False Appearance",
+				"Siege Monster"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Tribal Warrior",
@@ -35718,7 +37291,10 @@
 				}
 			],
 			"page": 350,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/493/tribal-warrior.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/493/tribal-warrior.mp3",
+			"traitTags": [
+				"Pack Tactics"
+			]
 		},
 		{
 			"name": "Triceratops",
@@ -35849,7 +37425,10 @@
 				}
 			],
 			"page": 225,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/495/tridrone.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/495/tridrone.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Troglodyte",
@@ -35937,7 +37516,13 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/571/troglodyte.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/571/troglodyte.mp3",
+			"traitTags": [
+				"Sunlight Sensitivity"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Troll",
@@ -36059,7 +37644,14 @@
 				"hill",
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/497/troll.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/497/troll.mp3",
+			"traitTags": [
+				"Keen Senses",
+				"Regeneration"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Twig Blight",
@@ -36125,7 +37717,10 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/498/twig-blight.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/498/twig-blight.mp3",
+			"traitTags": [
+				"False Appearance"
+			]
 		},
 		{
 			"name": "Tyrannosaurus Rex",
@@ -36185,7 +37780,10 @@
 			"environment": [
 				"grassland"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/499/tyrannosaurus-rex.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/499/tyrannosaurus-rex.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Ultroloth",
@@ -36342,7 +37940,15 @@
 					}
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/501/ultroloth.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/501/ultroloth.mp3",
+			"traitTags": [
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Teleport"
+			]
 		},
 		{
 			"name": "Umber Hulk",
@@ -36419,7 +38025,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/502/umber-hulk.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/502/umber-hulk.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Unicorn",
@@ -36555,7 +38164,15 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/503/unicorn.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/503/unicorn.mp3",
+			"traitTags": [
+				"Charge",
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Vampire",
@@ -36719,7 +38336,13 @@
 			"environment": [
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/507/vampire.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/507/vampire.mp3",
+			"traitTags": [
+				"Shapechanger",
+				"Legendary Resistances",
+				"Regeneration",
+				"Spider Climb"
+			]
 		},
 		{
 			"name": "Vampire Spawn",
@@ -36823,7 +38446,14 @@
 				"underdark",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/504/vampire-spawn.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/504/vampire-spawn.mp3",
+			"traitTags": [
+				"Regeneration",
+				"Spider Climb"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Vampire Spellcaster",
@@ -37041,7 +38671,13 @@
 			"environment": [
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/505/vampire-spellcaster.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/505/vampire-spellcaster.mp3",
+			"traitTags": [
+				"Shapechanger",
+				"Legendary Resistances",
+				"Regeneration",
+				"Spider Climb"
+			]
 		},
 		{
 			"name": "Vampire Warrior",
@@ -37217,7 +38853,16 @@
 			"environment": [
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/506/vampire-warrior.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/506/vampire-warrior.mp3",
+			"traitTags": [
+				"Shapechanger",
+				"Legendary Resistances",
+				"Regeneration",
+				"Spider Climb"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Veteran",
@@ -37287,7 +38932,10 @@
 				}
 			],
 			"page": 350,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/512/veteran.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/512/veteran.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Vine Blight",
@@ -37356,7 +39004,10 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/513/vine-blight.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/513/vine-blight.mp3",
+			"traitTags": [
+				"False Appearance"
+			]
 		},
 		{
 			"name": "Violet Fungus",
@@ -37416,7 +39067,13 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/514/violet-fungus.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/514/violet-fungus.mp3",
+			"traitTags": [
+				"False Appearance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Vrock",
@@ -37534,7 +39191,13 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/515/vrock.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/515/vrock.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Vulture",
@@ -37594,7 +39257,11 @@
 				"hill",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/516/vulture.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/516/vulture.mp3",
+			"traitTags": [
+				"Keen Senses",
+				"Pack Tactics"
+			]
 		},
 		{
 			"name": "Warhorse",
@@ -37797,7 +39464,10 @@
 				"swamp",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/524/water-elemental.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/524/water-elemental.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Water Weird",
@@ -37928,7 +39598,10 @@
 			],
 			"page": 340,
 			"familiar": true,
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/526/weasel.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/526/weasel.mp3",
+			"traitTags": [
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Werebear",
@@ -38037,7 +39710,14 @@
 				"hill",
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/527/werebear.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/527/werebear.mp3",
+			"traitTags": [
+				"Shapechanger",
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Wereboar",
@@ -38146,7 +39826,10 @@
 				"forest",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/528/wereboar.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/528/wereboar.mp3",
+			"traitTags": [
+				"Shapechanger"
+			]
 		},
 		{
 			"name": "Wererat",
@@ -38243,7 +39926,11 @@
 				"forest",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/529/wererat.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/529/wererat.mp3",
+			"traitTags": [
+				"Shapechanger",
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Weretiger",
@@ -38355,7 +40042,11 @@
 				"forest",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/530/weretiger.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/530/weretiger.mp3",
+			"traitTags": [
+				"Shapechanger",
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Werewolf",
@@ -38463,7 +40154,11 @@
 				"forest",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/531/werewolf.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/531/werewolf.mp3",
+			"traitTags": [
+				"Shapechanger",
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "White Dragon Wyrmling",
@@ -38630,7 +40325,13 @@
 				"urban",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/534/wight.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/534/wight.mp3",
+			"traitTags": [
+				"Sunlight Sensitivity"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Will-o'-Wisp",
@@ -38740,7 +40441,10 @@
 				"swamp",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/535/will-o-wisp.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/535/will-o-wisp.mp3",
+			"traitTags": [
+				"Incorporeal Movement"
+			]
 		},
 		{
 			"name": "Winged Kobold",
@@ -38817,7 +40521,11 @@
 				"mountain",
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/536/winged-kobold.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/536/winged-kobold.mp3",
+			"traitTags": [
+				"Sunlight Sensitivity",
+				"Pack Tactics"
+			]
 		},
 		{
 			"name": "Winter Wolf",
@@ -38897,7 +40605,11 @@
 			"environment": [
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/538/winter-wolf.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/538/winter-wolf.mp3",
+			"traitTags": [
+				"Keen Senses",
+				"Pack Tactics"
+			]
 		},
 		{
 			"name": "Wolf",
@@ -38962,7 +40674,11 @@
 				"forest",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/539/wolf.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/539/wolf.mp3",
+			"traitTags": [
+				"Keen Senses",
+				"Pack Tactics"
+			]
 		},
 		{
 			"name": "Worg",
@@ -39023,7 +40739,10 @@
 				"forest",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/541/worg.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/541/worg.mp3",
+			"traitTags": [
+				"Keen Senses"
+			]
 		},
 		{
 			"name": "Wraith",
@@ -39120,7 +40839,11 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/542/wraith.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/542/wraith.mp3",
+			"traitTags": [
+				"Incorporeal Movement",
+				"Sunlight Sensitivity"
+			]
 		},
 		{
 			"name": "Wyvern",
@@ -39189,7 +40912,10 @@
 				"mountain",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/574/wyvern.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/574/wyvern.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Xorn",
@@ -39281,7 +41007,10 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/543/xorn.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/543/xorn.mp3",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Yeti",
@@ -39369,7 +41098,13 @@
 			"environment": [
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/548/yeti.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/548/yeti.mp3",
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Yochlol",
@@ -39517,7 +41252,16 @@
 					]
 				}
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/549/yochlol.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/549/yochlol.mp3",
+			"traitTags": [
+				"Shapechanger",
+				"Magic Resistance",
+				"Spider Climb",
+				"Web Walker"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Young Black Dragon",
@@ -39606,7 +41350,14 @@
 			"environment": [
 				"swamp"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/53/black-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/53/black-dragon.mp3",
+			"dragonCastingColor": "B",
+			"traitTags": [
+				"Amphibious"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Young Blue Dragon",
@@ -39688,7 +41439,11 @@
 				"desert",
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/60/blue-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/60/blue-dragon.mp3",
+			"dragonCastingColor": "U",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Young Brass Dragon",
@@ -39786,7 +41541,11 @@
 			"environment": [
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/68/brass-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/68/brass-dragon.mp3",
+			"dragonCastingColor": "A",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Young Bronze Dragon",
@@ -39892,7 +41651,14 @@
 			"environment": [
 				"coastal"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/71/bronze-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/71/bronze-dragon.mp3",
+			"dragonCastingColor": "Z",
+			"traitTags": [
+				"Amphibious"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Young Copper Dragon",
@@ -39990,7 +41756,11 @@
 			"environment": [
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/100/copper-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/100/copper-dragon.mp3",
+			"dragonCastingColor": "C",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Young Gold Dragon",
@@ -40098,7 +41868,14 @@
 				"grassland",
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/236/gold-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/236/gold-dragon.mp3",
+			"dragonCastingColor": "O",
+			"traitTags": [
+				"Amphibious"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Young Green Dragon",
@@ -40191,7 +41968,14 @@
 			"environment": [
 				"forest"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/243/green-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/243/green-dragon.mp3",
+			"dragonCastingColor": "G",
+			"traitTags": [
+				"Amphibious"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Young Red Dragon",
@@ -40273,7 +42057,11 @@
 				"mountain",
 				"hill"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/408/red-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/408/red-dragon.mp3",
+			"dragonCastingColor": "R",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Young Red Shadow Dragon",
@@ -40377,7 +42165,14 @@
 			"environment": [
 				"underdark"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/409/red-shadow-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/409/red-shadow-dragon.mp3",
+			"dragonCastingColor": "R",
+			"traitTags": [
+				"Sunlight Sensitivity"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Young Remorhaz",
@@ -40535,7 +42330,11 @@
 				"mountain",
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/448/silver-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/448/silver-dragon.mp3",
+			"dragonCastingColor": "S",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Young White Dragon",
@@ -40625,7 +42424,11 @@
 			"environment": [
 				"arctic"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/533/white-dragon.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/533/white-dragon.mp3",
+			"dragonCastingColor": "W",
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Yuan-ti Abomination",
@@ -40748,7 +42551,11 @@
 				"swamp",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/550/yuan-ti-abomination.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/550/yuan-ti-abomination.mp3",
+			"traitTags": [
+				"Shapechanger",
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Yuan-ti Malison (Type 1)",
@@ -40866,7 +42673,11 @@
 				"swamp",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/421/yuan-ti-malison.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/421/yuan-ti-malison.mp3",
+			"traitTags": [
+				"Shapechanger",
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Yuan-ti Malison (Type 2)",
@@ -40972,7 +42783,11 @@
 				"swamp",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/421/yuan-ti-malison.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/421/yuan-ti-malison.mp3",
+			"traitTags": [
+				"Shapechanger",
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Yuan-ti Malison (Type 3)",
@@ -41096,7 +42911,11 @@
 				"swamp",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/421/yuan-ti-malison.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/421/yuan-ti-malison.mp3",
+			"traitTags": [
+				"Shapechanger",
+				"Magic Resistance"
+			]
 		},
 		{
 			"name": "Yuan-ti Pureblood",
@@ -41195,7 +43014,13 @@
 				"urban",
 				"desert"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/425/yuan-ti-pureblood.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/425/yuan-ti-pureblood.mp3",
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"actionTags": [
+				"Multiattack"
+			]
 		},
 		{
 			"name": "Zombie",
@@ -41255,7 +43080,10 @@
 			"environment": [
 				"urban"
 			],
-			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/426/zombie.mp3"
+			"soundClip": "https://media-waterdeep.cursecdn.com/file-attachments/0/426/zombie.mp3",
+			"traitTags": [
+				"Undead Fortitude"
+			]
 		}
 	]
 }
