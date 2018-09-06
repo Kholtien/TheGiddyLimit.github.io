@@ -71,6 +71,13 @@
 			"traitTags": [
 				"Incorporeal Movement",
 				"Turn Immunity"
+			],
+			"languageTags": [
+				"XX"
+			],
+			"senseTags": [
+				"D",
+				"U"
 			]
 		},
 		{
@@ -101,7 +108,10 @@
 			"senses": "darkvision 60 ft.",
 			"passive": 10,
 			"cr": "0",
-			"page": 169
+			"page": 169,
+			"senseTags": [
+				"D"
+			]
 		},
 		{
 			"source": "DMG",
@@ -135,7 +145,7 @@
 				{
 					"name": "Bite",
 					"entries": [
-						"Melee Weapon Attack: {@hit 1} to hit, reach 5 ft., one target. Hit: 1 ({@dice 1d4-1}) piercing damage."
+						"{@atk mw} {@hit 1} to hit, reach 5 ft., one target. Hit: 1 ({@dice 1d4-1}) piercing damage."
 					]
 				}
 			],

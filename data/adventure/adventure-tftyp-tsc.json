@@ -159,8 +159,8 @@
 								"Item"
 							],
 							"colStyles": [
-								"col-xs-1 text-align-center",
-								""
+								"col-xs-2 text-align-center",
+								"col-xs-10"
 							],
 							"rows": [
 								[
@@ -269,8 +269,8 @@
 								"Objective"
 							],
 							"colStyles": [
-								"col-xs-1 text-align-center",
-								""
+								"col-xs-2 text-align-center",
+								"col-xs-10"
 							],
 							"rows": [
 								[
@@ -315,8 +315,8 @@
 								"Secret"
 							],
 							"colStyles": [
-								"col-xs-1 text-align-center",
-								""
+								"col-xs-2 text-align-center",
+								"col-xs-10"
 							],
 							"rows": [
 								[
@@ -333,7 +333,7 @@
 								],
 								[
 									"4",
-									"Is a devil in disguise"
+									"Is a {@filter devil|bestiary|tag=devil} in disguise"
 								],
 								[
 									"5",
@@ -341,15 +341,15 @@
 								],
 								[
 									"6",
-									"Is the charmed thrall of a mind flayer"
+									"Is the charmed thrall of a {@creature mind flayer}"
 								],
 								[
 									"7",
-									"Is possessed by a ghost"
+									"Is possessed by a {@creature ghost}"
 								],
 								[
 									"8",
-									"Is a solar in disguise"
+									"Is a {@creature solar} in disguise"
 								]
 							]
 						},
@@ -411,8 +411,8 @@
 										"Denizen"
 									],
 									"colStyles": [
-										"col-xs-1 text-align-center",
-										""
+										"col-xs-2 text-align-center",
+										"col-xs-10"
 									],
 									"rows": [
 										[
@@ -659,7 +659,7 @@
 					"type": "entries",
 					"name": "The Citadel",
 					"entries": [
-							{
+						{
 							"type": "quote",
 							"entries": [
 								"See the old Dragon from his throne",
@@ -1219,33 +1219,33 @@
 										"Encounter"
 									],
 									"colStyles": [
-										"col-xs-1 text-align-center",
-										""
+										"col-xs-2 text-align-center",
+										"col-xs-10"
 									],
 									"rows": [
 										[
 											"1",
-											"1d6 kobolds"
+											"{@dice 1d6} {@creature kobold|mm|kobolds}"
 										],
 										[
 											"2",
-											"1d6 giant rats"
+											"{@dice 1d6} {@creature giant rat|mm|giant rats}"
 										],
 										[
 											"3",
-											"1d4 goblins"
+											"{@dice 1d4} {@creature goblin|mm|goblins}"
 										],
 										[
 											"4",
-											"1d2 hobgoblins"
+											"{@dice 1d2} {@creature hobgoblin|mm|hobgoblins}"
 										],
 										[
 											"5",
-											"1d4 skeletons"
+											"{@dice 1d4} {@creature skeleton|mm|skeletons}"
 										],
 										[
 											"6",
-											"1d6 twig blights"
+											"{@dice 1d6} {@creature twig blight|mm|twig blights}"
 										],
 										[
 											"7-20",
@@ -2735,7 +2735,7 @@
 							"type": "entries",
 							"name": "Creatures",
 							"entries": [
-								"{@creature Belak the Outcast|tftyp} spends much of his time studying the Gulthias Tree, but he is well aware when the characters are approaching. He is a human {@creature druid|MM}, and he has the following spells prepared:"
+								"{@creature Belak the Outcast|tftyp} spends much of his time studying the {@object Gulthias Tree|tftyp}, but he is well aware when the characters are approaching. He is a human {@creature druid|MM}, and he has the following spells prepared:"
 							]
 						},
 						"Cantrips (at will): {@spell druidcraft|PHB}, {@spell poison spray|PHB}, {@spell shillelagh|PHB}",
@@ -2837,38 +2837,38 @@
 							]
 						},
 						{
-							"type": "entries",
+							"type": "inset",
 							"name": "The Gulthias Tree",
 							"entries": [
-								"A Gargantuan plant, the Gulthias Tree has AC 10 and 35 hit points. It is immune to necrotic, poison, psychic damage, and it has resistance to piercing damage. The tree has vulnerability to fire damage.",
+								"A Gargantuan plant, the {@object Gulthias Tree|tftyp} has AC 10 and 35 hit points. It is immune to necrotic, poison, psychic damage, and it has resistance to piercing damage. The tree has vulnerability to fire damage.",
 								{
 									"type": "entries",
 									"name": "Fruit",
 									"entries": [
-										"Two magical fruits (evocation school) ripen on the tree each year. Each fruit resembles an apple, but it slowly extrudes from the tree like a cyst."
+										"Two magical fruits (evocation school) ripen on the tree each year. Each fruit resembles an apple, but it slowly extrudes from the tree like a cyst.",
+										"Up to a week before the summer solstice, a ruby red fruit grows. Someone other than a construct who eats a quarter or more of it regains 70 hit points. In addition, any blindness, deafness, and diseases affecting the eater end.",
+										"Up to a week before the winter solstice, a sickly white fruit grows. Someone who eats a quarter or more of it takes 70 necrotic damage. Each fruit has 1d4 seeds that, if planted, grow leafless woody shrubs that animate as twig blights after one year."
 									]
 								},
-								"Up to a week before the summer solstice, a ruby red fruit grows. Someone other than a construct who eats a quarter or more of it regains 70 hit points. In addition, any blindness, deafness, and diseases affecting the eater end.",
-								"Up to a week before the winter solstice, a sickly white fruit grows. Someone who eats a quarter or more of it takes 70 necrotic damage. Each fruit has 1d4 seeds that, if planted, grow leafless woody shrubs that animate as twig blights after one year.",
 								{
 									"type": "entries",
 									"name": "Tree Thralls",
 									"entries": [
-										"If a humanoid is bound to the bole of the Gulthias Tree, over the next 24 hours the victim is sucked completely into the tree. Once the victim is completely absorbed into the tree, it becomes the tree's thrall, and is expelled over the course of 1 hour. The Gulthias Tree can have only four thralls at any one time. A victim's skin is rough, gray, and bark-like. A thrall is totally corrupted, becoming neutral evil. Such a creature exists only to serve the Gulthias Tree and those who tend it (such as Belak). It possesses all of its former abilities and gains the following traits:"
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Barkskin",
-									"entries": [
-										"The thrall's AC can't be lower than 16."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Tree Thrall",
-									"entries": [
-										"If the Gulthias Tree dies, the thrall dies 24 hours later."
+										"If a humanoid is bound to the bole of the Gulthias Tree, over the next 24 hours the victim is sucked completely into the tree. Once the victim is completely absorbed into the tree, it becomes the tree's thrall, and is expelled over the course of 1 hour. The Gulthias Tree can have only four thralls at any one time. A victim's skin is rough, gray, and bark-like. A thrall is totally corrupted, becoming neutral evil. Such a creature exists only to serve the Gulthias Tree and those who tend it (such as Belak). It possesses all of its former abilities and gains the following traits:",
+										{
+											"type": "entries",
+											"name": "Barkskin",
+											"entries": [
+												"The thrall's AC can't be lower than 16."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Tree Thrall",
+											"entries": [
+												"If the Gulthias Tree dies, the thrall dies 24 hours later."
+											]
+										}
 									]
 								}
 							]

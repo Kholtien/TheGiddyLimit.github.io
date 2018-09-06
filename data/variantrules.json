@@ -226,7 +226,7 @@
 			"entries": [
 				"In most campaigns, you can use or wear any equipment that you find on your adventures, within the bounds of common sense. For example, a burly half-orc won't fit in a halfling's leather armor, and a gnome would be swallowed up in a cloud giant's elegant robe.",
 				"The DM can impose mare realism. For example, a suit of plate armor made for one human might not fit another one without significant alterations, and a guard's uniform might be visibly ill-fitting when an adventurer tries to wear it as a disguise.",
-				"Using this variant, when adventurers find armor, clothing, and similar items that are made to be worn, they might need to visit an armorsmith, tailor, leatherworker, or similar expert to make the item wearable. The cost for such work varies from 10 to 40 percent of the market price of the item. The DM can either roll 1d4 x 10 or determine the increase in cost based on the extent of the alterations required."
+				"Using this variant, when adventurers find armor, clothing, and similar items that are made to be worn, they might need to visit an armorsmith, tailor, leatherworker, or similar expert to make the item wearable. The cost for such work varies from 10 to 40 percent of the market price of the item. The DM can either roll 1d4 × 10 or determine the increase in cost based on the extent of the alterations required."
 			],
 			"source": "PHB"
 		},
@@ -1425,7 +1425,7 @@
 											3,
 											3,
 											3,
-											3,
+											2,
 											1,
 											"\u2014",
 											"\u2014",
@@ -1437,7 +1437,7 @@
 											3,
 											3,
 											3,
-											3,
+											2,
 											1,
 											"\u2014",
 											"\u2014",
@@ -1449,7 +1449,7 @@
 											3,
 											3,
 											3,
-											3,
+											2,
 											1,
 											1,
 											"\u2014",
@@ -1461,7 +1461,7 @@
 											3,
 											3,
 											3,
-											3,
+											2,
 											1,
 											1,
 											"\u2014",
@@ -1473,7 +1473,7 @@
 											3,
 											3,
 											3,
-											3,
+											2,
 											1,
 											1,
 											1,
@@ -1485,7 +1485,7 @@
 											3,
 											3,
 											3,
-											3,
+											2,
 											1,
 											1,
 											1,
@@ -1497,7 +1497,7 @@
 											3,
 											3,
 											3,
-											3,
+											2,
 											1,
 											1,
 											1,
@@ -2475,7 +2475,9 @@
 					]
 				}
 			],
-			"source": "DMG"
+			"source": "DMG",
+			"page": 288,
+			"ruleType": "V"
 		},
 		{
 			"name": "Training to Gain Levels",
@@ -3553,12 +3555,12 @@
 			"type": "section",
 			"name": "Falling",
 			"entries": [
-				"Falling from a great height is a significant risk for adventurers and their foes. The rule given in the Player's Handbook is simple: at the end of a fall, you take 1d6 bludgeoning damage for every 10 feet you fell, to a maximum of 20d6. You also land {@condition prone}, unless you somehow avoid taking damage from the fall. Here are two optional rules that expand on that simple rule.",
+				"Falling from a great height is a significant risk for adventurers and their foes. The rule given in the Player's Handbook is simple: at the end of a fall, you take {@dice 1d6} bludgeoning damage for every 10 feet you fell, to a maximum of {@dice 20d6}. You also land {@condition prone}, unless you somehow avoid taking damage from the fall. Here are two optional rules that expand on that simple rule.",
 				{
 					"type": "entries",
 					"name": "Rate of Falling",
 					"entries": [
-						"The rule for falling assumes that a creature immediately drops the entire distance when it falls. But what if a creature is at a high altitude when it falls, perhaps on the back of a griffon or on board an airship? Realistically, a fall from such a height can take more than a few seconds, extending past the end of the turn when the fall occurred. If you'd like high-altitude falls to be properly time-consuming, use the following optional rule.",
+						"The rule for falling assumes that a creature immediately drops the entire distance when it falls. But what if a creature is at a high altitude when it falls, perhaps on the back of a {@creature griffon} or on board an {@item airship}? Realistically, a fall from such a height can take more than a few seconds, extending past the end of the turn when the fall occurred. If you'd like high-altitude falls to be properly time-consuming, use the following optional rule.",
 						"When you fall from a great height, you instantly descend up to 500 feet. If you're still falling on your next turn, you descend up to 500 feet at the end of that turn. This process continues until the fall ends, either because you hit the ground or the fall is otherwise halted."
 					]
 				},
@@ -3566,7 +3568,7 @@
 					"type": "entries",
 					"name": "Flying Creatures and Falling",
 					"entries": [
-						"A flying creature in flight falls if it is knocked {@condition prone}, if its speed is reduced to 0 feet, or if it otherwise loses the ability to move, unless it can hover or it is being held aloft by magic, such as the fly spell.",
+						"A flying creature in flight falls if it is knocked {@condition prone}, if its speed is reduced to 0 feet, or if it otherwise loses the ability to move, unless it can hover or it is being held aloft by magic, such as the {@spell fly} spell.",
 						"If you'd like a flying creature to have a better chance of surviving a fall than a non-flying creature does, use this rule: subtract the creature's current flying speed from the distance it fell before calculating falling damage. This rule is helpful to a flier that is knocked {@condition prone} but is still conscious and has a current flying speed that is greater than 0 feet. The rule is designed to simulate the creature flapping its wings furiously or taking similar measures to slow the velocity of its fall.",
 						"If you use the rule for rate of falling in the previous section, a flying creature descends 500 feet on the turn when it falls, just as other creatures do. But if that creature starts any of its later turns still falling and is {@condition prone}, it can halt the fall on its turn by spending half its flying speed to counter the {@condition prone} condition (as if it were standing up in midair)."
 					]
@@ -3623,7 +3625,7 @@
 			"entries": [
 				"The rules are purposely open-ended concerning mundane tasks like tying knots, but sometimes knowing how well a knot was fashioned is important in a dramatic scene when someone is trying to untie a knot or slip out of one. Here's an optional rule for determining the effectiveness of a knot.",
 				"The creature who ties the knot makes an Intelligence (Sleight of Hand) check when doing so. The total of the check becomes the DC for an attempt to untie the knot with an Intelligence (Sleight of Hand) check or to slip out of it with a Dexterity (Acrobatics) check.",
-				"This rule intentionally links Sleight of Hand with Intelligence, rather than Dexterity. This is an example of how to apply the rule in the \"Variant: Skills with Different Abilities\" section in chapter 7 of the Player's Handbook."
+				"This rule intentionally links Sleight of Hand with Intelligence, rather than Dexterity. This is an example of how to apply the rule in the {@variantrule Skills with Different Abilities|phb|\"Variant: Skills with Different Abilities\"} section in chapter 7 of the Player's Handbook."
 			],
 			"source": "XGE"
 		},
@@ -7390,15 +7392,51 @@
 										"col-xs-4 text-align-center"
 									],
 									"rows": [
-										["A", "1\u20144", "4"],
-										["B", "1\u20144", "4"],
-										["C", "1\u20144", "4"],
-										["D", "2\u20144", "8"],
-										["E", "3\u20144", "8"],
-										["F", "1\u20144", "8"],
-										["G", "2\u20144", "10"],
-										["H", "3\u20144", "10"],
-										["I", "3\u20144", "12"]
+										[
+											"A",
+											"1\u20144",
+											"4"
+										],
+										[
+											"B",
+											"1\u20144",
+											"4"
+										],
+										[
+											"C",
+											"1\u20144",
+											"4"
+										],
+										[
+											"D",
+											"2\u20144",
+											"8"
+										],
+										[
+											"E",
+											"3\u20144",
+											"8"
+										],
+										[
+											"F",
+											"1\u20144",
+											"8"
+										],
+										[
+											"G",
+											"2\u20144",
+											"10"
+										],
+										[
+											"H",
+											"3\u20144",
+											"10"
+										],
+										[
+											"I",
+											"3\u20144",
+											"12"
+										]
 									]
 								}
 							]
@@ -7432,14 +7470,38 @@
 								"col-xs-4 text-align-center"
 							],
 							"rows": [
-								["Healing", "50 gp"],
-								["Climbing", "75 gp"],
-								["Animal friendship", "100 gp"],
-								["Greater healing", "100 gp"],
-								["Water breathing", "100 gp"],
-								["Superior healing", "500 gp"],
-								["Supreme healing", "5,000 gp"],
-								["Invisibility", "5,000 gp"]
+								[
+									"Healing",
+									"50 gp"
+								],
+								[
+									"Climbing",
+									"75 gp"
+								],
+								[
+									"Animal friendship",
+									"100 gp"
+								],
+								[
+									"Greater healing",
+									"100 gp"
+								],
+								[
+									"Water breathing",
+									"100 gp"
+								],
+								[
+									"Superior healing",
+									"500 gp"
+								],
+								[
+									"Supreme healing",
+									"5,000 gp"
+								],
+								[
+									"Invisibility",
+									"5,000 gp"
+								]
 							]
 						},
 						{
@@ -7455,12 +7517,30 @@
 								"col-xs-4 text-align-center"
 							],
 							"rows": [
-								["Cantrip", "25 gp"],
-								["1st", "75 gp"],
-								["2nd", "150 gp"],
-								["3rd", "300 gp"],
-								["4th", "500 gp"],
-								["5th", "1,000 gp"]
+								[
+									"Cantrip",
+									"25 gp"
+								],
+								[
+									"1st",
+									"75 gp"
+								],
+								[
+									"2nd",
+									"150 gp"
+								],
+								[
+									"3rd",
+									"300 gp"
+								],
+								[
+									"4th",
+									"500 gp"
+								],
+								[
+									"5th",
+									"1,000 gp"
+								]
 							]
 						},
 						{
@@ -7500,73 +7580,178 @@
 							"type": "table",
 							"caption": "Short-Term Madness",
 							"colLabels": [
-								"d100", "Effects (lasts 1d10 minutes)"
+								"d100",
+								"Effects (lasts 1d10 minutes)"
 							],
 							"colStyles": [
 								"col-xs-2 text-align-center",
 								"col-xs-10"
 							],
 							"rows": [
-								["01-20", "The character retreats into his or her mind and becomes {@condition paralyzed}. The effect ends if the character takes any damage."],
-								["21-31", "The character becomes {@condition incapacitated} and spends the duration screaming, laughing, or weeping."],
-								["31-40", "The character becomes {@condition frightened} and must use his or her action and movement each round to flee from the source of the fear."],
-								["41-50", "The character begins babbling and is incapable of normal speech or spellcasting."],
-								["51-60", "The character must use his or her action each round to attack the nearest creature."],
-								["61-70", "The character experiences vivid hallucinations and has disadvantage on ability checks."],
-								["71-75", "The character does whatever anyone tells him or her to do that isn't obviously self-destructive."],
-								["76-80", "The character experiences an overpowering urge to eat something strange such as dirt, slime, or offal."],
-								["81-90", "The character is {@condition stunned}."],
-								["91-100", "The character falls {@condition unconscious}."]
+								[
+									"01-20",
+									"The character retreats into his or her mind and becomes {@condition paralyzed}. The effect ends if the character takes any damage."
+								],
+								[
+									"21-31",
+									"The character becomes {@condition incapacitated} and spends the duration screaming, laughing, or weeping."
+								],
+								[
+									"31-40",
+									"The character becomes {@condition frightened} and must use his or her action and movement each round to flee from the source of the fear."
+								],
+								[
+									"41-50",
+									"The character begins babbling and is incapable of normal speech or spellcasting."
+								],
+								[
+									"51-60",
+									"The character must use his or her action each round to attack the nearest creature."
+								],
+								[
+									"61-70",
+									"The character experiences vivid hallucinations and has disadvantage on ability checks."
+								],
+								[
+									"71-75",
+									"The character does whatever anyone tells him or her to do that isn't obviously self-destructive."
+								],
+								[
+									"76-80",
+									"The character experiences an overpowering urge to eat something strange such as dirt, slime, or offal."
+								],
+								[
+									"81-90",
+									"The character is {@condition stunned}."
+								],
+								[
+									"91-100",
+									"The character falls {@condition unconscious}."
+								]
 							]
 						},
 						{
 							"type": "table",
 							"caption": "Long-Term Madness",
 							"colLabels": [
-								"d100", "Effects (lasts 1d10 × 10 hours)"
+								"d100",
+								"Effects (lasts 1d10 × 10 hours)"
 							],
 							"colStyles": [
 								"col-xs-2 text-align-center",
 								"col-xs-10"
 							],
 							"rows": [
-								["01-10", "The character feels compelled to repeat a specific activity over and over, such as washing hands, touching things, praying, or counting coins."],
-								["11-20", "The character experiences vivid hallucinations and has disadvantage on ability checks."],
-								["21-30", "The character suffers extreme paranoia. The character has disadvantage on Wisdom and Charisma checks"],
-								["31-40", "The character regards something (usually the source of madness) with intense revulsion, as if affected by the antipathy effect of the {@spell antipathy/sympathy} spell."],
-								["41-45", "The character experiences a powerful delusion. Choose a potion. The character imagines that he or she is under its effects."],
-								["46-55", "The character becomes attached to a \"lucky charm,\" such as a person or an object, and has disadvantage on attack rolls, ability checks, and saving throws while more than 30 feet from it."],
-								["56-65", "The character is {@condition blinded} (25%) or {@condition deafened} (75%)."],
-								["66-75", "The character experiences uncontrollable tremors or tics, which impose disadvantage on attack rolls, ability checks, and saving throws that involve Strength or Dexterity."],
-								["76-85", "The character suffers from partial amnesia. The character knows who he or she is and retains racial traits and class features, but doesn't recognize other people or remember anything that happened before the madness took effect."],
-								["86-90", "Whenever the character takes damage, he or she must succeed on a DC 15 Wisdom saving throw or be affected as though he or she failed a saving throw against the {@spell confusion} spell. The confusion effect lasts for 1 minute."],
-								["91-95", "The character loses the ability to speak."],
-								["96-100", "The character falls {@condition unconscious}. No amount of jostling or damage can wake the character."]
+								[
+									"01-10",
+									"The character feels compelled to repeat a specific activity over and over, such as washing hands, touching things, praying, or counting coins."
+								],
+								[
+									"11-20",
+									"The character experiences vivid hallucinations and has disadvantage on ability checks."
+								],
+								[
+									"21-30",
+									"The character suffers extreme paranoia. The character has disadvantage on Wisdom and Charisma checks"
+								],
+								[
+									"31-40",
+									"The character regards something (usually the source of madness) with intense revulsion, as if affected by the antipathy effect of the {@spell antipathy/sympathy} spell."
+								],
+								[
+									"41-45",
+									"The character experiences a powerful delusion. Choose a potion. The character imagines that he or she is under its effects."
+								],
+								[
+									"46-55",
+									"The character becomes attached to a \"lucky charm,\" such as a person or an object, and has disadvantage on attack rolls, ability checks, and saving throws while more than 30 feet from it."
+								],
+								[
+									"56-65",
+									"The character is {@condition blinded} (25%) or {@condition deafened} (75%)."
+								],
+								[
+									"66-75",
+									"The character experiences uncontrollable tremors or tics, which impose disadvantage on attack rolls, ability checks, and saving throws that involve Strength or Dexterity."
+								],
+								[
+									"76-85",
+									"The character suffers from partial amnesia. The character knows who he or she is and retains racial traits and class features, but doesn't recognize other people or remember anything that happened before the madness took effect."
+								],
+								[
+									"86-90",
+									"Whenever the character takes damage, he or she must succeed on a DC 15 Wisdom saving throw or be affected as though he or she failed a saving throw against the {@spell confusion} spell. The confusion effect lasts for 1 minute."
+								],
+								[
+									"91-95",
+									"The character loses the ability to speak."
+								],
+								[
+									"96-100",
+									"The character falls {@condition unconscious}. No amount of jostling or damage can wake the character."
+								]
 							]
 						},
 						{
 							"type": "table",
 							"caption": "Indefinite Madness",
 							"colLabels": [
-								"d100", "Flaw (lasts until cured)"
+								"d100",
+								"Flaw (lasts until cured)"
 							],
 							"colStyles": [
 								"col-xs-2 text-align-center",
 								"col-xs-10"
 							],
 							"rows": [
-								["01-15", "\"Being drunk keeps me sane.\""],
-								["16-25", "\"I keep whatever I find.\""],
-								["26-30", "\"I try to become more like someone else I know- adopting his or her style of dress, mannerisms, and name.\""],
-								["31-35", "\"I must bend the truth, exaggerate, or outright lie to be interesting to other people.\""],
-								["36-45", "\"Achieving my goal is the only thing of interest to me, and I'll ignore everything else to pursue it.\""],
-								["46-50", "\"I find it hard to care about anything that goes on around me.\""],
-								["51-55", "\"I don't like the way people judge me all the time.\""],
-								["56-70", "\"I am the smartest, wisest, strongest, fastest, and most beautiful person I know.\""],
-								["71-80", "\"I am convinced that powerful enemies are hunting me, and their agents are everywhere I go. I am sure they're watching me all the time.\""],
-								["81-85", "\"There's only one person I can trust. And only I can see this special friend.\""],
-								["86-95", "\"I can't take anything seriously. The more serious the situation, the funnier I find it.\""],
-								["96-100", "\"I've discovered that I really like killing people.\""]
+								[
+									"01-15",
+									"\"Being drunk keeps me sane.\""
+								],
+								[
+									"16-25",
+									"\"I keep whatever I find.\""
+								],
+								[
+									"26-30",
+									"\"I try to become more like someone else I know- adopting his or her style of dress, mannerisms, and name.\""
+								],
+								[
+									"31-35",
+									"\"I must bend the truth, exaggerate, or outright lie to be interesting to other people.\""
+								],
+								[
+									"36-45",
+									"\"Achieving my goal is the only thing of interest to me, and I'll ignore everything else to pursue it.\""
+								],
+								[
+									"46-50",
+									"\"I find it hard to care about anything that goes on around me.\""
+								],
+								[
+									"51-55",
+									"\"I don't like the way people judge me all the time.\""
+								],
+								[
+									"56-70",
+									"\"I am the smartest, wisest, strongest, fastest, and most beautiful person I know.\""
+								],
+								[
+									"71-80",
+									"\"I am convinced that powerful enemies are hunting me, and their agents are everywhere I go. I am sure they're watching me all the time.\""
+								],
+								[
+									"81-85",
+									"\"There's only one person I can trust. And only I can see this special friend.\""
+								],
+								[
+									"86-95",
+									"\"I can't take anything seriously. The more serious the situation, the funnier I find it.\""
+								],
+								[
+									"96-100",
+									"\"I've discovered that I really like killing people.\""
+								]
 							]
 						}
 					]
@@ -7631,6 +7816,256 @@
 				"Feel free to determine that not all creatures have every type of arc. For example, an amorphous ochre jelly could treat all of its arcs as front ones, while a hydra might have three front arcs and one rear one. On squares, you pick one side of a creature's space as the direction it is facing. Draw a diagonal line outward from each corner of this side to determine the squares in its front arc. The opposite side of the space determines its rear arc in the same way. The remaining spaces to either side of the creature form its side arcs.",
 				"On hexes, determining the front, rear, and side arcs requires more judgment. Pick one side of the creature's space and create a wedge shape expanding out from there for the front arc, and another on the opposite side of the creature for the rear arc. The remaining spaces to either side of the creature are its side arcs.",
 				"A square or hex might be in more than one arc, depending on how you draw the lines from a creature's space. If more than half of a square or hex lies in one arc, it is in that arc. If it is split exactly down the middle, use this rule: if half of it lies in the front arc, it's in that arc. If half of it is in a side arc and the rear arc, it's in the side arc."
+			]
+		},
+		{
+			"source": "UAWGE",
+			"page": 8,
+			"ruleType": "O",
+			"name": "Environmental Elements",
+			"entries": [
+				"Combat can feel very mechanical. {@i I move 10 feet. I make an attack roll. I use a reaction.} One way for the DM to encourage more cinematic action is to present a list of Environmental Elements. In a tavern, this list could include Chandelier, Plate Glass Window, Roaring Fireplace, Tray of Drinks, Drunk Patron. If you're fighting in an ancient tomb the list could be Pile of Gold Coins, Scattered Bones, Rotting Tapestry, Moss-Covered Statue. Each turn, a player can work one of these elements into their description of their action. The primary purpose of this is to give players ideas; interesting details to use while describing their actions. But if a player comes up with a particularly clever way to use an element, the DM could grant advantage on a check or attack roll, or some other benefit. The rogue needs to cross a room full of enemies and wants to swing on the chandelier? As the DM, I'd let them make a simple Dexterity (Acrobatics) check to avoid opportunity attacks, essentially getting a free Disengage action.",
+				"Environmental elements are always  optional and largely cosmetic. As a DM, you  don't have to grant a bonus for every use of an   element. But presenting a list can help players  think of the location as more than just squares  on a map and challenge them to add more  cinematic flair to their actions."
+			]
+		},
+		{
+			"source": "UAWGE",
+			"page": 40,
+			"ruleType": "O",
+			"name": "Common Languages",
+			"entries": [
+				"Common is the language of the Five Nations. The Mror dwarves speak Dwarvish and the Aereni elves speak Elvish, but they know Common as the language of trade. In Eberron, there are a number of other languages that serve this role in different regions or cultures. The DM may change the languages assigned to a monster or NPC to reflect this.",
+				"Giant is the common tongue of Xen'drik. It is rarely encountered on Khorvaire. Monsters in Khorvaire usually speak Goblin.",
+				"Goblin is the common tongue of Darguun, Droaam, and the Shadow Marches, along with most \"monstrous\" creatures in Khorvaire. It was the language of the goblin empire that dominated the continent before humanity arrived. Orcish is a dead language; it may be encountered in ancient inscriptions, but modern orcs speak Goblin.",
+				"Infernal is spoken by spirits that embody evil. This incorporates Abyssal; all fiends speak a common language. Infernal is sometimes called \"Khyber's speech,\" while Celestial is \"the tongue of Siberys.\"",
+				"Riedran is the common tongue of the continent of Sarlona. Quori is spoken by the kalashtar, spirits native to Dal Quor, and the Inspired lords of Riedra."
+			]
+		},
+		{
+			"source": "UAWGE",
+			"page": 40,
+			"ruleType": "O",
+			"name": "Swapping Racial Languages",
+			"entries": [
+				"This optional rule allows you to exchange a language granted by your race for a different standard language. Your DM must approve the language you select. This is a way to reflect a character with no ties to the culture of their race. Halfling is the language of the Talenta Plains; if a halfling was raised in the Mror Holds, they might replace Halfling with Dwarvish to reflect this."
+			]
+		},
+		{
+			"source": "UAWGE",
+			"page": 46,
+			"ruleType": "U",
+			"name": "Creating Magic Items",
+			"entries": [
+				"House Cannith has an enclave devoted solely to wand production. This facility is equipped with tools that amplify the Mark of Making and channel planar energies; the artisans also have access to a vast array of exotic woods and materials. You can also create a wand, but you're starting from scratch and creating the tools you need. Essentially, when House Cannith creates magic items, it's using factories; while your artificer is the equivalent of the tinkerer working in the garage. You can create magic items, and you can potentially create items that House Cannith can't make... but it's going to take you more time and gold than it takes for them. Here's an overview of the process.",
+				{
+					"type": "entries",
+					"name": "The Schema",
+					"entries": [
+						"The first step in creating a magic item is to acquire a schema for it. This is the equivalent of a recipe or a blueprint; it explains the process and components required to create the item. If you can obtain a schema\u2014from House Cannith, the mystical library of Arcanix, the collection of an experienced artificer\u2014 you're ready to move on. Otherwise, you can create a schema, but this takes time and skill. An arcane spellcaster uses Arcana to create schema. A divine caster uses Religion, while a druid or ranger relies on Nature. You must have a minimum skill bonus\u2014your proficiency bonus plus your ability score bonus\u2014in order to develop a schema. You must maintain the minimum skill bonus for the duration of your work, so an effect that increases an ability score for a few minutes won't help you.",
+						{
+							"type": "table",
+							"caption": "Schema Creation Requirements",
+							"colLabels": [
+								"Item Rarity",
+								"Work weeks",
+								"Minimum Skill"
+							],
+							"colStyles": [
+								"col-xs-4 text-align-right",
+								"col-xs-4 text-align-right",
+								"col-xs-4 text-align-right"
+							],
+							"rows": [
+								[
+									"Common",
+									"3 days",
+									"+2"
+								],
+								[
+									"Uncommon",
+									1,
+									"+4"
+								],
+								[
+									"Rare",
+									3,
+									"+6"
+								],
+								[
+									"Very Rare",
+									8,
+									"+8"
+								],
+								[
+									"Legendary",
+									16,
+									"+10"
+								]
+							]
+						},
+						"This ability to develop a schema represents remarkable talent. It could take House Cannith years or decades to develop a particular schema; the fact that you can accomplish this in weeks reflects the idea that player characters are innovators. However, it is always up to the DM to decide if you can create a particular schema. The DM can always choose to exclude a particular magic item from a campaign."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Rare Components",
+					"entries": [
+						"Any magic item requires specialized materials\u2014Eberron dragonshards, rare woods or metals, exotic herbs or other substances. While exotic, these things can be purchased or obtained in any major city. But creating a magic item from scratch often requires rarer components that can't simply be purchased. You might need a flower from Thelanis, a feather from a couatl, or the scale of a dragon. More often than not, such this will require an adventure. You may not have to kill something to obtain what you need, but you'll surely have to overcome a challenge. The Magic Item Ingredients table suggests how difficult that challenge could be.",
+						{
+							"type": "table",
+							"caption": "Magic Item Ingredients",
+							"colLabels": [
+								"Item Rarity",
+								"CR Range"
+							],
+							"colStyles": [
+								"col-xs-6 text-align-center",
+								"col-xs-6 text-align-center"
+							],
+							"rows": [
+								[
+									"Common",
+									"1\u20133"
+								],
+								[
+									"Uncommon",
+									"4\u20138"
+								],
+								[
+									"Rare",
+									"9\u201312"
+								],
+								[
+									"Very Rare",
+									"13\u201318"
+								],
+								[
+									"Legendary",
+									"19+"
+								]
+							]
+						},
+						"It's possible to find a rare component even when you're not looking for one. You could discover an exotic Khyber crystal in the ruins of an artificer's workshop. Time and study could yield suggestions as to what items could be made with the component; for example, that Khyber shard could be used to create an {@item iron flask} or {@item dimensional shackles}."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Creation",
+					"entries": [
+						"Once you have your schema and any rare components, you're ready to begin. The DM can assign skills or tools that are required for this act of creation, so that it requires both proficiency and access to these tools. You must pay the basic costs of materials and services required to make the item. And you must spend a significant amount of time working on it; creating a legendary item can take a year of effort!",
+						{
+							"type": "table",
+							"caption": "Magic Item Crafting Time and Cost",
+							"colLabels": [
+								"Item Rarity",
+								"Work weeks*",
+								"Cost*"
+							],
+							"colStyles": [
+								"col-xs-4 text-align-center",
+								"col-xs-4 text-align-center",
+								"col-xs-4 text-align-right"
+							],
+							"rows": [
+								[
+									"Common",
+									1,
+									"50 gp"
+								],
+								[
+									"Uncommon",
+									2,
+									"200 gp"
+								],
+								[
+									"Rare",
+									10,
+									"2,000 gp"
+								],
+								[
+									"Very Rare",
+									25,
+									"20,000 gp"
+								],
+								[
+									"Legendary",
+									20,
+									"100,000 gp"
+								]
+							],
+							"footnotes": [
+								"* Halved for a consumable item"
+							]
+						},
+						"The Magic Item Crafting Time and Cost table provides a basic framework, but various factors could reduce time or cost. Eberron dragonshards are a significant amount of the cost of materials. A remarkable dragonshard could reduce the cost of creating an item by 10 percent. A planar convergence could reduce the time or cost required to make an item with an effect tied to that plane. Ultimately, this is a story, and there are exceptions to every rule."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Complications",
+					"entries": [
+						"These rules for magic item creation are derived from the system presented in Xanathar's Guide to Everything. This also offers the idea that the creation of a magic item is a complex procedure and that complications can arise. If you use this rule, there's a 10 percent chance of a complication arising for every five workweeks spent on crafting the item. Xanathar's Guide presents a number of possible complications. Here are few tied to Eberron.",
+						{
+							"type": "table",
+							"caption": "",
+							"colLabels": [
+								"d6",
+								"Complications"
+							],
+							"colStyles": [
+								"col-xs-2 text-align-center",
+								"col-xs-10"
+							],
+							"rows": [
+								[
+									1,
+									"A Dragonmarked House takes an interest in your work. Do they view you as a threat, or are they impressed by your techniques? Do they want to buy the item, and what will happen if you refuse?"
+								],
+								[
+									2,
+									"A mishap creates a temporary manifest zone."
+								],
+								[
+									3,
+									"You need to acquire an additional rare component."
+								],
+								[
+									4,
+									"The shifting balance of the planes interferes with your work; you must wait for the current planar alignment to change."
+								],
+								[
+									5,
+									"Your efforts draw the attention of one of the conspiracies of Eberron\u2014such as the Chamber, the Aurum, the Emerald Claw, or the Lords of Dust."
+								],
+								[
+									6,
+									"Your item unexpectedly becomes sentient."
+								]
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"source": "UAWGE",
+			"page": 114,
+			"ruleType": "O",
+			"name": "Two-Handed Arcane Focuses",
+			"entries": [
+				"In Eberron, an arcane focus is a weapon. As such, it can be interesting to give a focus some of the same trade-offs as mundane weapons: do you sacrifice your free hand for greater power?",
+				"If you use this optional rule, when a caster uses a two-handed arcane focus to cast an offensive cantrip (a cantrip requiring a saving throw or an attack roll), the range of the cantrip is increased by 50 percent.",
+				"By this rule, a staff always requires two hands, while rods can be used with either one or two hands. Using a two-handed arcane focus fulfills the somatic component requirement for a spell."
+			]
+		},
+		{
+			"source": "MTF",
+			"page": 45,
+			"ruleType": "U",
+			"name": "The Blessed of Corellon",
+			"entries": [
+				"Ever changing, mirthful, and beautiful, the primal elves could assume whatever sex they liked. When they bowed to Lolth's influence and chose to fix their physical forms, elves lost the ability to transform in this way. Yet occasionally elves are born who are so androgynous that they are proclaimed to be among the blessed of Corellon\u2014living symbols of the god's love and of the primal elves' original fluid state of being. Many of Corellon's chief priests bear this blessing.",
+				"The rarest of these blessed elves can change their sex whenever they finish a long rest-a miracle celebrated by elves of all sorts except drow. (The DM decides whether an elf can manifest this miracle.) Dark elves find this ability to be terrifying and characterize it as a curse, for it could destabilize their entire society. If Corellon's blessing manifests in a drow, that elf usually flees to the surface world to seek shelter among those dedicated to Corellon."
 			]
 		}
 	]

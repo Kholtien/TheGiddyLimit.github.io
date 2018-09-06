@@ -52,6 +52,11 @@ const spellFilter = new Filter({
 	header: "Spell or Feature",
 	items: ["Eldritch Blast", "Hex/Curse", STR_NONE]
 });
+const levelFilter = new Filter({
+	header: "Warlock Level",
+	items: [5, 7, 9, 12, 15, 18, STR_ANY],
+	displayFn: (it) => it === STR_ANY ? it : `Level ${it}`
+});
 let filterBox;
 function onJsonLoad (data) {
 	const patronFilter = new Filter({
@@ -64,7 +69,6 @@ function onJsonLoad (data) {
 		items: ["Blade", "Chain", "Tome", STR_ANY],
 		displayFn: Parser.invoPactToFull
 	});
-	const levelFilter = new Filter({header: "Warlock Level", items: ["5", "7", "9", "12", "15", "18", STR_ANY]});
 
 	filterBox = initFilterBox(sourceFilter, pactFilter, patronFilter, spellFilter, levelFilter);
 
@@ -94,7 +98,8 @@ function onJsonLoad (data) {
 
 	addInvocations(data);
 	BrewUtil.pAddBrewData()
-		.then(addInvocations)
+		.then(handleBrew)
+		.then(BrewUtil.pAddLocalBrewData)
 		.catch(BrewUtil.purgeBrew)
 		.then(() => {
 			BrewUtil.makeBrewButton("manage-brew");
@@ -104,6 +109,11 @@ function onJsonLoad (data) {
 
 			History.init(true);
 		});
+}
+
+function handleBrew (homebrew) {
+	addInvocations(homebrew);
+	return Promise.resolve();
 }
 
 let invoList = [];
@@ -163,6 +173,9 @@ function addInvocations (data) {
 			if (p.prerequisites[JSON_ITEM_SPELL] instanceof Array) p.prerequisites[JSON_ITEM_SPELL].forEach(sp => spellFilter.addIfAbsent(sp));
 			else spellFilter.addIfAbsent(p.prerequisites[JSON_ITEM_SPELL]);
 		}
+		if (p.prerequisites[JSON_ITEM_LEVEL]) {
+			levelFilter.addIfAbsent(p.prerequisites[JSON_ITEM_LEVEL]);
+		}
 	}
 	const lastSearch = ListUtil.getSearchTermAndReset(list);
 	$(`#${ID_INVOCATION_LIST}`).append(tempString);
@@ -170,6 +183,7 @@ function addInvocations (data) {
 	// sort filters
 	sourceFilter.items.sort(SortUtil.ascSort);
 	spellFilter.items.sort(SortUtil.ascSort);
+	levelFilter.items.sort(SortUtil.ascSort);
 
 	list.reIndex();
 	if (lastSearch) list.search(lastSearch);
@@ -230,6 +244,7 @@ function loadhash (jsonIndex) {
 		${Object.keys(inv.prerequisites).length ? `<tr><td colspan="6"><span class="prerequisites">${EntryRenderer.invocation.getPrerequisiteText(inv.prerequisites)}</span></td></tr>` : ""}
 		<tr><td class="divider" colspan="6"><div></div></td></tr>
 		<tr><td colspan="6">${EntryRenderer.getDefaultRenderer().renderEntry({entries: inv.entries}, 1)}</td></tr>
+		${EntryRenderer.invocation.getPreviouslyPrintedText(inv)}
 		${EntryRenderer.utils.getPageTr(inv)}
 		${EntryRenderer.utils.getBorderTr()}
 	`);

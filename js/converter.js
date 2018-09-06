@@ -36,8 +36,31 @@ function tryGetStat (strLine) {
 	}
 }
 
+String.prototype.split_handleColon = String.prototype.split_handleColon ||
+	function (str) {
+		const colonStr = `${str.trim()}:`;
+		if (this.startsWith(colonStr)) {
+			return this.split(colonStr).map(it => it.trim());
+		} else {
+			return this.split(str);
+		}
+	};
+
+String.prototype.indexOf_handleColon = String.prototype.indexOf_handleColon ||
+	function (str) {
+		const colonStr = `${str.trim()}:`;
+		const idxColon = this.indexOf(colonStr);
+		if (~idxColon) return idxColon;
+		return this.indexOf(str);
+	};
+
 // Tries to parse immunities, resistances, and vulnerabilities
 function tryParseSpecialDamage (strDamage, damageType) {
+	// handle the case where a comma is mistakenly used instead of a semicolon
+	if (strDamage.toLowerCase().includes(", bludgeoning, piercing, and slashing from")) {
+		strDamage = strDamage.replace(/, (bludgeoning, piercing, and slashing from)/gi, "; $1")
+	}
+
 	const splSemi = strDamage.toLowerCase().split(";");
 	const newDamage = [];
 	try {
@@ -64,11 +87,32 @@ function tryParseSpecialDamage (strDamage, damageType) {
 	}
 }
 
-function tryParseSpellcasting (trait) {
+function tryParseSpellcasting (trait, isMarkdown) {
 	let spellcasting = [];
 
 	function parseSpellcasting (trait) {
 		const splitter = new RegExp(/,\s?(?![^(]*\))/, "g"); // split on commas not within parentheses
+
+		function getParsedSpells (thisLine) {
+			let spellPart = thisLine.substring(thisLine.indexOf(": ") + 2).trim();
+			if (isMarkdown) {
+				const cleanPart = (part) => {
+					part = part.trim();
+					while (part.startsWith("*") && part.endsWith("*")) {
+						part = part.replace(/^\*(.*)\*$/, "$1");
+					}
+					return part;
+				};
+
+				const cleanedInner = spellPart.split(splitter).map(it => cleanPart(it)).filter(it => it);
+				spellPart = cleanedInner.join(", ");
+
+				while (spellPart.startsWith("*") && spellPart.endsWith("*")) {
+					spellPart = spellPart.replace(/^\*(.*)\*$/, "$1");
+				}
+			}
+			return spellPart.split(splitter).map(i => parseSpell(i));
+		}
 
 		let name = trait.name;
 		let spellcastingEntry = {"name": name, "headerEntries": [parseToHit(trait.entries[0])]};
@@ -78,36 +122,36 @@ function tryParseSpellcasting (trait) {
 			if (thisLine.includes("/rest")) {
 				doneHeader = true;
 				let property = thisLine.substr(0, 1) + (thisLine.includes(" each:") ? "e" : "");
-				let value = thisLine.substring(thisLine.indexOf(": ") + 2).split(splitter).map(i => parseSpell(i));
+				const value = getParsedSpells(thisLine);
 				if (!spellcastingEntry.rest) spellcastingEntry.rest = {};
 				spellcastingEntry.rest[property] = value;
 			} else if (thisLine.includes("/day")) {
 				doneHeader = true;
 				let property = thisLine.substr(0, 1) + (thisLine.includes(" each:") ? "e" : "");
-				let value = thisLine.substring(thisLine.indexOf(": ") + 2).split(splitter).map(i => parseSpell(i));
+				const value = getParsedSpells(thisLine);
 				if (!spellcastingEntry.daily) spellcastingEntry.daily = {};
 				spellcastingEntry.daily[property] = value;
 			} else if (thisLine.includes("/week")) {
 				doneHeader = true;
 				let property = thisLine.substr(0, 1) + (thisLine.includes(" each:") ? "e" : "");
-				let value = thisLine.substring(thisLine.indexOf(": ") + 2).split(splitter).map(i => parseSpell(i));
+				const value = getParsedSpells(thisLine);
 				if (!spellcastingEntry.weekly) spellcastingEntry.weekly = {};
 				spellcastingEntry.weekly[property] = value;
 			} else if (thisLine.startsWith("Constant: ")) {
 				doneHeader = true;
-				spellcastingEntry.constant = thisLine.substring(9).split(splitter).map(i => parseSpell(i));
+				spellcastingEntry.constant = getParsedSpells(thisLine);
 			} else if (thisLine.startsWith("At will: ")) {
 				doneHeader = true;
-				spellcastingEntry.will = thisLine.substring(9).split(splitter).map(i => parseSpell(i));
+				spellcastingEntry.will = getParsedSpells(thisLine);
 			} else if (thisLine.includes("Cantrip")) {
 				doneHeader = true;
-				let value = thisLine.substring(thisLine.indexOf(": ") + 2).split(splitter).map(i => parseSpell(i));
+				const value = getParsedSpells(thisLine);
 				if (!spellcastingEntry.spells) spellcastingEntry.spells = {"0": {"spells": []}};
 				spellcastingEntry.spells["0"].spells = value;
 			} else if (thisLine.includes(" level") && thisLine.includes(": ")) {
 				doneHeader = true;
 				let property = thisLine.substr(0, 1);
-				let value = thisLine.substring(thisLine.indexOf(": ") + 2).split(splitter).map(i => parseSpell(i));
+				const value = getParsedSpells(thisLine);
 				if (!spellcastingEntry.spells) spellcastingEntry.spells = {};
 				let slots = thisLine.includes(" slot") ? parseInt(thisLine.substr(11, 1)) : 0;
 				spellcastingEntry.spells[property] = {"slots": slots, "spells": value};
@@ -120,6 +164,14 @@ function tryParseSpellcasting (trait) {
 				}
 			}
 		}
+
+		if (spellcastingEntry.headerEntries) {
+			const m = /charisma|intelligence|wisdom|constitution/gi.exec(JSON.stringify(spellcastingEntry.headerEntries));
+			if (m) {
+				spellcastingEntry.ability = m[0].substring(0, 3).toLowerCase();
+			}
+		}
+
 		spellcasting.push(spellcastingEntry);
 	}
 
@@ -152,6 +204,7 @@ function tryParseSpellcasting (trait) {
 		parseSpellcasting(trait);
 		return {out: spellcasting, success: true};
 	} catch (e) {
+		$(`#lastWarnings`).append(`<div>Failed to parse spellcasting! ${e.message}</div>`);
 		return {out: trait, success: false};
 	}
 }
@@ -208,8 +261,12 @@ function appendSource ($select, src) {
 }
 
 const COOKIE_NAME = "converterSources";
+const COOKIE_NAME_MODE = "converterMode";
 function loadparser (data) {
 	let hasAppended = false;
+
+	const $iptPage = $(`#page_in`);
+	const getPage = () => Number($iptPage.val() || 0);
 
 	// custom sources
 	const $srcSel = $(`#source`);
@@ -239,22 +296,63 @@ function loadparser (data) {
 		}
 	});
 
+	$(`#download`).on("click", () => {
+		const output = $(`#jsonoutput`).val();
+		if (output && output.trim()) {
+			const out = {
+				monster: JSON.parse(`[${output}]`)
+			};
+			DataUtil.userDownload(`converter-output.json`, out);
+		} else {
+			alert("Nothing to download!");
+		}
+	});
+
+	$(`#editable`).click(() => {
+		if (confirm(`Edits will be overwritten as you parse new statblocks. Enable anyway?`)) $(`#jsonoutput`).attr("readonly", false);
+	});
+
 	// init editor
 	const editor = ace.edit("statblock");
 	editor.setOptions({
-		wrap: true
+		wrap: true,
+		showPrintMargin: false
 	});
 
+	function catchErrors (toRun) {
+		try {
+			$(`#lastWarnings`).html("");
+			$(`#lastError`).html("");
+			toRun()
+		} catch (x) {
+			const splitStack = x.stack.split("\n");
+			const atPos = splitStack.length > 1 ? splitStack[1].trim() : "(Unknown location)";
+			const message = `${x.message} ${atPos}`;
+			$(`#lastError`).html(message);
+		}
+	}
+
+	const $selMode = $(`#parse_mode`).on("change", () => {
+		Cookies.set(COOKIE_NAME_MODE, $selMode.val(), {expires: 365, path: window.location.pathname})
+	});
+
+	const prevMode = Cookies.get(COOKIE_NAME_MODE);
+	if (prevMode) $selMode.val(prevMode);
+
 	$(`button#parsestatblockadd`).on("click", () => {
-		if ($(`#parse_mode`).val() === "txt") doParseText(true);
-		else doParseMarkdown(true);
+		catchErrors(() => {
+			if ($(`#parse_mode`).val() === "txt") doParseText(true);
+			else doParseMarkdown(true);
+		});
 	});
 
 	$("button#parsestatblock").on("click", () => {
-		if (!hasAppended || confirm("You're about to overwrite multiple entries. Are you sure?")) {
-			if ($(`#parse_mode`).val() === "txt") doParseText(false);
-			else doParseMarkdown(false);
-		}
+		catchErrors(() => {
+			if (!hasAppended || confirm("You're about to overwrite multiple entries. Are you sure?")) {
+				if ($(`#parse_mode`).val() === "txt") doParseText(false);
+				else doParseMarkdown(false);
+			}
+		})
 	});
 
 	// SHARED PARSING FUNCTIONS ////////////////////////////////////////////////////////////////////////////////////////
@@ -264,9 +362,7 @@ function loadparser (data) {
 	}
 
 	function getCleanName (line) {
-		return line.toLowerCase().replace(/\b\w/g, function (l) {
-			return l.toUpperCase()
-		});
+		return $(`#titlecase`).prop("checked") ? line.toLowerCase().toTitleCase() : line;
 	}
 
 	function setCleanSizeTypeAlignment (stats, line) {
@@ -279,7 +375,7 @@ function loadparser (data) {
 	}
 
 	function setCleanHp (stats, line) {
-		const rawHp = line.split("Hit Points ")[1];
+		const rawHp = line.split_handleColon("Hit Points ")[1];
 		// split HP into average and formula
 		const m = /^(\d+) \((.*?)\)$/.exec(rawHp);
 		if (!m) stats.hp = {special: rawHp}; // for e.g. Avatar of Death
@@ -292,7 +388,7 @@ function loadparser (data) {
 	}
 
 	function setCleanSpeed (stats, line) {
-		line = line.toLowerCase().trim().replace(/^speed\s*/, "");
+		line = line.toLowerCase().trim().replace(/^speed:?\s*/, "");
 		const ALLOWED = ["walk", "fly", "swim", "climb", "burrow"];
 
 		function splitSpeed (str) {
@@ -329,7 +425,7 @@ function loadparser (data) {
 		let byHand = false;
 
 		splitSpeed(line.toLowerCase()).map(it => it.trim()).forEach(s => {
-			const m = /^(\w+?\s+)?(\d+)\s*ft\.( .*)?$/.exec(s);
+			const m = /^(\w+?\s+)?(\d+)\s*ft\.?( .*)?$/.exec(s);
 			if (!m) {
 				byHand = true;
 				return;
@@ -352,12 +448,15 @@ function loadparser (data) {
 		if (Object.values(out).filter(s => (s.number != null ? s.number : s) % 5 !== 0).length) out.INVALID_SPEED = true;
 
 		// flag speed as needing hand-parsing
-		if (byHand) out.UNPARSED_SPEED = line;
+		if (byHand) {
+			out.UNPARSED_SPEED = line;
+			$(`#lastWarnings`).append(`<div>Warning: Speed requires manual conversion '${line}'</div>`);
+		}
 		stats.speed = out;
 	}
 
 	function setCleanSaves (stats, line) {
-		stats.save = line.split("Saving Throws")[1].trim();
+		stats.save = line.split_handleColon("Saving Throws")[1].trim();
 		// convert to object format
 		if (stats.save && stats.save.trim()) {
 			const spl = stats.save.split(",").map(it => it.trim().toLowerCase()).filter(it => it);
@@ -371,7 +470,7 @@ function loadparser (data) {
 	}
 
 	function setCleanSkills (stats, line) {
-		stats.skill = line.split("Skills")[1].trim().toLowerCase();
+		stats.skill = line.split_handleColon("Skills")[1].trim().toLowerCase();
 		const split = stats.skill.split(",");
 		const newSkills = {};
 		try {
@@ -390,38 +489,48 @@ function loadparser (data) {
 	}
 
 	function setCleanDamageVuln (stats, line) {
-		stats.vulnerable = line.split("Vulnerabilities")[1].trim();
+		stats.vulnerable = line.split_handleColon("Vulnerabilities")[1].trim();
 		stats.vulnerable = tryParseSpecialDamage(stats.vulnerable, "vulnerable");
 	}
 
 	function setCleanDamageRes (stats, line) {
-		stats.resist = (line.includes("Resistances") ? line.split("Resistances") : line.split("Resistance"))[1].trim();
+		stats.resist = (line.includes("Resistances") ? line.split_handleColon("Resistances") : line.split_handleColon("Resistance"))[1].trim();
 		stats.resist = tryParseSpecialDamage(stats.resist, "resist");
 	}
 
 	function setCleanDamageImm (stats, line) {
-		stats.immune = line.split("Immunities")[1].trim();
+		stats.immune = line.split_handleColon("Immunities")[1].trim();
 		stats.immune = tryParseSpecialDamage(stats.immune, "immune");
 	}
 
 	function setCleanConditionImm (stats, line) {
-		stats.conditionImmune = line.split("Immunities")[1];
+		stats.conditionImmune = line.split_handleColon("Immunities")[1];
 		stats.conditionImmune = tryParseSpecialDamage(stats.conditionImmune, "conditionImmune");
 	}
 
 	function setCleanSenses (stats, line) {
-		stats.senses = line.toLowerCase().split("senses")[1].split("passive perception")[0].trim();
-		if (!stats.senses.indexOf("passive perception")) stats.senses = "";
-		if (stats.senses[stats.senses.length - 1] === ",") stats.senses = stats.senses.substring(0, stats.senses.length - 1);
-		stats.passive = tryConvertNumber(line.toLowerCase().split("passive perception")[1].trim());
+		const senses = line.toLowerCase().split_handleColon("senses")[1].trim();
+		const tempSenses = [];
+		senses.split(",").forEach(s => {
+			s = s.trim();
+			if (s) {
+				if (s.includes("passive perception")) stats.passive = tryConvertNumber(s.split("passive perception")[1].trim());
+				else tempSenses.push(s.trim());
+			}
+		});
+		if (tempSenses.length) stats.senses = tempSenses.join(", ");
+		else delete stats.senses;
 	}
 
 	function setCleanLanguages (stats, line) {
-		stats.languages = line.split("Languages")[1].trim();
+		stats.languages = line.split_handleColon("Languages")[1].trim();
+		if (stats.languages && /^([-–‒—]|\\u201\d)$/.exec(stats.languages.trim())) {
+			delete stats.languages;
+		}
 	}
 
 	function setCleanCr (stats, line) {
-		stats.cr = line.split("Challenge")[1].trim().split("(")[0].trim();
+		stats.cr = line.split_handleColon("Challenge")[1].trim().split("(")[0].trim();
 	}
 
 	function hasEntryContent (trait) {
@@ -435,7 +544,8 @@ function loadparser (data) {
 
 				// replace e.g. "+X to hit"
 				e = e.replace(/([-+])?\d+(?= to hit)/g, function (match) {
-					return `{@hit ${match}}`
+					const cleanMatch = match.startsWith("+") ? match.replace("+", "") : match;
+					return `{@hit ${cleanMatch}}`
 				});
 
 				// replace e.g. "2d4+2"
@@ -457,7 +567,7 @@ function loadparser (data) {
 		const stats = {};
 		stats.source = $srcSel.val();
 		// for the user to fill out
-		stats.page = 0;
+		stats.page = getPage();
 
 		let prevLine = null;
 		let curLine = null;
@@ -481,7 +591,7 @@ function loadparser (data) {
 
 			// armor class
 			if (i === 2) {
-				stats.ac = curLine.split("Armor Class ")[1];
+				stats.ac = curLine.split_handleColon("Armor Class ")[1];
 				continue;
 			}
 
@@ -500,7 +610,7 @@ function loadparser (data) {
 			if (i === 5) continue;
 			// ability scores
 			if (i === 6) {
-				const abilities = curLine.split(/ \(([+-–‒])?[0-9]*\) ?/g);
+				const abilities = curLine.split(/ ?\(([+\-–‒])?[0-9]*\) ?/g);
 				stats.str = tryConvertNumber(abilities[0]);
 				stats.dex = tryConvertNumber(abilities[2]);
 				stats.con = tryConvertNumber(abilities[4]);
@@ -533,56 +643,56 @@ function loadparser (data) {
 			}
 
 			// saves (optional)
-			if (!curLine.indexOf("Saving Throws ")) {
+			if (!curLine.indexOf_handleColon("Saving Throws ")) {
 				setCleanSaves(stats, curLine);
 				continue;
 			}
 
 			// skills (optional)
-			if (!curLine.indexOf("Skills ")) {
+			if (!curLine.indexOf_handleColon("Skills ")) {
 				setCleanSkills(stats, curLine);
 				continue;
 			}
 
 			// damage vulnerabilities (optional)
-			if (!curLine.indexOf("Damage Vulnerabilities ")) {
+			if (!curLine.indexOf_handleColon("Damage Vulnerabilities ")) {
 				setCleanDamageVuln(stats, curLine);
 				continue;
 			}
 
 			// damage resistances (optional)
-			if (!curLine.indexOf("Damage Resistance")) {
+			if (!curLine.indexOf_handleColon("Damage Resistance")) {
 				setCleanDamageRes(stats, curLine);
 				continue;
 			}
 
 			// damage immunities (optional)
-			if (!curLine.indexOf("Damage Immunities ")) {
+			if (!curLine.indexOf_handleColon("Damage Immunities ")) {
 				setCleanDamageImm(stats, curLine);
 				continue;
 			}
 
 			// condition immunities (optional)
-			if (!curLine.indexOf("Condition Immunities ")) {
+			if (!curLine.indexOf_handleColon("Condition Immunities ")) {
 				setCleanConditionImm(stats, curLine);
 				continue;
 			}
 
 			// senses
-			if (!curLine.indexOf("Senses ")) {
+			if (!curLine.indexOf_handleColon("Senses ")) {
 				setCleanSenses(stats, curLine);
 				continue;
 			}
 
 			// languages
-			if (!curLine.indexOf("Languages ")) {
+			if (!curLine.indexOf_handleColon("Languages ")) {
 				setCleanLanguages(stats, curLine);
 				continue;
 			}
 
 			// challenges and traits
 			// goes into actions
-			if (!curLine.indexOf("Challenge ")) {
+			if (!curLine.indexOf_handleColon("Challenge ")) {
 				setCleanCr(stats, curLine);
 
 				// traits
@@ -605,9 +715,9 @@ function loadparser (data) {
 				while (i < toConvert.length) {
 					if (moveon(curLine)) {
 						ontraits = false;
-						onactions = !curLine.toUpperCase().indexOf("ACTIONS");
-						onreactions = !curLine.toUpperCase().indexOf("REACTIONS");
-						onlegendaries = !curLine.toUpperCase().indexOf("LEGENDARY ACTIONS");
+						onactions = !curLine.toUpperCase().indexOf_handleColon("ACTIONS");
+						onreactions = !curLine.toUpperCase().indexOf_handleColon("REACTIONS");
+						onlegendaries = !curLine.toUpperCase().indexOf_handleColon("LEGENDARY ACTIONS");
 						onlegendarydescription = onlegendaries;
 						i++;
 						curLine = toConvert[i];
@@ -692,7 +802,15 @@ function loadparser (data) {
 	}
 
 	function doPostProcessing (stats) {
-		ConverterUtils.tryPostProcessAc(stats);
+		ConverterUtils.tryPostProcessAc(
+			stats,
+			(ac) => {
+				$(`#lastWarnings`).append(`<div>Warning: AC requires manual conversion '${ac}'</div>`)
+			},
+			(ac) => {
+				$(`#lastWarnings`).append(`<div>Warning: failed to auto-parse AC '${ac}'</div>`)
+			}
+		);
 	}
 
 	function cleanOutput (out) {
@@ -707,10 +825,10 @@ function loadparser (data) {
 		const $outArea = $("textarea#jsonoutput");
 		if (append) {
 			const oldVal = $outArea.text();
-			$outArea.text(`${out},\n${oldVal}`);
+			$outArea.val(`${out},\n${oldVal}`);
 			hasAppended = true;
 		} else {
-			$outArea.text(out);
+			$outArea.val(out);
 			hasAppended = false;
 		}
 	}
@@ -749,13 +867,14 @@ function loadparser (data) {
 		function getNewStatblock () {
 			return {
 				source: $srcSel.val(),
-				page: 0
+				page: getPage()
 			}
 		}
 
 		let parsed = 0;
 		let hasMultipleBlocks = false;
 		function doOutputStatblock () {
+			if (trait != null) doAddFromParsed();
 			if (stats) {
 				doPostProcessing(stats);
 				const out = cleanOutput(JSON.stringify(stats, null, "\t"));
@@ -797,7 +916,7 @@ function loadparser (data) {
 
 				// convert spellcasting
 				if (trait.name.toLowerCase().includes("spellcasting")) {
-					trait = tryParseSpellcasting(trait);
+					trait = tryParseSpellcasting(trait, true);
 					if (trait.success) {
 						// merge in e.g. innate spellcasting
 						if (stats.spellcasting) stats.spellcasting = stats.spellcasting.concat(trait.out);
@@ -840,11 +959,16 @@ function loadparser (data) {
 			trait = null;
 		}
 
+		function getCleanedRaw (str) {
+			return str.trim()
+				.replace(/<br\s*(\/)?>/gi, ""); // remove <br>
+		}
+
 		let i = 0;
 		for (; i < toConvert.length; i++) {
 			prevLine = curLine;
-			curLineRaw = toConvert[i].trim();
-			curLine = toConvert[i].trim();
+			curLineRaw = getCleanedRaw(toConvert[i]);
+			curLine = curLineRaw;
 
 			if (curLine === "" || curLine.toLowerCase() === "\\pagebreak" || curLine.toLowerCase() === "\\columnbreak") {
 				prevBlank = true;

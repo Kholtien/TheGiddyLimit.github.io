@@ -88,7 +88,8 @@ function onJsonLoad (data) {
 
 	addDeities(data);
 	BrewUtil.pAddBrewData()
-		.then(addDeities)
+		.then(handleBrew)
+		.then(BrewUtil.pAddLocalBrewData)
 		.catch(BrewUtil.purgeBrew)
 		.then(() => {
 			BrewUtil.makeBrewButton("manage-brew");
@@ -99,6 +100,11 @@ function onJsonLoad (data) {
 
 			History.init(true);
 		});
+}
+
+function handleBrew (homebrew) {
+	addDeities(homebrew);
+	return Promise.resolve();
 }
 
 let deitiesList = [];
@@ -128,7 +134,7 @@ function addDeities (data) {
 					<span class="pantheon col-xs-2 text-align-center">${g.pantheon}</span>
 					<span class="alignment col-xs-2 text-align-center">${g.alignment.join("")}</span>
 					<span class="domains col-xs-3 ${g.domains[0] === STR_NONE ? `list-entry-none` : ""}">${g.domains.join(", ")}</span>
-					<span class="source col-xs-2 source${abvSource}" title="${Parser.sourceJsonToFull(g.source)}">${abvSource}</span>
+					<span class="source col-xs-2 ${Parser.sourceJsonToColor(abvSource)}" title="${Parser.sourceJsonToFull(g.source)}">${abvSource}</span>
 				</a>
 			</li>
 		`;

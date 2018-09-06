@@ -4,10 +4,11 @@ const HASH_HIDE_FEATURES = "hideclassfs:";
 const HASH_SHOW_FLUFF = "showfluff:";
 const HASH_SOURCES = "sources:";
 const HASH_BOOK_VIEW = "bookview:";
+const HASH_SHOW_PILL_SOURCES = "pillsource:";
 
 const CLSS_FEATURE_LINK = "feature-link";
-const CLSS_ACTIVE = "active";
-const CLSS_SUBCLASS_PILL = "sc-pill";
+const CLSS_ACTIVE = "sc_pill--active";
+const CLSS_SUBCLASS_PILL = "sc_pill__subclass";
 const CLSS_PANEL_LINK = "pnl-link";
 const CLSS_CLASS_FEATURES_ACTIVE = "cf-active";
 const CLSS_FLUFF_ACTIVE = "fluff-active";
@@ -104,10 +105,12 @@ class ClassList {
 			const curClass = newClasses[i];
 			if (ExcludeUtil.isExcluded(curClass.name, "class", curClass.source)) continue;
 
-			curClass._fSource = SourceUtil.isNonstandardSource(curClass.source) ? "Others" : "Core";
+			curClass._fSource = BrewUtil.hasSourceJson(curClass.source) ? "Homebrew" : SourceUtil.isNonstandardSource(curClass.source) ? "Others" : "Core";
+			sourceFilter.addIfAbsent(curClass._fSource);
 			const id = i + previousClassAmount;
 			tempString += ClassList._renderClass(curClass, id);
 		}
+		sourceFilter.items.sort(SortUtil.ascSort);
 		$classTable.append(tempString);
 	}
 
@@ -115,7 +118,7 @@ class ClassList {
 		return `<li class="row" ${FLTR_ID}="${id}" ${classToRender.uniqueId ? `data-unique-id="${classToRender.uniqueId}"` : ""}>
 				<a id='${id}' href="${HashLoad.getClassHash(classToRender)}" title="${classToRender.name}">
 					<span class='name col-xs-8'>${classToRender.name}</span>
-					<span class='source col-xs-4 text-align-center source${Parser.sourceJsonToAbv(classToRender.source)}' title="${Parser.sourceJsonToFull(classToRender.source)}">
+					<span class='source col-xs-4 text-align-center ${Parser.sourceJsonToColor(classToRender.source)}' title="${Parser.sourceJsonToFull(classToRender.source)}">
 						${Parser.sourceJsonToAbv(classToRender.source)}
 					</span>
 					<span class="uniqueid hidden">${classToRender.uniqueId ? classToRender.uniqueId : id}</span>
@@ -130,8 +133,6 @@ class ClassData {
 		const newClasses = data.class;
 		if (!newClasses || !newClasses.length) return;
 
-		ClassData.replaceWarlockInvocationsWithLink(newClasses);
-
 		ClassData.sortSubclasses(newClasses);
 
 		newClasses.filter(c => SourceUtil.isNonstandardSource(c.source) || BrewUtil.hasSourceJson(c.source))
@@ -142,40 +143,6 @@ class ClassData {
 		ClassList.addClasses(newClasses);
 
 		History.hashChange();
-	}
-
-	static replaceWarlockInvocationsWithLink (classes) {
-		const warlock = classes
-			.find(it => it.name === "Warlock" && it.source === SRC_PHB);
-		if (!warlock) {
-			return;
-		}
-		const invocFeature = warlock.classFeatures[1]
-			.find(f => f.name === "Eldritch Invocations");
-		if (!invocFeature) {
-			return;
-		}
-
-		const toRemove = invocFeature.entries.findIndex(it => it.type === "options");
-		const toSwitch = invocFeature.entries.findIndex(it => it.includes("Your invocation options are detailed at the end of the class description."));
-		if (toRemove !== -1 && toSwitch !== -1) {
-			invocFeature.entries[toSwitch] = {
-				type: "inlineBlock",
-				entries: [
-					"At 2nd level, you gain two eldritch invocations of your choice. See the ",
-					{
-						"type": "link",
-						"href": {
-							"type": "internal",
-							"path": "invocations.html"
-						},
-						"text": "Invocations page"
-					},
-					" for the list of available options. When you gain certain warlock levels, you gain additional invocations of your choice."
-				]
-			};
-			invocFeature.entries.splice(toRemove, 1);
-		}
 	}
 
 	static addSubclassData (data) {
@@ -225,7 +192,7 @@ ClassData.classes = [];
 class FeatureDescription {
 	static getSubclassStyles (sc) {
 		const styleClasses = [CLSS_SUBCLASS_FEATURE];
-		const nonStandard = SourceUtil.isNonstandardSource(sc.source) || SourceUtil.hasBeenReprinted(sc.shortName, sc.source);
+		const nonStandard = SourceUtil.isNonstandardSource(sc.source) || SourceUtil.hasBeenReprinted(sc.shortName, sc.source) || (sc.source.source || sc.source) === SRC_DMG;
 		if (nonStandard) styleClasses.push(CLSS_NON_STANDARD_SOURCE);
 		if (FeatureDescription.subclassIsFreshUa(sc)) styleClasses.push(CLSS_FRESH_UA);
 		if (BrewUtil.hasSourceJson(ClassData.cleanScSource(sc.source))) styleClasses.push(CLSS_HOMEBREW_SOURCE);
@@ -276,7 +243,7 @@ class HashLoad {
 
 		// SUMMARY SIDEBAR =================================================================================================
 		// hit dice and HP
-		const hdEntry = {toRoll: [ClassDisplay.curClass.hd], rollable: true};
+		const hdEntry = {toRoll: `${ClassDisplay.curClass.hd.number}d${ClassDisplay.curClass.hd.faces}`, rollable: true};
 		$("td#hp div#hitdice span").html(EntryRenderer.getEntryDice(hdEntry, "Hit die"));
 		$("td#hp div#hp1stlevel span").html(ClassDisplay.curClass.hd.faces + " + your Constitution modifier");
 		$("td#hp div#hphigherlevels span").html(`${EntryRenderer.getEntryDice(hdEntry, "Hit die")} (or ${
@@ -297,14 +264,14 @@ class HashLoad {
 
 		function getSkillProfString (skills) {
 			const numString = Parser.numberToString(skills.choose);
-			return skills.from.length === 18 ? `Choose any ${numString}.` : `Choose ${numString} from ${CollectionUtil.joinConjunct(skills.from, ", ", ", and ")}.`
+			return skills.from.length === 18 ? `Choose any ${numString}.` : `Choose ${numString} from ${skills.from.joinConjunct(", ", " and ")}.`
 		}
 
 		// starting equipment
 		const sEquip = ClassDisplay.curClass.startingEquipment;
 		const fromBackground = sEquip.additionalFromBackground ? "<p>You start with the following items, plus anything provided by your background.</p>" : "";
 		const defList = sEquip.default.length === 0 ? "" : `<ul><li>${sEquip.default.map(it => EntryRenderer.getDefaultRenderer().renderEntry(it)).join("</li><li>")}</ul>`;
-		const goldAlt = sEquip.goldAlternative === undefined ? "" : `<p>Alternatively, you may start with ${sEquip.goldAlternative} gp to buy your own equipment.</p>`;
+		const goldAlt = sEquip.goldAlternative === undefined ? "" : `<p>Alternatively, you may start with ${EntryRenderer.getDefaultRenderer().renderEntry(sEquip.goldAlternative)} gp to buy your own equipment.</p>`;
 		$("#equipment").find("div").html(`${fromBackground}${defList}${goldAlt}`);
 
 		// FEATURE TABLE ===================================================================================================
@@ -376,7 +343,7 @@ class HashLoad {
 				});
 				if (feature.type !== "inset") featureLinks.push(featureLink);
 
-				const styleClasses = [CLSS_CLASS_FEATURE];
+				const styleClasses = [CLSS_CLASS_FEATURE, "linked-titles--classes"];
 				if (feature.gainSubclassFeature) styleClasses.push(CLSS_GAIN_SUBCLASS_FEATURE);
 
 				renderer.recursiveEntryRender(feature, renderStack, 0, {prefix: `<tr id="${featureId}" class="${styleClasses.join(" ")}"><td colspan="6">`, suffix: `</td></tr>`, forcePrefixSuffix: true});
@@ -437,7 +404,7 @@ class HashLoad {
 
 		// show/hide class features pill
 		HashLoad.makeGenericTogglePill("Class Features", CLSS_CLASS_FEATURES_ACTIVE, ID_CLASS_FEATURES_TOGGLE, HASH_HIDE_FEATURES, true, "Toggle class features");
-		if (ClassDisplay.curClass.fluff) HashLoad.makeGenericTogglePill("Detail Info", CLSS_FLUFF_ACTIVE, ID_FLUFF_TOGGLE, HASH_SHOW_FLUFF, false, "Toggle class detail information (Source: Xanathar's Guide to Everything)");
+		if (ClassDisplay.curClass.fluff) HashLoad.makeGenericTogglePill("Info", CLSS_FLUFF_ACTIVE, ID_FLUFF_TOGGLE, HASH_SHOW_FLUFF, false, "Toggle class detail information (Source: Xanathar's Guide to Everything)");
 
 		// show/hide UA/other sources
 		HashLoad.makeSourceCyclePill();
@@ -447,21 +414,23 @@ class HashLoad {
 
 		// subclass pills
 		const subClasses = ClassDisplay.curClass.subclasses
+			.filter(sc => !ExcludeUtil.isExcluded(sc.name, "subclass", sc.source))
 			.map(sc => ({name: sc.name, source: sc.source, shortName: sc.shortName}))
 			.sort(function (a, b) {
 				return SortUtil.ascSort(a.shortName, b.shortName)
 			});
 		for (let i = 0; i < subClasses.length; i++) {
 			const subClass = subClasses[i];
-			const nonStandardSource = SourceUtil.isNonstandardSource(subClass.source) || SourceUtil.hasBeenReprinted(subClass.shortName, subClass.source);
-			const styleClasses = [CLSS_ACTIVE, CLSS_SUBCLASS_PILL];
+			const nonStandardSource = SourceUtil.isNonstandardSource(subClass.source) || SourceUtil.hasBeenReprinted(subClass.shortName, subClass.source) || (subClass.source.source || subClass.source) === SRC_DMG;
+			const styleClasses = [CLSS_ACTIVE, CLSS_SUBCLASS_PILL, "sc_pill"];
 			if (nonStandardSource) styleClasses.push(CLSS_NON_STANDARD_SOURCE);
 			if (FeatureDescription.subclassIsFreshUa(subClass)) styleClasses.push(CLSS_FRESH_UA);
 			if (BrewUtil.hasSourceJson(ClassData.cleanScSource(subClass.source))) styleClasses.push(CLSS_HOMEBREW_SOURCE);
-			const pillText = SourceUtil.hasBeenReprinted(subClass.shortName, subClass.source) ? `${subClass.shortName} (${Parser.sourceJsonToAbv(subClass.source)})`
-				: subClass.shortName;
+			const reprinted = SourceUtil.hasBeenReprinted(subClass.shortName, subClass.source);
+			const pillText = reprinted ? `${subClass.shortName} (${Parser.sourceJsonToAbv(subClass.source)})` : subClass.shortName;
+			const pillPostText = reprinted || SourceUtil.isNonstandardSource(subClass.source) ? "" : ` (${Parser.sourceJsonToAbv(subClass.source)})`;
 			const pill = $(`<span class="${styleClasses.join(" ")}" ${ATB_DATA_SC}="${subClass.name}" ${ATB_DATA_SRC}="${
-				ClassData.cleanScSource(subClass.source)}" title="Source: ${Parser.sourceJsonToFull(subClass.source)}"><span>${pillText}</span></span>`);
+				ClassData.cleanScSource(subClass.source)}" title="Source: ${Parser.sourceJsonToFull(subClass.source)}"><span>${pillText}<span class="sc_pill__source_suffix">${pillPostText}</span></span></span>`);
 			pill.click(function () {
 				HashLoad.handleSubclassClick($(this).hasClass(CLSS_ACTIVE), subClasses[i].name, ClassData.cleanScSource(subClasses[i].source));
 			});
@@ -472,13 +441,15 @@ class HashLoad {
 		// spacer before "Feeling Lucky" pill
 		HashLoad.addPillDivider();
 		HashLoad.makeFeelingLuckyPill();
+		HashLoad.makeToggleSourcesPill();
+		HashLoad.makeResetPill();
 
 		// call loadsub with a blank sub-hash, to ensure the right content is displayed
 		loadsub([]);
 	}
 
 	static makeSourceCyclePill () {
-		const $pill = $(`<span title="Cycle through source types" id="${ID_OTHER_SOURCES_TOGGLE}" data-state="0" style="min-width: 8em;"><span>${
+		const $pill = $(`<span title="Cycle through source types" id="${ID_OTHER_SOURCES_TOGGLE}" data-state="0" style="min-width: 8em;" class="sc_pill"><span>${
 			STRS_SOURCE_STATES[0]}</span></span>`);
 		HashLoad.subclassPillWrapper.append($pill);
 		$pill.click(() => {
@@ -492,7 +463,7 @@ class HashLoad {
 
 	// helper functions
 	static makeGenericTogglePill (pillText, pillActiveClass, pillId, hashKey, defaultActive, title) {
-		const pill = $(`<span title="${title}" id="${pillId}"><span>${pillText}</span></span>`);
+		const pill = $(`<span title="${title}" id="${pillId}" class="sc_pill"><span>${pillText}</span></span>`);
 		if (defaultActive) pill.addClass(pillActiveClass);
 		HashLoad.subclassPillWrapper.append(pill);
 		pill.click(function () {
@@ -525,17 +496,53 @@ class HashLoad {
 	}
 
 	static makeFeelingLuckyPill () {
-		const $pill = $(`<span title="Feeling Lucky?" class="sc-pill-feeling-lucky"><span class="glyphicon glyphicon-random"></span></span>`);
+		const $pill = $(`<span title="Feeling Lucky?" class="sc_pill sc-pill-feeling-lucky"><span class="glyphicon glyphicon-random"></span></span>`);
 		HashLoad.subclassPillWrapper.append($pill);
 		$pill.click(() => {
 			const [link, ...sub] = History._getHashParts();
 			const outStack = [link];
-			sub.filter(hashPart => !hashPart.startsWith(HASH_SUBCLASS)).forEach(hashPart => outStack.push(hashPart));
+			let singleSelected = null;
+			sub.filter(hashPart => {
+				if (!hashPart.startsWith(HASH_SUBCLASS)) return true;
+				else if (!hashPart.includes(HASH_LIST_SEP) && hashPart.length) singleSelected = hashPart.slice(HASH_SUBCLASS.length);
+			}).forEach(hashPart => outStack.push(hashPart));
 			const hashes = $(`.${CLSS_SUBCLASS_PILL}`).filter(`:visible`)
 				.map((i, e) => HashLoad.getEncodedSubclass($(e).attr(`data-subclass`), $(e).attr(`data-source`))).get();
-			outStack.push(`${HASH_SUBCLASS}${hashes[RollerUtil.roll(hashes.length)]}`);
+
+			const getRolled = () => hashes[RollerUtil.roll(hashes.length)];
+
+			if (singleSelected == null || hashes.length === 1) outStack.push(`${HASH_SUBCLASS}${getRolled()}`);
+			else if (hashes.length > 1) {
+				let rolled;
+				do {
+					rolled = getRolled()
+				} while (rolled === singleSelected);
+				outStack.push(`${HASH_SUBCLASS}${rolled}`);
+			}
 			HashLoad.cleanSetHash(outStack.join(HASH_PART_SEP));
 		});
+	}
+
+	static makeToggleSourcesPill () {
+		$(`<span title="Toggle Sources" class="sc_pill sc_pill__source"><span class="glyphicon glyphicon-book"></span></span>`)
+			.appendTo(HashLoad.subclassPillWrapper)
+			.click(function () {
+				const [link, ...sub] = History._getHashParts();
+				const outStack = [link];
+				let curr = false;
+				sub.filter(hashPart => {
+					if (!hashPart.startsWith(HASH_SHOW_PILL_SOURCES)) return true;
+					else curr = hashPart.substr(HASH_SHOW_PILL_SOURCES.length) === "true";
+				}).forEach(hashPart => outStack.push(hashPart));
+				outStack.push(`${HASH_SHOW_PILL_SOURCES}${!curr}`);
+				HashLoad.cleanSetHash(outStack.join(HASH_PART_SEP));
+			});
+	}
+
+	static makeResetPill () {
+		$(`<span title="Reset" class="sc_pill"><span class="glyphicon glyphicon-refresh"></span></span>`)
+			.appendTo(HashLoad.subclassPillWrapper)
+			.click(() => HashLoad.cleanSetHash(window.location.hash.split(HASH_PART_SEP)[0] || ""));
 	}
 
 	static handleSubclassClick (isPillActive, subclassName, subclassSource) {
@@ -620,6 +627,7 @@ class SubClassLoader {
 		let sources = null;
 		let bookView = null;
 		let comparisonView = null;
+		let showPillSources = null;
 
 		SubClassLoader.partCache = null;
 
@@ -636,6 +644,7 @@ class SubClassLoader {
 			if (hashPart.startsWith(HASH_SHOW_FLUFF)) showFluff = sliceTrue(hashPart, HASH_SHOW_FLUFF);
 			if (hashPart.startsWith(HASH_SOURCES)) sources = hashPart.slice(HASH_SOURCES.length);
 			if (hashPart.startsWith(HASH_BOOK_VIEW)) bookView = sliceTrue(hashPart, HASH_BOOK_VIEW);
+			if (hashPart.startsWith(HASH_SHOW_PILL_SOURCES)) showPillSources = sliceTrue(hashPart, HASH_SHOW_PILL_SOURCES);
 			if (subclassComparisonView && hashPart.startsWith(subclassComparisonView.hashKey)) comparisonView = sliceTrue(hashPart, `${subclassComparisonView.hashKey}:`);
 		}
 
@@ -827,6 +836,9 @@ class SubClassLoader {
 		} else if (subclassComparisonView) {
 			subclassComparisonView.teardown();
 		}
+
+		$(`.sc_pill__source_suffix`).toggle(!!showPillSources);
+		$(`.sc_pill__source`).toggleClass(CLSS_ACTIVE, !!showPillSources);
 	}
 
 	static handleTableGroups (shownInTable, tableDataTag, show) {
@@ -877,7 +889,7 @@ class SubClassLoader {
 		$(`.${CLSS_FEATURE_LINK}`).each(
 			function () {
 				const $this = $(this);
-				this.href = SubClassLoader.getFeatureLink(ATB_DATA_FEATURE_LINK);
+				this.href = SubClassLoader.getFeatureLink($this.attr(ATB_DATA_FEATURE_LINK));
 			}
 		)
 	}
@@ -953,7 +965,7 @@ class SubClassLoader {
 					if (!$e.is(":visible")) return;
 					const idTr = $e.closest(`tr[id]`);
 					const pTr = $e.closest(`tr`);
-					const textNodes = $e.contents().filter(function () {
+					const textNodes = $e.find(`.entry-title-inner`).contents().filter(function () {
 						return this.nodeType === 3;
 					});
 					if (!textNodes.length) return;
@@ -992,8 +1004,8 @@ function initCompareMode () {
 
 			let numShown = 0;
 			ClassDisplay.curClass.subclasses.filter(sc => !ExcludeUtil.isExcluded(sc.name, "subclass", sc.source)).forEach((sc, i) => {
-				const $pill = $(`.sc-pill[data-subclass="${sc.name}"][data-source="${sc.source.source || sc.source}"]`);
-				if (!($pill.hasClass("active"))) {
+				const $pill = $(`.${CLSS_SUBCLASS_PILL}[data-subclass="${sc.name}"][data-source="${sc.source.source || sc.source}"]`);
+				if (!($pill.hasClass(CLSS_ACTIVE))) {
 					$tbl.find(`.subclass-features-${i}`).hide();
 				} else {
 					numShown++;
@@ -1085,7 +1097,7 @@ class ClassBookView {
 		ClassDisplay.curClass.subclasses.filter(sc => !ExcludeUtil.isExcluded(sc.name, "subclass", sc.source)).forEach((sc, i) => {
 			const name = SourceUtil.hasBeenReprinted(sc.shortName, sc.source) ? `${sc.shortName} (${Parser.sourceJsonToAbv(sc.source)})` : sc.shortName;
 			const styles = FeatureDescription.getSubclassStyles(sc);
-			const $pill = $(`.sc-pill[data-subclass="${sc.name}"][data-source="${sc.source.source || sc.source}"]`);
+			const $pill = $(`.${CLSS_SUBCLASS_PILL}[data-subclass="${sc.name}"][data-source="${sc.source.source || sc.source}"]`);
 
 			const $scToggle = $(`<span class="pnl-link active ${styles.join(" ")}" title="Source: ${Parser.sourceJsonToFull(sc.source)}" data-i="${i}" data-bk-subclass="${
 				sc.name}" data-bk-source="${sc.source.source || sc.source}">${name}</span>`).on("click", () => {
@@ -1093,7 +1105,7 @@ class ClassBookView {
 				$pill.click();
 			});
 
-			if (!($pill.hasClass("active"))) {
+			if (!($pill.hasClass(CLSS_ACTIVE))) {
 				ClassBookView._toggleSubclass($bkTbl, $scToggle, i);
 			}
 
@@ -1167,13 +1179,26 @@ ClassBookView._$wrpBook = null;
 ClassBookView._$bkTbl = null;
 ClassBookView._$scToggles = {};
 
+function initLinkGrabbers () {
+	$(`body`).on(`click`, `.linked-titles--classes > td > * > .entry-title .entry-title-inner`, function () {
+		const $this = $(this);
+		const fTag = $this.closest(`tr`).attr("id");
+
+		const hash = `${window.location.hash.slice(1).split(HASH_PART_SEP)
+			.filter(it => !it.startsWith(HASH_FEATURE)).join(HASH_PART_SEP)}${HASH_PART_SEP}${fTag}`;
+
+		copyText(`${window.location.href.split("#")[0]}#${hash}`);
+		showCopiedEffect($this);
+	});
+}
+
 const renderer = EntryRenderer.getDefaultRenderer();
 
 const sourceFilter = new Filter({
 	header: FilterBox.SOURCE_HEADER,
 	minimalUI: true,
 	items: ["Core", "Others"],
-	selFn: (it) => it === "Core"
+	selFn: (it) => it === "Core" || it === "Homebrew"
 });
 
 const filterBox = initFilterBox(sourceFilter);
@@ -1192,6 +1217,7 @@ BrewUtil.makeBrewButton("manage-brew");
 BrewUtil.bind({list: ClassList.classList, filterBox, sourceFilter});
 
 initCompareMode();
+initLinkGrabbers();
 ClassBookView.initButton();
 ExcludeUtil.initialise();
 
@@ -1204,6 +1230,7 @@ DataUtil.class.loadJSON().then((data) => {
 
 	BrewUtil.pAddBrewData()
 		.then(handleBrew)
+		.then(BrewUtil.pAddLocalBrewData)
 		.catch(BrewUtil.purgeBrew)
 		.then(() => {
 			RollerUtil.addListRollButton();
@@ -1214,4 +1241,5 @@ DataUtil.class.loadJSON().then((data) => {
 function handleBrew (homebrew) {
 	addClassData(homebrew);
 	addSubclassData(homebrew);
+	return Promise.resolve();
 }

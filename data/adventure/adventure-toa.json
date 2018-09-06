@@ -573,15 +573,7 @@
 										"type": "internal",
 										"path": "adventure/ToA/Player Map Chult Pinned.jpg"
 									},
-									"title": "Player Map Chult Pinned"
-								},
-								{
-									"type": "image",
-									"href": {
-										"type": "internal",
-										"path": "adventure/ToA/Player Map Chult Unpinned.jpg"
-									},
-									"title": "Player Map Chult Unpinned"
+									"title": "Players Map of Chult"
 								},
 								{
 									"type": "image",
@@ -589,7 +581,7 @@
 										"type": "internal",
 										"path": "adventure/ToA/Players-Chult-Complete.jpg"
 									},
-									"title": "Players Chult Complete"
+									"title": "Players' Map of Chult (Complete)"
 								},
 								{
 									"type": "image",
@@ -597,7 +589,7 @@
 										"type": "internal",
 										"path": "adventure/ToA/DM Map Chult.jpg"
 									},
-									"title": "DM Map Chult"
+									"title": "DMs' Map of Chult"
 								}
 							]
 						},
@@ -963,8 +955,8 @@
 								"Quest"
 							],
 							"colStyles": [
-								"col-xs-1 text-align-center",
-								""
+								"col-xs-2 text-align-center",
+								"col-xs-10"
 							],
 							"rows": [
 								[
@@ -1566,8 +1558,8 @@
 								"Rumor"
 							],
 							"colStyles": [
-								"col-xs-1 text-align-center",
-								""
+								"col-xs-2 text-align-center",
+								"col-xs-10"
 							],
 							"rows": [
 								[
@@ -1682,8 +1674,8 @@
 								"Ekene-Afa's Price"
 							],
 							"colStyles": [
-								"",
-								""
+								"col-xs-6",
+								"col-xs-6 text-align-right"
 							],
 							"rows": [
 								[
@@ -1733,8 +1725,8 @@
 								"Ifan's Price"
 							],
 							"colStyles": [
-								"",
-								""
+								"col-xs-6",
+								"col-xs-6 text-align-right"
 							],
 							"rows": [
 								[
@@ -1892,8 +1884,8 @@
 								"Wakanga's Price"
 							],
 							"colStyles": [
-								"",
-								""
+								"col-xs-6",
+								"col-xs-6 text-align-right"
 							],
 							"rows": [
 								[
@@ -2945,25 +2937,9 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/ToA/DM Map Chult.jpg"
-							},
-							"title": "DM Map Chult"
-						},
-						{
-							"type": "image",
-							"href": {
-								"type": "internal",
 								"path": "adventure/ToA/Player Map Chult Pinned.jpg"
 							},
-							"title": "Player Map Chult Pinned"
-						},
-						{
-							"type": "image",
-							"href": {
-								"type": "internal",
-								"path": "adventure/ToA/Player Map Chult Unpinned.jpg"
-							},
-							"title": "Player Map Chult Unpinned"
+							"title": "Players Map of Chult"
 						},
 						{
 							"type": "image",
@@ -2971,7 +2947,15 @@
 								"type": "internal",
 								"path": "adventure/ToA/Players-Chult-Complete.jpg"
 							},
-							"title": "Players Chult Complete"
+							"title": "Players' Map of Chult (Complete)"
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "adventure/ToA/DM Map Chult.jpg"
+							},
+							"title": "DMs' Map of Chult"
 						},
 						"If there's a particular site that you want the characters to discover and explore, you can move the site so that it falls along their path, and give it a new name if necessary. For example, the goblin village of Yellyark doesn't have to be in the location marked on your map. You can place it anywhere you want, or create another goblin village that has a similar configuration. Many other locations described in this chapter are just as adaptable. In addition to relocating a site, you can add or remove monsters and traps to make it harder or easier."
 					]
@@ -5197,7 +5181,7 @@
 							]
 						},
 						"When it was intact, the second floor was actually a mezzanine that wrapped around three sides of the dome. The head, chest, and shoulders of the warrior statue rose above the mezzanine level.",
-						"The 20-foot-deep pit contains 1d4+2 inches of rainwater and is home to two {@b swarms of poisonous snakes}. The swarms are content to remain in the pit and attack any creature that joins them, except for Zalkoré, whom the snakes obey. The walls of the pit can't be climbed without gear or magic.",
+						"The 20-foot-deep pit contains 1d4+2 inches of rainwater and is home to two {@creature swarm of poisonous snakes|mm|swarms of poisonous snakes}. The swarms are content to remain in the pit and attack any creature that joins them, except for Zalkoré, whom the snakes obey. The walls of the pit can't be climbed without gear or magic.",
 						"Rainwater pouring into the pit through holes in the roof drains via pipes through the tyrannosaurus spout at the head of the main concourse (area 1). The snakes can also come and go through the pipes, which are 6 inches wide.",
 						{
 							"type": "entries",
@@ -5427,7 +5411,7 @@
 						},
 						"The walls of the sinkhole are rough and draped with dozens of stout vines, so climbing into or out of the grotto is easy and automatically successful.",
 						"The bones are the remains of Ormalagos, an adult green dragon better known during her lifetime as Needle. She used this grotto as a lair but feared Batiri goblins had sniffed out its location and were getting ready to raid it. Needle was in the process of moving her treasure to other locations when the goblins struck. While the dragon was away, they dumped baskets full of quippers into the sinkhole. When the dragon returned, they trapped her in the sinkhole with vine nets. As the quippers devoured the dragon from below, the Batiri showered Needle with spears from above until she finally died. Nearly the entire goblin tribe perished in the fight, too.",
-						"The characters' first impression of the water is correct; it varies from 3 to 4 feet deep everywhere. A search of the muddy bottom turns up hundreds of goblin bones and stone spear heads, greatly annoys the multitude of frogs, and draws attacks from two {@b swarms of quippers}. Someone who examines the dragon bones and succeeds on a DC 13 Intelligence (Investigation) check sees enough regularity in the vines draped across the ribs to conclude the dragon was tangled in a net. To identify the remains as a green dragon, characters must lift its skull out of the water and muck; that feat takes a successful DC 15 Strength (Athletics) check.",
+						"The characters' first impression of the water is correct; it varies from 3 to 4 feet deep everywhere. A search of the muddy bottom turns up hundreds of goblin bones and stone spear heads, greatly annoys the multitude of frogs, and draws attacks from two {@creature swarm of quippers|mm|swarms of quippers}. Someone who examines the dragon bones and succeeds on a DC 13 Intelligence (Investigation) check sees enough regularity in the vines draped across the ribs to conclude the dragon was tangled in a net. To identify the remains as a green dragon, characters must lift its skull out of the water and muck; that feat takes a successful DC 15 Strength (Athletics) check.",
 						{
 							"type": "entries",
 							"name": "Treasure",
@@ -5489,7 +5473,7 @@
 					"type": "entries",
 					"name": "Third Steps",
 					"entries": [
-						"The steps from level 2 to level 3 (the level of the shrine) are 20 feet long and rise 12 feet. The stairs are in excellent condition, but {@b swarms of poisonous} snakes slither over them. If snakes are killed, more crawl out through holes in the stone to replace them, so the swarms can never be destroyed or even weakened. No spells or abilities prevent the snakes from attacking someone who climbs the stairs.",
+						"The steps from level 2 to level 3 (the level of the shrine) are 20 feet long and rise 12 feet. The stairs are in excellent condition, but {@creature swarm of poisonous snakes|mm|swarms of poisonous snakes} slither over them. If snakes are killed, more crawl out through holes in the stone to replace them, so the swarms can never be destroyed or even weakened. No spells or abilities prevent the snakes from attacking someone who climbs the stairs.",
 						"After a few moments of examining the stairs, the characters notice a third {@creature chwinga|ToA} standing among them at the base of the steps. Its mask resembles a mongoose's face, and it carries a red parrot feather and an orange and purple orchid. At the bottom step, the chwinga whacks a snake with its orchid to make it angry, then strokes the snake's flank with the feather to calm it down, then lies down facing the snake, whereupon the reptile crawls through the mouth of the mask and inside the chwinga. The chwinga then slithers up the steps like a snake, untroubled by any of the other poisonous snakes. To climb the steps safely, characters must do the same thing, but this stage isn't automatic. Using the orchid and the feather are easy, but a character must make a successful DC 10 Constitution saving throw after swallowing a snake. Evil-aligned characters have disadvantage on the saving throw. If the save succeeds, the character can slither up the steps safely. If the saving throw fails, the character takes 17 (5d6) psychic damage and can try again, but the DC increases to 11. The DC increases by 1 more with each successive failure."
 					]
 				},
@@ -6093,7 +6077,7 @@
 					"name": "5. Ant Hills",
 					"entries": [
 						"This particular Batiri tribe is skilled at ant husbandry, and the village is situated between three ant hills that are each 10 feet across at the base and stand 8 feet high. The three ant hills are joined together by tunnels.",
-						"Damaging or destroying an ant hill causes six ant swarms ({@b swarms of insects}) to erupt from an underground nest. Two ant swarms emerge from each hill. The ants ignore the Batiri goblins and go after anything else they detect nearby."
+						"Damaging or destroying an ant hill causes six ant swarms ({@creature swarm of insects|mm|swarms of insects}) to erupt from an underground nest. Two ant swarms emerge from each hill. The ants ignore the Batiri goblins and go after anything else they detect nearby."
 					]
 				},
 				{
@@ -9165,7 +9149,7 @@
 								"A rickety wooden walkway threads around the walls of a deep pit. Foul odors waft up from below. Somewhere in the gloom beneath you, thousands of snakes writhe."
 							]
 						},
-						"Despite appearances, the rickety wooden walkway is safe. The yuan-ti sometimes hurl disobedient slaves into the pit to be devoured by the serpents. The pit is 50 feet deep and filled with poisonous snakes. When a creature falls or sets foot in the pit, a {@b swarm of poisonous} snakes forms around it and attacks. A virtually inexhaustible number of swarms can be created in this fashion. A swarm that has nothing to attack ceases to exist as its constituents slither apart.",
+						"Despite appearances, the rickety wooden walkway is safe. The yuan-ti sometimes hurl disobedient slaves into the pit to be devoured by the serpents. The pit is 50 feet deep and filled with poisonous snakes. When a creature falls or sets foot in the pit, a {@creature swarm of poisonous snakes} forms around it and attacks. A virtually inexhaustible number of swarms can be created in this fashion. A swarm that has nothing to attack ceases to exist as its constituents slither apart.",
 						"To climb the wet cavern walls, a character must succeed on a DC 15 Strength (Athletics) check."
 					]
 				},
@@ -10436,7 +10420,7 @@
 							"type": "entries",
 							"name": "Undead Spider Warrens",
 							"entries": [
-								"Six swarms of undead spiders inhabit the warrens within the walls of the tomb. They are treated as {@b swarms of insects (spiders)}, except that they are susceptible to effects that can target undead.",
+								"Six swarms of undead spiders inhabit the warrens within the walls of the tomb. They are treated as {@creature swarm of spiders|mm|swarms of insects (spiders)}, except that they are susceptible to effects that can target undead.",
 								"The warrens are too narrow for Medium and larger creatures to enter, and Small creatures must squeeze to traverse them (see \"Movement and Position\" in chapter 9 of the {@i Player's Handbook}). Tiny creatures can move through the warrens freely. The swarms attack any creatures that enter the warrens or any creatures in Moa's tomb if Nepartak becomes enraged."
 							]
 						},
@@ -18189,21 +18173,21 @@
 					"type": "entries",
 					"name": "Swarms of Bats",
 					"entries": [
-						"Ruins, hollow trees, and hidden caverns can all be homes to bats. This encounter sees the characters disturb 1d4 {@b swarms of bats} that have become unnaturally aggressive from feeding on undead flesh."
+						"Ruins, hollow trees, and hidden caverns can all be homes to bats. This encounter sees the characters disturb 1d4 {@creature swarm of bats|mm|swarms of bats} that have become unnaturally aggressive from feeding on undead flesh."
 					]
 				},
 				{
 					"type": "entries",
 					"name": "Swarms of Insects",
 					"entries": [
-						"The characters are beset by 1d4 {@b swarms of insects (centipedes}). At the end of the encounter, any character damaged by a swarm must succeed on a DC 11 Constitution saving throw or become infected with shivering sickness (see {@i \"Diseases\"})."
+						"The characters are beset by {@dice 1d4} {@creature swarm of centipedes|mm|swarm of insects (centipedes)}. At the end of the encounter, any character damaged by a swarm must succeed on a DC 11 Constitution saving throw or become infected with shivering sickness (see {@i \"Diseases\"}). At the end of the encounter, any character damaged by a swarm must succeed on a DC 11 Constitution saving throw or become infected with shivering sickness (see {@i \"Diseases\"})."
 					]
 				},
 				{
 					"type": "entries",
 					"name": "Swarms of Quippers",
 					"entries": [
-						"This encounter indicates that 1d4 {@b swarms of quippers} catch sight of the party, but these creatures are dangerous only if the characters are in the water with them. Creatures on the shore or in canoes are safe, but in both cases, the swarms follow the characters until they're out of sight and away from the water."
+						"This encounter indicates that 1d4 {@creature swarm of quippers|mm|swarms of quippers} catch sight of the party, but these creatures are dangerous only if the characters are in the water with them. Creatures on the shore or in canoes are safe, but in both cases, the swarms follow the characters until they're out of sight and away from the water."
 					]
 				},
 				{
@@ -18705,300 +18689,85 @@
 									"10 gp"
 								]
 							]
+						},
+						{
+							"type": "entries",
+							"name": "Dancing Monkey Fruit",
+							"entries": [
+								"This rare magical fruit produces enough juice to fill a vial. Any humanoid that eats a dancing monkey fruit or drinks its juice must succeed on a DC 14 Constitution saving throw or begin a comic dance that lasts for 1 minute. Humanoids that can't be poisoned are immune to this magical effect.",
+								"The dancer must use all its movement to dance without leaving its space and has disadvantage on attack rolls and Dexterity saving throws, and other creatures have advantage on attack rolls against it. Each time it takes damage, the dancer can repeat the saving throw, ending the effect on itself on a success. When the dancing effect ends, the humanoid suffers the poisoned condition for 1 hour."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Menga Leaves",
+							"entries": [
+								"The dried leaves of a menga bush can be ground, dissolved in a liquid, heated, and ingested. A creature that ingests 1 ounce of menga leaves in this fashion regains 1 hit point. A creature that ingests more than 5 ounces of menga leaves in a 24-hour period gains no additional benefit and must succeed on a DC 11 Constitution saving throw or fall unconscious for 1 hour. The unconscious creature awakens if it takes at least 5 damage on one turn.",
+								"A healthy menga bush usually has 2d6 ounces of leaves. Once picked, the leaves require 1 day to dry out before they can confer any benefit."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Ryath Root",
+							"entries": [
+								"Any creature that ingests a ryath root gains 2d4 temporary hit points. A creature that consumes more than one ryath root in a 24-hour period must succeed on a DC 13 Constitution saving throw or suffer the poisoned condition for 1 hour."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Sinda Berries",
+							"entries": [
+								"These berries are dark brown and bitter. A full-grown sinda berry bush has 4d6 berries growing on it. A bush plucked of all its berries grows new berries in 1d4 months. Picked berries lose their freshness and efficacy after 24 hours.",
+								"Fresh sinda berries can be eaten raw or crushed and added to a drink to dull the bitterness. A creature that consumes at least ten fresh sinda berries gains advantage on saving throws against disease and poison for the next 24 hours."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Wildroot",
+							"entries": [
+								"Introducing the juice of a wildroot into a poisoned creature's bloodstream (for example, by rubbing it on an open wound) rids the creature of the poisoned condition. Once used in this way, a wildroot loses this property."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Wukka Nuts",
+							"entries": [
+								"These fist-sized nuts grow on wukka trees, which are popular haunts for jaculi, su-monsters, and zorbos. A wukka nut rattles when shaken, causing its shell to shed bright light in a 10-foot radius and dim light for an additional 10 feet. This magical light fades after 1 minute, but shaking the nut again causes the light to reappear. If the shell of the nut is cracked open, it loses its magic."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Yahcha",
+							"entries": [
+								"A yahcha (pronounced YAH-chah) is a harmless, meaty beetle about the size of a human hand, which feeds on worms and maggots. It moves slowly (walking speed 10 feet) and is easy to catch. A creature with mad monkey fever that eats a raw or cooked yahcha can immediately make a saving throw with advantage against that disease (see {@i \"Diseases,\"})."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Zabou",
+							"entries": [
+								"Zabou mushrooms feed on offal and the rotting wood of dead trees. If handled carefully, a zabou can be picked or uprooted without causing it to release its spores. If crushed or struck, a zabou releases its spores in a 10-foot-radius sphere. A zabou can also be hurled up to 30 feet away or dropped like a grenade, releasing its cloud of spores on impact. Any creature in that area must succeed on a DC 10 Constitution saving throw or be poisoned for 1 minute. The poisoned creature's skin itches for the duration. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+							]
 						}
-					]
-				},
-				{
-					"type": "entries",
-					"name": "Dancing Monkey Fruit",
-					"entries": [
-						"This rare magical fruit produces enough juice to fill a vial. Any humanoid that eats a dancing monkey fruit or drinks its juice must succeed on a DC 14 Constitution saving throw or begin a comic dance that lasts for 1 minute. Humanoids that can't be poisoned are immune to this magical effect.",
-						"The dancer must use all its movement to dance without leaving its space and has disadvantage on attack rolls and Dexterity saving throws, and other creatures have advantage on attack rolls against it. Each time it takes damage, the dancer can repeat the saving throw, ending the effect on itself on a success. When the dancing effect ends, the humanoid suffers the poisoned condition for 1 hour."
-					]
-				},
-				{
-					"type": "entries",
-					"name": "Menga Leaves",
-					"entries": [
-						"The dried leaves of a menga bush can be ground, dissolved in a liquid, heated, and ingested. A creature that ingests 1 ounce of menga leaves in this fashion regains 1 hit point. A creature that ingests more than 5 ounces of menga leaves in a 24-hour period gains no additional benefit and must succeed on a DC 11 Constitution saving throw or fall unconscious for 1 hour. The unconscious creature awakens if it takes at least 5 damage on one turn.",
-						"A healthy menga bush usually has 2d6 ounces of leaves. Once picked, the leaves require 1 day to dry out before they can confer any benefit."
-					]
-				},
-				{
-					"type": "entries",
-					"name": "Ryath Root",
-					"entries": [
-						"Any creature that ingests a ryath root gains 2d4 temporary hit points. A creature that consumes more than one ryath root in a 24-hour period must succeed on a DC 13 Constitution saving throw or suffer the poisoned condition for 1 hour."
-					]
-				},
-				{
-					"type": "entries",
-					"name": "Sinda Berries",
-					"entries": [
-						"These berries are dark brown and bitter. A full-grown sinda berry bush has 4d6 berries growing on it. A bush plucked of all its berries grows new berries in 1d4 months. Picked berries lose their freshness and efficacy after 24 hours.",
-						"Fresh sinda berries can be eaten raw or crushed and added to a drink to dull the bitterness. A creature that consumes at least ten fresh sinda berries gains advantage on saving throws against disease and poison for the next 24 hours."
-					]
-				},
-				{
-					"type": "entries",
-					"name": "Wildroot",
-					"entries": [
-						"Introducing the juice of a wildroot into a poisoned creature's bloodstream (for example, by rubbing it on an open wound) rids the creature of the poisoned condition. Once used in this way, a wildroot loses this property."
-					]
-				},
-				{
-					"type": "entries",
-					"name": "Wukka Nuts",
-					"entries": [
-						"These fist-sized nuts grow on wukka trees, which are popular haunts for jaculi, su-monsters, and zorbos. A wukka nut rattles when shaken, causing its shell to shed bright light in a 10-foot radius and dim light for an additional 10 feet. This magical light fades after 1 minute, but shaking the nut again causes the light to reappear. If the shell of the nut is cracked open, it loses its magic."
-					]
-				},
-				{
-					"type": "entries",
-					"name": "Yahcha",
-					"entries": [
-						"A yahcha (pronounced YAH-chah) is a harmless, meaty beetle about the size of a human hand, which feeds on worms and maggots. It moves slowly (walking speed 10 feet) and is easy to catch. A creature with mad monkey fever that eats a raw or cooked yahcha can immediately make a saving throw with advantage against that disease (see {@i \"Diseases,\"})."
-					]
-				},
-				{
-					"type": "entries",
-					"name": "Zabou",
-					"entries": [
-						"Zabou mushrooms feed on offal and the rotting wood of dead trees. If handled carefully, a zabou can be picked or uprooted without causing it to release its spores. If crushed or struck, a zabou releases its spores in a 10-foot-radius sphere. A zabou can also be hurled up to 30 feet away or dropped like a grenade, releasing its cloud of spores on impact. Any creature in that area must succeed on a DC 10 Constitution saving throw or be poisoned for 1 minute. The poisoned creature's skin itches for the duration. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 					]
 				},
 				{
 					"type": "entries",
 					"name": "Magic Items",
 					"entries": [
-						"The following items appear in various locations in the adventure."
-					]
-				},
-				{
-					"type": "entries",
-					"name": "{@item Amulet of the Black Skull|ToA}",
-					"entries": [
-						"This amulet is carved from obsidian and shaped like a screaming humanoid skull, with ruby eyes and emeralds for teeth. It hangs from an iron chain necklace.",
-						"The amulet has 6 charges and regains 1d6 charges daily at dawn. While wearing the amulet, you can use an action to expend 1 of its charges to transport yourself and anything you are wearing or carrying to a location within 100 feet of you. The destination you choose doesn't need to be in your line of sight, but it must be familiar to you (in other words, a place you have seen or visited), and it must be on the same plane of existence as you. This effect isn't subject to the magic restrictions placed on the Tomb of the Nine Gods; thus, the amulet can be used to enter and exit the tomb.",
-						"If you aren't undead, you must make a DC 16 Constitution saving throw each time you use the amulet to teleport. On a failed saving throw, the black skull cackles as you are transformed in transit. The transformation takes effect as soon as you arrive at the destination, and is determined randomly by rolling percentile dice and consulting the Black Skull Transformation table.",
-						{
-							"type": "table",
-							"caption": "Black Skull Transformation",
-							"colLabels": [
-								"d10+d100",
-								"Transformation"
-							],
-							"colStyles": [
-								"col-xs-2 text-align-center",
-								"col-xs-10"
-							],
-							"rows": [
-								[
-									"1-20",
-									"The symbol of Acererak is burned into your flesh, a curse that can only be removed with a remove curse spell or similar magic. Until the curse ends, your hit points can't be restored by magic."
-								],
-								[
-									"21-35",
-									"You grow larger as if affected by an enlarge/reduce spell, except the effect lasts for 1 hour."
-								],
-								[
-									"36-50",
-									"You grow smaller as if affected by an enlarge/re- duce spell, except the effect lasts for 1 hour."
-								],
-								[
-									"51-70",
-									"You arrive at the destination wearing nothing but the amulet of the black skull. Everything else that you were wearing or carrying appears in a random unoccupied space within 100 feet of you."
-								],
-								[
-									"71-95",
-									"You are paralyzed for 1 minute or until this effect is ended with a lesser restoration spell or similar magic."
-								],
-								[
-									"96-0",
-									"You become petrified. This effect can be ended only with a greater restoration spell or similar magic."
-								]
-							]
-						}
-					]
-				},
-				{
-					"type": "entries",
-					"name": "{@item Bookmark|ToA}",
-					"entries": [
-						"This {@item dagger +3|DMG|+3 dagger} belongs to Artus Cimber. While you have the dagger drawn, you can use a bonus action to activate one of the following properties:",
+						"The following items appear in various locations in the adventure.",
 						{
 							"type": "list",
 							"items": [
-								"Cause a blue gem set into the dagger's pommel to shed bright light in a 20-foot radius and dim light for an additional 20 feet, or make the gem go dark.",
-								"Turn the dagger into a compass that, while resting on your palm, points north.",
-								"Cast {@spell dimension door|PHB} from the dagger. Once this property is used, it can't be used again until the next dawn.",
-								"Cast {@spell compulsion|PHB} (save DC 15) from the dagger. The range of the spell increases to 90 feet, but it targets only spiders that are beasts. Once this property is used, it can't be used again until the next dawn."
+								"{@item Amulet of the Black Skull|ToA}",
+								"{@item Bookmark|ToA}",
+								"{@item Ghost Lantern|ToA}",
+								"{@item Mask of the Beast|ToA}",
+								"{@item Ring of Winter|ToA}",
+								"{@item Scorpion Armor|ToA}",
+								"{@item Staff of the Forgotten One|ToA}"
 							]
 						}
-					]
-				},
-				{
-					"type": "entries",
-					"name": "{@item Ghost Lantern|ToA}",
-					"entries": [
-						"A restless spirit is trapped inside this lantern. While holding the lantern, you can command the spirit as a bonus action to shed bright light in a 30-foot radius and dim light for an additional 30 feet.",
-						"While holding the lantern, you can use an action to order the spirit to leave the lantern and duplicate the effect of the {@spell mage hand|PHB} spell. The spirit returns to the lantern when the spell ends.",
-						"If you fall unconscious within 10 feet of the lantern, the spirit emerges from it, magically stabilizes you with a touch, and then quickly returns to the lantern.",
-						"The spirit is bound to the lantern and can't be harmed, turned, or raised from the dead. Casting a {@i dispel evil and good spell} on the lantern releases the spirit to the afterlife and renders the lantern nonmagical."
-					]
-				},
-				{
-					"type": "entries",
-					"name": "{@item Mask of the Beast|ToA}",
-					"entries": [
-						"This wooden mask is shaped in the likeness of a beast's visage and has 3 charges. While wearing the mask, you can expend 1 charge and use the mask to cast the {@spell animal friendship|PHB} spell as an action. The mask regains all expended charges at dawn."
-					]
-				},
-				{
-					"type": "entries",
-					"name": "{@item Ring of Winter|ToA}",
-					"entries": [
-						"Artus Cimber has kept this item in his possession for over a century. The {@item Ring of Winter|ToA} is a golden band that resizes to fit snugly on the finger of its wearer. A thin layer of frost coats the outside of the ring, which normal heat can't melt. The ring feels ice cold to the touch and initially numbs the hand that wears it, but this cold ceases to be felt by one who is attuned to the ring.",
-						"The {@item Ring of Winter|ToA} is sentient and tries to take control of any creature that wears it (see \"Sentient Magic Items\" in chapter 7 of the {@i Dungeon Master's Guide}). If it succeeds, the ring compels its wearer to cause undue harm to everyone and everything around it, in a cold-hearted attempt to incur the wrath of enemies and bring about the wearer's doom.",
-						{
-							"type": "entries",
-							"name": "Sentience",
-							"entries": [
-								" The {@item Ring of Winter|ToA} is a sentient chaotic evil item with an Intelligence of 14, a Wisdom of 14, and a Charisma of 17. The ring communicates by transmitting emotion to the creature carrying or wielding it, and it has hearing and normal vision out to a range of 60 feet. The ring craves destruction, and it likes inflicting indiscriminate harm on others."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Nondetection",
-							"entries": [
-								" The {@item Ring of Winter|ToA} defies attempts to magically locate it. Neither the ring nor its wearer can be targeted by any divination magic or perceived through magical scrying sensors. Frozen Time. As long as you wear the ring, you don't age naturally. This effect is similar to suspended animation, in that your age doesn't catch up to you once the ring is removed. The ring doesn't protect its wearer from magical or supernatural aging effects, such as the Horrifying Visage of a ghost."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Cold Immunity",
-							"entries": [
-								" While attuned to and wearing the ring, you have immunity to cold damage and don't suffer any ill effects from extreme cold (see chapter 5 of the Dungeon Master's Guide)."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Magic",
-							"entries": [
-								" The {@item Ring of Winter|ToA} has 12 charges and regains all its expended charges daily at dawn. While wearing the ring, you can expend the necessary number of charges to activate one of the following properties:"
-							]
-						},
-						{
-							"type": "list",
-							"items": [
-								"You can expend 1 charge as an action and use the ring to lower the temperature in a 120-foot-radius sphere centered on a point you can see within 300 feet of you. The temperature in that area drops 20 degrees per minute, to a minimum of -30 degrees Fahrenheit. Frost and ice begin to form on surfaces once the temperature drops below 32 degrees. This effect is per manent unless you use the ring to end it as an action, at which point the temperature in the area returns to normal at a rate of 10 degrees per minute.",
-								"You can cast one of the following spells from the ring (spell save DC 17) by expending the necessary number of charges: {@spell Bigby's hand|PHB} (2 charges; the hand is made of ice, is immune to cold damage, and deals bludgeoning damage instead of force damage as a clenched fist), {@spell cone of cold|PHB} (2 charges), {@i flesh to ice} (3 charges; as flesh to stone except that the target turns to solid ice with the density and durability of stone), {@spell ice storm|PHB} (2 charges), {@spell Otiluke's freezing sphere|PHB} (3 charges), {@spell sleet storm|PHB} (1 charge), {@spell spike growth|PHB} (1 charge; the spikes are made of ice), or {@spell wall of ice|PHB} (2 charges).",
-								"You can expend the necessary number of charges as an action and use the ring to create either an inanimate ice object (2 charges) or an animated ice creature (4 charges). The ice object can't have any moving parts, must be able to fit inside a 10-foot cube, and has the density and durability of metal or stone (your choice). The ice creature must be modeled after a beast with a challenge rating of 2 or less. The ice creature has the same statistics as the beast it models, with the following changes: the creature is a construct with vulnerability to fire damage, immunity to cold and poison damage, and immunity to the following conditions: charmed, {@condition exhaustion}, frightened, paralyzed, petrified, and poisoned. The ice creature obeys only its creator's commands. The ice object or creature appears in an unoccupied space within 60 feet of you. It melts into a pool of normal water after 24 hours or when it drops to 0 hit points. In extreme heat, it loses 5 (1d10) hit points per minute as it melts. Use the guidelines in chapter 8 of the {@i Dungeon Master's Guide} to determine the hit points of an inanimate object if they become necessary"
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Other Properties",
-							"entries": [
-								" The {@item Ring of Winter|ToA} is rumored to possess other properties that can be activated only by an evil being whose will the ring can't break. Frost giants have long believed that the ring can be used to freeze entire worlds, while a djinni in the service of a Calishite pasha once claimed that the ring could be used to summon and control white dragons, as well as a mighty ice primordial named Cryonax."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Destroying the Ring",
-							"entries": [
-								" The ring is nigh indestructible, resisting even the most intense magical heat. If it is placed on the finger of the powerful archfey known as the Summer Queen, the ring melts away and is destroyed forever."
-							]
-						}
-					]
-				},
-				{
-					"type": "entries",
-					"name": "{@item Scorpion Armor|ToA}",
-					"entries": [
-						"This suit of plate armor is fashioned from giant scorpion chitin. While wearing this armor, you gain the following benefits:",
-						{
-							"type": "list",
-							"items": [
-								"The armor improves your combat readiness, granting you a +5 bonus to initiative as long as you aren't incapacitated.",
-								"The armor doesn't impose disadvantage on your Dexterity (Stealth) checks.",
-								"The armor doesn't impose disadvantage on saving throws made to resist the effects of extreme heat (see chapter 5 of the {@i Dungeon Master's Guide})."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Curse",
-							"entries": [
-								" This armor is cursed. Whenever you don or doff it, you must make a DC 15 Constitution saving throw, taking 100 (10d10+45) poison damage on a failed save, or half as much damage on a successful one. Only a wish spell can remove the armor's curse."
-							]
-						}
-					]
-				},
-				{
-					"type": "entries",
-					"name": "{@item Staff of the Forgotten One|ToA}",
-					"entries": [
-						"This crooked staff is carved from bone and topped with the skull of a forgotten archmage whom Acererak destroyed long ago. Etched into the skull's forehead is Acererak's rune, which is known on many worlds as a sign of death.",
-						{
-							"type": "entries",
-							"name": "Beneficial Properties",
-							"entries": [
-								" While the staff is on your person, you gain the following benefits:"
-							]
-						},
-						{
-							"type": "list",
-							"items": [
-								"Your proficiency bonus to Intelligence (Arcana) and Intelligence (History) checks is doubled.",
-								"You can't be blinded, charmed, deafened, frightened, petrified, or stunned.",
-								"Undead with a challenge rating of 2 or lower will neither threaten nor attack you unless you harm them.",
-								"You can wield the staff as a +3 quarterstaff that deals an extra 10 (3d6) necrotic damage on a hit."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Invoke Curse",
-							"entries": [
-								" The {@item Staff of the Forgotten One|ToA} has 7 charges and regains 1d4+3 expended charges daily at dawn. While holding the staff, you can use an action to expend 1 charge and target one creature you can see within 60 feet of you. The target must succeed on a Constitution saving throw (using your spell save DC) or be cursed. While cursed in this way, the target can't regain hit points and has vulnerability to necrotic damage. A greater restoration, remove curse, or similar spell ends the curse on the target."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "The Forgotten One",
-							"entries": [
-								" The bodiless life force of a dead archmage empowers the staff and is imprisoned within it. The rune carved into the staff's skull protects Acer erak from this spirit's vengeance. Each time a creature other than Acererak expends any of the staff's charges, there is a 50 percent chance that the life force tries to possess the staff wielder. The wielder must succeed on a DC 20 Charisma saving throw or be possessed, becoming an NPC under the DM's control. If the intruding life force is targeted by magic such as a {@spell dispel evil and good|PHB} spell, it becomes trapped in the staff once more. Once it takes control of another creature, the insane spirit of the dead archmage attempts to destroy the staff."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Destroying the Staff",
-							"entries": [
-								" A creature in possession of the staff can use an action to break it over one knee or a solid surface. The staff is destroyed and releases its remaining magic in an explosion that expands to fill a 30-foot-radius sphere centered on it. Each creature in the area must make a DC 18 Dexterity saving throw, taking 132 (24d10) force damage on a failed save, or half as much damage on a successful one. When the staff is destroyed, the life force of the Forgotten One is released to the afterlife. Where it goes is anyone's guess."
-							]
-						},
-						"Casting the staff into a {@item sphere of annihilation|DMG} destroys both the staff and the life force trapped within it. The staff doesn't explode if destroyed in this manner, but its destruction causes the sphere to be destroyed as well."
-					]
-				}
-			]
-		},
-		{
-			"type": "section",
-			"name": "The Party is Really Here",
-			"entries": [
-				"This special story entry is linked to a pin on the Player's Map of Chult. The pin and this story are designed to be used as an {@i aide memoire} for the DM to help keep track of the progress of the player characters any time that they are travelling. The pin should indicate where the party actually is (which might not be where the party {@i think} they are)",
-				{
-					"type": "entries",
-					"name": "Links",
-					"entries": [
-						"The following are the links needed to control the player's journey:",
-						"The following links might prove useful"
-					]
-				},
-				{
-					"type": "entries",
-					"name": "You Are Here",
-					"entries": [
-						"The map pin that links this story entry to the Map of Chult indicates in which hex you are located on that map."
 					]
 				}
 			]

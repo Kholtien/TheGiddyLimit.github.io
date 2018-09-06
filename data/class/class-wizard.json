@@ -344,7 +344,7 @@
 					"(a) a {@item scholar's pack|phb} or (b) an {@item explorer's pack|phb}",
 					"A {@item spellbook|phb}"
 				],
-				"goldAlternative": "4d4 × 10"
+				"goldAlternative": "{@dice 4d4×10|4d4 × 10|Starting Gold}"
 			},
 			"classFeatures": [
 				[
@@ -492,7 +492,7 @@
 						"name": "Ability Score Improvement",
 						"entries": [
 							"When you reach 4th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-							"If your DM allows the use of feats, you may instead take a feat."
+							"If your DM allows the use of feats, you may instead take a {@5etools feat|feats.html}."
 						]
 					}
 				],
@@ -512,7 +512,7 @@
 						"name": "Ability Score Improvement",
 						"entries": [
 							"When you reach 8th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-							"If your DM allows the use of feats, you may instead take a feat."
+							"If your DM allows the use of feats, you may instead take a {@5etools feat|feats.html}."
 						]
 					}
 				],
@@ -532,7 +532,7 @@
 						"name": "Ability Score Improvement",
 						"entries": [
 							"When you reach 12th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-							"If your DM allows the use of feats, you may instead take a feat."
+							"If your DM allows the use of feats, you may instead take a {@5etools feat|feats.html}."
 						]
 					}
 				],
@@ -552,7 +552,7 @@
 						"name": "Ability Score Improvement",
 						"entries": [
 							"When you reach 16th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-							"If your DM allows the use of feats, you may instead take a feat."
+							"If your DM allows the use of feats, you may instead take a {@5etools feat|feats.html}."
 						]
 					}
 				],
@@ -571,7 +571,7 @@
 						"name": "Ability Score Improvement",
 						"entries": [
 							"When you reach 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-							"If your DM allows the use of feats, you may instead take a feat."
+							"If your DM allows the use of feats, you may instead take a {@5etools feat|feats.html}."
 						]
 					}
 				],
@@ -944,8 +944,8 @@
 										"type": "entries",
 										"name": "Arcane Ward",
 										"entries": [
-											"Starting at 2nd level, you can weave magic around yourself for protection. When you cast an abjuration spell of 1st level or higher, you can simultaneously use a strand of the spell's magic to create a magical ward on yourself that lasts until you finish a long rest. The ward has hit points equal to twice your wizard level + your Intelligence modifier. Whenever you take damage, the ward takes the damage instead. If this damage reduces the ward to 0 hit points, you take any remaining damage.",
-											"While the ward has 0 hit points, it can't absorb damage, but its magic remains. Whenever you cast an abjuration spell of 1st level or higher, the ward regains a number of hit points equal to twice the level of the spell.",
+											"Starting at 2nd level, you can weave magic around yourself for protection. When you cast an {@filter abjuration spell of 1st level or higher|spells|school=A|level=!0}, you can simultaneously use a strand of the spell's magic to create a magical ward on yourself that lasts until you finish a long rest. The ward has hit points equal to twice your wizard level + your Intelligence modifier. Whenever you take damage, the ward takes the damage instead. If this damage reduces the ward to 0 hit points, you take any remaining damage.",
+											"While the ward has 0 hit points, it can't absorb damage, but its magic remains. Whenever you cast an {@filter abjuration spell of 1st level or higher|spells|school=A|level=!0} , the ward regains a number of hit points equal to twice the level of the spell.",
 											"Once you create the ward, you can't create it again until you finish a long rest."
 										]
 									}
@@ -972,7 +972,7 @@
 										"type": "entries",
 										"name": "Improved Abjuration",
 										"entries": [
-											"Beginning at 10th level, when you cast an abjuration spell that requires you to make an ability check as a part of casting that spell (as in counterspell and dispel magic), you add your proficiency bonus to that ability check."
+											"Beginning at 10th level, when you cast an abjuration spell that requires you to make an ability check as a part of casting that spell (as in {@spell counterspell} and {@spell dispel magic}), you add your proficiency bonus to that ability check."
 										]
 									}
 								]
@@ -1040,7 +1040,7 @@
 										]
 									},
 									{
-										"type": "entries",
+										"type": "inset",
 										"name": "Bladesinger Styles",
 										"entries": [
 											"From its inception as a martial and magical art, Bladesinging has been tied to the sword, more specifically the longsword. Yet many generations of study gave rise to various styles of Bladesinging based on the melee weapon employed. The techniques of these styles are passed from master to students in small schools, some of which have a building dedicated to instruction. Even the newest styles are hundreds of years old, but are still taught by their original creators due to the long lives of elves. Most schools of Bladesinging are in Evermeet or Evereska. One was started in Myth Drannor, but the city's destruction has scattered those students who survived.",
@@ -1203,7 +1203,7 @@
 										"type": "entries",
 										"name": "Portent",
 										"entries": [
-											"Starting at 2nd level when you choose this school, glimpses of the future begin to press in on your awareness. When you finish a long rest, roll two d20s and record the numbers rolled. You can replace any attack roll, saving throw, or ability check made by you or a creature that you can see with one of these foretelling rolls. You must choose to do so before the roll, and you can replace a roll in this way only once per turn.",
+											"Starting at 2nd level when you choose this school, glimpses of the future begin to press in on your awareness. When you finish a long rest, roll two {@dice d20}s and record the numbers rolled. You can replace any attack roll, saving throw, or ability check made by you or a creature that you can see with one of these foretelling rolls. You must choose to do so before the roll, and you can replace a roll in this way only once per turn.",
 											"Each foretelling roll can be used only once. When you finish a long rest, you lose any unused foretelling rolls."
 										]
 									}
@@ -1291,7 +1291,7 @@
 										"type": "entries",
 										"name": "Greater Portent",
 										"entries": [
-											"Starting at 14th level, the visions in your dreams intensify and paint a more accurate picture in your mind of what is to come. You roll three d20s for your Portent feature, rather than two."
+											"Starting at 14th level, the visions in your dreams intensify and paint a more accurate picture in your mind of what is to come. You roll three {@dice d20}s for your Portent feature, rather than two."
 										]
 									}
 								]
@@ -1432,7 +1432,7 @@
 										"name": "Overchannel",
 										"entries": [
 											"Starting at 14th level, you can increase the power of your simpler spells. When you cast a wizard spell of 1st through 5th-level that deals damage, you can deal maximum damage with that spell.",
-											"The first time you do so, you suffer no adverse effect. If you use this feature again before you finish a long rest, you take 2d12 necrotic damage for each level of the spell, immediately after you cast it. Each time you use this feature again before finishing a long rest, the necrotic damage per spell level increases by 1d12. This damage ignores resistance and immunity."
+											"The first time you do so, you suffer no adverse effect. If you use this feature again before you finish a long rest, you take {@dice 2d12} necrotic damage for each level of the spell, immediately after you cast it. Each time you use this feature again before finishing a long rest, the necrotic damage per spell level increases by {@dice 1d12}. This damage ignores resistance and immunity."
 										]
 									}
 								]
@@ -1861,7 +1861,7 @@
 														"type": "entries",
 														"name": "Restore Youth",
 														"entries": [
-															"You touch the transmuter's stone to a willing creature, and that creature's apparent age is reduced by 3d10 years, to a minimum of 13 years. This effect doesn't extend the creature's lifespan."
+															"You touch the transmuter's stone to a willing creature, and that creature's apparent age is reduced by {@dice 3d10} years, to a minimum of 13 years. This effect doesn't extend the creature's lifespan."
 														]
 													}
 												]
@@ -1895,7 +1895,7 @@
 										"type": "entries",
 										"name": "Grim Harvest",
 										"entries": [
-											"At 2nd level, you gain the ability to reap life energy from creatures you kill with your spells. Once per turn when you kill one or more creatures with a spell of 1st level or higher, you regain hit points equal to twice the spell's level, or three times its level if the spell belongs to the School of Necromancy. You don't gain this benefit for killing constructs or undead."
+											"At 2nd level, you gain the ability to reap life energy from creatures you kill with your spells. Once per turn when you kill one or more creatures with a spell of 1st level or higher, you regain hit points equal to twice the spell's level, or three times its level if the spell belongs to the {@filter School of Necromancy|spells|school=N}. You don't gain this benefit for killing constructs or undead."
 										]
 									}
 								]
@@ -1997,7 +1997,7 @@
 										"name": "Alchemical Casting",
 										"entries": [
 											"At 6th level, you learn to augment spells in a variety of ways. When you cast a spell with a spell slot, you can expend one additional spell slot to augment its effects for this casting, mixing the raw stuff of magic into your spell to amplify it. The effect depends on the spell slot you expend.",
-											"An additional 1st-level spell slot can increase the spell's raw force. If you roll damage for the spell when you cast it, increase the damage against every target by 2d10 force damage. If the spell can deal damage on more than one turn, it deals this extra force damage only on the turn you cast the spell.",
+											"An additional 1st-level spell slot can increase the spell's raw force. If you roll damage for the spell when you cast it, increase the damage against every target by {@dice 2d10} force damage. If the spell can deal damage on more than one turn, it deals this extra force damage only on the turn you cast the spell.",
 											"An additional 2nd-level spell slot can increase the spell's range. If the spell's range is at least 30 feet, it becomes 1 mile.",
 											"An additional 3rd-level spell slot can increase the spell's potency. Increase the spell's save DC by 2."
 										]
@@ -2072,7 +2072,7 @@
 										"name": "Power Surge",
 										"entries": [
 											"Starting at 6th level, you can store magical energy within yourself to later empower your damaging spells. In its stored form, this energy is called a power surge.",
-											"You can store a maximum number of power surges equal to your Intelligence modifier (minimum of one). Whenever you finish a long rest, your number of power surges resets to one. Whenever you successfully end a spell with dispel magic or counterspell, you gain one power surge, as you steal magic from the spell you foiled. If you end a short rest with no power surges, you gain one power surge.",
+											"You can store a maximum number of power surges equal to your Intelligence modifier (minimum of one). Whenever you finish a long rest, your number of power surges resets to one. Whenever you successfully end a spell with {@spell dispel magic} or {@spell counterspell}, you gain one power surge, as you steal magic from the spell you foiled. If you end a short rest with no power surges, you gain one power surge.",
 											"Once per turn when you deal damage to a creature or object with a wizard spell, you can spend one power surge to deal extra force damage to that target. The extra damage equals half your wizard level."
 										]
 									}
@@ -2154,133 +2154,319 @@
 												"type": "table",
 												"caption": "Reckless Casting",
 												"colLabels": [
-													"d10", "Cantrip"
+													"d10",
+													"Cantrip"
 												],
 												"colStyles": [
 													"col-xs-2",
 													"col-xs-10"
 												],
 												"rows": [
-													["1", "{@spell acid splash}"],
-													["2", "{@spell chill touch}"],
-													["3", "{@spell fire bolt}"],
-													["4", "{@spell light}"],
-													["5", "{@spell poison spray}"],
-													["6", "{@spell ray of frost}"],
-													["7", "{@spell shocking grasp}"],
-													["8", "{@spell sacred flame}"],
-													["9", "{@spell thorn whip}"],
-													["10", "Roll twice and cast each cantrip, but if you roll another 10 on either die, you cast nothing, wasting your action."]
+													[
+														"1",
+														"{@spell acid splash}"
+													],
+													[
+														"2",
+														"{@spell chill touch}"
+													],
+													[
+														"3",
+														"{@spell fire bolt}"
+													],
+													[
+														"4",
+														"{@spell light}"
+													],
+													[
+														"5",
+														"{@spell poison spray}"
+													],
+													[
+														"6",
+														"{@spell ray of frost}"
+													],
+													[
+														"7",
+														"{@spell shocking grasp}"
+													],
+													[
+														"8",
+														"{@spell sacred flame}"
+													],
+													[
+														"9",
+														"{@spell thorn whip}"
+													],
+													[
+														"10",
+														"Roll twice and cast each cantrip, but if you roll another 10 on either die, you cast nothing, wasting your action."
+													]
 												]
 											},
 											{
 												"type": "table",
 												"colLabels": [
-													"d10", "1st-Level Spell"
+													"d10",
+													"1st-Level Spell"
 												],
 												"colStyles": [
 													"col-xs-2",
 													"col-xs-10"
 												],
 												"rows": [
-													["1", "{@spell burning hands}"],
-													["2", "{@spell chromatic orb}"],
-													["3", "{@spell color spray}"],
-													["4", "{@spell faerie fire}"],
-													["5", "{@spell false life}"],
-													["6", "{@spell fog cloud}"],
-													["7", "{@spell jump}"],
-													["8", "{@spell magic missile}"],
-													["9", "{@spell thunderwave}"],
-													["10", "Roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot."]
+													[
+														"1",
+														"{@spell burning hands}"
+													],
+													[
+														"2",
+														"{@spell chromatic orb}"
+													],
+													[
+														"3",
+														"{@spell color spray}"
+													],
+													[
+														"4",
+														"{@spell faerie fire}"
+													],
+													[
+														"5",
+														"{@spell false life}"
+													],
+													[
+														"6",
+														"{@spell fog cloud}"
+													],
+													[
+														"7",
+														"{@spell jump}"
+													],
+													[
+														"8",
+														"{@spell magic missile}"
+													],
+													[
+														"9",
+														"{@spell thunderwave}"
+													],
+													[
+														"10",
+														"Roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot."
+													]
 												]
 											},
 											{
 												"type": "table",
 												"colLabels": [
-													"d10", "2nd-Level Spell"
+													"d10",
+													"2nd-Level Spell"
 												],
 												"colStyles": [
 													"col-xs-2",
 													"col-xs-10"
 												],
 												"rows": [
-													["1", "{@spell blur}"],
-													["2", "{@spell darkness}"],
-													["3", "{@spell enlarge/reduce}"],
-													["4", "{@spell gust of wind}"],
-													["5", "{@spell invisibility}"],
-													["6", "{@spell levitate}"],
-													["7", "{@spell Melf's acid arrow}"],
-													["8", "{@spell scorching ray}"],
-													["9", "{@spell shatter}"],
-													["10", "Roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot."]
+													[
+														"1",
+														"{@spell blur}"
+													],
+													[
+														"2",
+														"{@spell darkness}"
+													],
+													[
+														"3",
+														"{@spell enlarge/reduce}"
+													],
+													[
+														"4",
+														"{@spell gust of wind}"
+													],
+													[
+														"5",
+														"{@spell invisibility}"
+													],
+													[
+														"6",
+														"{@spell levitate}"
+													],
+													[
+														"7",
+														"{@spell Melf's acid arrow}"
+													],
+													[
+														"8",
+														"{@spell scorching ray}"
+													],
+													[
+														"9",
+														"{@spell shatter}"
+													],
+													[
+														"10",
+														"Roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot."
+													]
 												]
 											},
 											{
 												"type": "table",
 												"colLabels": [
-													"d10", "3rd-Level Spell"
+													"d10",
+													"3rd-Level Spell"
 												],
 												"colStyles": [
 													"col-xs-2",
 													"col-xs-10"
 												],
 												"rows": [
-													["1", "{@spell blink}"],
-													["2", "{@spell fear}"],
-													["3", "{@spell feign death}"],
-													["4", "{@spell fireball}"],
-													["5", "{@spell fly}"],
-													["6", "{@spell gaseous form}"],
-													["7", "{@spell lightning bolt}"],
-													["8", "{@spell sleet storm}"],
-													["9", "{@spell stinking cloud}"],
-													["10", "Roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot."]
+													[
+														"1",
+														"{@spell blink}"
+													],
+													[
+														"2",
+														"{@spell fear}"
+													],
+													[
+														"3",
+														"{@spell feign death}"
+													],
+													[
+														"4",
+														"{@spell fireball}"
+													],
+													[
+														"5",
+														"{@spell fly}"
+													],
+													[
+														"6",
+														"{@spell gaseous form}"
+													],
+													[
+														"7",
+														"{@spell lightning bolt}"
+													],
+													[
+														"8",
+														"{@spell sleet storm}"
+													],
+													[
+														"9",
+														"{@spell stinking cloud}"
+													],
+													[
+														"10",
+														"Roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot."
+													]
 												]
 											},
 											{
 												"type": "table",
 												"colLabels": [
-													"d10", "4th-Level Spell"
+													"d10",
+													"4th-Level Spell"
 												],
 												"colStyles": [
 													"col-xs-2",
 													"col-xs-10"
 												],
 												"rows": [
-													["1", "{@spell blight}"],
-													["2", "{@spell confusion}"],
-													["3", "{@spell Evard's black tentacles}"],
-													["4", "{@spell fire shield}"],
-													["5", "{@spell greater invisibility}"],
-													["6", "{@spell ice storm}"],
-													["7", "{@spell phantasmal killer}"],
-													["8", "{@spell stoneskin}"],
-													["9", "{@spell wall of fire}"],
-													["10", "Roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot."]
+													[
+														"1",
+														"{@spell blight}"
+													],
+													[
+														"2",
+														"{@spell confusion}"
+													],
+													[
+														"3",
+														"{@spell Evard's black tentacles}"
+													],
+													[
+														"4",
+														"{@spell fire shield}"
+													],
+													[
+														"5",
+														"{@spell greater invisibility}"
+													],
+													[
+														"6",
+														"{@spell ice storm}"
+													],
+													[
+														"7",
+														"{@spell phantasmal killer}"
+													],
+													[
+														"8",
+														"{@spell stoneskin}"
+													],
+													[
+														"9",
+														"{@spell wall of fire}"
+													],
+													[
+														"10",
+														"Roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot."
+													]
 												]
 											},
 											{
 												"type": "table",
 												"colLabels": [
-													"d10", "5th-Level Spell"
+													"d10",
+													"5th-Level Spell"
 												],
 												"colStyles": [
 													"col-xs-2",
 													"col-xs-10"
 												],
 												"rows": [
-													["1", "{@spell cloudkill}"],
-													["2", "{@spell cone of cold}"],
-													["3", "{@spell destructive wave}"],
-													["4", "{@spell flame strike}"],
-													["5", "{@spell hold monster}"],
-													["6", "{@spell insect plague}"],
-													["7", "{@spell mass cure wounds}"],
-													["8", "{@spell wall of force}"],
-													["9", "{@spell wall of stone}"],
-													["10", "Roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot."]
+													[
+														"1",
+														"{@spell cloudkill}"
+													],
+													[
+														"2",
+														"{@spell cone of cold}"
+													],
+													[
+														"3",
+														"{@spell destructive wave}"
+													],
+													[
+														"4",
+														"{@spell flame strike}"
+													],
+													[
+														"5",
+														"{@spell hold monster}"
+													],
+													[
+														"6",
+														"{@spell insect plague}"
+													],
+													[
+														"7",
+														"{@spell mass cure wounds}"
+													],
+													[
+														"8",
+														"{@spell wall of force}"
+													],
+													[
+														"9",
+														"{@spell wall of stone}"
+													],
+													[
+														"10",
+														"Roll twice and cast each spell, but if you roll another 10 on either die, you cast nothing, wasting your action but not the spell slot."
+													]
 												]
 											}
 										]
@@ -2297,7 +2483,7 @@
 										"entries": [
 											"At 6th level, you learn to channel magic through your arcanomechanical armor to augment spells in a variety of ways. When you cast a spell while wearing that armor and attuned to it, you can expend one additional spell slot of 1st or 2nd level to alter the spell. The effect depends on the spell slot you expend.",
 											"A 1st-level slot allows you to manipulate the spell's energy. When you cast a spell that deals acid, cold, fire, lightning, or thunder damage, you can substitute that damage type for another one from that list.",
-											"A 2nd-level slot increases the spell's raw force. If you roll damage for the spell when you cast it, increase that damage by 2d10 force damage against one of the spell's targets (your choice) this turn."
+											"A 2nd-level slot increases the spell's raw force. If you roll damage for the spell when you cast it, increase that damage by {@dice 2d10} force damage against one of the spell's targets (your choice) this turn."
 										]
 									}
 								]

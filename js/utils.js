@@ -115,25 +115,6 @@ ROLLER_MACRO_STORAGE = "ROLLER_MACRO_STORAGE";
 JSON_HOMEBREW_INDEX = `homebrew/index.json`;
 
 // STRING ==============================================================================================================
-// Appropriated from StackOverflow (literally, the site uses this code)
-String.prototype.formatUnicorn = String.prototype.formatUnicorn ||
-	function () {
-		let str = this.toString();
-		if (arguments.length) {
-			const t = typeof arguments[0];
-			let key;
-			const args = t === "string" || t === "number"
-				? Array.prototype.slice.call(arguments)
-				: arguments[0];
-
-			for (key in args) {
-				str = str.replace(new RegExp("\\{" + key + "\\}", "gi"), args[key]);
-			}
-		}
-
-		return str;
-	};
-
 String.prototype.uppercaseFirst = String.prototype.uppercaseFirst ||
 	function () {
 		const str = this.toString();
@@ -183,13 +164,19 @@ String.prototype.toTitleCase = String.prototype.toTitleCase ||
 		return str;
 	};
 
-// as we're targeting ES6
-String.prototype.ltrim = String.prototype.ltrim ||
+String.prototype.toSpellCase = String.prototype.toSpellCase ||
+	function () {
+		return this.toLowerCase().replace(/(^|of )(bigby|otiluke|mordenkainen|evard|hadar|agatys|abi-dalzim|aganazzar|drawmij|leomund|maximilian|melf|nystul|otto|rary|snilloc|tasha|tenser)('s|$| )/g, (...m) => `${m[1]}${m[2].toTitleCase()}${m[3]}`);
+	};
+
+// FIXME remove polyfill at ~the end of October 2018
+String.prototype.trimStart = String.prototype.trimStart ||
 	function () {
 		return this.replace(/^\s+/, "");
 	};
 
-String.prototype.rtrim = String.prototype.rtrim ||
+// FIXME remove polyfill at ~the end of October 2018
+String.prototype.trimEnd = String.prototype.trimEnd ||
 	function () {
 		return this.replace(/\s+$/, "");
 	};
@@ -245,22 +232,33 @@ String.prototype.distance = String.prototype.distance ||
 		return score[m + 1][n + 1];
 	};
 
-StrUtil = {
-	joinPhraseArray: function (array, joiner, lastJoiner) {
-		if (array.length === 0) return "";
-		if (array.length === 1) return array[0];
-		if (array.length === 2) return array.join(lastJoiner);
+String.prototype.isNumeric = String.prototype.isNumeric ||
+	function () {
+		return !isNaN(parseFloat(this)) && isFinite(this);
+	};
+
+Array.prototype.joinConjunct = Array.prototype.joinConjunct ||
+	function (joiner, lastJoiner, nonOxford) {
+		if (this.length === 0) return "";
+		if (this.length === 1) return this[0];
+		if (this.length === 2) return this.join(lastJoiner);
 		else {
 			let outStr = "";
-			for (let i = 0; i < array.length; ++i) {
-				outStr += array[i];
-				if (i < array.length - 2) outStr += joiner;
-				else if (i === array.length - 2) outStr += lastJoiner
+			for (let i = 0; i < this.length; ++i) {
+				outStr += this[i];
+				if (i < this.length - 2) outStr += joiner;
+				else if (i === this.length - 2) outStr += `${(!nonOxford && this.length > 2 ? joiner.trim() : "")}${lastJoiner}`;
 			}
 			return outStr;
 		}
-	},
+	};
 
+Array.prototype.peek = Array.prototype.peek ||
+	function () {
+		return this.slice(-1)[0];
+	};
+
+StrUtil = {
 	uppercaseFirst: function (string) {
 		return string.uppercaseFirst();
 	},
@@ -279,18 +277,6 @@ RegExp.escape = function (string) {
 };
 
 // TEXT COMBINING ======================================================================================================
-function utils_makeAttChoose (attList) {
-	if (attList.length === 1) {
-		return Parser.attAbvToFull(attList[0]) + " modifier";
-	} else {
-		const attsTemp = [];
-		for (let i = 0; i < attList.length; ++i) {
-			attsTemp.push(Parser.attAbvToFull(attList[i]));
-		}
-		return attsTemp.join(" or ") + " modifier (your choice)";
-	}
-}
-
 class AbilityData {
 	constructor (asText, asTextShort, asCollection, areNegative) {
 		this.asText = asText;
@@ -417,6 +403,17 @@ Parser._parse_bToA = function (abMap, b) {
 	return b;
 };
 
+Parser.attrChooseToFull = function (attList) {
+	if (attList.length === 1) return `${Parser.attAbvToFull(attList[0])} modifier`;
+	else {
+		const attsTemp = [];
+		for (let i = 0; i < attList.length; ++i) {
+			attsTemp.push(Parser.attAbvToFull(attList[i]));
+		}
+		return `${attsTemp.join(" or ")} modifier (your choice)`;
+	}
+};
+
 Parser.numberToText = function (number) {
 	if (Math.abs(number) >= 100) return number;
 
@@ -488,7 +485,7 @@ Parser.getSpeedString = (it) => {
 			stack.push(`${propName === "walk" ? "" : `${propName} `}${getVal(s)}ft.${getCond(s)}`);
 		}
 
-		if (it.speed[propName]) addSpeed(it.speed[propName]);
+		if (it.speed[propName] || propName === "walk") addSpeed(it.speed[propName] || 0);
 		if (it.speed.alternate && it.speed.alternate[propName]) it.speed.alternate[propName].forEach(addSpeed);
 	}
 
@@ -510,7 +507,7 @@ Parser.getSpeedString = (it) => {
 		procSpeed("swim");
 		if (it.speed.choose) {
 			joiner = "; ";
-			stack.push(`${CollectionUtil.joinConjunct(it.speed.choose.from.sort(), ", ", ", or ")} ${it.speed.choose.amount} ft.${it.speed.choose.note ? ` ${it.speed.choose.note}` : ""}`);
+			stack.push(`${it.speed.choose.from.sort().joinConjunct(", ", " or ")} ${it.speed.choose.amount} ft.${it.speed.choose.note ? ` ${it.speed.choose.note}` : ""}`);
 		}
 		return stack.join(joiner);
 	} else {
@@ -545,8 +542,14 @@ LEVEL_TO_XP_MEDIUM = [0, 50, 100, 150, 250, 500, 600, 750, 900, 1100, 1200, 1600
 LEVEL_TO_XP_HARD = [0, 75, 150, 225, 375, 750, 900, 1100, 1400, 1600, 1900, 2400, 3000, 3400, 3800, 4300, 4800, 5900, 6300, 7300, 8500];
 LEVEL_TO_XP_DEADLY = [0, 100, 200, 400, 500, 1100, 1400, 1700, 2100, 2400, 2800, 3600, 4500, 5100, 5700, 6400, 7200, 8800, 9500, 10900, 12700];
 
+Parser.CRS = ["0", "1/8", "1/4", "1/2", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"];
+
 Parser.levelToXpThreshold = function (level) {
 	return [LEVEL_TO_XP_EASY[level], LEVEL_TO_XP_MEDIUM[level], LEVEL_TO_XP_HARD[level], LEVEL_TO_XP_DEADLY[level]];
+};
+
+Parser.isValidCr = function (cr) {
+	return Parser.CRS.includes(cr);
 };
 
 Parser.crToNumber = function (cr) {
@@ -558,6 +561,21 @@ Parser.crToNumber = function (cr) {
 	else return 0;
 };
 
+Parser._greatestCommonDivisor = function (a, b) {
+	if (b < Number.EPSILON) return a;
+	return Parser._greatestCommonDivisor(b, Math.floor(a % b));
+};
+Parser.numberToCr = function (number) {
+	const len = number.toString().length - 2;
+	let denominator = Math.pow(10, len);
+	let numerator = number * denominator;
+	const divisor = Parser._greatestCommonDivisor(numerator, denominator);
+	numerator = Math.floor(numerator / divisor);
+	denominator = Math.floor(denominator / divisor);
+
+	return denominator === 1 ? String(numerator) : `${Math.floor(numerator)}/${Math.floor(denominator)}`;
+};
+
 Parser.crToPb = function (cr) {
 	if (cr === "Unknown" || cr == null) return 0;
 	cr = cr.cr || cr;
@@ -565,8 +583,33 @@ Parser.crToPb = function (cr) {
 	return Math.ceil(cr / 4) + 1;
 };
 
+Parser.SKILL_TO_ATB_ABV = {
+	"athletics": "str",
+	"acrobatics": "dex",
+	"sleight of hand": "dex",
+	"stealth": "dex",
+	"arcana": "int",
+	"history": "int",
+	"investigation": "int",
+	"nature": "int",
+	"religion": "int",
+	"animal handling": "wis",
+	"insight": "wis",
+	"medicine": "wis",
+	"perception": "wis",
+	"survival": "wis",
+	"deception": "cha",
+	"intimidation": "cha",
+	"performance": "cha",
+	"persuasion": "cha"
+};
+
+Parser.skillToAbilityAbv = function (skill) {
+	return Parser._parse_aToB(Parser.SKILL_TO_ATB_ABV, skill);
+};
+
 Parser.dragonColorToFull = function (c) {
-	return Parser._parse_bToA(DRAGON_COLOR_TO_FULL, c);
+	return Parser._parse_aToB(DRAGON_COLOR_TO_FULL, c);
 };
 
 DRAGON_COLOR_TO_FULL = {
@@ -648,6 +691,10 @@ Parser.sourceJsonToAbv = function (source) {
 	return Parser._parse_aToB(Parser.SOURCE_JSON_TO_ABV, source);
 };
 
+Parser.sourceJsonToColor = function (source) {
+	return `source${Parser.sourceJsonToAbv(source)}`;
+};
+
 Parser.stringToSlug = function (str) {
 	return str.toLowerCase().replace(/[^\w ]+/g, STR_EMPTY).replace(/ +/g, STR_SLUG_DASH);
 };
@@ -671,14 +718,18 @@ Parser._coinValueToNumberMultipliers = {
 	"gp": 1,
 	"pp": 10
 };
+
+Parser._decimalSeparator = (0.1).toLocaleString().substring(1, 2);
+Parser._numberCleanRegexp = Parser._decimalSeparator === "." ? new RegExp(/[\s,]*/g, "g") : new RegExp(/[\s.]*/g, "g");
+Parser._costSplitRegexp = Parser._decimalSeparator === "." ? new RegExp(/(\d+(\.\d+)?)([csegp]p)/) : new RegExp(/(\d+(,\d+)?)([csegp]p)/);
 Parser.coinValueToNumber = function (value) {
 	if (!value) return 0;
 	// handle oddities
 	if (value === "x4" || value === "Varies") return 0;
 
 	// input e.g. "25gp", "1,000pp"
-	value = value.replace(/[\s,]*/g, "").toLowerCase();
-	const m = /(\d+(\.\d+)?)([csegp]p)/.exec(value);
+	value = value.replace(Parser._numberCleanRegexp, "").toLowerCase();
+	const m = Parser._costSplitRegexp.exec(value);
 	if (!m) throw new Error(`Badly formatted value ${value}`);
 	return Number(m[1]) * Parser._coinValueToNumberMultipliers[m[3]];
 };
@@ -686,7 +737,7 @@ Parser.coinValueToNumber = function (value) {
 Parser.weightValueToNumber = function (value) {
 	if (!value) return 0;
 	// handle oddities
-	if (value === "x2") return 0;
+	if (/[x×]\s*\d+/i.test(value.trim())) return 0;
 
 	if (Number(value)) return Number(value);
 	else throw new Error(`Badly formatted value ${value}`)
@@ -727,19 +778,33 @@ Parser.numberToString = function (num) {
 
 // sp-prefix functions are for parsing spell data, and shared with the roll20 script
 Parser.spSchoolAbvToFull = function (school) {
-	return Parser._parse_aToB(Parser.SP_SCHOOL_ABV_TO_FULL, school);
+	// if (school === "AH") debugger
+	const out = Parser._parse_aToB(Parser.SP_SCHOOL_ABV_TO_FULL, school);
+	if (Parser.SP_SCHOOL_ABV_TO_FULL[school]) return out;
+	if (BrewUtil.homebrewMeta && BrewUtil.homebrewMeta.spellSchools && BrewUtil.homebrewMeta.spellSchools[school]) return BrewUtil.homebrewMeta.spellSchools[school].full;
+	return out;
 };
 
 Parser.spSchoolAbvToShort = function (school) {
-	return Parser._parse_aToB(Parser.SP_SCHOOL_ABV_TO_SHORT, school);
+	// if (school === "AH") debugger
+	const out = Parser._parse_aToB(Parser.SP_SCHOOL_ABV_TO_SHORT, school);
+	if (Parser.SP_SCHOOL_ABV_TO_SHORT[school]) return out;
+	if (BrewUtil.homebrewMeta && BrewUtil.homebrewMeta.spellSchools && BrewUtil.homebrewMeta.spellSchools[school]) return BrewUtil.homebrewMeta.spellSchools[school].short;
+	return out;
 };
 
 Parser.spLevelToFull = function (level) {
-	if (level === 0) return STR_CANTRIP;
-	if (level === 1) return level + "st";
-	if (level === 2) return level + "nd";
-	if (level === 3) return level + "rd";
-	return level + "th";
+	switch (level) {
+		case 0: return STR_CANTRIP;
+		case 1: return `${level}st`;
+		case 2: return `${level}nd`;
+		case 3: return `${level}rd`;
+		default: return `${level}th`;
+	}
+};
+
+Parser.spellLevelToArticle = function (level) {
+	return level === 8 || level === 11 || level === 18 ? "an" : "a";
 };
 
 Parser.spLevelToFullLevelText = function (level, dash) {
@@ -785,9 +850,6 @@ Parser.spRangeToFull = function (range) {
 	function renderPoint () {
 		const dist = range.distance;
 		switch (dist.type) {
-			case UNT_FEET:
-			case UNT_MILES:
-				return `${dist.amount} ${dist.amount === 1 ? Parser.getSingletonUnit(dist.type) : dist.type}`;
 			case RNG_SELF:
 				return "Self";
 			case RNG_SIGHT:
@@ -798,6 +860,10 @@ Parser.spRangeToFull = function (range) {
 				return "Unlimited on the same plane";
 			case RNG_TOUCH:
 				return "Touch";
+			case UNT_FEET:
+			case UNT_MILES:
+			default:
+				return `${dist.amount} ${dist.amount === 1 ? Parser.getSingletonUnit(dist.type) : dist.type}`;
 		}
 	}
 
@@ -819,9 +885,18 @@ Parser.spRangeToFull = function (range) {
 };
 
 Parser.getSingletonUnit = function (unit) {
-	if (unit === UNT_FEET) return "foot";
-	if (unit.charAt(unit.length - 1) === "s") return unit.slice(0, -1);
-	return unit;
+	switch (unit) {
+		case UNT_FEET:
+			return "foot";
+		case UNT_MILES:
+			return "mile";
+		default: {
+			const fromBrew = MiscUtil.getProperty(BrewUtil.homebrewMeta, "spellDistanceUnits", unit, "singular");
+			if (fromBrew) return fromBrew;
+			if (unit.charAt(unit.length - 1) === "s") return unit.slice(0, -1);
+			return unit;
+		}
+	}
 };
 
 Parser.spComponentsToFull = function (comp) {
@@ -840,7 +915,7 @@ Parser.spDurationToFull = function (dur) {
 			case "instant":
 				return `Instantaneous${d.condition ? ` (${d.condition})` : ""}`;
 			case "timed":
-				return `${d.concentration ? "Concentration, " : ""}${d.duration.upTo && d.concentration ? "u" : d.duration.upTo ? "U" : ""}${d.duration.upTo ? "p to " : ""}${d.duration.amount} ${d.duration.amount === 1 ? d.duration.type : `${d.duration.type}s`}`;
+				return `${d.concentration ? "Concentration, " : ""}${d.concentration ? "u" : d.duration.upTo ? "U" : ""}${d.concentration || d.duration.upTo ? "p to " : ""}${d.duration.amount} ${d.duration.amount === 1 ? d.duration.type : `${d.duration.type}s`}`;
 			case "permanent":
 				if (d.ends) {
 					return `Until ${d.ends.map(m => m === "dispel" ? "dispelled" : m === "trigger" ? "triggered" : m === "discharge" ? "discharged" : undefined).join(" or ")}`
@@ -956,13 +1031,13 @@ Parser.monImmResToFull = function (toParse) {
 			let stack = it.preNote ? `${it.preNote} ` : "";
 			if (it.immune) {
 				const toJoin = it.immune.map(nxt => toString(nxt, depth + 1));
-				stack += depth ? toJoin.join(maxDepth ? "; " : ", ") : CollectionUtil.joinConjunct(toJoin, ", ", " and ");
+				stack += depth ? toJoin.join(maxDepth ? "; " : ", ") : toJoin.joinConjunct(", ", " and ");
 			} else if (it.resist) {
 				const toJoin = it.resist.map(nxt => toString(nxt, depth + 1));
-				stack += depth ? toJoin.join(maxDepth ? "; " : ", ") : CollectionUtil.joinConjunct(toJoin, ", ", " and ");
+				stack += depth ? toJoin.join(maxDepth ? "; " : ", ") : toJoin.joinConjunct(", ", " and ");
 			} else if (it.vulnerable) {
 				const toJoin = it.vulnerable.map(nxt => toString(nxt, depth + 1));
-				stack += depth ? toJoin.join(maxDepth ? "; " : ", ") : CollectionUtil.joinConjunct(toJoin, ", ", " and ");
+				stack += depth ? toJoin.join(maxDepth ? "; " : ", ") : toJoin.joinConjunct(", ", " and ");
 			}
 			if (it.note) stack += ` ${it.note}`;
 			return stack;
@@ -978,6 +1053,17 @@ Parser.monCondImmToFull = function (condImm) {
 		if (it.conditionImmune) return `${it.preNote ? `${it.preNote} ` : ""}${it.conditionImmune.join(", ")}${it.note ? ` ${it.note}` : ""}`;
 		return it;
 	}).join(", ");
+};
+
+Parser.MON_SENSE_TAG_TO_FULL = {
+	"B": "blindsight",
+	"D": "darkvision",
+	"SD": "superior darkvision",
+	"T": "tremorsense",
+	"U": "truesight"
+};
+Parser.monSenseTagToFull = function (tag) {
+	return Parser._parse_aToB(Parser.MON_SENSE_TAG_TO_FULL, tag);
 };
 
 // psi-prefix functions are for parsing psionic data, and shared with the roll20 script
@@ -1002,23 +1088,34 @@ Parser.levelToFull = function (level) {
 	return level + "th";
 };
 
-Parser.invoSpellToFull = function (spell) {
+Parser.prereqSpellToFull = function (spell) {
 	if (spell === "Eldritch Blast") return EntryRenderer.getDefaultRenderer().renderEntry(`{@spell ${spell}} cantrip`);
 	else if (spell === "Hex/Curse") return EntryRenderer.getDefaultRenderer().renderEntry("{@spell Hex} spell or a warlock feature that curses");
 	else if (spell) return EntryRenderer.getDefaultRenderer().renderEntry(`{@spell ${spell}}`);
 	return STR_NONE
 };
 
-Parser.invoPactToFull = function (pact) {
+Parser.prereqPactToFull = function (pact) {
 	if (pact === "Chain") return "Pact of the Chain";
 	if (pact === "Tome") return "Pact of the Tome";
 	if (pact === "Blade") return "Pact of the Blade";
-	return STR_ANY;
+	return pact;
 };
 
-Parser.invoPatronToShort = function (patron) {
+Parser.prereqPatronToShort = function (patron) {
 	if (patron === STR_ANY) return STR_ANY;
 	return /^The (.*?)$/.exec(patron)[1];
+};
+
+Parser.OPT_FEATURE_TYPE_TO_FULL = {
+	EI: "Eldritch Invocation",
+	MM: "Metamagic",
+	MAB: "Maneuver, Battlemaster",
+	OTH: "Other"
+};
+
+Parser.optFeatureTypeToFull = function (type) {
+	return Parser._parse_aToB(Parser.OPT_FEATURE_TYPE_TO_FULL, type);
 };
 
 Parser.alignmentAbvToFull = function (alignment) {
@@ -1106,6 +1203,8 @@ Parser.CAT_ID_QUICKREF = 18;
 Parser.CAT_ID_CULT = 19;
 Parser.CAT_ID_BOON = 20;
 Parser.CAT_ID_DISEASE = 21;
+Parser.CAT_ID_METAMAGIC = 22;
+Parser.CAT_ID_MANEUVER_BATTLEMASTER = 23;
 
 Parser.CAT_ID_TO_FULL = {};
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_CREATURE] = "Bestiary";
@@ -1129,6 +1228,8 @@ Parser.CAT_ID_TO_FULL[Parser.CAT_ID_QUICKREF] = "Quick Reference";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_CULT] = "Cult";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_BOON] = "Boon";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_DISEASE] = "Disease";
+Parser.CAT_ID_TO_FULL[Parser.CAT_ID_METAMAGIC] = "Metamagic";
+Parser.CAT_ID_TO_FULL[Parser.CAT_ID_MANEUVER_BATTLEMASTER] = "Maneuver; Battlemaster";
 
 Parser.pageCategoryToFull = function (catId) {
 	return Parser._parse_aToB(Parser.CAT_ID_TO_FULL, catId);
@@ -1194,16 +1295,20 @@ Parser.attackTypeToFull = function (attackType) {
 	return Parser._parse_aToB(Parser.ATK_TYPE_TO_FULL, attackType);
 };
 
-Parser.trapTypeToFull = function (type) {
-	return Parser._parse_aToB(Parser.TRAP_TYPE_TO_FULL, type);
+Parser.trapHazTypeToFull = function (type) {
+	return Parser._parse_aToB(Parser.TRAP_HAZARD_TYPE_TO_FULL, type);
 };
 
-Parser.TRAP_TYPE_TO_FULL = {};
-Parser.TRAP_TYPE_TO_FULL["MECH"] = "Mechanical trap";
-Parser.TRAP_TYPE_TO_FULL["MAG"] = "Magical trap";
-Parser.TRAP_TYPE_TO_FULL["SMPL"] = "Simple trap";
-Parser.TRAP_TYPE_TO_FULL["CMPX"] = "Complex trap";
-Parser.TRAP_TYPE_TO_FULL["HAZ"] = "Hazard";
+Parser.TRAP_HAZARD_TYPE_TO_FULL = {
+	MECH: "Mechanical trap",
+	MAG: "Magical trap",
+	SMPL: "Simple trap",
+	CMPX: "Complex trap",
+	HAZ: "Hazard",
+	WTH: "Weather",
+	ENV: "Environmental Hazard",
+	WLD: "Wilderness Hazard"
+};
 
 Parser.tierToFullLevel = function (tier) {
 	return Parser._parse_aToB(Parser.TIER_TO_FULL_LEVEL, tier);
@@ -1386,6 +1491,7 @@ SRC_PSI = SRC_PS_PREFIX + "I";
 SRC_PSK = SRC_PS_PREFIX + "K";
 SRC_PSZ = SRC_PS_PREFIX + "Z";
 SRC_PSX = SRC_PS_PREFIX + "X";
+SRC_PSD = SRC_PS_PREFIX + "D";
 
 SRC_UA_PREFIX = "UA";
 
@@ -1430,7 +1536,9 @@ SRC_UATSC = SRC_UA_PREFIX + "ThreeSubclasses";
 SRC_UAOD = SRC_UA_PREFIX + "OrderDomain";
 SRC_UACAM = SRC_UA_PREFIX + "CentaursMinotaurs";
 SRC_UAGSS = SRC_UA_PREFIX + "GiantSoulSorcerer";
-SRC_UAWGtE = SRC_UA_PREFIX + "WGtE";
+SRC_UARoE = SRC_UA_PREFIX + "RacesOfEberron";
+SRC_UARoR = SRC_UA_PREFIX + "RacesOfRavnica";
+SRC_UAWGE = SRC_UA_PREFIX + "WGE";
 
 SRC_3PP_SUFFIX = " 3pp";
 SRC_STREAM = "Stream";
@@ -1483,6 +1591,7 @@ Parser.SOURCE_JSON_TO_FULL[SRC_PSI] = PS_PREFIX + "Innistrad";
 Parser.SOURCE_JSON_TO_FULL[SRC_PSK] = PS_PREFIX + "Kaladesh";
 Parser.SOURCE_JSON_TO_FULL[SRC_PSZ] = PS_PREFIX + "Zendikar";
 Parser.SOURCE_JSON_TO_FULL[SRC_PSX] = PS_PREFIX + "Ixalan";
+Parser.SOURCE_JSON_TO_FULL[SRC_PSD] = PS_PREFIX + "Dominaria";
 Parser.SOURCE_JSON_TO_FULL[SRC_UAA] = UA_PREFIX + "Artificer";
 Parser.SOURCE_JSON_TO_FULL[SRC_UAEAG] = UA_PREFIX + "Eladrin and Gith";
 Parser.SOURCE_JSON_TO_FULL[SRC_UAEBB] = UA_PREFIX + "Eberron";
@@ -1524,7 +1633,9 @@ Parser.SOURCE_JSON_TO_FULL[SRC_UATSC] = UA_PREFIX + "Three Subclasses";
 Parser.SOURCE_JSON_TO_FULL[SRC_UAOD] = UA_PREFIX + "Order Domain";
 Parser.SOURCE_JSON_TO_FULL[SRC_UACAM] = UA_PREFIX + "Centaurs and Minotaurs";
 Parser.SOURCE_JSON_TO_FULL[SRC_UAGSS] = UA_PREFIX + "Giant Soul Sorcerer";
-Parser.SOURCE_JSON_TO_FULL[SRC_UAWGtE] = "Wayfinder's Guide to Eberron";
+Parser.SOURCE_JSON_TO_FULL[SRC_UARoE] = UA_PREFIX + "Races of Eberron";
+Parser.SOURCE_JSON_TO_FULL[SRC_UARoR] = UA_PREFIX + "Races of Ravnica";
+Parser.SOURCE_JSON_TO_FULL[SRC_UAWGE] = "Wayfinder's Guide to Eberron";
 Parser.SOURCE_JSON_TO_FULL[SRC_STREAM] = "Livestream";
 Parser.SOURCE_JSON_TO_FULL[SRC_TWITTER] = "Twitter";
 
@@ -1567,6 +1678,7 @@ Parser.SOURCE_JSON_TO_ABV[SRC_PSI] = "PSI";
 Parser.SOURCE_JSON_TO_ABV[SRC_PSK] = "PSK";
 Parser.SOURCE_JSON_TO_ABV[SRC_PSZ] = "PSZ";
 Parser.SOURCE_JSON_TO_ABV[SRC_PSX] = "PSX";
+Parser.SOURCE_JSON_TO_ABV[SRC_PSD] = "PSD";
 Parser.SOURCE_JSON_TO_ABV[SRC_UAA] = "UAA";
 Parser.SOURCE_JSON_TO_ABV[SRC_UAEAG] = "UAEaG";
 Parser.SOURCE_JSON_TO_ABV[SRC_UAEBB] = "UAEB";
@@ -1608,7 +1720,9 @@ Parser.SOURCE_JSON_TO_ABV[SRC_UATSC] = "UATSC";
 Parser.SOURCE_JSON_TO_ABV[SRC_UAOD] = "UAOD";
 Parser.SOURCE_JSON_TO_ABV[SRC_UACAM] = "UACAM";
 Parser.SOURCE_JSON_TO_ABV[SRC_UAGSS] = "UAGSS";
-Parser.SOURCE_JSON_TO_ABV[SRC_UAWGtE] = "WGE";
+Parser.SOURCE_JSON_TO_ABV[SRC_UARoE] = "UARoE";
+Parser.SOURCE_JSON_TO_ABV[SRC_UARoR] = "UARoR";
+Parser.SOURCE_JSON_TO_ABV[SRC_UAWGE] = "WGE";
 Parser.SOURCE_JSON_TO_ABV[SRC_STREAM] = "Stream";
 Parser.SOURCE_JSON_TO_ABV[SRC_TWITTER] = "Twitter";
 
@@ -1616,6 +1730,7 @@ Parser.ITEM_TYPE_JSON_TO_ABV = {
 	"A": "Ammunition",
 	"AF": "Ammunition",
 	"AT": "Artisan Tool",
+	"EM": "Eldritch Machine",
 	"EXP": "Explosive",
 	"G": "Adventuring Gear",
 	"GS": "Gaming Set",
@@ -1633,6 +1748,7 @@ Parser.ITEM_TYPE_JSON_TO_ABV = {
 	"S": "Shield",
 	"SC": "Scroll",
 	"SCF": "Spellcasting Focus",
+	"OTH": "Other",
 	"T": "Tool",
 	"TAH": "Tack and Harness",
 	"TG": "Trade Good",
@@ -1732,6 +1848,22 @@ SourceUtil = {
 };
 
 // CONVENIENCE/ELEMENTS ================================================================================================
+Math.sum = Math.sum ||
+	function (...values) {
+		return values.reduce((a, b) => a + b, 0);
+	};
+
+Math.mean = Math.mean ||
+	function (...values) {
+		return Math.sum(...values) / values.length;
+	};
+
+Math.meanAbsoluteDeviation = Math.meanAbsoluteDeviation ||
+	function (...values) {
+		const mean = Math.mean(...values);
+		return Math.mean(...(values.map(num => Math.abs(num - mean))));
+	};
+
 function xor (a, b) {
 	return !a !== !b;
 }
@@ -1745,6 +1877,29 @@ function implies (a, b) {
 
 function noModifierKeys (e) {
 	return !e.ctrlKey && !e.altKey && !e.metaKey;
+}
+
+function isObject (obj) {
+	const type = typeof obj;
+	return (type === 'function' || type === 'object') && !!obj;
+}
+
+function isString (str) {
+	return typeof str === 'string';
+}
+
+function isNumber (obj) {
+	return toString.call(obj) === '[object Number]';
+}
+
+function isEmpty (obj) {
+	if (obj == null) {
+		return true;
+	}
+	if (Array.isArray(obj) || isString(obj)) {
+		return obj.length === 0;
+	}
+	return Object.keys(obj).length === 0;
 }
 
 if (typeof window !== "undefined") {
@@ -1779,9 +1934,10 @@ function copyText (text) {
 
 function showCopiedEffect ($ele) {
 	const $temp = $(`<div class="copied-tip"><span>Copied!</span></div>`);
+	const top = $(window).scrollTop();
 	const pos = $ele.offset();
 	$temp.css({
-		top: pos.top - 17,
+		top: (pos.top - 17) - top,
 		left: pos.left - 36 + ($ele.width() / 2)
 	}).appendTo($(`body`)).animate({
 		top: "-=8",
@@ -1793,6 +1949,18 @@ function showCopiedEffect ($ele) {
 
 // TODO refactor other misc utils into this
 MiscUtil = {
+	copy (obj) {
+		return JSON.parse(JSON.stringify(obj));
+	},
+
+	getProperty (object, ...path) {
+		for (let i = 0; i < path.length; ++i) {
+			object = object[path[i]];
+			if (object == null) return object;
+		}
+		return object;
+	},
+
 	clearSelection () {
 		if (document.getSelection) {
 			document.getSelection().removeAllRanges();
@@ -1824,25 +1992,66 @@ MiscUtil = {
 			case 5: r = 1; g = 0; b = q; break;
 		}
 		return `#${("00" + (~~(r * 255)).toString(16)).slice(-2)}${("00" + (~~(g * 255)).toString(16)).slice(-2)}${("00" + (~~(b * 255)).toString(16)).slice(-2)}`;
+	},
+
+	scrollPageTop () {
+		document.body.scrollTop = document.documentElement.scrollTop = 0;
+	},
+
+	isInInput (event) {
+		return event.target.nodeName === "INPUT" || event.target.nodeName === "TEXTAREA";
+	},
+
+	expEval (str) {
+		// eslint-disable-next-line no-new-func
+		return new Function(`return ${str.replace(/[^-()\d/*+.]/g, "")}`)();
 	}
 };
 
 // LIST AND SEARCH =====================================================================================================
+SearchUtil = {
+	removeStemmer (elasticSearch) {
+		const stemmer = elasticlunr.Pipeline.getRegisteredFunction("stemmer");
+		elasticSearch.pipeline.remove(stemmer);
+	}
+};
+
 ListUtil = {
 	SUB_HASH_PREFIX: "sublistselected",
 
 	_first: true,
 
+	bindEscapeKey (list, $iptSearch, forceRebind) {
+		if (!list._isBoundEscape || forceRebind) {
+			if (forceRebind) $iptSearch.off("keydown.search5e");
+			list._isBoundEscape = true;
+			$iptSearch.on("keydown.search5e", (e) => {
+				if (e.which === 27) {
+					setTimeout(() => {
+						$iptSearch.blur();
+						list.search();
+					}, 0);
+				}
+			});
+		}
+	},
+
 	search: (options) => {
+		if (!options.sortFunction && options.valueNames && options.valueNames.includes("name")) options.sortFunction = SortUtil.listSort;
+
 		const list = new List("listcontainer", options);
 		list.sort("name");
+		const $iptSearch = $("#search");
 		$("#reset").click(function () {
 			$("#filtertools").find("select").val("All");
-			$("#search").val("");
+			$iptSearch.val("");
 			list.search();
 			list.sort("name");
 			list.filter();
 		});
+
+		ListUtil.bindEscapeKey(list, $iptSearch);
+
 		const listWrapper = $("#listcontainer");
 		if (listWrapper.data("lists")) {
 			listWrapper.data("lists").push(list);
@@ -1854,12 +2063,30 @@ ListUtil = {
 			const $headDesc = $(`header div p`);
 			$headDesc.html(`${$headDesc.html()} Press J/K to navigate rows.`);
 
+			const scrollTo = () => {
+				const toShow = History.getSelectedListElementWithIndex();
+				if (toShow && toShow.$el && toShow.$el.length) {
+					const $wrp = toShow.$el.parent();
+					const $parent = toShow.$el.parent().parent();
+					const parentScroll = $parent.scrollTop();
+					const parentHeight = $parent.height();
+					const posInParent = $wrp.position().top;
+					const height = $wrp.height();
+
+					if (posInParent < 0) {
+						$wrp[0].scrollIntoView();
+					} else if (posInParent + height > parentHeight) {
+						$parent.scrollTop(parentScroll + (posInParent - parentHeight + height));
+					}
+				}
+			};
+
 			$(window).on("keypress", (e) => {
 				// K up; J down
 				if (noModifierKeys(e)) {
 					if (e.key === "k" || e.key === "j") {
 						// don't switch if the user is typing somewhere else
-						if (e.target.nodeName === "INPUT" || e.target.nodeName === "TEXTAREA") return;
+						if (MiscUtil.isInInput(e)) return;
 						const it = History.getSelectedListElementWithIndex();
 
 						if (it) {
@@ -1867,6 +2094,7 @@ ListUtil = {
 								const prevLink = it.$el.parent().prev().find("a").attr("href");
 								if (prevLink !== undefined) {
 									window.location.hash = prevLink;
+									scrollTo();
 								} else {
 									const lists = listWrapper.data("lists");
 									let x = it.x;
@@ -1874,7 +2102,10 @@ ListUtil = {
 										const l = lists[x];
 										if (l.visibleItems.length) {
 											const goTo = $(l.visibleItems[l.visibleItems.length - 1].elm).find("a").attr("href");
-											if (goTo) window.location.hash = goTo;
+											if (goTo) {
+												window.location.hash = goTo;
+												scrollTo();
+											}
 											return;
 										}
 									}
@@ -1887,6 +2118,7 @@ ListUtil = {
 								const nextLink = it.$el.parent().next().find("a").attr("href");
 								if (nextLink !== undefined) {
 									window.location.hash = nextLink;
+									scrollTo();
 								} else {
 									const lists = listWrapper.data("lists");
 									let x = it.x;
@@ -1894,7 +2126,10 @@ ListUtil = {
 										const l = lists[x];
 										if (l.visibleItems.length) {
 											const goTo = $(l.visibleItems[0].elm).find("a").attr("href");
-											if (goTo) window.location.hash = goTo;
+											if (goTo) {
+												window.location.hash = goTo;
+												scrollTo();
+											}
 											return;
 										}
 									}
@@ -1958,7 +2193,7 @@ ListUtil = {
 	},
 
 	initSubContextMenu: (clickFn, ...labels) => {
-		ListUtil._handleInitContextMenu("contextSubMenu", clickFn, labels)
+		ListUtil._handleInitContextMenu("contextSubMenu", clickFn, labels.filter(it => it))
 	},
 
 	openSubContextMenu: (evt, ele) => {
@@ -1970,7 +2205,8 @@ ListUtil = {
 		ListUtil._handlePreInitContextMenu(menuId);
 		let tempString = `<ul id="${menuId}" class="dropdown-menu" role="menu">`;
 		labels.forEach((it, i) => {
-			tempString += `<li><a data-ctx-id="${i}" href="${STR_VOID_LINK}">${it}</a></li>`;
+			if (it === null) tempString += `<li class="divider"/>`;
+			else tempString += `<li><a data-ctx-id="${i}" href="${STR_VOID_LINK}">${it}</a></li>`;
 		});
 		tempString += `</ul>`;
 		$("body").append(tempString);
@@ -2075,8 +2311,7 @@ ListUtil = {
 					copyText(parts.join(HASH_PART_SEP));
 					showCopiedEffect($btn);
 				} else {
-					const filename = `${UrlUtil.getCurrentPage().replace(".html", "")}-sublist`;
-					DataUtil.userDownload(filename, JSON.stringify(ListUtil._getExportableSublist(), null, "\t"));
+					DataUtil.userDownload(ListUtil._getDownloadName(), JSON.stringify(ListUtil._getExportableSublist(), null, "\t"));
 				}
 			})
 			.attr("title", "Download List (SHIFT for Link)");
@@ -2196,7 +2431,7 @@ ListUtil = {
 	},
 
 	_updateSublistVisibility: () => {
-		if (ListUtil.sublist.items.length) ListUtil.$sublistContainer.show();
+		if (ListUtil.sublist.items.length) ListUtil.$sublistContainer.css("display", "flex");
 		else ListUtil.$sublistContainer.hide();
 	},
 
@@ -2282,7 +2517,7 @@ ListUtil = {
 
 	initGenericPinnable: () => {
 		ListUtil.initContextMenu(ListUtil.handleGenericContextMenuClick, "Popout", "Pin");
-		ListUtil.initSubContextMenu(ListUtil.handleGenericSubContextMenuClick, "Popout", "Unpin", "Clear Pins");
+		ListUtil.initSubContextMenu(ListUtil.handleGenericSubContextMenuClick, "Popout", "Unpin", "Clear Pins", null, "Download JSON");
 	},
 
 	handleGenericContextMenuClick: (evt, ele, $invokedOn, $selectedMenu) => {
@@ -2314,12 +2549,15 @@ ListUtil = {
 			case 2:
 				ListUtil.doSublistRemoveAll();
 				break;
+			case 3:
+				ListUtil._handleJsonDownload();
+				break;
 		}
 	},
 
 	initGenericAddable: () => {
 		ListUtil.initContextMenu(ListUtil.handleGenericMultiContextMenuClick, "Popout", "Add");
-		ListUtil.initSubContextMenu(ListUtil.handleGenericMulriSubContextMenuClick, "Popout", "Remove", "Clear List");
+		ListUtil.initSubContextMenu(ListUtil.handleGenericMultiSubContextMenuClick, "Popout", "Remove", "Clear List", null, "Download JSON");
 	},
 
 	handleGenericMultiContextMenuClick: (evt, ele, $invokedOn, $selectedMenu) => {
@@ -2337,7 +2575,7 @@ ListUtil = {
 		}
 	},
 
-	handleGenericMulriSubContextMenuClick: (evt, ele, $invokedOn, $selectedMenu) => {
+	handleGenericMultiSubContextMenuClick: (evt, ele, $invokedOn, $selectedMenu) => {
 		const itId = Number($invokedOn.attr(FLTR_ID));
 		switch (Number($selectedMenu.data("ctx-id"))) {
 			case 0:
@@ -2349,7 +2587,23 @@ ListUtil = {
 			case 2:
 				ListUtil.doSublistRemoveAll();
 				break;
+			case 3:
+				ListUtil._handleJsonDownload();
+				break;
 		}
+	},
+
+	_getDownloadName () {
+		return `${UrlUtil.getCurrentPage().replace(".html", "")}-sublist`;
+	},
+
+	_handleJsonDownload () {
+		const out = ListUtil.getSublistedIds().map(id => {
+			const cpy = JSON.parse(JSON.stringify(ListUtil._allItems[id]));
+			Object.keys(cpy).filter(k => k.startsWith("_") || !cpy[k] || (cpy[k] instanceof Array && !cpy[k].length)).forEach(k => delete cpy[k]);
+			return cpy;
+		});
+		DataUtil.userDownload(`${ListUtil._getDownloadName()}-data`, out);
 	},
 
 	/**
@@ -2376,8 +2630,19 @@ ListUtil = {
 		return it.otherSources ? [it.source].concat(it.otherSources.map(src => src.source)) : it.source;
 	},
 
-	bindShowTableButton (id, title, dataList, colTransforms, sorter) {
-		$(`#${id}`).click("click", () => ListUtil.showTable(title, dataList, colTransforms, sorter));
+	bindShowTableButton (id, title, dataList, colTransforms, filter, sorter) {
+		$(`#${id}`).click("click", () => ListUtil.showTable(title, dataList, colTransforms, filter, sorter));
+	},
+
+	basicFilterGenerator () {
+		const slIds = ListUtil.getSublistedIds();
+		if (slIds.length) {
+			const slIdSet = new Set(slIds);
+			return slIdSet.has.bind(slIdSet);
+		} else {
+			const visibleIds = new Set(ListUtil.getVisibleIds());
+			return visibleIds.has.bind(visibleIds);
+		}
 	},
 
 	getVisibleIds () {
@@ -2393,7 +2658,7 @@ ListUtil = {
 		const $pnlControl = $(`<div class="split my-3"/>`).appendTo($modalInner);
 		const $pnlCols = $(`<div class="flex" style="align-items: center;"/>`).appendTo($pnlControl);
 		Object.values(colTransforms).forEach((c, i) => {
-			const $wrpCb = $(`<label class="flex-${c.flex} px-2 mr-2 no-wrap inline-flex">${c.name} </label>`).appendTo($pnlCols);
+			const $wrpCb = $(`<label class="flex-${c.flex || 1} px-2 mr-2 no-wrap inline-flex">${c.name} </label>`).appendTo($pnlCols);
 			const $cbToggle = $(`<input type="checkbox" class="ml-1" data-name="${c.name}" checked>`)
 				.click(() => {
 					const toToggle = $modalInner.find(`.col_${i}`);
@@ -2424,12 +2689,12 @@ ListUtil = {
 
 		if (typeof filter === "object" && filter.generator) filter = filter.generator();
 
-		let temp = `<table class="table-striped" style="width: 100%;"><thead><tr class="flex">${Object.values(colTransforms).map((c, i) => `<th class="col_${i} flex-${c.flex} px-2">${c.name}</th>`).join("")}</tr></thead><tbody>`;
+		let temp = `<table class="table-striped stats stats-book" style="width: 100%;"><thead><tr>${Object.values(colTransforms).map((c, i) => `<th class="col_${i} px-2" colspan="${c.flex || 1}">${c.name}</th>`).join("")}</tr></thead><tbody>`;
 		(sorter ? JSON.parse(JSON.stringify(dataList)).sort(sorter) : dataList).filter((it, i) => filter ? filter(i) : it).forEach(it => {
-			temp += `<tr class="flex data-row">`;
+			temp += `<tr class="data-row">`;
 			temp += Object.keys(colTransforms).map((k, i) => {
 				const c = colTransforms[k];
-				return `<td class="col_${i} flex-${c.flex} px-2">${c.transform === true ? it[k] : c.transform(it[k])}</td>`;
+				return `<td class="col_${i} px-2" colspan="${c.flex || 1}">${c.transform === true ? it[k] : c.transform(k[0] === "_" ? it : it[k])}</td>`;
 			}).join("");
 			temp += `</tr>`;
 		});
@@ -2447,7 +2712,7 @@ ListUtil = {
 function getSourceFilter (options = {}) {
 	const baseOptions = {
 		header: FilterBox.SOURCE_HEADER,
-		displayFn: Parser.sourceJsonToFullCompactPrefix,
+		displayFn: (item) => Parser.sourceJsonToFullCompactPrefix(item.item || item),
 		selFn: defaultSourceSelFn,
 		groupFn: SourceUtil.getFilterGroup
 	};
@@ -2567,7 +2832,7 @@ UrlUtil.PG_ITEMS = "items.html";
 UrlUtil.PG_CLASSES = "classes.html";
 UrlUtil.PG_CONDITIONS_DISEASES = "conditionsdiseases.html";
 UrlUtil.PG_FEATS = "feats.html";
-UrlUtil.PG_INVOCATIONS = "invocations.html";
+UrlUtil.PG_OPT_FEATURES = "optionalfeatures.html";
 UrlUtil.PG_PSIONICS = "psionics.html";
 UrlUtil.PG_RACES = "races.html";
 UrlUtil.PG_REWARDS = "rewards.html";
@@ -2579,6 +2844,7 @@ UrlUtil.PG_CULTS_BOONS = "cultsboons.html";
 UrlUtil.PG_OBJECTS = "objects.html";
 UrlUtil.PG_TRAPS_HAZARDS = "trapshazards.html";
 UrlUtil.PG_QUICKREF = "quickreference.html";
+UrlUtil.PG_MAKE_SHAPED = "makeshaped.html";
 
 UrlUtil.URL_TO_HASH_BUILDER = {};
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BESTIARY] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
@@ -2588,7 +2854,7 @@ UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS] = (it) => UrlUtil.encodeForHash([i
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CONDITIONS_DISEASES] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_FEATS] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
-UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_INVOCATIONS] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
+UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_OPT_FEATURES] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_PSIONICS] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_RACES] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_REWARDS] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
@@ -2607,7 +2873,9 @@ UrlUtil.CAT_TO_PAGE[Parser.CAT_ID_ITEM] = UrlUtil.PG_ITEMS;
 UrlUtil.CAT_TO_PAGE[Parser.CAT_ID_CLASS] = UrlUtil.PG_CLASSES;
 UrlUtil.CAT_TO_PAGE[Parser.CAT_ID_CONDITION] = UrlUtil.PG_CONDITIONS_DISEASES;
 UrlUtil.CAT_TO_PAGE[Parser.CAT_ID_FEAT] = UrlUtil.PG_FEATS;
-UrlUtil.CAT_TO_PAGE[Parser.CAT_ID_ELDRITCH_INVOCATION] = UrlUtil.PG_INVOCATIONS;
+UrlUtil.CAT_TO_PAGE[Parser.CAT_ID_ELDRITCH_INVOCATION] = UrlUtil.PG_OPT_FEATURES;
+UrlUtil.CAT_TO_PAGE[Parser.CAT_ID_METAMAGIC] = UrlUtil.PG_OPT_FEATURES;
+UrlUtil.CAT_TO_PAGE[Parser.CAT_ID_MANEUVER_BATTLEMASTER] = UrlUtil.PG_OPT_FEATURES;
 UrlUtil.CAT_TO_PAGE[Parser.CAT_ID_PSIONIC] = UrlUtil.PG_PSIONICS;
 UrlUtil.CAT_TO_PAGE[Parser.CAT_ID_RACE] = UrlUtil.PG_RACES;
 UrlUtil.CAT_TO_PAGE[Parser.CAT_ID_OTHER_REWARD] = UrlUtil.PG_REWARDS;
@@ -2669,6 +2937,10 @@ SortUtil = {
 		return SortUtil._ascSort(a, b);
 	},
 
+	ascSortLower: (a, b) => {
+		return SortUtil._ascSort(a.toLowerCase(), b.toLowerCase());
+	},
+
 	_ascSort: (a, b) => {
 		if (b === a) return 0;
 		return b < a ? 1 : -1;
@@ -2718,6 +2990,13 @@ SortUtil = {
 		if (SortUtil._alignFirst.includes(b)) return 1;
 		if (SortUtil._alignSecond.includes(b)) return -1;
 		return 0;
+	},
+
+	ascSortCr (a, b) {
+		// always put unknown values last
+		if (a === "Unknown" || a === undefined) a = "999";
+		if (b === "Unknown" || b === undefined) b = "999";
+		return SortUtil.ascSort(Parser.crToNumber(a), Parser.crToNumber(b));
 	}
 };
 
@@ -2761,10 +3040,10 @@ DataUtil = {
 						DataUtil._loaded[toUrl] = data;
 						resolve(data, otherData);
 					} catch (e) {
-						reject(new Error('Could not parse JSON'));
+						reject(new Error(`Could not parse JSON from ${toUrl}: ${e}`));
 					}
 				};
-				request.onerror = () => reject(new Error('Error during JSON request'));
+				request.onerror = (e) => reject(new Error(`Error during JSON request: ${e}`));
 				return request;
 			}
 		});
@@ -2772,11 +3051,11 @@ DataUtil = {
 
 	multiLoadJSON: function (toLoads, onEachLoadFunction, onFinalLoadFunction) {
 		if (!toLoads.length) onFinalLoadFunction([]);
-		Promise.all(toLoads.map(tl => this.loadJSON(tl.url))).then(datas => {
+		return Promise.all(toLoads.map(tl => this.loadJSON(tl.url))).then(datas => {
 			datas.forEach((data, i) => {
 				if (onEachLoadFunction) onEachLoadFunction(toLoads[i], data);
 			});
-			onFinalLoadFunction(datas);
+			return onFinalLoadFunction(datas);
 		});
 	},
 
@@ -2991,8 +3270,9 @@ RollerUtil = {
 		return !!/^({@dice )?(\d+)?d\d+([+-](\d+)?d\d+)*(})?$/.exec(string.trim());
 	},
 
-	DICE_REGEX: /([1-9]\d*)?d([1-9]\d*)(\s?[+-]\s?\d+)?/g
+	_DICE_REGEX_STR: "([1-9]\\d*)?d([1-9]\\d*)(\\s?[+-]\\s?\\d+)?"
 };
+RollerUtil.DICE_REGEX = new RegExp(RollerUtil._DICE_REGEX_STR, "g");
 
 // STORAGE =============================================================================================================
 StorageUtil = {
@@ -3051,7 +3331,7 @@ StorageUtil = {
 // HOMEBREW ============================================================================================================
 BrewUtil = {
 	homebrew: null,
-	homebrewMeta: null, // TODO
+	homebrewMeta: null,
 	_lists: null,
 	storage: StorageUtil.getStorage(),
 	_sourceCache: null,
@@ -3075,32 +3355,17 @@ BrewUtil = {
 				const rawBrew = BrewUtil.storage.getItem(HOMEBREW_STORAGE);
 				const rawBrewMeta = BrewUtil.storage.getItem(HOMEBREW_META_STORAGE);
 
-				new Promise((resolve) => {
-					if (rawBrewMeta) {
-						BrewUtil.homebrewMeta = JSON.parse(rawBrewMeta);
-						BrewUtil.homebrewMeta.sources = BrewUtil.homebrewMeta.sources || [];
-						resolve();
-					} else {
-						BrewUtil.homebrewMeta = {sources: []};
-						resolve();
-					}
-				}).then(new Promise((resolve) => {
-					if (rawBrew) {
-						BrewUtil.homebrew = JSON.parse(rawBrew);
-						resolve();
-					} else {
-						BrewUtil.homebrew = {};
-						resolve();
-					}
-				}).then(BrewUtil._pLoadLocal()).then(() => {
-					BrewUtil._resetSourceCache();
-				}).then(() => resolve(BrewUtil.homebrew))).catch(error => {
-					// on error, purge all brew and reset hash
-					BrewUtil.purgeBrew();
-					setTimeout(() => {
-						throw error
-					});
-				});
+				if (rawBrewMeta) {
+					BrewUtil.homebrewMeta = JSON.parse(rawBrewMeta);
+					BrewUtil.homebrewMeta.sources = BrewUtil.homebrewMeta.sources || [];
+				} else BrewUtil.homebrewMeta = {sources: []};
+
+				if (rawBrew) BrewUtil.homebrew = JSON.parse(rawBrew);
+				else BrewUtil.homebrew = {};
+
+				BrewUtil._resetSourceCache();
+
+				resolve(BrewUtil.homebrew);
 			}
 		});
 	},
@@ -3117,17 +3382,21 @@ BrewUtil = {
 		}
 	},
 
-	_pLoadLocal (callbackFn = (d, page) => BrewUtil.doHandleBrewJson(d, page, null)) {
-		return DataUtil.loadJSON(`${EntryRenderer.getDefaultRenderer().baseUrl}${JSON_HOMEBREW_INDEX}`).then((data) => {
-			// auto-load from `homebrew/`, for custom versions of the site
-			if (data.toImport.length) {
-				const page = UrlUtil.getCurrentPage();
-				Promise.all(data.toImport.map(it => DataUtil.loadJSON(`homebrew/${it}`))).then((datas) => {
-					datas.forEach(d => callbackFn(d, page));
-					Promise.resolve();
-				});
-			} else Promise.resolve();
-		});
+	pAddLocalBrewData (callbackFn = (d, page) => BrewUtil.doHandleBrewJson(d, page, null)) {
+		if (!IS_ROLL20 && !IS_DEPLOYED) {
+			return DataUtil.loadJSON(`${EntryRenderer.getDefaultRenderer().baseUrl}${JSON_HOMEBREW_INDEX}`).then((data) => {
+				// auto-load from `homebrew/`, for custom versions of the site
+				if (data.toImport.length) {
+					const page = UrlUtil.getCurrentPage();
+					return Promise.all(data.toImport.map(it => DataUtil.loadJSON(`homebrew/${it}`))).then((datas) => {
+						datas.forEach(d => callbackFn(d, page));
+					});
+				} else {
+					return Promise.resolve();
+				}
+			});
+		}
+		return Promise.resolve();
 	},
 
 	manageBrew: (funcAddCallback) => {
@@ -3221,8 +3490,8 @@ BrewUtil = {
 						return ["background"];
 					case UrlUtil.PG_FEATS:
 						return ["feat"];
-					case UrlUtil.PG_INVOCATIONS:
-						return ["invocation"];
+					case UrlUtil.PG_OPT_FEATURES:
+						return ["optionalfeature"];
 					case UrlUtil.PG_RACES:
 						return ["race"];
 					case UrlUtil.PG_OBJECTS:
@@ -3243,31 +3512,53 @@ BrewUtil = {
 						return ["condition", "disease"];
 					case UrlUtil.PG_ADVENTURES:
 						return ["adventure"];
+					case UrlUtil.PG_MAKE_SHAPED:
+						return ["spell", "creature"];
 					default:
 						throw new Error(`No homebrew properties defined for category ${page}`);
 				}
 			}
-			const urls = getBrewDirs().map(it => ({url: `https://api.github.com/repos/TheGiddyLimit/homebrew/contents/${it}?client_id=${HOMEBREW_CLIENT_ID}&client_secret=${HOMEBREW_CLIENT_SECRET}&${(new Date()).getTime()}`}));
-			DataUtil.multiLoadJSON(urls, null, (json) => {
-				let stack = "";
-				const all = [].concat.apply([], json);
-				all.forEach(it => {
-					stack += `<li>
-						<section onclick="BrewUtil.addBrewRemote(this, '${(it.download_url || "").escapeQuotes()}', true)">
-							<span class="col-xs-4 filename">${it.name.trim().replace(/\.json$/, "")}</span>
-							<span class="col-xs-8 source" title="${it.download_url}">${it.download_url}</span>
-						</section>
-					</li>`;
-				});
+			DataUtil.loadJSON(`https://raw.githubusercontent.com/TheGiddyLimit/homebrew/master/collection/index.json`)
+				.then((data) => {
+					const dirs = new Set(getBrewDirs());
+					return Object.keys(data).filter(k => data[k].find(it => dirs.has(it)));
+				})
+				.then((collectionFiles) => {
+					const getDirUrl = (dir) => `https://api.github.com/repos/TheGiddyLimit/homebrew/contents/${dir}?client_id=${HOMEBREW_CLIENT_ID}&client_secret=${HOMEBREW_CLIENT_SECRET}&${(new Date()).getTime()}`;
+					const urls = getBrewDirs().map(it => ({url: getDirUrl(it)}));
+					if (collectionFiles.length) urls.push({url: getDirUrl("collection"), _collection: true});
 
-				$ul.empty();
-				$ul.append(stack);
+					DataUtil.multiLoadJSON(
+						urls,
+						(url, json) => {
+							if (url._collection) json.filter(it => it.name === "index.json" || !collectionFiles.includes(it.name)).forEach(it => it._brewSkip = true);
+						},
+						(json) => {
+							let stack = "";
+							const all = [].concat.apply([], json);
+							all.forEach(it => it._brewName = it.name.trim().replace(/\.json$/, ""));
+							all.sort((a, b) => SortUtil.ascSortLower(a._brewName, b._brewName));
+							all.filter(it => !it._brewSkip).forEach(it => {
+								stack += `
+									<li>
+										<section onclick="BrewUtil.addBrewRemote(this, '${(it.download_url || "").escapeQuotes()}', true)">
+											<span class="col-xs-4 filename">${it._brewName}</span>
+											<span class="col-xs-8 source" title="${it.download_url}">${it.download_url}</span>
+										</section>
+									</li>`;
+							});
 
-				const list = new List("brewlistcontainer", {
-					valueNames: ["filename"],
-					listClass: "brew-list"
+							$ul.empty();
+							$ul.append(stack);
+
+							const list = new List("brewlistcontainer", {
+								valueNames: ["filename"],
+								listClass: "brew-list"
+							});
+							ListUtil.bindEscapeKey(list, $lst.find(`.search`), true);
+						}
+					);
 				});
-			});
 		});
 		$window.append(
 			$(`<div class="text-align-center"/>`)
@@ -3344,6 +3635,7 @@ BrewUtil = {
 					valueNames: ["name", "category", "uid"],
 					listClass: "brew-list"
 				});
+				ListUtil.bindEscapeKey(list, $lst.find(`.search`), true);
 
 				$cbAll.change(function () {
 					const val = this.checked;
@@ -3363,6 +3655,7 @@ BrewUtil = {
 							const deleteFn = getDeleteFunction(it.category.toLowerCase().replace(/ /g, ""));
 							deleteFn(it.uid, false);
 						});
+						BrewUtil.storage.setItem(HOMEBREW_STORAGE, JSON.stringify(BrewUtil.homebrew));
 						populateList();
 						refreshBrewList();
 						window.location.hash = "";
@@ -3419,6 +3712,7 @@ BrewUtil = {
 						valueNames: ["source", "authors"],
 						listClass: "brew-list"
 					});
+					ListUtil.bindEscapeKey(list, $lst.find(`.search`), true);
 				}, 5);
 			}
 		}
@@ -3469,8 +3763,8 @@ BrewUtil = {
 			reader.readAsText(input.files[readIndex++]);
 		}
 
-		function getIndex (arrName, uniqueId) {
-			return BrewUtil.homebrew[arrName].findIndex(it => it.uniqueId === uniqueId);
+		function getIndex (arrName, uniqueId, isChild) {
+			return BrewUtil.homebrew[arrName].findIndex(it => isChild ? it.parentUniqueId : it.uniqueId === uniqueId);
 		}
 
 		function deleteSource (source, doConfirm) {
@@ -3489,7 +3783,11 @@ BrewUtil = {
 					deleteFn(uId, false);
 				});
 			});
+			BrewUtil.storage.setItem(HOMEBREW_STORAGE, JSON.stringify(BrewUtil.homebrew));
 			BrewUtil.removeJsonSource(source);
+			if (page === UrlUtil.PG_MAKE_SHAPED) {
+				removeBrewSource(source);
+			}
 			// remove the source from the filters and re-render the filter box
 			if (BrewUtil._sourceFilter) BrewUtil._sourceFilter.removeIfExists(source);
 			if (BrewUtil._filterBox) BrewUtil._filterBox.render();
@@ -3498,14 +3796,15 @@ BrewUtil = {
 			if (BrewUtil._filterBox) BrewUtil._filterBox._fireValChangeEvent();
 		}
 
-		function doRemove (arrName, uniqueId, doRefresh) {
-			const index = getIndex(arrName, uniqueId);
+		function doRemove (arrName, uniqueId, doRefresh, isChild) {
+			const index = getIndex(arrName, uniqueId, isChild);
 			if (~index) {
 				BrewUtil.homebrew[arrName].splice(index, 1);
-				BrewUtil.storage.setItem(HOMEBREW_STORAGE, JSON.stringify(BrewUtil.homebrew));
 				if (doRefresh) refreshBrewList();
-				BrewUtil._lists.forEach(l => l.remove("uniqueid", uniqueId));
-				if (doRefresh) History.hashChange();
+				if (BrewUtil._lists) {
+					BrewUtil._lists.forEach(l => l.remove(isChild ? "parentuniqueid" : "uniqueid", uniqueId));
+					if (doRefresh) History.hashChange();
+				}
 			}
 		}
 
@@ -3515,7 +3814,7 @@ BrewUtil = {
 				case "monster":
 				case "background":
 				case "feat":
-				case "invocation":
+				case "optionalfeature":
 				case "race":
 				case "object":
 				case "trap":
@@ -3537,6 +3836,9 @@ BrewUtil = {
 					return deleteClassBrew;
 				case "adventure":
 					return deleteAdventureBrew;
+				case "adventureData":
+					// Do nothing, handled by deleting the associated adventure
+					return () => {};
 				default:
 					throw new Error(`No homebrew delete function defined for category ${category}`);
 			}
@@ -3559,7 +3861,6 @@ BrewUtil = {
 				const forClass = subClass.class;
 				BrewUtil.homebrew.subclass.splice(index, 1);
 				BrewUtil.storage.setItem(HOMEBREW_STORAGE, JSON.stringify(BrewUtil.homebrew));
-				// refreshBrewList();
 				const c = ClassData.classes.find(c => c.name.toLowerCase() === forClass.toLowerCase());
 
 				const indexInClass = c.subclasses.findIndex(it => it.uniqueId === uniqueId);
@@ -3583,8 +3884,7 @@ BrewUtil = {
 		function deleteAdventureBrew () {
 			return (uniqueId, doRefresh) => {
 				doRemove("adventure", uniqueId, false);
-				// TODO lookup the other uniqueID
-				doRemove("adventureData", uniqueId, doRefresh);
+				doRemove("adventureData", uniqueId, doRefresh, true);
 			}
 		}
 	},
@@ -3600,8 +3900,17 @@ BrewUtil = {
 
 		// prepare for storage
 		if (json.race && json.race.length) json.race = EntryRenderer.race.mergeSubraces(json.race);
-		const storable = ["class", "subclass", "spell", "monster", "background", "feat", "invocation", "race", "deity", "item", "itemProperty", "itemType", "psionic", "reward", "object", "trap", "hazard", "variantrule", "legendaryGroup", "condition", "disease", "adventure", "adventureData"];
+		const storable = ["class", "subclass", "spell", "monster", "background", "feat", "optionalfeature", "race", "deity", "item", "itemProperty", "itemType", "psionic", "reward", "object", "trap", "hazard", "variantrule", "legendaryGroup", "condition", "disease", "adventure", "adventureData"];
 		storable.forEach(storePrep);
+
+		if (json["adventure"] && json["adventureData"]) {
+			json["adventure"].forEach(adv => {
+				const data = json["adventureData"].find(it => it.id === adv.id);
+				if (data) {
+					data.parentUniqueId = adv.uniqueId;
+				}
+			})
+		}
 
 		// store
 		function checkAndAdd (prop) {
@@ -3617,17 +3926,31 @@ BrewUtil = {
 			return areNew;
 		}
 
-		function checkAndAddSources () {
-			if (!json._meta || !json._meta.sources) return [];
+		function checkAndAddMetaGetNewSources () {
 			const areNew = [];
-			if (!BrewUtil.homebrewMeta) BrewUtil.homebrewMeta = {sources: []};
-			const existing = BrewUtil.homebrewMeta.sources.map(src => src.json);
-			json._meta.sources.forEach(src => {
-				if (!existing.find(it => it === src.json)) {
-					BrewUtil.homebrewMeta.sources.push(src);
-					areNew.push(src);
-				}
-			});
+			if (json._meta) {
+				if (!BrewUtil.homebrewMeta) BrewUtil.homebrewMeta = {sources: []};
+
+				Object.keys(json._meta).forEach(k => {
+					switch (k) {
+						case "sources": {
+							const existing = BrewUtil.homebrewMeta.sources.map(src => src.json);
+							json._meta.sources.forEach(src => {
+								if (!existing.find(it => it === src.json)) {
+									BrewUtil.homebrewMeta.sources.push(src);
+									areNew.push(src);
+								}
+							});
+							break;
+						}
+						default: {
+							BrewUtil.homebrewMeta[k] = BrewUtil.homebrewMeta[k] || {};
+							Object.assign(BrewUtil.homebrewMeta[k], json._meta[k]);
+							break;
+						}
+					}
+				})
+			}
 			return areNew;
 		}
 
@@ -3637,7 +3960,7 @@ BrewUtil = {
 		if (!BrewUtil.homebrew) {
 			BrewUtil.homebrew = json;
 		} else {
-			sourcesToAdd = checkAndAddSources(); // adding source(s) to Filter should happen in per-page addX functions
+			sourcesToAdd = checkAndAddMetaGetNewSources(); // adding source(s) to Filter should happen in per-page addX functions
 			storable.forEach(k => toAdd[k] = checkAndAdd(k)); // only add if unique ID not already present
 		}
 		BrewUtil.storage.setItem(HOMEBREW_STORAGE, JSON.stringify(BrewUtil.homebrew));
@@ -3651,51 +3974,23 @@ BrewUtil = {
 		// TODO complete refactoring so this always call `handleBrew` which can be defined per-page
 		switch (page) {
 			case UrlUtil.PG_SPELLS:
-				handleBrew(toAdd);
-				break;
 			case UrlUtil.PG_CLASSES:
-				handleBrew(toAdd);
-				break;
 			case UrlUtil.PG_BESTIARY:
-				handleBrew(toAdd);
-				break;
 			case UrlUtil.PG_BACKGROUNDS:
-				addBackgrounds({background: toAdd.background});
-				break;
 			case UrlUtil.PG_FEATS:
-				addFeats({feat: toAdd.feat});
-				break;
-			case UrlUtil.PG_INVOCATIONS:
-				addInvocations({invocation: toAdd.invocation});
-				break;
+			case UrlUtil.PG_OPT_FEATURES:
 			case UrlUtil.PG_RACES:
-				addRaces({race: toAdd.race});
-				break;
 			case UrlUtil.PG_OBJECTS:
-				addObjects({object: toAdd.object});
-				break;
 			case UrlUtil.PG_TRAPS_HAZARDS:
-				handleBrew(toAdd);
-				break;
 			case UrlUtil.PG_DEITIES:
-				addDeities({deity: toAdd.deity});
-				break;
 			case UrlUtil.PG_ITEMS:
-				handleBrew(toAdd);
-				break;
 			case UrlUtil.PG_REWARDS:
-				addRewards({reward: toAdd.reward});
-				break;
 			case UrlUtil.PG_PSIONICS:
-				addPsionics({psionic: toAdd.psionic});
-				break;
 			case UrlUtil.PG_VARIATNRULES:
-				addVariantRules({variantrule: toAdd.variantrule});
-				break;
 			case UrlUtil.PG_CONDITIONS_DISEASES:
-				handleBrew(toAdd);
-				break;
 			case UrlUtil.PG_ADVENTURES:
+			case UrlUtil.PG_ADVENTURE:
+			case UrlUtil.PG_MAKE_SHAPED:
 				handleBrew(toAdd);
 				break;
 			case "NO_PAGE":
@@ -3747,21 +4042,6 @@ BrewUtil = {
 				const rawBrew = BrewUtil.storage.getItem(HOMEBREW_META_STORAGE);
 				const temp = rawBrew ? ((JSON.parse(rawBrew) || {})._meta || {}) : {};
 				temp.sources = temp.sources || [];
-
-				// FIXME Async code that, to be properly implemented, requires everything to be rewritten.
-				// This *should* complete before anything further is allowed to execute.
-				// The downside of not doing this, is homebrew sources will appear in the "official" section of the source filter.
-				// This didn't seem worth breaking everything to fix.
-				BrewUtil._pLoadLocal(d => {
-					if (d._meta && !d._meta.sources) {
-						const existing = temp.sources.map(src => src.json);
-						d._meta.sources.forEach(src => {
-							if (!existing.find(it => it === src.json)) {
-								temp.sources.push(src);
-							}
-						});
-					}
-				});
 				BrewUtil.homebrewMeta = temp;
 				doBuild();
 			} else {
@@ -3804,16 +4084,17 @@ BrewUtil = {
 	/**
 	 * Get data in a format similar to the main search index
 	 */
-	getSearchIndex () {
+	pGetSearchIndex () {
 		BrewUtil._buildSourceCache();
 		const indexer = new Omnidexer(Omnisearch.highestId + 1);
 
-		if (BrewUtil.homebrew) {
-			Omnidexer.TO_INDEX__FROM_INDEX_JSON.filter(ti => BrewUtil.homebrew[ti.listProp]).forEach(ti => indexer.addToIndex(ti, BrewUtil.homebrew));
-			Omnidexer.TO_INDEX.filter(ti => BrewUtil.homebrew[ti.listProp]).forEach(ti => indexer.addToIndex(ti, BrewUtil.homebrew));
-		}
-
-		return indexer.getIndex();
+		return BrewUtil.pAddBrewData().then(() => {
+			if (BrewUtil.homebrew) {
+				Omnidexer.TO_INDEX__FROM_INDEX_JSON.filter(ti => BrewUtil.homebrew[ti.listProp]).forEach(ti => indexer.addToIndex(ti, BrewUtil.homebrew));
+				Omnidexer.TO_INDEX.filter(ti => BrewUtil.homebrew[ti.listProp]).forEach(ti => indexer.addToIndex(ti, BrewUtil.homebrew));
+			}
+			return indexer.getIndex();
+		});
 	}
 };
 
@@ -3993,10 +4274,6 @@ CollectionUtil = {
 		}
 	},
 
-	joinConjunct: (arr, joinWith, conjunctWith) => {
-		return arr.length === 1 ? String(arr[0]) : arr.length === 2 ? arr.join(conjunctWith) : arr.slice(0, -1).join(joinWith) + conjunctWith + arr.slice(-1);
-	},
-
 	arrayEq (array1, array2) {
 		if (!array1 && !array2) return true;
 		else if ((!array1 && array2) || (array1 && !array2)) return false;
@@ -4020,6 +4297,16 @@ CollectionUtil = {
 			} else return false;
 		}
 		return true;
+	},
+
+	setEq (set1, set2) {
+		if (set1.size !== set2.size) return false;
+		for (const a of set1) if (!set2.has(a)) return false;
+		return true;
+	},
+
+	setDiff (set1, set2) {
+		return new Set([...set1].filter(it => !set2.has(it)));
 	}
 };
 
@@ -4038,9 +4325,10 @@ Array.prototype.last = Array.prototype.last ||
  * @param $openBtn jQuery-selected button to bind click open/close
  * @param noneVisibleMsg "error" message to display if user has not selected any viewable content
  * @param popTblGetNumShown function which should populate the view with HTML content and return the number of items displayed
+ * @param doShowEmpty whether or not the empty table should be visible (useful if the population function is guaranteed to display something)
  * @constructor
  */
-function BookModeView (hashKey, $openBtn, noneVisibleMsg, popTblGetNumShown) {
+function BookModeView (hashKey, $openBtn, noneVisibleMsg, popTblGetNumShown, doShowEmpty) {
 	this.hashKey = hashKey;
 	this.$openBtn = $openBtn;
 	this.noneVisibleMsg = noneVisibleMsg;
@@ -4086,8 +4374,8 @@ function BookModeView (hashKey, $openBtn, noneVisibleMsg, popTblGetNumShown) {
 		const numShown = self.popTblGetNumShown($tbl, $hdTxt);
 
 		const $tblRow = $(`<tr/>`);
-		$tblRow.append($(`<div class="wrp-content" style="${numShown ? "" : "display: none;"}"/>`).append($tbl));
-		const $msgRow = $(`<tr ${numShown ? `style="display: none;"` : ""}><td class="text-align-center"><span class="initial-message">${self.noneVisibleMsg}</span><br></td></tr>`);
+		$tblRow.append($(`<div class="wrp-content" style="${!numShown && !doShowEmpty ? "display: none;" : ""}"/>`).append($tbl));
+		const $msgRow = $(`<tr class="noprint" ${numShown ? `style="display: none;"` : ""}><td class="text-align-center"><span class="initial-message">${self.noneVisibleMsg}</span><br></td></tr>`);
 		$msgRow.find(`td`).append($(`<button class="btn btn-default">Close</button>`).on("click", () => {
 			hashTeardown();
 		}));
@@ -4104,6 +4392,12 @@ function BookModeView (hashKey, $openBtn, noneVisibleMsg, popTblGetNumShown) {
 			self._$wrpBook.remove();
 			self.active = false;
 		}
+	};
+
+	this.handleSub = (sub) => {
+		const bookViewHash = sub.find(it => it.startsWith(this.hashKey));
+		if (bookViewHash && UrlUtil.unpackSubHash(bookViewHash)[this.hashKey][0] === "true") this.open();
+		else this.teardown();
 	}
 }
 

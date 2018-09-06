@@ -43,7 +43,8 @@ function onJsonLoad (data) {
 
 	addRewards(data);
 	BrewUtil.pAddBrewData()
-		.then(addRewards)
+		.then(handleBrew)
+		.then(BrewUtil.pAddLocalBrewData)
 		.catch(BrewUtil.purgeBrew)
 		.then(() => {
 			BrewUtil.makeBrewButton("manage-brew");
@@ -53,6 +54,11 @@ function onJsonLoad (data) {
 
 			History.init(true);
 		});
+}
+
+function handleBrew (homebrew) {
+	addRewards(homebrew);
+	return Promise.resolve();
 }
 
 let rewardList = [];
@@ -71,7 +77,7 @@ function addRewards (data) {
 			<li class='row' ${FLTR_ID}='${rwI}' onclick="ListUtil.toggleSelected(event, this)" oncontextmenu="ListUtil.openContextMenu(event, this)">
 				<a id='${rwI}' href="#${UrlUtil.autoEncodeHash(reward)}" title="${reward.name}">
 					<span class='name col-xs-10'>${reward.name}</span>
-					<span class='source col-xs-2 source${Parser.sourceJsonToAbv(reward.source)}' title="${Parser.sourceJsonToFull(reward.source)}">${Parser.sourceJsonToAbv(reward.source)}</span>
+					<span class='source col-xs-2 ${Parser.sourceJsonToColor(reward.source)}' title="${Parser.sourceJsonToFull(reward.source)}">${Parser.sourceJsonToAbv(reward.source)}</span>
 				</a>
 			</li>`;
 

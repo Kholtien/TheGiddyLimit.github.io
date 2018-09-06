@@ -4,12 +4,15 @@
 <head>
 	<!--5ETOOLS_VERSION-->
 	<meta charset="utf-8">
+	<meta name="description" content="">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Classes - 5etools</title>
 
 	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="css/jquery-ui-slider-pips.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="icon" href="favicon.png">
 
@@ -78,7 +81,7 @@
 		}
 
 		.wrp-btn-readmode {
-			margin-top: 10px;
+			margin-top: 1px;
 			margin-bottom: 5px;
 		}
 
@@ -200,7 +203,7 @@
 			display: flex;
 		}
 
-		div#subclasses > span.sc-pill-feeling-lucky > .glyphicon {
+		div#subclasses .glyphicon {
 			width: 2rem;
 			line-height: 12px;
 		}
@@ -275,7 +278,7 @@
 
 			</ul>
 			<p class="text-align-center">
-				<button class="btn btn-default btn-sm btn-file btn-info" id="manage-brew">Manage Homebrew</button>
+				<button class="btn btn-default btn-xs btn-file btn-info" id="manage-brew">Manage Homebrew</button>
 			</p>
 		</div>
 		<div class="col-sm-9" id="classtable">
@@ -404,8 +407,8 @@
 	<div class="row" id="desktop-flex">
 		<div class="col-md-3">
 			<div id="button-wrapper" class="text-align-center wrp-btn-readmode">
-				<button class="btn btn-default btn-sm" id="btn-comparemode" title="A pop-up table which can be used to compare subclass features.">Subclass Comparison</button>
-				<button class="btn btn-default btn-sm" id="btn-readmode" title="A pop-up reading mode thatkeeps class and subclass information separated, matching the books.">Book View</button>
+				<button class="btn btn-default btn-xs" id="btn-comparemode" title="A pop-up table which can be used to compare subclass features.">Subclass Comparison</button>
+				<button class="btn btn-default btn-xs" id="btn-readmode" title="A pop-up reading mode thatkeeps class and subclass information separated, matching the books.">Book View</button>
 			</div>
 			<table id="statsprof" class="stats shadow-big">
 				<tr>
@@ -507,6 +510,8 @@
 
 </footer>    <!--5ETOOLS_SCRIPT_ANCHOR-->
 <script type="text/javascript" src="lib/jquery.js"></script>
+<script type="text/javascript" src="lib/jquery-ui.js"></script>
+<script type="text/javascript" src="lib/jquery-ui-slider-pip.js"></script>
 <script type="text/javascript" src="lib/list.js"></script>
 <script type="text/javascript" src="lib/bootstrap.js"></script>
 <script type="text/javascript" src="lib/elasticlunr.js"></script>
@@ -515,6 +520,7 @@
 <script type="text/javascript" src="js/omnisearch.js"></script>
 <script type="text/javascript" src="js/filter.js"></script>
 <script type="text/javascript" src="js/entryrender.js"></script>
+<script type="text/javascript" src="js/scalecreature.js"></script>
 <script type="text/javascript" src="js/history.js"></script>
 <script type="text/javascript" src="js/classes.js"></script>
 </body>

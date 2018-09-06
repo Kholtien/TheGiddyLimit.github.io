@@ -1,6 +1,7 @@
 class Blacklist {
 	static getDisplayCategory (cat) {
 		if (cat === "variantrule") return "Variant Rule";
+		if (cat === "optionalfeature") return "Optional Feature";
 		return cat.uppercaseFirst();
 	}
 
@@ -23,13 +24,14 @@ class Blacklist {
 			item: `<li class="row no-click"><span class="id hidden"></span><span class="source col-xs-3"></span><span class="category col-xs-3"></span><span class="name col-xs-3"></span><span class="actions col-xs-3 text-align-center"></span></li>`
 		});
 		Blacklist._listId = 1;
+		ListUtil.bindEscapeKey(Blacklist._list, $(`#search`));
 
 		const FILES = [
 			"backgrounds.json",
 			"cultsboons.json",
 			"deities.json",
 			"feats.json",
-			"invocations.json",
+			"optionalfeatures.json",
 			"objects.json",
 			"psionics.json",
 			"races.json",
@@ -152,6 +154,17 @@ class Blacklist {
 		if (ExcludeUtil.addExclude(name, category, source)) {
 			Blacklist._addListItem(name, category, source);
 		}
+	}
+
+	static addAllUa () {
+		$(`#bl-source`).find(`option`).each((i, e) => {
+			const val = $(e).val();
+			if (val === "*" || !SourceUtil.isNonstandardSource(val)) return;
+
+			if (ExcludeUtil.addExclude("*", "*", val)) {
+				Blacklist._addListItem("*", "*", val);
+			}
+		});
 	}
 
 	static remove (name, category, source) {

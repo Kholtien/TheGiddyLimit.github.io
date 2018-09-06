@@ -80,6 +80,7 @@ function onJsonLoad (data) {
 			"Armor Proficiency",
 			"Damage Resistance",
 			"Darkvision", "Superior Darkvision",
+			"Dragonmark",
 			"Improved Resting",
 			"Natural Armor",
 			"NPC Race",
@@ -149,7 +150,8 @@ function onJsonLoad (data) {
 
 	addRaces({race: jsonRaces});
 	BrewUtil.pAddBrewData()
-		.then(addRaces)
+		.then(handleBrew)
+		.then(BrewUtil.pAddLocalBrewData)
 		.catch(BrewUtil.purgeBrew)
 		.then(() => {
 			BrewUtil.makeBrewButton("manage-brew");
@@ -159,6 +161,11 @@ function onJsonLoad (data) {
 
 			History.init(true);
 		});
+}
+
+function handleBrew (homebrew) {
+	addRaces(homebrew);
+	return Promise.resolve();
 }
 
 let raceList = [];
@@ -194,7 +201,7 @@ function addRaces (data) {
 					<span class='name col-xs-4'>${race.name}</span>
 					<span class='ability col-xs-4'>${ability.asTextShort}</span>
 					<span class='size col-xs-2'>${Parser.sizeAbvToFull(race.size)}</span>
-					<span class='source col-xs-2 source${race.source}' title="${Parser.sourceJsonToFull(race.source)}">${Parser.sourceJsonToAbv(race.source)}</span>
+					<span class='source col-xs-2 ${Parser.sourceJsonToColor(race.source)}' title="${Parser.sourceJsonToFull(race.source)}">${Parser.sourceJsonToAbv(race.source)}</span>
 					${bracketMatch ? `<span class="clean-name hidden">${bracketMatch[2]} ${bracketMatch[1]}</span>` : ""}
 				</a>
 			</li>`;
@@ -311,7 +318,7 @@ function loadhash (id) {
 		$pgContent.find("th.name").html(`
 			<span class="stats-name copyable" onclick="EntryRenderer.utils._handleNameClick(this, '${race.source.escapeQuotes()}')">${race.name}</span>
 			${race.soundClip ? getPronunciationButton() : ""}
-			<span class="stats-source source${race.source}" title="${Parser.sourceJsonToFull(race.source)}">${Parser.sourceJsonToAbv(race.source)}</span>
+			<span class="stats-source ${Parser.sourceJsonToColor(race.source)}" title="${Parser.sourceJsonToFull(race.source)}">${Parser.sourceJsonToAbv(race.source)}</span>
 		`);
 
 		const size = Parser.sizeAbvToFull(race.size);
@@ -373,29 +380,45 @@ function loadhash (id) {
 					$td = $td2;
 				}
 
+				const findFluff = (appendCopy) => {
+					return data.race.find(it => it.name.toLowerCase() === appendCopy.name.toLowerCase() && it.source.toLowerCase() === appendCopy.source.toLowerCase());
+				};
+
+				const appendCopy = (fromFluff) => {
+					if (fromFluff && fromFluff._appendCopy) {
+						const appFluff = findFluff(fromFluff._appendCopy);
+						renderer.setFirstSection(true);
+						$td.append(renderer.renderEntry({type: "section", entries: appFluff.entries}));
+					}
+				};
+
 				const subFluff = race._baseName && race.name.toLowerCase() === race._baseName.toLowerCase() ? "" : data.race.find(it => it.name.toLowerCase() === race.name.toLowerCase() && it.source.toLowerCase() === race.source.toLowerCase());
 				const baseFluff = data.race.find(it => race._baseName && it.name.toLowerCase() === race._baseName.toLowerCase() && race._baseSource && it.source.toLowerCase() === race._baseSource.toLowerCase());
 				if (race.fluff && race.fluff.entries) { // override; for homebrew usage only
 					renderer.setFirstSection(true);
 					$td.append(renderer.renderEntry({type: "section", entries: race.fluff.entries}));
 				} else if (subFluff || baseFluff) {
-					if (subFluff && subFluff.entries && !baseFluff) {
+					if (subFluff && (subFluff.entries || subFluff._appendCopy) && !baseFluff) {
 						renderer.setFirstSection(true);
 						$td.append(renderer.renderEntry({type: "section", entries: subFluff.entries}));
-					} else if (subFluff && subFluff.entries && baseFluff && baseFluff.entries) {
+						appendCopy(subFluff);
+					} else if (subFluff && (subFluff.entries || subFluff._appendCopy) && baseFluff && (baseFluff.entries || baseFluff._appendCopy)) {
 						renderer.setFirstSection(true);
 						$td.append(renderer.renderEntry({type: "section", entries: subFluff.entries}));
+						appendCopy(subFluff);
 						let $tr2 = get$Tr();
 						let $td2 = get$Td().appendTo($tr2);
 						$tr.after($tr2);
 						$tr.after(EntryRenderer.utils.getDividerTr());
 						renderer.setFirstSection(true);
 						$td2.append(renderer.renderEntry({type: "section", name: race._baseName, entries: baseFluff.entries}));
+						appendCopy(baseFluff);
 						$tr = $tr2;
 						$td = $td2;
-					} else if (baseFluff && baseFluff.entries) {
+					} else if (baseFluff && (baseFluff.entries || baseFluff._appendCopy)) {
 						renderer.setFirstSection(true);
 						$td.append(renderer.renderEntry({type: "section", entries: baseFluff.entries}));
+						appendCopy(baseFluff);
 					}
 					if ((subFluff && subFluff.uncommon) || (baseFluff && baseFluff.uncommon)) {
 						renderMeta("uncommon");
